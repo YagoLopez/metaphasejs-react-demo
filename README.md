@@ -6,7 +6,8 @@ MetaphaseJS is an supereasy, efficient and frameworkless state manager for Javas
 
 ## Requirements
 
-***Yarn*** package manager (or ***npm***)
+- ***Yarn*** package manager (or ***npm***)
+- Typescript
 
 ## Installation
 
