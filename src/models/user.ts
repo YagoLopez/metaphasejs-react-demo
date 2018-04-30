@@ -10,7 +10,7 @@ export class User extends Model {
   @column({notNullable: true, index: true})
   age: number;
 
-  @column()
+  @column({notNullable: true})
   admin: number;
 
   hasMany() {

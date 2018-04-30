@@ -1,8 +1,8 @@
 # MetaphaseJS Demo
 
-Demostration of MetaphaseJS framework. 
+Demostration of MetaphaseJS framework (**<u>ALPHA VERSION</u>**).
 
-MetaphaseJS is an supereasy, efficient and frameworkless state manager for Javascript. It can be used with React, Angular o Vanilla JS. In this demo React has been used.
+**MetaphaseJS** is an super-easy, efficient and frameworkless state manager for Javascript. It can be used with React, Angular o Vanilla JS. In this demo React has been used.
 
 ## Demo
 
@@ -10,7 +10,7 @@ MetaphaseJS is an supereasy, efficient and frameworkless state manager for Javas
 
 ## Requirements
 
-- ***Yarn*** package manager (or ***npm***)
+- Yarn package manager (or npm)
 - Typescript
 
 ## Installation

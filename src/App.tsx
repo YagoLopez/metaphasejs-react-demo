@@ -1,3 +1,6 @@
+//todo: marcar filas no salvadas
+//todo: marcar tabla como activa
+//todo: filtrar tablas
 //todo: diagram view
 //todo: responsive layout
 import * as React from 'react';
@@ -66,7 +69,7 @@ import 'font-awesome/css/font-awesome.css';
 
 export default class App extends React.Component {
 
-  SHOW_CHILDREN = true;
+  SHOW_CHILDREN = false;
 
   state: {
     children: boolean,
@@ -97,22 +100,6 @@ export default class App extends React.Component {
       usersCollection: users.getAll({children}),
       postsCollection: posts.getAll({children})
     });
-  }
-
-  updateUser() {
-    user1.name = 'pepe';
-    user1.save();
-    this.updateState();
-  }
-
-  removeUser() {
-    user1.remove();
-    this.updateState();
-  }
-
-  removePost() {
-    post3.remove();
-    this.updateState()
   }
 
   showChildren() {
@@ -154,20 +141,30 @@ export default class App extends React.Component {
   }
 
   addNew(model: Model) {
-    model.save();
-    this.updateState();
+    // model.save();
+    // this.updateState();
+    if (model.tableName() === 'users') {
+      let users = this.state.usersCollection;
+      users.push(model);
+      this.setState({usersCollection: users});
+    }
+    if (model.tableName() === 'posts') {
+      let posts = this.state.postsCollection;
+      posts.push(model);
+      this.setState({postsCollection: posts});
+    }
   }
 
   save(model: Model) {
-      let editedModel = {...model};
-      try {
-        Object.setPrototypeOf(editedModel, model);
-        editedModel = Model.omitChildrenProps(editedModel);
-        editedModel.save();
-      } catch (exception) {
-        console.error(exception);
-        alert('Error: browser could not support "Object.setPrototypeOf()" ES6 standard')
-      }
+    let editedModel = {...model};
+    try {
+      Object.setPrototypeOf(editedModel, model);
+      editedModel = Model.omitChildrenProps(editedModel);
+      editedModel.save();
+    } catch (exception) {
+      console.warn(exception);
+      alert(exception.message);
+    }
     this.updateState();
   }
 
@@ -232,22 +229,26 @@ export default class App extends React.Component {
     )
   }
 
-
   //todo: revisar
-  requiredValidator(props: any) {
-    let value = props.rowData[props.field];
-    return value && value.length > 0;
+//   requiredValidator(props: any) {
+// // debugger
+//     const value = props.rowData[props.field];
+//     return value && value.length > 0;
+//   }
+
+  requiredValidator2(obj: Object) {
+
   }
 
   btnSave(model: Model) {
     return (
-      <Button onClick={_ => this.save(model)} className="ui-button-info" icon="fa-check-circle"/>
+      <Button onClick={_ => this.save(model)} className="ui-button-info" icon="fa-check-circle" title="Save"/>
     )
   }
 
   btnRemove(model: Model) {
     return (
-      <Button onClick={_ => this.remove(model)} className="ui-button-danger" icon="fa-trash"/>
+      <Button onClick={_ => this.remove(model)} className="ui-button-danger" icon="fa-trash" title="Delete"/>
     )
   }
 
@@ -313,16 +314,24 @@ export default class App extends React.Component {
     }
   }
 
+  getTableCSS(tableName: string) {
+    if (this.state.tableSelected === tableName.toUpperCase()) {
+      return 'centered table-selected';
+    } else {
+      return 'centered';
+    }
+  }
+
 
   render() {
 
     const {jsonContent, children, tableSelected, usersCollection, postsCollection} = this.state;
-    const headerUserTable = "USERS TABLE";
-    const headerPostTable = "POSTS TABLE";
+    const headerUserTable = "USERS";
+    const headerPostTable = "POSTS";
     const footerUsersTable = (
       <div className="ui-helper-clearfix full-width">
         <Button className="float-left" icon="fa-plus" label="Add New"
-          onClick={_ => this.addNew(new User({name: '', age: '', admin: 0}))}/>
+          onClick={_ => this.addNew(new User({name: '', age: 0, admin: 0}))}/>
       </div>
     );
     const footerPostsTable = (
@@ -371,11 +380,11 @@ export default class App extends React.Component {
         <Panel header="✅ Table View" toggleable={true}>
 
           <DataTable value={usersCollection} onRowClick={(e: any) => this.onClickTable(e)}
-            header={headerUserTable} footer={footerUsersTable} className="centered">
+            header={headerUserTable} footer={footerUsersTable}
+            className={this.getTableCSS('users')}>
               <Column field="id" header="Id"/>
               <Column field="name" header="Name"
-                editor={(props: any) => this.colEditor(props, 'name')}
-                editorValidator={(props: any) => this.requiredValidator(props)}/>
+                editor={(props: any) => this.colEditor(props, 'name')}/>
               <Column field="age" header="Age"
                 editor={(props: any) => this.colEditor(props, 'age')}/>
               <Column field="admin" header="Admin"
@@ -385,7 +394,8 @@ export default class App extends React.Component {
           </DataTable>
 
           <DataTable value={postsCollection} onRowClick={(e: any) => this.onClickTable(e)}
-            header={headerPostTable} footer={footerPostsTable} className="centered">
+            header={headerPostTable} footer={footerPostsTable}
+            className={this.getTableCSS('posts')}>
               <Column field="id" header="Id"/>
               <Column field="title" header="Title"
                 editor={(props: any) => this.colEditor(props, 'title')}/>
@@ -402,13 +412,6 @@ export default class App extends React.Component {
         <Panel header="✅ Nested View" toggleable={true}>
           {/*<JSONViewer json={this.state.users}></JSONViewer>*/}
         </Panel>
-
-        <p><button onClick={_ => this.updateUser()}>Update user id = 1</button></p>
-
-        <p><button onClick={_ => this.removeUser()}>Remove user id = 1</button></p>
-
-        <p><button onClick={_ => this.removePost()}>Remove post id = 3</button></p>
-
 
       </div>
     );

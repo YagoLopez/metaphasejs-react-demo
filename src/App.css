@@ -100,6 +100,11 @@ div.ui-panel {
 .centered {
   text-align: center;
 }
+
+.table-selected {
+  padding: 1px;
+  background-color: cornflowerblue;
+}
 /*
 .custom .ui-scrollpanel-bar:hover {
   background-color: #135ba1;
