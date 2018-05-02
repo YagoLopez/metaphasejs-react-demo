@@ -1,8 +1,8 @@
-//todo: marcar filas no salvadas
-//todo: marcar tabla como activa
-//todo: filtrar tablas
-//todo: diagram view
-//todo: responsive layout
+//todo: arreglar comportamiento boton cancel
+//todo: simplificar "this.state.selectedModel" en cmp dialog
+//todo: layout responsivo
+//todo: feature filtro en el listado de tabla
+//todo: diagram view (static)
 //todo: al hacer onclick en tableHeader, deberia cambiar el valor de this.state.tableSelected
 import * as React from 'react';
 import './App.css';
@@ -80,7 +80,8 @@ export default class App extends React.Component {
     users: Model[],
     posts: Model[],
     selectedModel: any,
-    displayDialog: boolean
+    displayDialog: boolean,
+    isAdmin: number
   };
 
   constructor(props: any) {
@@ -94,11 +95,13 @@ export default class App extends React.Component {
       users: usersCollectionList,
       posts: postsCollectionList,
       selectedModel: undefined,
-      displayDialog: false
+      displayDialog: false,
+      isAdmin: 0
     }
   }
 
   reactJsonCmp: React.Component;
+  dropDownIsAdmin: React.Component;
 
   componentDidMount() {
     //todo: cargar aqui la base de datos desde un fichero mediante peticion xmlhttp
@@ -175,7 +178,6 @@ export default class App extends React.Component {
   }
 
   onBtnSave() {
-// debugger
     const selectedModel = this.state.selectedModel;
     if (selectedModel) {
       let editedModel = {...selectedModel};
@@ -193,7 +195,8 @@ export default class App extends React.Component {
   }
 
   onBtnCancel() {
-    this.setState({displayDialog: false});
+    this.setState({displayDialog: false, selectedModel: null});
+    this.updateState();
   }
 
   remove(model: Model) {
@@ -228,17 +231,17 @@ export default class App extends React.Component {
     // )
   }
 
-  isAdminCellEditor(props: any) {
-    const options = [
-      {label: 'True', value: 1},
-      {label: 'False', value: 0},
-    ];
-    return (
-      <Dropdown value={props.value[props.rowIndex].admin} options={options}
-        onChange={(e: any) => this.onCellChange(props, e.value)}
-        className="full-width" placeholder="Is Admin?"/>
-    )
-  }
+  // isAdminCellEditor(props: any) {
+  //   const options = [
+  //     {label: 'True', value: 1},
+  //     {label: 'False', value: 0},
+  //   ];
+  //   return (
+  //     <Dropdown value={props.value[props.rowIndex].admin} options={options}
+  //       onChange={(e: any) => this.onCellChange(props, e.value)}
+  //       className="full-width" placeholder="Is Admin?"/>
+  //   )
+  // }
 
   dropDownUserIdCellEditor(props: any) {
     let usersIds = users.query().select('id').run();
@@ -350,15 +353,15 @@ export default class App extends React.Component {
   }
 
   updateProperty(property: any, value: any) {
-    // debugger
     let model = this.state.selectedModel;
     model[property] = value;
     this.setState({selectedModel: model});
   }
 
-  onDropDownChange(e: any) {
-    console.log('on city change, e', e);
-
+  onIsAdminChange(value: any) {
+    const selectedModel = this.state.selectedModel;
+    selectedModel.admin = value;
+    this.setState({selectedModel: selectedModel});
   }
 
   // onBlurInputText(props: any, value: any) {
@@ -478,7 +481,7 @@ export default class App extends React.Component {
 
 
 
-        <Dialog visible={this.state.displayDialog} header="Details" modal={true} footer={footerDialog}
+        <Dialog visible={this.state.displayDialog} header="Edit row" modal={true} footer={footerDialog}
                 onHide={() => this.setState({displayDialog: false})}>
           <div className="ui-grid ui-grid-responsive ui-fluid">
             <div className="ui-grid-row">
@@ -506,18 +509,17 @@ export default class App extends React.Component {
                 <label htmlFor="admin">Admin</label>
               </div>
               <div className="ui-grid-col-8 dialog-label">
-                {/*<InputText id="admin"*/}
-                           {/*onChange={(e: any) => {this.updateProperty('admin', e.target.value)}}*/}
-                           {/*value={this.state.selectedModel && this.state.selectedModel.admin}/>*/}
-
+                {/*todo: simplificar this.state.selectedModel como const {selectedModel} = this.state;*/}
                 <Dropdown value={this.state.selectedModel && this.state.selectedModel.admin}
+                          id="admin"
+                          ref={(el: any) => this.dropDownIsAdmin = el}
                           dataKey="admin"
-                          options={[{label: 'True', value: '1'}, {label: 'False', value: '0'}]}
-                          onChange={(e: any) => this.onDropDownChange(e)}
+                          options={[{label: 'True', value: 1}, {label: 'False', value: 0}]}
+                          onChange={(e: {originalEvent: Event, value: any}) => this.onIsAdminChange(e.value)}
                           className="dropdown" placeholder="Is Admin?"/>
 
                 {/*<div style={{marginTop: '.5em'}}>*/}
-                  {/*{this.state.selectedModel ? 'Is Admin?: ' + this.state.selectedModel.admin: 'No admin'}*/}
+                  {/*'this.state.selectedModel.admin: ' {this.state.selectedModel && this.state.selectedModel.admin}*/}
                 {/*</div>*/}
 
               </div>

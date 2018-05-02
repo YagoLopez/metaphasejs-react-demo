@@ -1,0 +1,17 @@
+PRAGMA foreign_keys=OFF;
+
+DROP TABLE IF EXISTS `users`;
+create table `users` (`id` integer not null primary key autoincrement, `modelName` text, `name` text, `age` integer, `admin` integer);
+insert into `users` (`admin`, `age`, `modelName`, `name`) values (0, 22, 'users', 'user1');
+insert into `users` (`admin`, `age`, `modelName`, `name`) values (1, 40, 'users', 'user2');
+
+DROP TABLE IF EXISTS `posts`;
+create table `posts` (`id` integer not null primary key autoincrement, `modelName` text, `title` text, `content` text, `user_id` integer, foreign key(`user_id`) references `users`(`id`) on delete cascade on update cascade);
+insert into `posts` (`content`, `modelName`, `title`, `user_id`) values ('content post 1', 'posts', 'title post1', 1);
+insert into `posts` (`content`, `modelName`, `title`, `user_id`) values ('content post 2', 'posts', 'title post2', 2);
+
+PRAGMA foreign_keys=ON;
+
+
+DELETE FROM users WHERE Id = 1;
+SELECT * FROM posts;

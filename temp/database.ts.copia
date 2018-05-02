@@ -1,0 +1,173 @@
+const sql = require('sql.js');
+import {QueryBuilder} from "knex";
+import {logQuery} from './yago.logger';
+
+
+
+//todo: falta completar definicion de tipos para clase Statement y si acaso documentar cada metodo
+/** **************************************************************************************************************
+ * db.js API
+ * Documentation:
+ * http://kripken.github.io/sql.js/documentation/#http://kripken.github.io/sql.js/documentation/class/Database.html
+ **************************************************************************************************************** */
+export interface db {
+
+  /**
+   * Open a new database either by creating a new one or opening an existing one,
+   * stored in the byte array passed in first argument
+   * @param {number[]} data
+   */
+  constructor(data: number[]): void;
+
+  /**
+   * Runs a database query constructed by Knex (the query builder)
+   * It does not returns a list of results. It returns db database object for fn chaining
+   * It wraps db.run()
+   * @param {Object | string} query
+   */
+  runQuery(query: QueryBuilder | string): any;
+
+  /**
+   * Execute a query against database and returns an array of objects
+   * It wraps db.exec()
+   * @param {QueryBuilder} query object
+   * @returns {Object[]} List of models
+   */
+  execQuery(query: QueryBuilder | string): Object[];
+
+  /**
+   * Get the results from a query and transform them to a list of POJOs
+   * @param statement Prepared SQL statement
+   * @returns {Object[]}
+   */
+  getResults(statement: any): Object[];
+
+  /**
+   * Check if a table exists in the database
+   * @param {string} tableName
+   * @returns {boolean}
+   */
+  hasTable(tableName: string): boolean;
+
+  /**
+   * Check databse integrity (for posible errors and corruption)
+   * @returns {Object[]} with integrity info
+   */
+  integrityCheck(): Object[];
+
+  /**
+   * Execute SQLite function
+   * @param {string} fnExpression
+   * @returns {any}
+   */
+  execFunction(fnExpression: string): any;
+
+  run(sqlQuery: string, params?: object | any[]): db;
+  exec(sqlQuery: string): Array<{columns: string[], values: any[]}>;
+  prepare(sqlQuery: string, params?: object | any[]): Object;
+  each(sqlQuery: string, callback: Function, done: Function, params?: object | any[]): db;
+  export(): Uint8Array;
+  close(): void;
+  getRowsModified(): number;
+  create_function(name: string, fn: Function): void;
+
+}
+
+// export let FILE_NAME: string = '';
+
+/**
+ * Database instance
+ * @type {sql.Database}
+ */
+export let db = new sql.Database();
+
+// if (FILE_NAME) {
+//   db = new sql.Database(FILE_NAME);
+// } else {
+//   db = new sql.Database();
+// }
+
+
+db.__proto__.runQuery = (query: QueryBuilder | string): any => {
+  const queryString = query.toString();
+  logQuery(queryString, 'query');
+  return db.run(queryString);
+};
+
+db.__proto__.execQuery = (query: QueryBuilder | string): Object[] => {
+  logQuery(query.toString(), 'query');
+  return db.getResults( db.prepare(query.toString()) );
+};
+
+db.__proto__.getResults = (statement: any): Object[] => {
+  let result: any[] = [];
+  while (statement.step()){
+    result.push(statement.getAsObject());
+  }
+  statement.free();
+  return result;
+};
+
+db.__proto__.hasTable = (tableName: string): boolean => {
+  const result = db.exec( `SELECT name FROM sqlite_master WHERE type='table' AND name='${tableName}'` );
+  return result && result.length > 0
+};
+
+db.__proto__.execFunction = (fnExpression: string) => {
+  const stmt = db.prepare(fnExpression);
+  const result = db.getResults(stmt);
+  stmt.free();
+  return result;
+};
+
+db.__proto__.integrityCheck = (): Object[] => {
+  return db.execFunction('PRAGMA integrity_check')
+};
+
+// db.__proto__.loadFromDisk = (fileNamePath: string) => {
+//   const filebuffer = fs.readFileSync(fileNamePath);
+//   db = new sql.Database(filebuffer);
+// };
+
+db.__proto__.loadFromDisk2 = (fileNamePath: string) => {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', fileNamePath, true);
+  xhr.responseType = 'arraybuffer';
+
+  xhr.onload = function(e) {
+debugger
+    const uInt8Array = new Uint8Array(this.response);
+    db = new sql.Database(uInt8Array);
+    // const contents = db.exec("SELECT * FROM users");
+    // contents is now [{columns:['col1','col2',...], values:[[first row], [second row], ...]}]
+  };
+  xhr.send();
+};
+
+export function loadFromDisk3(fileNamePath: string) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', fileNamePath, true);
+  xhr.responseType = 'arraybuffer';
+
+  xhr.onload = function(e) {
+    debugger
+    const uInt8Array = new Uint8Array(this.response);
+    db = new sql.Database(uInt8Array);
+    const res = db.hasTable('table1');
+    // const contents = db.exec("SELECT * FROM users");
+    // contents is now [{columns:['col1','col2',...], values:[[first row], [second row], ...]}]
+  };
+  xhr.send();
+}
+
+// db.__proto__.saveToDisk = (fileNamePath: string) => {
+//   const data = db.export();
+//   const buffer = new Buffer(data);
+//   fs.writeFileSync(fileNamePath, buffer);
+// };
+
+//todo: eliminar esta funcion (?). Se usa para obtener resultado de consulta como con "run()" pero usando "modify()"
+// export function rows(queryBuilder: any): any {
+//   queryBuilder.result = db.execQuery(queryBuilder);
+// }
+

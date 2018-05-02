@@ -1,0 +1,72 @@
+{
+  "name": "sql_js-test",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": ".",
+  "dependencies": {
+    "@types/knex": "^0.14.7",
+    "chalk": "^2.3.2",
+    "code-highlight": "^1.0.0",
+    "highlight.js": "^9.12.0",
+    "knex": "^0.14.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-json-view": "^1.16.1",
+    "react-json-viewer": "^1.7.1",
+    "react-scripts-ts": "2.13.0",
+    "reflect-metadata": "^0.1.12",
+    "sql-bricks-sqlite": "^0.1.0",
+    "sql.js": "^0.5.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.1.2",
+    "@types/node": "^9.4.6",
+    "@types/react": "^16.0.38",
+    "@types/react-dom": "^16.0.4",
+    "mock-knex": "YagoLopez/mock-knex",
+    "typescript": "^2.7.2"
+  },
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "eject": "react-scripts-ts eject",
+    "test": "jest --verbose --notify",
+    "test:watch": "jest --watch --notify",
+    "test:debug": "jest --debug",
+    "test:update": "jest -u",
+    "coverage": "jest --coverage --silent"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/config/test-shim.js",
+      "<rootDir>/config/test-setup.js"
+    ],
+    "globals": {
+      "ts-jest": {
+        "skipBabel": true
+      }
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/config/test-preprocessor.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/assetsTransformer.js",
+      "\\.(css|less)$": "<rootDir>/config/assetsTransformer.js"
+    },
+    "roots": [
+      "src"
+    ],
+    "testMatch": [
+      "**/test/*.(test).(ts|tsx|js)"
+    ],
+    "collectCoverageFrom": [
+      "src/orm/**/*.{js,tsx,ts}",
+      "!src/index.tsx",
+      "!src/App.tsx",
+      "!src/orm/test/models/**"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+Javascript has only one thread, therefore only one callback could be modifying count at a time. Order of callbacks, however, is not guaranteed.
+
+
+JavaScript code has a single explicit thread of execution. The scenario you've described will never take place in JavaScript. A timer callback is just another kind of event, and all events are serialized for sequential execution by the same core event loop of the browser UI thread.
+
+Thus, two timer events cannot be processed concurrently, one callback will happen after another.
+
+You still can have real concurrency in JavaScript by means of Web Workers. However, a web worker cannot share any objects with another web worker or the main thread. Instead, web workers serialize their state objects with JSON, and exchange messages with postMessage. So, your scenario is still impossible.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
+"Run-to-completion"
+Each message is processed completely before any other message is processed. This offers some nice properties when reasoning about your program, including the fact that whenever a function runs, it cannot be pre-empted and will run entirely before any other code runs (and can modify data the function manipulates). This differs from C, for instance, where if a function runs in a thread, it can be stopped at any point to run some other code in another thread.
+
+A downside of this model is that if a message takes too long to complete, the web application is unable to process user interactions like click or scroll. The browser mitigates this with the "a script is taking too long to run" dialog. A good practice to follow is to make message processing short and if possible cut down one message into several messages.https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
