@@ -1,4 +1,3 @@
-//todo: arreglar comportamiento boton cancel
 //todo: simplificar "this.state.selectedModel" en cmp dialog
 //todo: layout responsivo
 //todo: feature filtro en el listado de tabla
