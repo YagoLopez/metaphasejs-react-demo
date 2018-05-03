@@ -1,8 +1,9 @@
-//todo: simplificar "this.state.selectedModel" en cmp dialog
 //todo: layout responsivo
 //todo: feature filtro en el listado de tabla
 //todo: diagram view (static)
 //todo: al hacer onclick en tableHeader, deberia cambiar el valor de this.state.tableSelected
+//todo: hacer menu lateral izquierdo en vez de menu superior
+//todo: poner en cv desarrollo de software con metodologia de tarjetas (kanban?) y Cursos Deep Learning
 import * as React from 'react';
 import './App.css';
 
@@ -155,21 +156,7 @@ export default class App extends React.Component {
     saveToDisk('test3.sqlite');
   }
 
-  // addNew(model: Model) {
-  //   this.setState({unsavedRowId: 0})
-  //   if (model.tableName() === 'users') {
-  //     let users = this.state.users;
-  //     users.push(model);
-  //     this.setState({users: users});
-  //   }
-  //   if (model.tableName() === 'posts') {
-  //     let posts = this.state.posts;
-  //     posts.push(model);
-  //     this.setState({posts: posts});
-  //   }
-  // }
-
-  addNew2(model: Model) {
+  add(model: Model) {
     this.setState({selectedModel: model, displayDialog: true});
   }
 
@@ -238,13 +225,6 @@ export default class App extends React.Component {
         className="full-width" placeholder="User Id"/>
     )
   }
-
-  // btnSave(model: Model) {
-  //   return (
-  //     <Button onClick={_ => this.save()}
-  //       className="ui-button-info" icon="fa-check-circle" title="Save"/>
-  //   )
-  // }
 
   btnEdit() {
     return (
@@ -348,18 +328,6 @@ export default class App extends React.Component {
     this.setState({selectedModel: selectedModel});
   }
 
-  // onBlurInputText(props: any, value: any) {
-  //   console.log('on blur input text');
-  //   let modifiedUser = {...props.rowData};
-  //   try {
-  //     Object.setPrototypeOf(modifiedUser, props.rowData);
-  //     modifiedUser = Model.omitChildrenProps(modifiedUser);
-  //     modifiedUser.save();
-  //   } catch (exception) {
-  //     console.error(exception);
-  //     alert('Error: browser could not support "Object.setPrototypeOf()" ES6 standard')
-  //   }
-  // }
 
   render() {
 
@@ -369,13 +337,13 @@ export default class App extends React.Component {
     const footerUsersTable = (
       <div className="ui-helper-clearfix full-width">
         <Button className="float-left" icon="fa-plus" label="Add New"
-          onClick={_ => this.addNew2(new User({name: '', age: '', admin: 0}))}/>
+          onClick={_ => this.add(new User({name: '', age: '', admin: 0}))}/>
       </div>
     );
     const footerPostsTable = (
       <div className="ui-helper-clearfix full-width">
         <Button className="float-left" icon="fa-plus" label="Add New"
-          onClick={_ => this.addNew2(new Post({title: '', content: ''}))}/>
+          onClick={_ => this.add(new Post({title: '', content: ''}))}/>
       </div>
     );
     const footerDialog = <div className="ui-dialog-buttonpane ui-helper-clearfix">
@@ -386,7 +354,7 @@ export default class App extends React.Component {
 
     return (
 
-      <div className="container">
+      <div className="main-content">
 
         <Menubar model={this.menuItems}>
           <input type="checkbox" checked={children} onChange={_ => this.showChildren()} className="checkbox-children"/>
@@ -450,13 +418,9 @@ export default class App extends React.Component {
 
         </Panel>
 
-        <Panel header="✅ Nested View" toggleable={true}>
+        {/*<Panel header="✅ Nested View" toggleable={true}>*/}
           {/*<JSONViewer json={this.state.users}></JSONViewer>*/}
-        </Panel>
-
-
-
-
+        {/*</Panel>*/}
 
         <Dialog visible={this.state.displayDialog} header="Edit row" modal={true}
           footer={footerDialog} onHide={() => this.setState({displayDialog: false})}>

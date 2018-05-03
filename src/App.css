@@ -1,3 +1,18 @@
+.main-content {
+  width: 70%;
+  display: block;
+  margin: 25px auto 25px;
+  font-family: sans-serif;
+  font-size: small;
+}
+
+@media screen and (max-width: 700px) {
+  .main-content {
+    width: 100%;
+    margin: 0 auto 0;
+  }
+}
+
 .sample-code {
   font-size: 14px !important;
 }
@@ -20,11 +35,6 @@ h2 {
   margin: 5px;
   font-size: 16px;
   color: cornflowerblue;
-}
-
-.container {
-  font-family: sans-serif;
-  font-size: small;
 }
 
 .custom .ui-scrollpanel-wrapper {
