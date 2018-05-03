@@ -1,8 +1,7 @@
-//todo: layout responsivo
+//todo: hacer menu lateral izquierdo en vez de menu superior
 //todo: feature filtro en el listado de tabla
 //todo: diagram view (static)
 //todo: al hacer onclick en tableHeader, deberia cambiar el valor de this.state.tableSelected
-//todo: hacer menu lateral izquierdo en vez de menu superior
 //todo: poner en cv desarrollo de software con metodologia de tarjetas (kanban?) y Cursos Deep Learning
 import * as React from 'react';
 import './App.css';
@@ -21,7 +20,8 @@ import {saveToDisk} from "./orm/database";
 import {query} from "./orm/query.builder";
 import {Model} from "./orm/model";
 
-import {Menubar} from 'primereact/components/menubar/Menubar';
+import {Sidebar} from "primereact/components/sidebar/Sidebar";
+import {Toolbar} from 'primereact/components/toolbar/Toolbar';
 import {Button} from "primereact/components/button/Button";
 import {DataTable} from 'primereact/components/datatable/DataTable';
 import {Dialog} from 'primereact/components/dialog/Dialog';
@@ -80,7 +80,8 @@ export default class App extends React.Component {
     users: Model[],
     posts: Model[],
     selectedModel: any,
-    displayDialog: boolean
+    displayDialog: boolean,
+    displayLeftMenu: boolean
   };
 
   constructor(props: any) {
@@ -94,7 +95,8 @@ export default class App extends React.Component {
       users: usersList,
       posts: postsList,
       selectedModel: undefined,
-      displayDialog: false
+      displayDialog: false,
+      displayLeftMenu: false
     }
   }
 
@@ -105,6 +107,7 @@ export default class App extends React.Component {
     // this.carservice.getCarsSmall().then(data => this.setState({cars: data}));
   }
 
+  //todo: revisar esto para ver lo de las propiedades fantasmas
   updateState() {
     const {children} = this.state;
     const usersList = users.getAll({children});
@@ -238,50 +241,6 @@ export default class App extends React.Component {
     )
   }
 
-  menuItems=[
-    {
-      label: 'File',
-      icon: 'fa-file-o',
-      items: [{
-        label: 'New',
-        icon: 'fa-plus',
-        items: [
-          {label: 'Project'},
-          {label: 'Other'},
-        ]
-      },
-        {label: 'Open'},
-        {separator:true},
-        {label: 'Quit'}
-      ]
-    },
-    {
-      label: 'Edit',
-      icon: 'fa-edit',
-      items: [
-        {label: 'Undo', icon: 'fa-mail-forward'},
-        {label: 'Redo', icon: 'fa-mail-reply'}
-      ]
-    },
-    {
-      label: 'Help',
-      icon: 'fa-question',
-      items: [
-        {label: 'Contents'},
-        {
-          label: 'Search',
-          icon: 'fa-search',
-          items: [
-            {
-              label: 'Text',
-              items: [{label: 'Workspace'}]
-            },
-            {label: 'File'}
-          ]}
-      ]
-    }
-  ];
-
   onClickTable(e: any) {
     let collection;
     const {children} = this.state;
@@ -328,24 +287,25 @@ export default class App extends React.Component {
     this.setState({selectedModel: selectedModel});
   }
 
+  btnLeftMenu() {
+    this.setState({displayLeftMenu: !this.state.displayLeftMenu});
+  }
+
+
 
   render() {
 
     const {jsonContent, children, tableSelected, users, posts, selectedModel} = this.state;
     const headerUserTable = 'USERS';
     const headerPostTable = 'POSTS';
-    const footerUsersTable = (
-      <div className="ui-helper-clearfix full-width">
+    const footerUsersTable = (<div className="ui-helper-clearfix full-width">
         <Button className="float-left" icon="fa-plus" label="Add New"
           onClick={_ => this.add(new User({name: '', age: '', admin: 0}))}/>
-      </div>
-    );
-    const footerPostsTable = (
-      <div className="ui-helper-clearfix full-width">
+      </div>);
+    const footerPostsTable = (<div className="ui-helper-clearfix full-width">
         <Button className="float-left" icon="fa-plus" label="Add New"
           onClick={_ => this.add(new Post({title: '', content: ''}))}/>
-      </div>
-    );
+      </div>);
     const footerDialog = <div className="ui-dialog-buttonpane ui-helper-clearfix">
       <Button icon="fa-close" label="Cancel" onClick={_ => this.onBtnCancel()}/>
       <Button label="Save" icon="fa-check" onClick={_ => this.onBtnSave()}/>
@@ -356,11 +316,28 @@ export default class App extends React.Component {
 
       <div className="main-content">
 
-        <Menubar model={this.menuItems}>
-          <input type="checkbox" checked={children} onChange={_ => this.showChildren()} className="checkbox-children"/>
-          <span className="checkbox-children-label">Show Children</span>
-          <strong className="title">&nbsp; MetaphaseJS &nbsp;</strong>
-        </Menubar>
+        <Toolbar>
+          <div className="ui-toolbar-group-left">
+            <Button icon="fa-bars" onClick={_ => this.btnLeftMenu()} className="btn-menu"/>
+            <input type="checkbox" checked={children}
+              onChange={_ => this.showChildren()} className="checkbox-children"/>
+            <span className="checkbox-children-label">Show Children</span>
+          </div>
+          <div className="ui-toolbar-group-right">
+            <strong className="title">&nbsp; MetaphaseJS &nbsp;</strong>
+          </div>
+        </Toolbar>
+
+        <Sidebar visible={this.state.displayLeftMenu} baseZIndex={1000000}
+          onHide={() => this.setState({displayLeftMenu: false})}>
+            <h1 style={{fontWeight:'normal'}}>Left Sidebar</h1>
+
+            <Button type="button" onClick={() => this.setState({displayLeftMenu: true})}
+              label="Save" className="ui-button-success"/>
+            <Button type="button" onClick={() => this.setState({displayLeftMenu: true})}
+              label="Cancel" className="ui-button-secondary"/>
+
+        </Sidebar>
 
         <p><button onClick={(e: any) => this.loadDbFromDisk(e)}>load from file</button></p>
 
