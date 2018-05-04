@@ -329,8 +329,21 @@ export default class App extends React.Component {
         </Toolbar>
 
         <Sidebar visible={this.state.displayLeftMenu} baseZIndex={1000000}
-          onHide={() => this.setState({displayLeftMenu: false})}>
-            <h1 style={{fontWeight:'normal'}}>Left Sidebar</h1>
+          onHide={() => this.setState({displayLeftMenu: false})} blockScroll={true}>
+            <h1 style={{fontWeight:'normal'}}>MetaphaseJS</h1>
+
+            <a href="javascript:void(0)" className="left-menu-item">
+              <i className="fa fa-bars"></i><span>Item</span>
+            </a>
+            <a href="javascript:void(0)" className="left-menu-item">
+              <i className="fa fa-bars"></i><span>Item</span>
+            </a>
+            <a href="javascript:void(0)" className="left-menu-item">
+              <i className="fa fa-bars"></i><span>Item</span>
+            </a>
+            <a href="javascript:void(0)" className="left-menu-item">
+              <i className="fa fa-bars"></i><span>Item</span>
+            </a>
 
             <Button type="button" onClick={() => this.setState({displayLeftMenu: true})}
               label="Save" className="ui-button-success"/>

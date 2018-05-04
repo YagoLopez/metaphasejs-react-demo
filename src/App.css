@@ -127,6 +127,24 @@ div.ui-panel {
   border-color: grey;
 }
 
+.left-menu-item {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  font-size: large;
+  color: grey !important;
+  /* padding-left: 5px; */
+  border-top-style: solid;
+  border-top-color: lightgrey !important;
+  border-top-width: 1px;
+}
+
+.left-menu-item > span {
+  padding-left: 15px;
+}
+
+
 /*
 .row-editing {
   background-color: lightskyblue !important;
