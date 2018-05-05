@@ -1,3 +1,18 @@
+.main-content {
+  width: 70%;
+  display: block;
+  margin: 25px auto 25px;
+  font-family: sans-serif;
+  font-size: small;
+}
+
+@media screen and (max-width: 700px) {
+  .main-content {
+    width: 100%;
+    margin: 0 auto 0;
+  }
+}
+
 .sample-code {
   font-size: 14px !important;
 }
@@ -22,11 +37,6 @@ h2 {
   color: cornflowerblue;
 }
 
-.container {
-  font-family: sans-serif;
-  font-size: small;
-}
-
 .custom .ui-scrollpanel-wrapper {
   border-right: 9px solid #f4f4f4;
 }
@@ -46,17 +56,13 @@ div.ui-toolbar {
 }
 
 .title {
-  margin-left: 10px;
-  margin-right: 15px;
   font-size: 16px;
-  color: ghostwhite;
-  padding: 3px;
-  border: 1px solid;
+  color: deepskyblue;
   border-radius: 2px;
-  box-shadow: 0 0 2px 0 black;
   font-variant: petite-caps;
-  font-weight: 100;
-  background: cornflowerblue;
+  font-weight: normal;
+  /*vertical-align: sub;*/
+  vertical-align: -webkit-baseline-middle;
 }
 
 .react-json-view {
@@ -74,6 +80,7 @@ div.ui-toolbar {
 
 .checkbox-children {
   vertical-align: middle;
+  margin-left: 10px;
 }
 
 .checkbox-children-label {
@@ -93,8 +100,8 @@ div.ui-toolbar {
 }
 
 div.ui-panel {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .centered {
@@ -114,6 +121,29 @@ div.ui-panel {
   width: 158px !important;
   margin-bottom: 40px !important;
 }
+
+.btn-menu {
+  background-color: grey;
+  border-color: grey;
+}
+
+.left-menu-item {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  font-size: large;
+  color: grey !important;
+  /* padding-left: 5px; */
+  border-top-style: solid;
+  border-top-color: lightgrey !important;
+  border-top-width: 1px;
+}
+
+.left-menu-item > span {
+  padding-left: 15px;
+}
+
 
 /*
 .row-editing {

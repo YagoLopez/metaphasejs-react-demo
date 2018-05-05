@@ -1,4 +1,5 @@
-//todo: hacer menu lateral izquierdo en vez de menu superior
+//todo: por defecto logger = false
+//todo: items left side menu: logger = true/false
 //todo: feature filtro en el listado de tabla
 //todo: diagram view (static)
 //todo: al hacer onclick en tableHeader, deberia cambiar el valor de this.state.tableSelected
@@ -81,7 +82,8 @@ export default class App extends React.Component {
     posts: Model[],
     selectedModel: any,
     displayDialog: boolean,
-    displayLeftMenu: boolean
+    displayLeftMenu: boolean,
+    displayDialogFullScreen: boolean
   };
 
   constructor(props: any) {
@@ -96,7 +98,8 @@ export default class App extends React.Component {
       posts: postsList,
       selectedModel: undefined,
       displayDialog: false,
-      displayLeftMenu: false
+      displayLeftMenu: false,
+      displayDialogFullScreen: false
     }
   }
 
@@ -122,7 +125,6 @@ export default class App extends React.Component {
   }
 
   showChildren() {
-// debugger
     const {children, tableSelected} = this.state;
     if (tableSelected === 'USERS') {
       this.setState({
@@ -136,6 +138,7 @@ export default class App extends React.Component {
         jsonContent: posts.getAll({children: !children})
       });
     }
+    this.setState({displayDialogFullScreen: false});
   }
 
   loadDbFromDisk(e: any) {
@@ -281,6 +284,7 @@ export default class App extends React.Component {
     this.setState({selectedModel: model});
   }
 
+  //todo: debuggear
   onIsAdminChange(value: any) {
     const selectedModel = this.state.selectedModel;
     selectedModel.admin = value;
@@ -288,7 +292,11 @@ export default class App extends React.Component {
   }
 
   btnLeftMenu() {
-    this.setState({displayLeftMenu: !this.state.displayLeftMenu});
+    this.setState({displayLeftMenu: !this.state.displayLeftMenu, displayDialogFullScreen: false});
+  }
+
+  onClickLeftSideMenuItem() {
+    this.setState({displayLeftMenu: false, displayDialogFullScreen: true});
   }
 
 
@@ -329,46 +337,45 @@ export default class App extends React.Component {
         </Toolbar>
 
         <Sidebar visible={this.state.displayLeftMenu} baseZIndex={1000000}
-          onHide={() => this.setState({displayLeftMenu: false})} blockScroll={true}>
-            <h1 style={{fontWeight:'normal'}}>MetaphaseJS</h1>
+          onHide={() => this.setState({displayLeftMenu: false})}>
+            <h1>MetaphaseJS</h1>
+            <a href="#" className="left-menu-item"
+              onClick={_ => this.onClickLeftSideMenuItem()}>
+                <i className="fa fa-bars"></i><span>Show Code</span>
+            </a>
+            <a href="#" className="left-menu-item">
+              <i className="fa fa-bars"></i><span>Item</span>
+            </a>
+            <a href="#" className="left-menu-item">
+              <i className="fa fa-bars"></i><span>Item</span>
+            </a>
+            <a href="#" className="left-menu-item">
+              <i className="fa fa-bars"></i><span>Item</span>
+            </a>
+            {/*<Button type="button" onClick={_ => this.setState({displayLeftMenu: true})}*/}
+              {/*label="Save" className="ui-button-success"/>*/}
+            {/*<Button type="button" onClick={_ => this.setState({displayLeftMenu: true})}*/}
+              {/*label="Cancel" className="ui-button-secondary"/>*/}
+        </Sidebar>
 
-            <a href="javascript:void(0)" className="left-menu-item">
-              <i className="fa fa-bars"></i><span>Item</span>
-            </a>
-            <a href="javascript:void(0)" className="left-menu-item">
-              <i className="fa fa-bars"></i><span>Item</span>
-            </a>
-            <a href="javascript:void(0)" className="left-menu-item">
-              <i className="fa fa-bars"></i><span>Item</span>
-            </a>
-            <a href="javascript:void(0)" className="left-menu-item">
-              <i className="fa fa-bars"></i><span>Item</span>
-            </a>
-
-            <Button type="button" onClick={() => this.setState({displayLeftMenu: true})}
-              label="Save" className="ui-button-success"/>
-            <Button type="button" onClick={() => this.setState({displayLeftMenu: true})}
-              label="Cancel" className="ui-button-secondary"/>
-
+        <Sidebar fullScreen={true} visible={this.state.displayDialogFullScreen}
+          onHide={() => this.onClickLeftSideMenuItem()}>
+            <ScrollPanel className="custom code-view-container">
+              <CodeHighlight
+                language="javascript" tab={2}
+                classes={{code: 'sample-code', pre: 'pre-margin'}}
+                style={{padding: '20px'}}>
+                  { sampleCode }
+              </CodeHighlight>
+            </ScrollPanel>
         </Sidebar>
 
         <p><button onClick={(e: any) => this.loadDbFromDisk(e)}>load from file</button></p>
 
         <p><button onClick={(e: any) => this.saveDbToDisk(e)}>Save database file</button></p>
 
-        <Panel header="✅ Code View" toggleable={true} collapsed={true}>
-          <ScrollPanel className="custom code-view-container">
-            <CodeHighlight
-              language="javascript" tab={2}
-              classes={{code: 'sample-code', pre: 'pre-margin'}}
-              style={{padding: '20px'}}>
-              { sampleCode }
-            </CodeHighlight>
-          </ScrollPanel>
-        </Panel>
-
         <Panel header="✅ Tree View" toggleable={true}>
-          <ScrollPanel className="custom code-view-container">
+          <ScrollPanel className="custom json-view-container">
             <ReactJson
               ref={(el: React.Component) => this.reactJsonCmp = el}
               src={jsonContent} iconStyle={'square'} name={tableSelected}

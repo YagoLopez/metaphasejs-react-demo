@@ -11,6 +11,9 @@
     width: 100%;
     margin: 0 auto 0;
   }
+  .code-view-container {
+    width: 100%;
+  }
 }
 
 .sample-code {
@@ -89,6 +92,13 @@ div.ui-toolbar {
 }
 
 .code-view-container {
+  display: block;
+  margin: 30px auto auto;
+  width: 90%;
+  height: 90%;
+}
+
+.json-view-container {
   width: 100%;
   height: 300px;
 }
@@ -144,6 +154,12 @@ div.ui-panel {
   padding-left: 15px;
 }
 
+.ui-sidebar-close {
+  cursor: pointer;
+  font-size: 18px;
+  color: lightgrey !important;
+  border: 1px solid lightgrey !important;
+}
 
 /*
 .row-editing {

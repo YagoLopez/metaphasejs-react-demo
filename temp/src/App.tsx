@@ -1,8 +1,8 @@
-//todo: simplificar "this.state.selectedModel" en cmp dialog
-//todo: layout responsivo
+//todo: hacer menu lateral izquierdo en vez de menu superior
 //todo: feature filtro en el listado de tabla
 //todo: diagram view (static)
 //todo: al hacer onclick en tableHeader, deberia cambiar el valor de this.state.tableSelected
+//todo: poner en cv desarrollo de software con metodologia de tarjetas (kanban?) y Cursos Deep Learning
 import * as React from 'react';
 import './App.css';
 
@@ -20,7 +20,8 @@ import {saveToDisk} from "./orm/database";
 import {query} from "./orm/query.builder";
 import {Model} from "./orm/model";
 
-import {Menubar} from 'primereact/components/menubar/Menubar';
+import {Sidebar} from "primereact/components/sidebar/Sidebar";
+import {Toolbar} from 'primereact/components/toolbar/Toolbar';
 import {Button} from "primereact/components/button/Button";
 import {DataTable} from 'primereact/components/datatable/DataTable';
 import {Dialog} from 'primereact/components/dialog/Dialog';
@@ -80,33 +81,33 @@ export default class App extends React.Component {
     posts: Model[],
     selectedModel: any,
     displayDialog: boolean,
-    isAdmin: number
+    displayLeftMenu: boolean
   };
 
   constructor(props: any) {
     super(props);
-    const usersCollectionList = users.getAll({children: this.SHOW_CHILDREN});
-    const postsCollectionList = posts.getAll({children: this.SHOW_CHILDREN});
+    const usersList = users.getAll({children: this.SHOW_CHILDREN});
+    const postsList = posts.getAll({children: this.SHOW_CHILDREN});
     this.state = {
       children: this.SHOW_CHILDREN,
-      jsonContent: usersCollectionList,
+      jsonContent: usersList,
       tableSelected: 'USERS',
-      users: usersCollectionList,
-      posts: postsCollectionList,
+      users: usersList,
+      posts: postsList,
       selectedModel: undefined,
       displayDialog: false,
-      isAdmin: 0
+      displayLeftMenu: false
     }
   }
 
   reactJsonCmp: React.Component;
-  dropDownIsAdmin: React.Component;
 
   componentDidMount() {
     //todo: cargar aqui la base de datos desde un fichero mediante peticion xmlhttp
     // this.carservice.getCarsSmall().then(data => this.setState({cars: data}));
   }
 
+  //todo: revisar esto para ver lo de las propiedades fantasmas
   updateState() {
     const {children} = this.state;
     const usersList = users.getAll({children});
@@ -158,21 +159,7 @@ export default class App extends React.Component {
     saveToDisk('test3.sqlite');
   }
 
-  // addNew(model: Model) {
-  //   this.setState({unsavedRowId: 0})
-  //   if (model.tableName() === 'users') {
-  //     let users = this.state.users;
-  //     users.push(model);
-  //     this.setState({users: users});
-  //   }
-  //   if (model.tableName() === 'posts') {
-  //     let posts = this.state.posts;
-  //     posts.push(model);
-  //     this.setState({posts: posts});
-  //   }
-  // }
-
-  addNew2(model: Model) {
+  add(model: Model) {
     this.setState({selectedModel: model, displayDialog: true});
   }
 
@@ -230,18 +217,6 @@ export default class App extends React.Component {
     // )
   }
 
-  // isAdminCellEditor(props: any) {
-  //   const options = [
-  //     {label: 'True', value: 1},
-  //     {label: 'False', value: 0},
-  //   ];
-  //   return (
-  //     <Dropdown value={props.value[props.rowIndex].admin} options={options}
-  //       onChange={(e: any) => this.onCellChange(props, e.value)}
-  //       className="full-width" placeholder="Is Admin?"/>
-  //   )
-  // }
-
   dropDownUserIdCellEditor(props: any) {
     let usersIds = users.query().select('id').run();
     usersIds = usersIds.map((userId: {id: number}) => {
@@ -254,13 +229,6 @@ export default class App extends React.Component {
     )
   }
 
-  // btnSave(model: Model) {
-  //   return (
-  //     <Button onClick={_ => this.save()}
-  //       className="ui-button-info" icon="fa-check-circle" title="Save"/>
-  //   )
-  // }
-
   btnEdit() {
     return (
       <Button onClick={_ => this.edit()} className="ui-button-info" icon="fa-edit" title="Edit"/>
@@ -272,50 +240,6 @@ export default class App extends React.Component {
       <Button onClick={_ => this.remove(model)} className="ui-button-danger" icon="fa-trash" title="Delete"/>
     )
   }
-
-  menuItems=[
-    {
-      label: 'File',
-      icon: 'fa-file-o',
-      items: [{
-        label: 'New',
-        icon: 'fa-plus',
-        items: [
-          {label: 'Project'},
-          {label: 'Other'},
-        ]
-      },
-        {label: 'Open'},
-        {separator:true},
-        {label: 'Quit'}
-      ]
-    },
-    {
-      label: 'Edit',
-      icon: 'fa-edit',
-      items: [
-        {label: 'Undo', icon: 'fa-mail-forward'},
-        {label: 'Redo', icon: 'fa-mail-reply'}
-      ]
-    },
-    {
-      label: 'Help',
-      icon: 'fa-question',
-      items: [
-        {label: 'Contents'},
-        {
-          label: 'Search',
-          icon: 'fa-search',
-          items: [
-            {
-              label: 'Text',
-              items: [{label: 'Workspace'}]
-            },
-            {label: 'File'}
-          ]}
-      ]
-    }
-  ];
 
   onClickTable(e: any) {
     let collection;
@@ -357,64 +281,77 @@ export default class App extends React.Component {
     this.setState({selectedModel: model});
   }
 
+  //todo: debuggear
   onIsAdminChange(value: any) {
     const selectedModel = this.state.selectedModel;
     selectedModel.admin = value;
     this.setState({selectedModel: selectedModel});
   }
 
-  // onBlurInputText(props: any, value: any) {
-  //   console.log('on blur input text');
-  //   let modifiedUser = {...props.rowData};
-  //   try {
-  //     Object.setPrototypeOf(modifiedUser, props.rowData);
-  //     modifiedUser = Model.omitChildrenProps(modifiedUser);
-  //     modifiedUser.save();
-  //   } catch (exception) {
-  //     console.error(exception);
-  //     alert('Error: browser could not support "Object.setPrototypeOf()" ES6 standard')
-  //   }
-  // }
+  btnLeftMenu() {
+    this.setState({displayLeftMenu: !this.state.displayLeftMenu});
+  }
+
+
 
   render() {
 
-    const {jsonContent, children, tableSelected, users, posts} = this.state;
+    const {jsonContent, children, tableSelected, users, posts, selectedModel} = this.state;
     const headerUserTable = 'USERS';
     const headerPostTable = 'POSTS';
-    const footerUsersTable = (
-      <div className="ui-helper-clearfix full-width">
+    const footerUsersTable = (<div className="ui-helper-clearfix full-width">
         <Button className="float-left" icon="fa-plus" label="Add New"
-          onClick={_ => this.addNew2(new User({name: '', age: '', admin: 0}))}/>
-      </div>
-    );
-    const footerPostsTable = (
-      <div className="ui-helper-clearfix full-width">
+          onClick={_ => this.add(new User({name: '', age: '', admin: 0}))}/>
+      </div>);
+    const footerPostsTable = (<div className="ui-helper-clearfix full-width">
         <Button className="float-left" icon="fa-plus" label="Add New"
-          onClick={_ => this.addNew2(new Post({title: '', content: ''}))}/>
-      </div>
-    );
+          onClick={_ => this.add(new Post({title: '', content: ''}))}/>
+      </div>);
     const footerDialog = <div className="ui-dialog-buttonpane ui-helper-clearfix">
       <Button icon="fa-close" label="Cancel" onClick={_ => this.onBtnCancel()}/>
       <Button label="Save" icon="fa-check" onClick={_ => this.onBtnSave()}/>
     </div>;
-
-    const cities = [
-      {name: 'New York', code: 'NY'},
-      {name: 'Rome', code: 'RM'},
-      {name: 'London', code: 'LDN'},
-      {name: 'Istanbul', code: 'IST'},
-      {name: 'Paris', code: 'PRS'}
-    ];
+    const isAdminOptions = [{label: 'True', value: 1}, {label: 'False', value: 0}];
 
     return (
 
-      <div className="container">
+      <div className="main-content">
 
-        <Menubar model={this.menuItems}>
-          <input type="checkbox" checked={children} onChange={_ => this.showChildren()} className="checkbox-children"/>
-          <span className="checkbox-children-label">Show Children</span>
-          <strong className="title">&nbsp; MetaphaseJS &nbsp;</strong>
-        </Menubar>
+        <Toolbar>
+          <div className="ui-toolbar-group-left">
+            <Button icon="fa-bars" onClick={_ => this.btnLeftMenu()} className="btn-menu"/>
+            <input type="checkbox" checked={children}
+              onChange={_ => this.showChildren()} className="checkbox-children"/>
+            <span className="checkbox-children-label">Show Children</span>
+          </div>
+          <div className="ui-toolbar-group-right">
+            <strong className="title">&nbsp; MetaphaseJS &nbsp;</strong>
+          </div>
+        </Toolbar>
+
+        <Sidebar visible={this.state.displayLeftMenu} baseZIndex={1000000}
+          onHide={() => this.setState({displayLeftMenu: false})} blockScroll={true}>
+            <h1 style={{fontWeight:'normal'}}>MetaphaseJS</h1>
+
+            <a href="javascript:void(0)" className="left-menu-item">
+              <i className="fa fa-bars"></i><span>Item</span>
+            </a>
+            <a href="javascript:void(0)" className="left-menu-item">
+              <i className="fa fa-bars"></i><span>Item</span>
+            </a>
+            <a href="javascript:void(0)" className="left-menu-item">
+              <i className="fa fa-bars"></i><span>Item</span>
+            </a>
+            <a href="javascript:void(0)" className="left-menu-item">
+              <i className="fa fa-bars"></i><span>Item</span>
+            </a>
+
+            <Button type="button" onClick={() => this.setState({displayLeftMenu: true})}
+              label="Save" className="ui-button-success"/>
+            <Button type="button" onClick={() => this.setState({displayLeftMenu: true})}
+              label="Cancel" className="ui-button-secondary"/>
+
+        </Sidebar>
 
         <p><button onClick={(e: any) => this.loadDbFromDisk(e)}>load from file</button></p>
 
@@ -472,62 +409,46 @@ export default class App extends React.Component {
 
         </Panel>
 
-        <Panel header="✅ Nested View" toggleable={true}>
+        {/*<Panel header="✅ Nested View" toggleable={true}>*/}
           {/*<JSONViewer json={this.state.users}></JSONViewer>*/}
-        </Panel>
+        {/*</Panel>*/}
 
-
-
-
-
-        <Dialog visible={this.state.displayDialog} header="Edit row" modal={true} footer={footerDialog}
-                onHide={() => this.setState({displayDialog: false})}>
-          <div className="ui-grid ui-grid-responsive ui-fluid">
-            <div className="ui-grid-row">
-              <div className="ui-grid-col-4 dialog-label">
-                <label htmlFor="name">Name</label>
+        <Dialog visible={this.state.displayDialog} header="Edit row" modal={true}
+          footer={footerDialog} onHide={() => this.setState({displayDialog: false})}>
+            <div className="ui-grid ui-grid-responsive ui-fluid">
+              <div className="ui-grid-row">
+                <div className="ui-grid-col-4 dialog-label">
+                  <label htmlFor="name">Name</label>
+                </div>
+                <div className="ui-grid-col-8 dialog-label">
+                  <InputText id="name"
+                    onChange={(e: any) => {this.updateProperty('name', e.target.value)}}
+                    value={selectedModel && selectedModel.name}/>
+                </div>
               </div>
-              <div className="ui-grid-col-8 dialog-label">
-                <InputText id="name"
-                           onChange={(e: any) => {this.updateProperty('name', e.target.value)}}
-                           value={this.state.selectedModel && this.state.selectedModel.name}/>
+              <div className="ui-grid-row">
+                <div className="ui-grid-col-4 dialog-label">
+                  <label htmlFor="age">Age</label>
+                </div>
+                <div className="ui-grid-col-8 dialog-label">
+                  <InputText id="age"
+                    onChange={(e: any) => {this.updateProperty('age', e.target.value)}}
+                    value={selectedModel && selectedModel.age}/>
+                </div>
               </div>
-            </div>
-            <div className="ui-grid-row">
-              <div className="ui-grid-col-4 dialog-label">
-                <label htmlFor="age">Age</label>
-              </div>
-              <div className="ui-grid-col-8 dialog-label">
-                <InputText id="age"
-                           onChange={(e: any) => {this.updateProperty('age', e.target.value)}}
-                           value={this.state.selectedModel && this.state.selectedModel.age}/>
-              </div>
-            </div>
-            <div className="ui-grid-row">
-              <div className="ui-grid-col-4 dialog-label">
-                <label htmlFor="admin">Admin</label>
-              </div>
-              <div className="ui-grid-col-8 dialog-label">
-                {/*todo: simplificar this.state.selectedModel como const {selectedModel} = this.state;*/}
-                <Dropdown value={this.state.selectedModel && this.state.selectedModel.admin}
-                          id="admin"
-                          ref={(el: any) => this.dropDownIsAdmin = el}
-                          dataKey="admin"
-                          options={[{label: 'True', value: 1}, {label: 'False', value: 0}]}
-                          onChange={(e: {originalEvent: Event, value: any}) => this.onIsAdminChange(e.value)}
-                          className="dropdown" placeholder="Is Admin?"/>
-
-                {/*<div style={{marginTop: '.5em'}}>*/}
-                  {/*'this.state.selectedModel.admin: ' {this.state.selectedModel && this.state.selectedModel.admin}*/}
-                {/*</div>*/}
-
+              <div className="ui-grid-row">
+                <div className="ui-grid-col-4 dialog-label">
+                  <label htmlFor="admin">Admin</label>
+                </div>
+                <div className="ui-grid-col-8 dialog-label">
+                  <Dropdown value={selectedModel && selectedModel.admin}
+                    id="admin" dataKey="admin" options={isAdminOptions}
+                    onChange={(e: {originalEvent: Event, value: any}) => this.onIsAdminChange(e.value)}
+                    className="dropdown" placeholder="Is Admin?"/>
+                </div>
               </div>
             </div>
-          </div>
         </Dialog>
-
-
-
 
       </div>
     );
