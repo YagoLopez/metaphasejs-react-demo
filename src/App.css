@@ -14,9 +14,6 @@
   .code-view-container {
     width: 100%;
   }
-  .dropdown {
-    width: 200px !important;
-  }
 }
 
 .sample-code {
@@ -129,7 +126,6 @@ div.ui-panel {
 
 .dialog-label {
   padding: 4px 10px;
-  text-align: center;
 }
 
 .dropdown {
