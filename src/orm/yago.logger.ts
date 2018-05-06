@@ -1,12 +1,12 @@
 // Controls default logger behaviour. User 'false' for log supression in production mode
-const DEFAULT_LOG_STATE: string = 'true';
+const DEFAULT_LOG_STATE: string = 'false';
 
 /**
  * Gets an url query string parameter value form URL
  * @param {string} paramName
  * @returns {string}
  */
-const getUrlParameter = (paramName: string) => {
+export const getUrlParameter = (paramName: string) => {
   paramName = paramName.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
   const regex = new RegExp('[\\?&]' + paramName + '=([^&#]*)');
   const results = regex.exec(location.search);

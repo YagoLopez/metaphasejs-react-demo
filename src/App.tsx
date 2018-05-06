@@ -1,3 +1,5 @@
+//todo: css item side left menu
+//todo: css select admin true/false
 //todo: por defecto logger = false
 //todo: items left side menu: logger = true/false
 //todo: feature filtro en el listado de tabla
@@ -31,6 +33,7 @@ import {InputText} from 'primereact/components/inputtext/InputText';
 import {Dropdown} from 'primereact/components/dropdown/Dropdown';
 import {ScrollPanel} from 'primereact/components/scrollpanel/ScrollPanel';
 import {Panel} from 'primereact/components/panel/Panel';
+import {getUrlParameter} from "./orm/yago.logger";
 import 'primereact/resources/primereact.min.css';
 import 'primereact/resources/themes/omega/theme.css';
 import 'font-awesome/css/font-awesome.css';
@@ -83,7 +86,8 @@ export default class App extends React.Component {
     selectedModel: any,
     displayDialog: boolean,
     displayLeftMenu: boolean,
-    displayDialogFullScreen: boolean
+    displayDialogFullScreen: boolean,
+    logger: boolean
   };
 
   constructor(props: any) {
@@ -99,11 +103,20 @@ export default class App extends React.Component {
       selectedModel: undefined,
       displayDialog: false,
       displayLeftMenu: false,
-      displayDialogFullScreen: false
+      displayDialogFullScreen: false,
+      logger: false
     }
   }
 
   reactJsonCmp: React.Component;
+
+  componentWillMount() {
+    if (getUrlParameter('logger').toLowerCase() === 'true') {
+      this.setState({logger: true});
+    } else {
+      this.setState({logger: false});
+    }
+  }
 
   componentDidMount() {
     //todo: cargar aqui la base de datos desde un fichero mediante peticion xmlhttp
@@ -295,9 +308,24 @@ export default class App extends React.Component {
     this.setState({displayLeftMenu: !this.state.displayLeftMenu, displayDialogFullScreen: false});
   }
 
-  onClickLeftSideMenuItem() {
+  showCode() {
     this.setState({displayLeftMenu: false, displayDialogFullScreen: true});
   }
+
+  toggleLogger() {
+    const {logger} = this.state
+    this.setState({logger: !logger});
+    if(logger) {
+      alert('Logger System Off')
+    } else {
+      alert('Logger System On. Operations will be written to browser console')
+    }
+  }
+
+  getUrlApp(): string {
+    return this.state.logger ? "/?logger=true" : "/";
+  }
+
 
 
 
@@ -340,26 +368,25 @@ export default class App extends React.Component {
           onHide={() => this.setState({displayLeftMenu: false})}>
             <h1>MetaphaseJS</h1>
             <a href="#" className="left-menu-item"
-              onClick={_ => this.onClickLeftSideMenuItem()}>
+              onClick={_ => this.showCode()}>
                 <i className="fa fa-bars"></i><span>Show Code</span>
             </a>
-            <a href="#" className="left-menu-item">
-              <i className="fa fa-bars"></i><span>Item</span>
+            <a href={this.getUrlApp()} className="left-menu-item"
+               onClick={_ => this.toggleLogger()}>
+              <i className="fa fa-bars"></i><span>Switch Logger</span>
             </a>
-            <a href="#" className="left-menu-item">
-              <i className="fa fa-bars"></i><span>Item</span>
+            <a href="#" className="left-menu-item"
+              onClick={_ => this.showCode()}>
+                <i className="fa fa-bars"></i><span>Show Code</span>
             </a>
-            <a href="#" className="left-menu-item">
-              <i className="fa fa-bars"></i><span>Item</span>
+            <a href="#" className="left-menu-item"
+              onClick={_ => this.showCode()}>
+                <i className="fa fa-bars"></i><span>Show Code</span>
             </a>
-            {/*<Button type="button" onClick={_ => this.setState({displayLeftMenu: true})}*/}
-              {/*label="Save" className="ui-button-success"/>*/}
-            {/*<Button type="button" onClick={_ => this.setState({displayLeftMenu: true})}*/}
-              {/*label="Cancel" className="ui-button-secondary"/>*/}
         </Sidebar>
 
         <Sidebar fullScreen={true} visible={this.state.displayDialogFullScreen}
-          onHide={() => this.onClickLeftSideMenuItem()}>
+          onHide={() => this.showCode()}>
             <ScrollPanel className="custom code-view-container">
               <CodeHighlight
                 language="javascript" tab={2}

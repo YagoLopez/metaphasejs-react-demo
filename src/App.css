@@ -42,6 +42,7 @@ h2 {
 
 .custom .ui-scrollpanel-wrapper {
   border-right: 9px solid #f4f4f4;
+  background-color: aliceblue;
 }
 
 .custom .ui-scrollpanel-bar {
@@ -139,8 +140,6 @@ div.ui-panel {
 
 .left-menu-item {
   display: block;
-  padding-top: 10px;
-  padding-bottom: 10px;
   text-decoration: none;
   font-size: large;
   color: grey !important;
@@ -148,6 +147,8 @@ div.ui-panel {
   border-top-style: solid;
   border-top-color: lightgrey !important;
   border-top-width: 1px;
+  height: 50px;
+  line-height: 50px;
 }
 
 .left-menu-item > span {
