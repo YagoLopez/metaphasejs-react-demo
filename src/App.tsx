@@ -1,7 +1,7 @@
 //todo: css item side left menu
+//todo: sigue dando error en el componente input: admin true/false
 //todo: css select admin true/false
-//todo: por defecto logger = false
-//todo: items left side menu: logger = true/false
+//todo: dialogos crud como componentes
 //todo: feature filtro en el listado de tabla
 //todo: diagram view (static)
 //todo: al hacer onclick en tableHeader, deberia cambiar el valor de this.state.tableSelected
@@ -312,13 +312,13 @@ export default class App extends React.Component {
     this.setState({displayLeftMenu: false, displayDialogFullScreen: true});
   }
 
-  toggleLogger() {
+  switchLogger() {
     const {logger} = this.state
     this.setState({logger: !logger});
     if(logger) {
-      alert('Logger System Off')
+      alert('Logger System Off.\nReloading...');
     } else {
-      alert('Logger System On. Operations will be written to browser console')
+      alert('Logger System On. Operations on data will be written to browser console.\nReloading...');
     }
   }
 
@@ -372,7 +372,7 @@ export default class App extends React.Component {
                 <i className="fa fa-bars"></i><span>Show Code</span>
             </a>
             <a href={this.getUrlApp()} className="left-menu-item"
-               onClick={_ => this.toggleLogger()}>
+               onClick={_ => this.switchLogger()}>
               <i className="fa fa-bars"></i><span>Switch Logger</span>
             </a>
             <a href="#" className="left-menu-item"
