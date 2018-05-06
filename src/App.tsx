@@ -1,4 +1,3 @@
-//todo: css item side left menu
 //todo: sigue dando error en el componente input: admin true/false
 //todo: css select admin true/false
 //todo: dialogos crud como componentes
@@ -212,6 +211,7 @@ export default class App extends React.Component {
     this.setState({displayDialog: true});
   }
 
+  //todo: revisar, puede ser el culpable de los errores de controled component
   onCellChange(props: any, value: any) {
     // let updatedModels = [...props.value];
     // updatedModels[props.rowIndex][props.field] = value;
@@ -224,14 +224,14 @@ export default class App extends React.Component {
     // }
   }
 
-  colEditor(props: any, col: string) {
+  // colEditor(props: any, col: string) {
     // return (
     //   <InputText type="text"
     //              onBlur={_=> console.log('on blur input text')}
     //     value={props.rowData[col]}
     //     onChange={(e: any) => this.onCellChange(props, e.target.value)}/>
     // )
-  }
+  // }
 
   dropDownUserIdCellEditor(props: any) {
     let usersIds = users.query().select('id').run();
@@ -446,7 +446,7 @@ export default class App extends React.Component {
           {/*<JSONViewer json={this.state.users}></JSONViewer>*/}
         {/*</Panel>*/}
 
-        <Dialog visible={this.state.displayDialog} header="Edit row" modal={true}
+        <Dialog visible={this.state.displayDialog} header="Edit Row" modal={true}
           footer={footerDialog} onHide={() => this.setState({displayDialog: false})}>
             <div className="ui-grid ui-grid-responsive ui-fluid">
               <div className="ui-grid-row">
@@ -473,7 +473,7 @@ export default class App extends React.Component {
                 <div className="ui-grid-col-4 dialog-label">
                   <label htmlFor="admin">Admin</label>
                 </div>
-                <div className="ui-grid-col-8 dialog-label">
+                <div className="dialog-label">
                   <Dropdown value={selectedModel && selectedModel.admin}
                     id="admin" dataKey="admin" options={isAdminOptions}
                     onChange={(e: {originalEvent: Event, value: any}) => this.onIsAdminChange(e.value)}
