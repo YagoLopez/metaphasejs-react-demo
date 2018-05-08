@@ -1,6 +1,5 @@
-//todo: sigue dando error en el componente input: admin true/false
-//todo: css select admin true/false
-//todo: dialogos crud como componentes
+//todo: sigue dando error al pulsar boton edit. (no pasa cuando solo tabla users)
+//probablemente tenga que ver con inicializacion de "selectedModel"
 //todo: feature filtro en el listado de tabla
 //todo: diagram view (static)
 //todo: al hacer onclick en tableHeader, deberia cambiar el valor de this.state.tableSelected
@@ -130,29 +129,6 @@ export default class App extends React.Component {
     // this.carservice.getCarsSmall().then(data => this.setState({cars: data}));
   }
 
-/*
-  updateState(showChildren?: boolean) {
-debugger
-    // const {children} = this.state;
-    // const children = this.children;
-    let children: boolean;
-    if (showChildren) {
-      children = showChildren;
-    } else {
-      children = this.state.children;
-    }
-    const usersList = users.getAll({children});
-    const postsList = posts.getAll({children});
-    if (this.state.tableSelected === 'USERS') {
-      this.setState({jsonContent: usersList});
-    }
-    if (this.state.tableSelected === 'POSTS') {
-      this.setState({jsonContent: postsList});
-    }
-    this.setState({users: usersList, posts: postsList});
-  }
-*/
-
   updateState() {
 // debugger
     const {children} = this.state;
@@ -215,13 +191,8 @@ debugger
   }
 
   btnEdit(model: Model) {
+// debugger
     const edit = () => {
-      // if (model.tableName() === 'users') {
-      //   this.dialogUser.show();
-      // }
-      // if (model.tableName() === 'posts') {
-      //   this.dialogPost.show();
-      // }
       model.tableName() === 'users' && this.dialogUser.show();
       model.tableName() === 'posts' && this.dialogPost.show();
       // model.tableName() === 'comments' && this.dialogComments.show();
@@ -233,6 +204,7 @@ debugger
   }
 
   btnRemove(model: Model) {
+// debugger
     const remove = (model: Model) => {
       if (model.isSaved()) {
         model.remove();
@@ -261,7 +233,7 @@ debugger
         tableSelected: tableName.toUpperCase(),
       });
     }
-    this.setState({selectedModel: selectedModel});
+    // this.setState({selectedModel: selectedModel});
   }
 
   getSelectedTableCss(tableName: string): string {
@@ -271,18 +243,6 @@ debugger
       return 'centered';
     }
   }
-
-  // updateProperty(property: any, value: any) {
-  //   let model = this.state.selectedModel;
-  //   model[property] = value;
-  //   this.setState({selectedModel: model});
-  // }
-
-  // onIsAdminChange(value: any) {
-  //   const selectedModel = this.state.selectedModel;
-  //   selectedModel.admin = value;
-  //   this.setState({selectedModel: selectedModel});
-  // }
 
   btnLeftMenu() {
     this.setState({displayLeftMenu: !this.state.displayLeftMenu, displayDialogFullScreen: false});
@@ -312,17 +272,19 @@ debugger
   render() {
 
     const {jsonContent, children, tableSelected, users, posts, selectedModel} = this.state;
+    const defaultUser = new User({name: '', age: '', admin: 0});
+    const defaultPost = new Post({title: '', content: ''});
 
     const footerUsersTable = (
       <div className="ui-helper-clearfix full-width">
         <Button className="float-left" icon="fa-plus" label="Add New"
-          onClick={_ => this.add(new User({name: '', age: '', admin: 0}), this.dialogUser)}/>
+          onClick={_ => this.add(defaultUser, this.dialogUser)}/>
       </div>
     );
     const footerPostsTable = (
       <div className="ui-helper-clearfix full-width">
         <Button className="float-left" icon="fa-plus" label="Add New"
-          onClick={_ => this.add(new Post({title: '', content: ''}), this.dialogPost)}/>
+          onClick={_ => this.add(defaultPost, this.dialogPost)}/>
       </div>
     );
     const dialogProps = {

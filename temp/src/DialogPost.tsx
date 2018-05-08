@@ -5,9 +5,17 @@ import {InputText} from "primereact/components/inputtext/InputText";
 import {Dropdown} from "primereact/components/dropdown/Dropdown";
 import {Button} from "primereact/components/button/Button";
 import {Model} from "./orm/model";
+import {Post} from "./models/post";
+import {query} from "./orm/query.builder";
 
+export class DialogPost extends DialogBase {
 
-export class DialogPost extends DialogBase{
+  userIds: Model[];
+
+  componentWillUpdate() {
+    this.userIds = query.select('id').from('users').run();
+    console.log('dialog post component will update', this.userIds);
+  }
 
   render() {
     const {selectedModel, displayDialog} = this.state;
@@ -23,7 +31,7 @@ export class DialogPost extends DialogBase{
         <div className="ui-grid ui-grid-responsive ui-fluid">
           <div className="ui-grid-row">
             <div className="ui-grid-col-4 dialog-label">
-              <label htmlFor="title">Name</label>
+              <label htmlFor="title">Title</label>
             </div>
             <div className="ui-grid-col-8 dialog-label">
               <InputText id="title"
@@ -33,7 +41,7 @@ export class DialogPost extends DialogBase{
           </div>
           <div className="ui-grid-row">
             <div className="ui-grid-col-4 dialog-label">
-              <label htmlFor="content">Age</label>
+              <label htmlFor="content">Content</label>
             </div>
             <div className="ui-grid-col-8 dialog-label">
               <InputText id="content"

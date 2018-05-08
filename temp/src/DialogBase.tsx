@@ -20,15 +20,20 @@ export class DialogBase extends React.Component {
 
   constructor(props: Props) {
     super(props)
-    this.state = {
-      selectedModel: props.selectedModel,
-    }
+    this.state = {selectedModel: props.selectedModel};
+  }
+
+  dialogBelongsToSelectedModel(dialogName: string, selectedModelClassName: string): boolean {
+    return dialogName.indexOf(selectedModelClassName) > 0;
   }
 
   componentWillReceiveProps(props: Props) {
-    this.setState({
-      selectedModel: props.selectedModel,
-    });
+debugger
+    const dialogName = this.constructor.name;
+    const selectedModelClassName = props.selectedModel && props.selectedModel.constructor.name;
+    if (this.dialogBelongsToSelectedModel(dialogName, selectedModelClassName)) {
+      this.setState({selectedModel: props.selectedModel});
+    }
   }
 
   updateProperty(property: any, value: any) {

@@ -5,17 +5,20 @@ import {InputText} from "primereact/components/inputtext/InputText";
 import {Dropdown} from "primereact/components/dropdown/Dropdown";
 import {Button} from "primereact/components/button/Button";
 import {Model} from "./orm/model";
+import {User} from "./models/user";
 
 
 export class DialogUser extends DialogBase {
 
   render() {
     const {selectedModel, displayDialog} = this.state;
-    const footerDialog = <div className="ui-dialog-buttonpane ui-helper-clearfix">
-      <Button icon="fa-close" label="Cancel" onClick={_ => this.onBtnCancel()}/>
-      <Button label="Save" icon="fa-check" onClick={_ => this.onBtnSave()}/>
-    </div>;
     const isAdminOptions = [{label: 'True', value: 1}, {label: 'False', value: 0}];
+    const footerDialog = (
+      <div className="ui-dialog-buttonpane ui-helper-clearfix">
+        <Button icon="fa-close" label="Cancel" onClick={_ => this.onBtnCancel()}/>
+        <Button label="Save" icon="fa-check" onClick={_ => this.onBtnSave()}/>
+      </div>
+    );
 
     return (
       <Dialog visible={displayDialog} header="Edit Row" modal={true}

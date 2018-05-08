@@ -6,9 +6,16 @@ import {Dropdown} from "primereact/components/dropdown/Dropdown";
 import {Button} from "primereact/components/button/Button";
 import {Model} from "./orm/model";
 import {Post} from "./models/post";
+import {query} from "./orm/query.builder";
 
+export class DialogPost extends DialogBase {
 
-export class DialogPost extends DialogBase{
+  userIds: Model[];
+
+  componentWillUpdate() {
+    this.userIds = query.select('id').from('users').run();
+    console.log('dialog post component will update', this.userIds);
+  }
 
   render() {
     const {selectedModel, displayDialog} = this.state;
