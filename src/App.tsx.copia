@@ -1,5 +1,6 @@
-//todo: sigue dando error al pulsar boton edit. (no pasa cuando solo tabla users)
-//probablemente tenga que ver con inicializacion de "selectedModel"
+//todo: sigue dando error en el componente input: admin true/false
+//todo: css select admin true/false
+//todo: dialogos crud como componentes
 //todo: feature filtro en el listado de tabla
 //todo: diagram view (static)
 //todo: al hacer onclick en tableHeader, deberia cambiar el valor de this.state.tableSelected
@@ -85,6 +86,7 @@ export default class App extends React.Component {
     users: Model[],
     posts: Model[],
     selectedModel: any,
+    displayDialog: boolean,
     displayLeftMenu: boolean,
     displayDialogFullScreen: boolean,
     logger: boolean
@@ -101,6 +103,7 @@ export default class App extends React.Component {
       users: usersList,
       posts: postsList,
       selectedModel: undefined,
+      displayDialog: false,
       displayLeftMenu: false,
       displayDialogFullScreen: false,
       logger: false
@@ -166,6 +169,7 @@ debugger
     this.setState({
       users: usersList,
       posts: postsList,
+      displayDialog: false,
       displayDialogFullScreen: false,
     });
   }
@@ -260,7 +264,7 @@ debugger
         tableSelected: tableName.toUpperCase(),
       });
     }
-    // this.setState({selectedModel: selectedModel});
+    this.setState({selectedModel: selectedModel});
   }
 
   getSelectedTableCss(tableName: string): string {

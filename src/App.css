@@ -65,7 +65,6 @@ div.ui-toolbar {
   border-radius: 2px;
   font-variant: petite-caps;
   font-weight: normal;
-  /*vertical-align: sub;*/
   vertical-align: -webkit-baseline-middle;
 }
 
@@ -143,7 +142,7 @@ div.ui-panel {
   text-decoration: none;
   font-size: large;
   color: grey !important;
-   padding-left: 10px;
+  padding-left: 10px;
   border-top-style: solid;
   border-top-color: lightgrey !important;
   border-top-width: 1px;

@@ -1,11 +1,13 @@
-//todo: hacer menu lateral izquierdo en vez de menu superior
+//todo: sigue dando error en el componente input: admin true/false
+//todo: css select admin true/false
+//todo: dialogos crud como componentes
 //todo: feature filtro en el listado de tabla
 //todo: diagram view (static)
 //todo: al hacer onclick en tableHeader, deberia cambiar el valor de this.state.tableSelected
 //todo: poner en cv desarrollo de software con metodologia de tarjetas (kanban?) y Cursos Deep Learning
+//todo: validacion de propiedades de modelo al salvar
 import * as React from 'react';
 import './App.css';
-
 import {Collection} from "./orm/collection";
 import {User} from "./models/user";
 import {Post} from "./models/post";
@@ -30,9 +32,13 @@ import {InputText} from 'primereact/components/inputtext/InputText';
 import {Dropdown} from 'primereact/components/dropdown/Dropdown';
 import {ScrollPanel} from 'primereact/components/scrollpanel/ScrollPanel';
 import {Panel} from 'primereact/components/panel/Panel';
+import {getUrlParameter} from "./orm/yago.logger";
+import {DialogUser} from "./DialogUser";
+import {DialogPost} from "./DialogPost";
 import 'primereact/resources/primereact.min.css';
 import 'primereact/resources/themes/omega/theme.css';
 import 'font-awesome/css/font-awesome.css';
+import {DialogBase} from "./DialogBase";
 
 
 
@@ -80,8 +86,9 @@ export default class App extends React.Component {
     users: Model[],
     posts: Model[],
     selectedModel: any,
-    displayDialog: boolean,
-    displayLeftMenu: boolean
+    displayLeftMenu: boolean,
+    displayDialogFullScreen: boolean,
+    logger: boolean
   };
 
   constructor(props: any) {
@@ -95,21 +102,45 @@ export default class App extends React.Component {
       users: usersList,
       posts: postsList,
       selectedModel: undefined,
-      displayDialog: false,
-      displayLeftMenu: false
+      displayLeftMenu: false,
+      displayDialogFullScreen: false,
+      logger: false
     }
+    this.updateState = this.updateState.bind(this);
   }
 
   reactJsonCmp: React.Component;
+
+  dialogUser: DialogUser;
+
+  dialogPost: DialogPost;
+
+  // dialogUser: DialogUser;
+
+  componentWillMount() {
+    if (getUrlParameter('logger').toLowerCase() === 'true') {
+      this.setState({logger: true});
+    } else {
+      this.setState({logger: false});
+    }
+  }
 
   componentDidMount() {
     //todo: cargar aqui la base de datos desde un fichero mediante peticion xmlhttp
     // this.carservice.getCarsSmall().then(data => this.setState({cars: data}));
   }
 
-  //todo: revisar esto para ver lo de las propiedades fantasmas
-  updateState() {
-    const {children} = this.state;
+/*
+  updateState(showChildren?: boolean) {
+debugger
+    // const {children} = this.state;
+    // const children = this.children;
+    let children: boolean;
+    if (showChildren) {
+      children = showChildren;
+    } else {
+      children = this.state.children;
+    }
     const usersList = users.getAll({children});
     const postsList = posts.getAll({children});
     if (this.state.tableSelected === 'USERS') {
@@ -120,9 +151,27 @@ export default class App extends React.Component {
     }
     this.setState({users: usersList, posts: postsList});
   }
+*/
+
+  updateState() {
+// debugger
+    const {children} = this.state;
+    const usersList = users.getAll({children});
+    const postsList = posts.getAll({children});
+    if (this.state.tableSelected === 'USERS') {
+      this.setState({jsonContent: usersList});
+    }
+    if (this.state.tableSelected === 'POSTS') {
+      this.setState({jsonContent: postsList});
+    }
+    this.setState({
+      users: usersList,
+      posts: postsList,
+      displayDialogFullScreen: false,
+    });
+  }
 
   showChildren() {
-// debugger
     const {children, tableSelected} = this.state;
     if (tableSelected === 'USERS') {
       this.setState({
@@ -136,6 +185,7 @@ export default class App extends React.Component {
         jsonContent: posts.getAll({children: !children})
       });
     }
+    this.setState({displayDialogFullScreen: false});
   }
 
   loadDbFromDisk(e: any) {
@@ -156,95 +206,49 @@ export default class App extends React.Component {
   }
 
   saveDbToDisk(e: any) {
-    saveToDisk('test3.sqlite');
+    saveToDisk('metaphasejs.sqlite');
   }
 
-  add(model: Model) {
-    this.setState({selectedModel: model, displayDialog: true});
+  add(model: Model, dialog: DialogBase) {
+    this.setState({selectedModel: model});
+    dialog.show();
   }
 
-  onBtnSave() {
-    const selectedModel = this.state.selectedModel;
-    if (selectedModel) {
-      let editedModel = {...selectedModel};
-      try {
-        Object.setPrototypeOf(editedModel, selectedModel);
-        editedModel = Model.omitChildrenProps(editedModel);
-        editedModel.save();
-        this.setState({displayDialog: false});
-      } catch (exception) {
-        console.warn(exception);
-        alert(exception.message);
-      }
-      this.updateState();
+  btnEdit(model: Model) {
+    const edit = () => {
+      // if (model.tableName() === 'users') {
+      //   this.dialogUser.show();
+      // }
+      // if (model.tableName() === 'posts') {
+      //   this.dialogPost.show();
+      // }
+      model.tableName() === 'users' && this.dialogUser.show();
+      model.tableName() === 'posts' && this.dialogPost.show();
+      // model.tableName() === 'comments' && this.dialogComments.show();
+      this.setState({selectedModel: model});
     }
-  }
-
-  onBtnCancel() {
-    this.setState({displayDialog: false, selectedModel: null});
-    this.updateState();
-  }
-
-  remove(model: Model) {
-    if (model.isSaved()) {
-      model.remove();
-      this.updateState();
-    }
-  }
-
-  edit() {
-    this.setState({displayDialog: true});
-  }
-
-  onCellChange(props: any, value: any) {
-    // let updatedModels = [...props.value];
-    // updatedModels[props.rowIndex][props.field] = value;
-    // this.setState({unsavedRowId: props.rowData.id});
-    // if (props.rowData.constructor.name === "User") {
-    //   this.setState({users: updatedModels});
-    // }
-    // if (props.rowData.constructor.name === "Post") {
-    //   this.setState({posts: updatedModels});
-    // }
-  }
-
-  colEditor(props: any, col: string) {
-    // return (
-    //   <InputText type="text"
-    //              onBlur={_=> console.log('on blur input text')}
-    //     value={props.rowData[col]}
-    //     onChange={(e: any) => this.onCellChange(props, e.target.value)}/>
-    // )
-  }
-
-  dropDownUserIdCellEditor(props: any) {
-    let usersIds = users.query().select('id').run();
-    usersIds = usersIds.map((userId: {id: number}) => {
-      return {label: userId.id, value: userId.id};
-    });
     return (
-      <Dropdown value={props.value[props.rowIndex].user_id} options={usersIds}
-        onChange={(e: any) => this.onCellChange(props, e.value)}
-        className="full-width" placeholder="User Id"/>
-    )
-  }
-
-  btnEdit() {
-    return (
-      <Button onClick={_ => this.edit()} className="ui-button-info" icon="fa-edit" title="Edit"/>
+      <Button onClick={_ => edit()} className="ui-button-info" icon="fa-edit" title="Edit"/>
     )
   }
 
   btnRemove(model: Model) {
+    const remove = (model: Model) => {
+      if (model.isSaved()) {
+        model.remove();
+        this.updateState();
+      }
+    }
     return (
-      <Button onClick={_ => this.remove(model)} className="ui-button-danger" icon="fa-trash" title="Delete"/>
+      <Button onClick={_ => remove(model)} className="ui-button-danger" icon="fa-trash" title="Delete"/>
     )
   }
 
-  onClickTable(e: any) {
+  onRowClick(e: any) {
     let collection;
     const {children} = this.state;
-    const tableName = e.data.tableName();
+    const selectedModel = e.data
+    const tableName = selectedModel.tableName();
     if (tableName === "users") {
       this.setState({
         jsonContent: users.getAll({children}),
@@ -257,9 +261,10 @@ export default class App extends React.Component {
         tableSelected: tableName.toUpperCase(),
       });
     }
+    this.setState({selectedModel: selectedModel});
   }
 
-  getSelectedTableCss(tableName: string) {
+  getSelectedTableCss(tableName: string): string {
     if (this.state.tableSelected === tableName.toUpperCase()) {
       return 'centered table-selected';
     } else {
@@ -267,51 +272,64 @@ export default class App extends React.Component {
     }
   }
 
-  onRowSelect (e: any) {
-    this.setState({selectedModel: e.data});
-  }
+  // updateProperty(property: any, value: any) {
+  //   let model = this.state.selectedModel;
+  //   model[property] = value;
+  //   this.setState({selectedModel: model});
+  // }
 
-  onSelectionChange(e: any) {
-    this.setState({selectedModel: e.data});
-  }
-
-  updateProperty(property: any, value: any) {
-    let model = this.state.selectedModel;
-    model[property] = value;
-    this.setState({selectedModel: model});
-  }
-
-  //todo: debuggear
-  onIsAdminChange(value: any) {
-    const selectedModel = this.state.selectedModel;
-    selectedModel.admin = value;
-    this.setState({selectedModel: selectedModel});
-  }
+  // onIsAdminChange(value: any) {
+  //   const selectedModel = this.state.selectedModel;
+  //   selectedModel.admin = value;
+  //   this.setState({selectedModel: selectedModel});
+  // }
 
   btnLeftMenu() {
-    this.setState({displayLeftMenu: !this.state.displayLeftMenu});
+    this.setState({displayLeftMenu: !this.state.displayLeftMenu, displayDialogFullScreen: false});
   }
+
+  showCode() {
+    this.setState({displayLeftMenu: false, displayDialogFullScreen: true});
+  }
+
+  switchLogger() {
+    const {logger} = this.state
+    this.setState({logger: !logger});
+    if(logger) {
+      alert('Logger System Off.\n\nReloading...');
+    } else {
+      alert('Logger System On. Operations on data will be written to browser console.\n\nReloading...');
+    }
+  }
+
+  getUrlApp(): string {
+    return this.state.logger ? "/?logger=true" : "/";
+  }
+
 
 
 
   render() {
 
     const {jsonContent, children, tableSelected, users, posts, selectedModel} = this.state;
-    const headerUserTable = 'USERS';
-    const headerPostTable = 'POSTS';
-    const footerUsersTable = (<div className="ui-helper-clearfix full-width">
+
+    const footerUsersTable = (
+      <div className="ui-helper-clearfix full-width">
         <Button className="float-left" icon="fa-plus" label="Add New"
-          onClick={_ => this.add(new User({name: '', age: '', admin: 0}))}/>
-      </div>);
-    const footerPostsTable = (<div className="ui-helper-clearfix full-width">
+          onClick={_ => this.add(new User({name: '', age: '', admin: 0}), this.dialogUser)}/>
+      </div>
+    );
+    const footerPostsTable = (
+      <div className="ui-helper-clearfix full-width">
         <Button className="float-left" icon="fa-plus" label="Add New"
-          onClick={_ => this.add(new Post({title: '', content: ''}))}/>
-      </div>);
-    const footerDialog = <div className="ui-dialog-buttonpane ui-helper-clearfix">
-      <Button icon="fa-close" label="Cancel" onClick={_ => this.onBtnCancel()}/>
-      <Button label="Save" icon="fa-check" onClick={_ => this.onBtnSave()}/>
-    </div>;
-    const isAdminOptions = [{label: 'True', value: 1}, {label: 'False', value: 0}];
+          onClick={_ => this.add(new Post({title: '', content: ''}), this.dialogPost)}/>
+      </div>
+    );
+    const dialogProps = {
+      selectedModel: selectedModel,
+      updateState: this.updateState,
+      children: children
+    };
 
     return (
 
@@ -330,46 +348,44 @@ export default class App extends React.Component {
         </Toolbar>
 
         <Sidebar visible={this.state.displayLeftMenu} baseZIndex={1000000}
-          onHide={() => this.setState({displayLeftMenu: false})} blockScroll={true}>
-            <h1 style={{fontWeight:'normal'}}>MetaphaseJS</h1>
+          onHide={() => this.setState({displayLeftMenu: false})}>
+            <h1>MetaphaseJS</h1>
+            <a href="#" className="left-menu-item"
+              onClick={_ => this.showCode()}>
+                <i className="fa fa-bars"></i><span>Show Code</span>
+            </a>
+            <a href={this.getUrlApp()} className="left-menu-item"
+               onClick={_ => this.switchLogger()}>
+              <i className="fa fa-bars"></i><span>Switch Logger</span>
+            </a>
+            <a href="#" className="left-menu-item"
+              onClick={_ => this.showCode()}>
+                <i className="fa fa-bars"></i><span>Show Code</span>
+            </a>
+            <a href="#" className="left-menu-item"
+              onClick={_ => this.showCode()}>
+                <i className="fa fa-bars"></i><span>Show Code</span>
+            </a>
+        </Sidebar>
 
-            <a href="javascript:void(0)" className="left-menu-item">
-              <i className="fa fa-bars"></i><span>Item</span>
-            </a>
-            <a href="javascript:void(0)" className="left-menu-item">
-              <i className="fa fa-bars"></i><span>Item</span>
-            </a>
-            <a href="javascript:void(0)" className="left-menu-item">
-              <i className="fa fa-bars"></i><span>Item</span>
-            </a>
-            <a href="javascript:void(0)" className="left-menu-item">
-              <i className="fa fa-bars"></i><span>Item</span>
-            </a>
-
-            <Button type="button" onClick={() => this.setState({displayLeftMenu: true})}
-              label="Save" className="ui-button-success"/>
-            <Button type="button" onClick={() => this.setState({displayLeftMenu: true})}
-              label="Cancel" className="ui-button-secondary"/>
-
+        <Sidebar fullScreen={true} visible={this.state.displayDialogFullScreen}
+          onHide={() => this.showCode()}>
+            <ScrollPanel className="custom code-view-container">
+              <CodeHighlight
+                language="javascript" tab={2}
+                classes={{code: 'sample-code', pre: 'pre-margin'}}
+                style={{padding: '20px'}}>
+                  { sampleCode }
+              </CodeHighlight>
+            </ScrollPanel>
         </Sidebar>
 
         <p><button onClick={(e: any) => this.loadDbFromDisk(e)}>load from file</button></p>
 
         <p><button onClick={(e: any) => this.saveDbToDisk(e)}>Save database file</button></p>
 
-        <Panel header="✅ Code View" toggleable={true} collapsed={true}>
-          <ScrollPanel className="custom code-view-container">
-            <CodeHighlight
-              language="javascript" tab={2}
-              classes={{code: 'sample-code', pre: 'pre-margin'}}
-              style={{padding: '20px'}}>
-              { sampleCode }
-            </CodeHighlight>
-          </ScrollPanel>
-        </Panel>
-
         <Panel header="✅ Tree View" toggleable={true}>
-          <ScrollPanel className="custom code-view-container">
+          <ScrollPanel className="custom json-view-container">
             <ReactJson
               ref={(el: React.Component) => this.reactJsonCmp = el}
               src={jsonContent} iconStyle={'square'} name={tableSelected}
@@ -381,29 +397,25 @@ export default class App extends React.Component {
 
         <Panel header="✅ Table View" toggleable={true}>
 
-          <DataTable value={users} onRowClick={(e: any) => this.onClickTable(e)}
-            header={headerUserTable} footer={footerUsersTable}
-            selectionMode="single"
-            selection={this.state.selectedModel}
-            onSelectionChange={(e: any) => this.onSelectionChange(e)}
-            onRowSelect={(e: any) => this.onRowSelect(e)}
+          <DataTable value={users} onRowClick={(e: any) => this.onRowClick(e)}
+            header="USERS" footer={footerUsersTable}
             className={this.getSelectedTableCss('users')}>
               <Column field="id" header="Id"/>
               <Column field="name" header="Name"/>
               <Column field="age" header="Age"/>
               <Column field="admin" header="Admin"/>
-              <Column header="Edit" body={() => this.btnEdit()}/>
+              <Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>
               <Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>
           </DataTable>
 
-          <DataTable value={posts} onRowClick={(e: any) => this.onClickTable(e)}
-            header={headerPostTable} footer={footerPostsTable}
+          <DataTable value={posts} onRowClick={(e: any) => this.onRowClick(e)}
+            header="POSTS" footer={footerPostsTable}
             className={this.getSelectedTableCss('posts')}>
               <Column field="id" header="Id"/>
               <Column field="title" header="Title"/>
               <Column field="content" header="Content"/>
               <Column field="user_id" header="User Id"/>
-              <Column header="Edit" body={() => this.btnEdit()}/>
+              <Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>
               <Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>
           </DataTable>
 
@@ -413,42 +425,10 @@ export default class App extends React.Component {
           {/*<JSONViewer json={this.state.users}></JSONViewer>*/}
         {/*</Panel>*/}
 
-        <Dialog visible={this.state.displayDialog} header="Edit row" modal={true}
-          footer={footerDialog} onHide={() => this.setState({displayDialog: false})}>
-            <div className="ui-grid ui-grid-responsive ui-fluid">
-              <div className="ui-grid-row">
-                <div className="ui-grid-col-4 dialog-label">
-                  <label htmlFor="name">Name</label>
-                </div>
-                <div className="ui-grid-col-8 dialog-label">
-                  <InputText id="name"
-                    onChange={(e: any) => {this.updateProperty('name', e.target.value)}}
-                    value={selectedModel && selectedModel.name}/>
-                </div>
-              </div>
-              <div className="ui-grid-row">
-                <div className="ui-grid-col-4 dialog-label">
-                  <label htmlFor="age">Age</label>
-                </div>
-                <div className="ui-grid-col-8 dialog-label">
-                  <InputText id="age"
-                    onChange={(e: any) => {this.updateProperty('age', e.target.value)}}
-                    value={selectedModel && selectedModel.age}/>
-                </div>
-              </div>
-              <div className="ui-grid-row">
-                <div className="ui-grid-col-4 dialog-label">
-                  <label htmlFor="admin">Admin</label>
-                </div>
-                <div className="ui-grid-col-8 dialog-label">
-                  <Dropdown value={selectedModel && selectedModel.admin}
-                    id="admin" dataKey="admin" options={isAdminOptions}
-                    onChange={(e: {originalEvent: Event, value: any}) => this.onIsAdminChange(e.value)}
-                    className="dropdown" placeholder="Is Admin?"/>
-                </div>
-              </div>
-            </div>
-        </Dialog>
+
+        <DialogUser ref={(el: DialogUser) => this.dialogUser = el} {...dialogProps}/>
+
+        <DialogPost ref={(el: DialogPost) => this.dialogPost = el} {...dialogProps}/>
 
       </div>
     );

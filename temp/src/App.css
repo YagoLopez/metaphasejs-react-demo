@@ -11,6 +11,9 @@
     width: 100%;
     margin: 0 auto 0;
   }
+  .code-view-container {
+    width: 100%;
+  }
 }
 
 .sample-code {
@@ -39,6 +42,7 @@ h2 {
 
 .custom .ui-scrollpanel-wrapper {
   border-right: 9px solid #f4f4f4;
+  background-color: aliceblue;
 }
 
 .custom .ui-scrollpanel-bar {
@@ -61,7 +65,6 @@ div.ui-toolbar {
   border-radius: 2px;
   font-variant: petite-caps;
   font-weight: normal;
-  /*vertical-align: sub;*/
   vertical-align: -webkit-baseline-middle;
 }
 
@@ -89,6 +92,13 @@ div.ui-toolbar {
 }
 
 .code-view-container {
+  display: block;
+  margin: 30px auto auto;
+  width: 90%;
+  height: 90%;
+}
+
+.json-view-container {
   width: 100%;
   height: 300px;
 }
@@ -114,11 +124,11 @@ div.ui-panel {
 }
 
 .dialog-label {
-  padding: 4px 10px
+  padding: 4px 10px;
 }
 
 .dropdown {
-  width: 158px !important;
+  width: 135px !important;
   margin-bottom: 40px !important;
 }
 
@@ -129,21 +139,36 @@ div.ui-panel {
 
 .left-menu-item {
   display: block;
-  padding-top: 10px;
-  padding-bottom: 10px;
   text-decoration: none;
   font-size: large;
   color: grey !important;
-  /* padding-left: 5px; */
+  padding-left: 10px;
   border-top-style: solid;
   border-top-color: lightgrey !important;
   border-top-width: 1px;
+  height: 50px;
+  line-height: 50px;
+}
+
+:hover.left-menu-item {
+  background-color: grey;
+  color: white !important;
+}
+
+:focus.left-menu-item {
+  background-color: lightgrey;
 }
 
 .left-menu-item > span {
   padding-left: 15px;
 }
 
+.ui-sidebar-close {
+  cursor: pointer;
+  font-size: 18px;
+  color: lightgrey !important;
+  border: 1px solid lightgrey !important;
+}
 
 /*
 .row-editing {
