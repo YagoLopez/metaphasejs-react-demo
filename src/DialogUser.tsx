@@ -10,6 +10,20 @@ import {User} from "./models/user";
 
 export class DialogUser extends DialogBase {
 
+  // onIsAdminChange(value: any) {
+  //   const {selectedModel} = this.state;
+  //   selectedModel.admin = value;
+  //   this.setState({selectedModel: selectedModel});
+  // }
+
+  onIsAdminChange(value: any) {
+    //todo: refactorizar y probar con {selectedModel} = this.state y desestructurarlo en setState()
+    //todo: si funciona hacer lo mismo con DialogPost.tsx
+    const selectedModel = {...this.state.selectedModel};
+    selectedModel.admin = value;
+    this.setState({selectedModel: selectedModel});
+  }
+
   render() {
     const {selectedModel, displayDialog} = this.state;
     const isAdminOptions = [{label: 'True', value: 1}, {label: 'False', value: 0}];
@@ -39,7 +53,7 @@ export class DialogUser extends DialogBase {
               <label htmlFor="age">Age</label>
             </div>
             <div className="ui-grid-col-8 dialog-label">
-              <InputText id="age"
+              <InputText id="age" keyfilter="pint"
                          onChange={(e: any) => {this.updateProperty('age', e.target.value)}}
                          value={selectedModel ? selectedModel.age : ''}/>
             </div>

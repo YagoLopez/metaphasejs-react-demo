@@ -194,7 +194,7 @@ export default class App extends React.Component {
 // debugger
     const edit = () => {
       model.tableName() === 'users' && this.dialogUser.show();
-      model.tableName() === 'posts' && this.dialogPost.show();
+      // model.tableName() === 'posts' && this.dialogPost.show();
       // model.tableName() === 'comments' && this.dialogComments.show();
       this.setState({selectedModel: model});
     }
@@ -217,23 +217,22 @@ export default class App extends React.Component {
   }
 
   onRowClick(e: any) {
-    let collection;
-    const {children} = this.state;
-    const selectedModel = e.data
-    const tableName = selectedModel.tableName();
-    if (tableName === "users") {
-      this.setState({
-        jsonContent: users.getAll({children}),
-        tableSelected: tableName.toUpperCase(),
-      });
-    }
-    if (tableName === "posts") {
-      this.setState({
-        jsonContent: posts.getAll({children}),
-        tableSelected: tableName.toUpperCase(),
-      });
-    }
-    // this.setState({selectedModel: selectedModel});
+    // let collection;
+    // const {children} = this.state;
+    // const selectedModel = e.data
+    // const tableName = selectedModel.tableName();
+    // if (tableName === "users") {
+    //   this.setState({
+    //     jsonContent: users.getAll({children}),
+    //     tableSelected: tableName.toUpperCase(),
+    //   });
+    // }
+    // if (tableName === "posts") {
+    //   this.setState({
+    //     jsonContent: posts.getAll({children}),
+    //     tableSelected: tableName.toUpperCase(),
+    //   });
+    // }
   }
 
   getSelectedTableCss(tableName: string): string {
@@ -258,7 +257,7 @@ export default class App extends React.Component {
     if(logger) {
       alert('Logger System Off.\n\nReloading...');
     } else {
-      alert('Logger System On. Operations on data will be written to browser console.\n\nReloading...');
+      alert('Logger System On. Check browser console.\n\nReloading...');
     }
   }
 
@@ -370,16 +369,16 @@ export default class App extends React.Component {
               <Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>
           </DataTable>
 
-          <DataTable value={posts} onRowClick={(e: any) => this.onRowClick(e)}
-            header="POSTS" footer={footerPostsTable}
-            className={this.getSelectedTableCss('posts')}>
-              <Column field="id" header="Id"/>
-              <Column field="title" header="Title"/>
-              <Column field="content" header="Content"/>
-              <Column field="user_id" header="User Id"/>
-              <Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>
-              <Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>
-          </DataTable>
+          {/*<DataTable value={posts} onRowClick={(e: any) => this.onRowClick(e)}*/}
+            {/*header="POSTS" footer={footerPostsTable}*/}
+            {/*className={this.getSelectedTableCss('posts')}>*/}
+              {/*<Column field="id" header="Id"/>*/}
+              {/*<Column field="title" header="Title"/>*/}
+              {/*<Column field="content" header="Content"/>*/}
+              {/*<Column field="user_id" header="User Id"/>*/}
+              {/*<Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>*/}
+              {/*<Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>*/}
+          {/*</DataTable>*/}
 
         </Panel>
 
@@ -390,7 +389,7 @@ export default class App extends React.Component {
 
         <DialogUser ref={(el: DialogUser) => this.dialogUser = el} {...dialogProps}/>
 
-        <DialogPost ref={(el: DialogPost) => this.dialogPost = el} {...dialogProps}/>
+        {/*<DialogPost ref={(el: DialogPost) => this.dialogPost = el} {...dialogProps}/>*/}
 
       </div>
     );

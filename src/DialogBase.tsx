@@ -2,12 +2,12 @@ import * as React from 'react';
 import {Model} from "./orm/model";
 
 interface Props {
-  readonly selectedModel: Model,
+  readonly selectedModel: Model | undefined,
   readonly updateState: Function,
 }
 
 interface State {
-  selectedModel: Model,
+  selectedModel: any,
   displayDialog?: boolean,
   updateState?: Function,
 }
@@ -23,42 +23,64 @@ export class DialogBase extends React.Component {
     this.state = {selectedModel: props.selectedModel};
   }
 
-  dialogBelongsToSelectedModel(dialogName: string, selectedModelClassName: string): boolean {
-    return dialogName.indexOf(selectedModelClassName) > 0;
-  }
-
   componentWillReceiveProps(props: Props) {
+    const dialogBelongsToSelectedModel = (dialogName: string, selectedModelClassName: string): boolean => {
+      return dialogName.indexOf(selectedModelClassName) > 0;
+    }
+// debugger
     const dialogName = this.constructor.name;
-    const selectedModelClassName = props.selectedModel && props.selectedModel.constructor.name;
-    if (this.dialogBelongsToSelectedModel(dialogName, selectedModelClassName)) {
+    const {selectedModel} = props;
+    const selectedModelClassName = selectedModel && selectedModel.constructor.name;
+    if (selectedModelClassName && dialogBelongsToSelectedModel(dialogName, selectedModelClassName)) {
+      // this.setState({selectedModel: {...props.selectedModel}});
       this.setState({selectedModel: props.selectedModel});
     }
   }
 
+  // updateProperty(property: any, value: any) {
+  //   let model = this.state.selectedModel;
+  //   model[property] = value;
+  //   this.setState({selectedModel: model});
+  // }
+
   updateProperty(property: any, value: any) {
-    let model = this.state.selectedModel;
+debugger
+    let model = {...this.state.selectedModel};
     model[property] = value;
     this.setState({selectedModel: model});
   }
 
-  onIsAdminChange(value: any) {
-    const selectedModel = this.state.selectedModel;
-    selectedModel.admin = value;
-    this.setState({selectedModel: selectedModel});
+  onBtnCancel() {
+    this.setState({selectedModel: undefined, displayDialog: false});
   }
 
-  onBtnCancel() {
-    this.setState({displayDialog: false, selectedModel: undefined});
-  }
+//   onBtnSave() {
+// debugger
+//     const {selectedModel} = this.props;
+//     if (selectedModel) {
+//       let editedModel = {...selectedModel};
+//       try {
+//         Object.setPrototypeOf(editedModel, selectedModel);
+//         editedModel = Model.omitChildrenProps(editedModel);
+//         editedModel.save();
+//         this.setState({displayDialog: false});
+//       } catch (exception) {
+//         console.warn(exception);
+//         alert(exception.message);
+//       }
+//       this.props.updateState();
+//     }
+//   }
 
   onBtnSave() {
-    const {selectedModel} = this.props;
-    if (selectedModel) {
-      let editedModel = {...selectedModel};
+debugger
+    const initialSelectedModel = this.props.selectedModel;
+    if (initialSelectedModel) {
+      let modifiedSelectedModel = this.state.selectedModel;
       try {
-        Object.setPrototypeOf(editedModel, selectedModel);
-        editedModel = Model.omitChildrenProps(editedModel);
-        editedModel.save();
+        Object.setPrototypeOf(modifiedSelectedModel, initialSelectedModel);
+        modifiedSelectedModel = Model.omitChildrenProps(modifiedSelectedModel);
+        modifiedSelectedModel.save();
         this.setState({displayDialog: false});
       } catch (exception) {
         console.warn(exception);
