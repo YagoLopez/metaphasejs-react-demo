@@ -10,15 +10,7 @@ import {User} from "./models/user";
 
 export class DialogUser extends DialogBase {
 
-  // onIsAdminChange(value: any) {
-  //   const {selectedModel} = this.state;
-  //   selectedModel.admin = value;
-  //   this.setState({selectedModel: selectedModel});
-  // }
-
   onIsAdminChange(value: any) {
-    //todo: refactorizar y probar con {selectedModel} = this.state y desestructurarlo en setState()
-    //todo: si funciona hacer lo mismo con DialogPost.tsx
     const selectedModel = {...this.state.selectedModel};
     selectedModel.admin = value;
     this.setState({selectedModel: selectedModel});
