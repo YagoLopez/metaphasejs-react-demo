@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Model} from "./orm/model";
+import {Model} from "../orm/model";
 
 interface Props {
   readonly selectedModel: Model | undefined,

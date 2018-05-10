@@ -5,6 +5,7 @@
 //todo: poner en cv desarrollo de software con metodologia de tarjetas (kanban?) y Cursos Deep Learning
 //todo: validacion de propiedades de modelo al salvar
 //todo: validacion de campo "comment.date"
+//todo: probar en iexplorer
 import * as React from 'react';
 import './App.css';
 import {Collection} from "./orm/collection";
@@ -32,10 +33,10 @@ import {Dropdown} from 'primereact/components/dropdown/Dropdown';
 import {ScrollPanel} from 'primereact/components/scrollpanel/ScrollPanel';
 import {Panel} from 'primereact/components/panel/Panel';
 import {getUrlParameter} from "./orm/yago.logger";
-import {DialogBase} from "./DialogBase";
-import {DialogUser} from "./DialogUser";
-import {DialogPost} from "./DialogPost";
-import {DialogComment} from "./DialogComment";
+import {DialogBase} from "./DialogCmp/DialogBase";
+import {DialogUser} from "./DialogCmp/DialogUser";
+import {DialogPost} from "./DialogCmp/DialogPost";
+import {DialogComment} from "./DialogCmp/DialogComment";
 import 'primereact/resources/primereact.min.css';
 import 'primereact/resources/themes/omega/theme.css';
 import 'font-awesome/css/font-awesome.css';
@@ -132,12 +133,7 @@ export default class App extends React.Component {
   }
 
   updateState() {
-// debugger
-    //todo: simplificar
     const {children} = this.state;
-    // const usersList = users.getAll({children});
-    // const postsList = posts.getAll({children});
-    // const commentsList = comments.getAll();
     this.setState({
       users: users.getAll({children}),
       posts: posts.getAll({children}),
@@ -230,13 +226,13 @@ export default class App extends React.Component {
   }
 
   showCode() {
-    // toggle browser right scroll bar
-    if (this.state.displayDialogFullScreen) {
-      document.body.style.overflow = 'visible';
-    } else {
-      document.body.style.overflow = 'hidden';
-    }
+    document.body.style.overflow = 'hidden';
     this.setState({displayLeftMenu: false, displayDialogFullScreen: true});
+  }
+
+  hideCode() {
+    document.body.style.overflow = 'visible';
+    this.setState({displayLeftMenu: false, displayDialogFullScreen: false});
   }
 
   switchLogger() {
@@ -316,18 +312,10 @@ export default class App extends React.Component {
                onClick={_ => this.switchLogger()}>
               <i className="fa fa-bars"></i><span>Switch Logger</span>
             </a>
-            <a href="#" className="left-menu-item"
-              onClick={_ => this.showCode()}>
-                <i className="fa fa-bars"></i><span>Show Code</span>
-            </a>
-            <a href="#" className="left-menu-item"
-              onClick={_ => this.showCode()}>
-                <i className="fa fa-bars"></i><span>Show Code</span>
-            </a>
         </Sidebar>
 
         <Sidebar fullScreen={true} visible={this.state.displayDialogFullScreen}
-          onHide={() => this.showCode()}>
+          onHide={() => this.hideCode()}>
             <ScrollPanel className="custom code-view-container">
               <CodeHighlight
                 language="javascript" tab={2}

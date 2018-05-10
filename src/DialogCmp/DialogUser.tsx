@@ -4,32 +4,25 @@ import {DialogBase} from "./DialogBase";
 import {InputText} from "primereact/components/inputtext/InputText";
 import {Dropdown} from "primereact/components/dropdown/Dropdown";
 import {Button} from "primereact/components/button/Button";
-import {query} from "./orm/query.builder";
+import {User} from "../models/user";
 
-export class DialogComment extends DialogBase {
 
-  postIds: {label: string, value: number}[];
+export class DialogUser extends DialogBase {
 
-  componentWillUpdate() {
-    let modelIds: {id: number}[] = query.select('id').from('posts').run();
-    this.postIds = modelIds.map((userIdObj: {id: number}) =>{
-      return {label: userIdObj.id.toString(), value: userIdObj.id};
-    })
-  }
-
-  onPostIdChange(value: any) {
+  onIsAdminChange(value: any) {
     const selectedModel = {...this.state.selectedModel};
-    selectedModel.post_id = value;
+    selectedModel.admin = value;
     this.setState({selectedModel: selectedModel});
   }
 
   render() {
     const {selectedModel, displayDialog} = this.state;
+    const isAdminOptions = [{label: 'True', value: 1}, {label: 'False', value: 0}];
     const footerDialog = (
       <div className="ui-dialog-buttonpane ui-helper-clearfix">
         <Button icon="fa-close" label="Cancel" onClick={_ => this.onBtnCancel()}/>
         <Button label="Save" icon="fa-check" onClick={_ => this.onBtnSave()}/>
-     </div>
+      </div>
     );
 
     return (
@@ -38,38 +31,35 @@ export class DialogComment extends DialogBase {
         <div className="ui-grid ui-grid-responsive ui-fluid">
           <div className="ui-grid-row">
             <div className="ui-grid-col-4 dialog-label">
-              <label htmlFor="author">Author</label>
+              <label htmlFor="name">Name</label>
             </div>
             <div className="ui-grid-col-8 dialog-label">
-              <InputText id="author"
-                         onChange={(e: any) => {this.updateProperty('author', e.target.value)}}
-                         value={selectedModel ? selectedModel.author : ''}/>
+              <InputText id="name"
+                         onChange={(e: any) => {this.updateProperty('name', e.target.value)}}
+                         value={selectedModel ? selectedModel.name : ''}/>
             </div>
           </div>
-
           <div className="ui-grid-row">
             <div className="ui-grid-col-4 dialog-label">
-              <label htmlFor="date">Date</label>
+              <label htmlFor="age">Age</label>
             </div>
             <div className="ui-grid-col-8 dialog-label">
-              <InputText id="date"
-                         onChange={(e: any) => {this.updateProperty('date', e.target.value)}}
-                         value={selectedModel ? selectedModel.date : ''}/>
+              <InputText id="age" keyfilter="pint"
+                         onChange={(e: any) => {this.updateProperty('age', e.target.value)}}
+                         value={selectedModel ? selectedModel.age : ''}/>
             </div>
           </div>
-
           <div className="ui-grid-row">
             <div className="ui-grid-col-4 dialog-label">
-              <label htmlFor="post_id">Post Id</label>
+              <label htmlFor="admin">Admin</label>
             </div>
             <div className="dialog-label">
-              <Dropdown value={selectedModel ? selectedModel.post_id : ''}
-                        id="post_id" options={this.postIds}
-                        onChange={(e: {originalEvent: Event, value: any}) => this.onPostIdChange(e.value)}
-                        className="dropdown marginBottom" placeholder="Post Id"/>
+              <Dropdown value={selectedModel ? selectedModel.admin : ''}
+                        id="admin" options={isAdminOptions}
+                        onChange={(e: {originalEvent: Event, value: any}) => this.onIsAdminChange(e.value)}
+                        className="dropdown" placeholder="Is Admin?"/>
             </div>
           </div>
-
         </div>
       </Dialog>
     )

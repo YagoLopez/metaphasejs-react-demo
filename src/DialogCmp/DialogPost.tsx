@@ -4,7 +4,7 @@ import {DialogBase} from "./DialogBase";
 import {InputText} from "primereact/components/inputtext/InputText";
 import {Dropdown} from "primereact/components/dropdown/Dropdown";
 import {Button} from "primereact/components/button/Button";
-import {query} from "./orm/query.builder";
+import {query} from "../orm/query.builder";
 
 export class DialogPost extends DialogBase {
 
