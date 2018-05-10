@@ -135,6 +135,7 @@ export default class App extends React.Component {
 
   updateState() {
 // debugger
+    //todo: simplificar
     const {children} = this.state;
     const usersList = users.getAll({children});
     const postsList = posts.getAll({children});
@@ -157,6 +158,7 @@ export default class App extends React.Component {
   }
 
   showChildren() {
+    //todo: simplificar
     const {children, tableSelected} = this.state;
     if (tableSelected === 'USERS') {
       this.setState({
@@ -378,27 +380,27 @@ export default class App extends React.Component {
 
         <Panel header="✅ Table View" toggleable={true}>
 
-          {/*<DataTable value={users} onRowClick={(e: any) => this.onRowClick(e)}*/}
-            {/*header="USERS" footer={footerUsersTable}*/}
-            {/*className={this.getSelectedTableCss('users')}>*/}
-              {/*<Column field="id" header="Id"/>*/}
-              {/*<Column field="name" header="Name"/>*/}
-              {/*<Column field="age" header="Age"/>*/}
-              {/*<Column field="admin" header="Admin"/>*/}
-              {/*<Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>*/}
-              {/*<Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>*/}
-          {/*</DataTable>*/}
+          <DataTable value={users} onRowClick={(e: any) => this.onRowClick(e)}
+            header="USERS" footer={footerUsersTable}
+            className={this.getSelectedTableCss('users')}>
+              <Column field="id" header="Id"/>
+              <Column field="name" header="Name"/>
+              <Column field="age" header="Age"/>
+              <Column field="admin" header="Admin"/>
+              <Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>
+              <Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>
+          </DataTable>
 
-          {/*<DataTable value={posts} onRowClick={(e: any) => this.onRowClick(e)}*/}
-            {/*header="POSTS" footer={footerPostsTable}*/}
-            {/*className={this.getSelectedTableCss('posts')}>*/}
-              {/*<Column field="id" header="Id"/>*/}
-              {/*<Column field="title" header="Title"/>*/}
-              {/*<Column field="content" header="Content"/>*/}
-              {/*<Column field="user_id" header="User Id"/>*/}
-              {/*<Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>*/}
-              {/*<Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>*/}
-          {/*</DataTable>*/}
+          <DataTable value={posts} onRowClick={(e: any) => this.onRowClick(e)}
+            header="POSTS" footer={footerPostsTable}
+            className={this.getSelectedTableCss('posts')}>
+              <Column field="id" header="Id"/>
+              <Column field="title" header="Title"/>
+              <Column field="content" header="Content"/>
+              <Column field="user_id" header="User Id"/>
+              <Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>
+              <Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>
+          </DataTable>
 
           <DataTable value={comments} onRowClick={(e: any) => this.onRowClick(e)}
             header="COMMENTS" footer={footerCommentsTable}
@@ -418,9 +420,9 @@ export default class App extends React.Component {
         {/*</Panel>*/}
 
 
-        {/*<DialogUser ref={(el: DialogUser) => this.dialogUser = el} {...dialogProps}/>*/}
+        <DialogUser ref={(el: DialogUser) => this.dialogUser = el} {...dialogProps}/>
 
-        {/*<DialogPost ref={(el: DialogPost) => this.dialogPost = el} {...dialogProps}/>*/}
+        <DialogPost ref={(el: DialogPost) => this.dialogPost = el} {...dialogProps}/>
 
         <DialogComment ref={(el: DialogComment) => this.dialogComment = el} {...dialogProps}/>
 
