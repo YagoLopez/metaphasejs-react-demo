@@ -67,9 +67,6 @@ export class DialogComment extends DialogBase {
             </div>
             <div className="ui-grid-col-8 dialog-label">
               <Calendar value={selectedModel ? new Date(selectedModel.date) : ''} id="date"
-                        readOnlyInput={true}
-                        monthNavigator={true}
-                        showIcon={true}
                         onChange={(e: {originalEvent: Event, value: any}) => this.onDateChange(e.value)}/>
             </div>
           </div>

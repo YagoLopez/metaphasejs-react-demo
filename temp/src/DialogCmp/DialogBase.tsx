@@ -19,14 +19,14 @@ export class DialogBase extends React.Component {
   props: Props;
 
   constructor(props: Props) {
-    super(props);
+    super(props)
     this.state = {selectedModel: props.selectedModel};
   }
 
   componentWillReceiveProps(props: Props) {
     const dialogBelongsToSelectedModel = (dialogName: string, selectedModelClassName: string): boolean => {
       return dialogName.indexOf(selectedModelClassName) > 0;
-    };
+    }
     const dialogName = this.constructor.name;
     const {selectedModel} = props;
     const selectedModelClassName = selectedModel && selectedModel.constructor.name;
@@ -36,6 +36,7 @@ export class DialogBase extends React.Component {
   }
 
   updateProperty(property: any, value: any) {
+debugger
     let selectedModel = {...this.state.selectedModel};
     selectedModel[property] = value;
     this.setState({selectedModel: selectedModel});

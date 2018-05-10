@@ -21,6 +21,10 @@
   padding-bottom: 5px;
 }
 
+.ui-dialog .ui-dialog-content {
+  overflow: unset !important;
+}
+
 .sample-code {
   font-size: 14px !important;
 }
@@ -123,22 +127,13 @@ div.ui-panel {
   text-align: center;
 }
 
-.table-selected {
-  /*padding: 1px;*/
-  /*background-color: cornflowerblue;*/
-}
-
 .dialog-label {
   padding: 4px 10px;
 }
 
 .dropdown {
   width: 135px !important;
-  margin-bottom: 40px !important;
-}
-
-.marginBottom {
-  margin-bottom: 65px !important;
+  margin-bottom: 20px !important;
 }
 
 .btn-menu {
@@ -179,3 +174,8 @@ div.ui-panel {
   border: 1px solid lightgrey !important;
 }
 
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

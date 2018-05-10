@@ -6,6 +6,7 @@
 //todo: validacion de propiedades de modelo al salvar
 //todo: validacion de campo "comment.date"
 //todo: probar en iexplorer
+//todo: html editor en campo "post.content"
 import * as React from 'react';
 import './App.css';
 import {Collection} from "./orm/collection";
@@ -67,8 +68,8 @@ import 'font-awesome/css/font-awesome.css';
 
 // Comments -----------------------------------------------------------------
   const comments = new Collection(Comment);
-  const comment1 = new Comment({author: 'author1', date: 'date1'});
-  const comment2 = new Comment({author: 'author2', date: 'date2'});
+  const comment1 = new Comment({author: 'author1', date: '05/16/2018'});
+  const comment2 = new Comment({author: 'author2', date: '06/16/2018'});
   comment1.belongsTo(post1);
   comment2.belongsTo(post1);
   comment1.save();
@@ -256,7 +257,7 @@ export default class App extends React.Component {
     const {jsonContent, children, users, posts, comments, selectedModel} = this.state;
     const defaultUser = new User({name: '', age: 0, admin: 0});
     const defaultPost = new Post({title: '', content: ''});
-    const defaultComment = new Comment({author: '', date: ''});
+    const defaultComment = new Comment({author: '', date: new Date()});
 
     const mapIsAdminValue = (model: Model): string => {
       return model.admin ? 'True' : 'False';
@@ -357,7 +358,7 @@ export default class App extends React.Component {
             header="POSTS" footer={footerPostsTable} className="centered">
               <Column field="id" header="Id"/>
               <Column field="title" header="Title"/>
-              <Column field="content" header="Content"/>
+              <Column field="content" header="Content" className="ellipsis"/>
               <Column field="user_id" header="User Id"/>
               <Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>
               <Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>
@@ -367,7 +368,7 @@ export default class App extends React.Component {
             header="COMMENTS" footer={footerCommentsTable} className="centered">
               <Column field="id" header="Id"/>
               <Column field="author" header="Author"/>
-              <Column field="date" header="Date"/>
+              <Column field="date" header="Date" className="ellipsis"/>
               <Column field="post_id" header="Post Id"/>
               <Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>
               <Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>
