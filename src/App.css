@@ -16,6 +16,11 @@
   }
 }
 
+.ui-datatable {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .sample-code {
   font-size: 14px !important;
 }
@@ -42,7 +47,7 @@ h2 {
 
 .custom .ui-scrollpanel-wrapper {
   border-right: 9px solid #f4f4f4;
-  background-color: aliceblue;
+  /*background-color: aliceblue;*/
 }
 
 .custom .ui-scrollpanel-bar {
@@ -119,8 +124,8 @@ div.ui-panel {
 }
 
 .table-selected {
-  padding: 1px;
-  background-color: cornflowerblue;
+  /*padding: 1px;*/
+  /*background-color: cornflowerblue;*/
 }
 
 .dialog-label {
@@ -133,7 +138,7 @@ div.ui-panel {
 }
 
 .marginBottom {
-  margin-bottom: 100px !important;
+  margin-bottom: 65px !important;
 }
 
 .btn-menu {
