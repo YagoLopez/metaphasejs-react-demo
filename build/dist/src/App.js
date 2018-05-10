@@ -23,6 +23,7 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
 //todo: poner en cv desarrollo de software con metodologia de tarjetas (kanban?) y Cursos Deep Learning
 //todo: validacion de propiedades de modelo al salvar
 //todo: validacion de campo "comment.date"
+//todo: probar en iexplorer
 import * as React from 'react';
 import './App.css';
 import { Collection } from "./orm/collection";

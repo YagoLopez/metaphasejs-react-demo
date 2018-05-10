@@ -17,7 +17,7 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     return t;
 };
 import * as React from 'react';
-import { Model } from "../../orm/model";
+import { Model } from "../orm/model";
 var DialogBase = /** @class */ (function (_super) {
     __extends(DialogBase, _super);
     function DialogBase(props) {
