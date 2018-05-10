@@ -82,7 +82,6 @@ export default class App extends React.Component {
   state: {
     children: boolean,
     jsonContent: Model[],
-    tableSelected: string,
     users: Model[],
     posts: Model[],
     comments: Model[],
@@ -100,7 +99,6 @@ export default class App extends React.Component {
     this.state = {
       children: this.SHOW_CHILDREN,
       jsonContent: usersList,
-      tableSelected: 'USERS',
       users: usersList,
       posts: postsList,
       comments: commentsList,
@@ -137,48 +135,25 @@ export default class App extends React.Component {
 // debugger
     //todo: simplificar
     const {children} = this.state;
-    const usersList = users.getAll({children});
-    const postsList = posts.getAll({children});
-    const commentsList = comments.getAll();
-    if (this.state.tableSelected === 'USERS') {
-      this.setState({jsonContent: usersList});
-    }
-    if (this.state.tableSelected === 'POSTS') {
-      this.setState({jsonContent: postsList});
-    }
-    if (this.state.tableSelected === 'COMMENTS') {
-      this.setState({jsonContent: commentsList});
-    }
+    // const usersList = users.getAll({children});
+    // const postsList = posts.getAll({children});
+    // const commentsList = comments.getAll();
     this.setState({
-      users: usersList,
-      posts: postsList,
-      comments: commentsList,
+      users: users.getAll({children}),
+      posts: posts.getAll({children}),
+      comments: comments.getAll(),
+      jsonContent: users.getAll({children}),
       displayDialogFullScreen: false,
     });
   }
 
   showChildren() {
-    //todo: simplificar
-    const {children, tableSelected} = this.state;
-    if (tableSelected === 'USERS') {
-      this.setState({
-        children: !children,
-        jsonContent: users.getAll({children: !children})
-      });
-    }
-    if (tableSelected === 'POSTS') {
-      this.setState({
-        children: !children,
-        jsonContent: posts.getAll({children: !children})
-      });
-    }
-    if (tableSelected === 'COMMENTS') {
-      this.setState({
-        children: !children,
-        jsonContent: comments.getAll()
-      });
-    }
-    this.setState({displayDialogFullScreen: false});
+    const {children} = this.state;
+    this.setState({
+      children: !children,
+      jsonContent: users.getAll({children: !children}),
+      displayDialogFullScreen: false
+    });
   }
 
   loadDbFromDisk(e: any) {
@@ -250,19 +225,17 @@ export default class App extends React.Component {
     // }
   }
 
-  getSelectedTableCss(tableName: string): string {
-    if (this.state.tableSelected === tableName.toUpperCase()) {
-      return 'centered table-selected';
-    } else {
-      return 'centered';
-    }
-  }
-
   btnLeftMenu() {
     this.setState({displayLeftMenu: !this.state.displayLeftMenu, displayDialogFullScreen: false});
   }
 
   showCode() {
+    // toggle browser right scroll bar
+    if (this.state.displayDialogFullScreen) {
+      document.body.style.overflow = 'visible';
+    } else {
+      document.body.style.overflow = 'hidden';
+    }
     this.setState({displayLeftMenu: false, displayDialogFullScreen: true});
   }
 
@@ -282,17 +255,16 @@ export default class App extends React.Component {
 
 
 
-
   render() {
 
-    const {jsonContent, children, tableSelected, users, posts, comments, selectedModel} = this.state;
+    const {jsonContent, children, users, posts, comments, selectedModel} = this.state;
     const defaultUser = new User({name: '', age: 0, admin: 0});
     const defaultPost = new Post({title: '', content: ''});
     const defaultComment = new Comment({author: '', date: ''});
-    const getIsAdminValue = (model: Model): string => {
+
+    const mapIsAdminValue = (model: Model): string => {
       return model.admin ? 'True' : 'False';
     };
-
     const footerUsersTable = (
       <div className="ui-helper-clearfix full-width">
         <Button className="float-left" icon="fa-plus" label="Add New"
@@ -374,7 +346,7 @@ export default class App extends React.Component {
           <ScrollPanel className="custom json-view-container">
             <ReactJson
               ref={(el: React.Component) => this.reactJsonCmp = el}
-              src={jsonContent} iconStyle={'square'} name={tableSelected}
+              src={jsonContent} iconStyle={'square'} name="USERS"
               enableClipboard={false} displayDataTypes={false}
               displayObjectSize={false} theme={'shapeshifter:inverted'}
             />
@@ -384,19 +356,17 @@ export default class App extends React.Component {
         <Panel header="✅ Table View" toggleable={true}>
 
           <DataTable value={users} onRowClick={(e: any) => this.onRowClick(e)}
-            header="USERS" footer={footerUsersTable}
-            className={this.getSelectedTableCss('users')}>
+            header="USERS" footer={footerUsersTable} className="centered">
               <Column field="id" header="Id"/>
               <Column field="name" header="Name"/>
               <Column field="age" header="Age"/>
-              <Column field="admin" header="Admin" body={(model: Model) => getIsAdminValue(model)}/>
+              <Column field="admin" header="Admin" body={(model: Model) => mapIsAdminValue(model)}/>
               <Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>
               <Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>
           </DataTable>
 
           <DataTable value={posts} onRowClick={(e: any) => this.onRowClick(e)}
-            header="POSTS" footer={footerPostsTable}
-            className={this.getSelectedTableCss('posts')}>
+            header="POSTS" footer={footerPostsTable} className="centered">
               <Column field="id" header="Id"/>
               <Column field="title" header="Title"/>
               <Column field="content" header="Content"/>
@@ -406,8 +376,7 @@ export default class App extends React.Component {
           </DataTable>
 
           <DataTable value={comments} onRowClick={(e: any) => this.onRowClick(e)}
-            header="COMMENTS" footer={footerCommentsTable}
-            className={this.getSelectedTableCss('comments')}>
+            header="COMMENTS" footer={footerCommentsTable} className="centered">
               <Column field="id" header="Id"/>
               <Column field="author" header="Author"/>
               <Column field="date" header="Date"/>
