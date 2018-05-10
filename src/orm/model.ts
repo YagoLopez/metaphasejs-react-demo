@@ -110,15 +110,19 @@ export abstract class Model extends Base {
    * returns {Model}
    */
   public static omitChildrenProps(model: any): Model {
-    model.hasMany().forEach((relatedModels: Model) => {
+    model.hasChildren() && model.hasMany().forEach((relatedModel: Model) => {
       try {
-        Object.defineProperty(model, relatedModels.prototype.tableName(), {enumerable: false});
+        Object.defineProperty(model, relatedModel.prototype.tableName(), {enumerable: false});
       } catch(exception) {
         console.error(exception);
-        alert('Error: browser could not support "Object.defineProperty() ES6 standard"')
+        alert(exception)
       }
     });
     return model;
+  }
+
+  public hasChildren(): boolean {
+    return this.hasMany !== undefined;
   }
 
 

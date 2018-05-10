@@ -1,11 +1,11 @@
 // Controls default logger behaviour. User 'false' for log supression in production mode
-var DEFAULT_LOG_STATE = 'true';
+var DEFAULT_LOG_STATE = 'false';
 /**
  * Gets an url query string parameter value form URL
  * @param {string} paramName
  * @returns {string}
  */
-var getUrlParameter = function (paramName) {
+export var getUrlParameter = function (paramName) {
     paramName = paramName.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
     var regex = new RegExp('[\\?&]' + paramName + '=([^&#]*)');
     var results = regex.exec(location.search);

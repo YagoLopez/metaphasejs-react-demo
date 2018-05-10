@@ -32,12 +32,13 @@ import {Dropdown} from 'primereact/components/dropdown/Dropdown';
 import {ScrollPanel} from 'primereact/components/scrollpanel/ScrollPanel';
 import {Panel} from 'primereact/components/panel/Panel';
 import {getUrlParameter} from "./orm/yago.logger";
+import {DialogBase} from "./DialogBase";
 import {DialogUser} from "./DialogUser";
 import {DialogPost} from "./DialogPost";
+import {DialogComment} from "./DialogComment";
 import 'primereact/resources/primereact.min.css';
 import 'primereact/resources/themes/omega/theme.css';
 import 'font-awesome/css/font-awesome.css';
-import {DialogBase} from "./DialogBase";
 
 
 
@@ -84,6 +85,7 @@ export default class App extends React.Component {
     tableSelected: string,
     users: Model[],
     posts: Model[],
+    comments: Model[],
     selectedModel: any,
     displayLeftMenu: boolean,
     displayDialogFullScreen: boolean,
@@ -94,12 +96,14 @@ export default class App extends React.Component {
     super(props);
     const usersList = users.getAll({children: this.SHOW_CHILDREN});
     const postsList = posts.getAll({children: this.SHOW_CHILDREN});
+    const commentsList = comments.getAll();
     this.state = {
       children: this.SHOW_CHILDREN,
       jsonContent: usersList,
       tableSelected: 'USERS',
       users: usersList,
       posts: postsList,
+      comments: commentsList,
       selectedModel: undefined,
       displayLeftMenu: false,
       displayDialogFullScreen: false,
@@ -114,7 +118,7 @@ export default class App extends React.Component {
 
   dialogPost: DialogPost;
 
-  // dialogUser: DialogUser;
+  dialogComment: DialogComment;
 
   componentWillMount() {
     if (getUrlParameter('logger').toLowerCase() === 'true') {
@@ -134,15 +138,20 @@ export default class App extends React.Component {
     const {children} = this.state;
     const usersList = users.getAll({children});
     const postsList = posts.getAll({children});
+    const commentsList = comments.getAll();
     if (this.state.tableSelected === 'USERS') {
       this.setState({jsonContent: usersList});
     }
     if (this.state.tableSelected === 'POSTS') {
       this.setState({jsonContent: postsList});
     }
+    if (this.state.tableSelected === 'COMMENTS') {
+      this.setState({jsonContent: commentsList});
+    }
     this.setState({
       users: usersList,
       posts: postsList,
+      comments: commentsList,
       displayDialogFullScreen: false,
     });
   }
@@ -159,6 +168,12 @@ export default class App extends React.Component {
       this.setState({
         children: !children,
         jsonContent: posts.getAll({children: !children})
+      });
+    }
+    if (tableSelected === 'COMMENTS') {
+      this.setState({
+        children: !children,
+        jsonContent: comments.getAll()
       });
     }
     this.setState({displayDialogFullScreen: false});
@@ -191,11 +206,10 @@ export default class App extends React.Component {
   }
 
   btnEdit(model: Model) {
-// debugger
     const edit = () => {
       model.tableName() === 'users' && this.dialogUser.show();
-      // model.tableName() === 'posts' && this.dialogPost.show();
-      // model.tableName() === 'comments' && this.dialogComments.show();
+      model.tableName() === 'posts' && this.dialogPost.show();
+      model.tableName() === 'comments' && this.dialogComment.show();
       this.setState({selectedModel: model});
     }
     return (
@@ -204,7 +218,6 @@ export default class App extends React.Component {
   }
 
   btnRemove(model: Model) {
-// debugger
     const remove = (model: Model) => {
       if (model.isSaved()) {
         model.remove();
@@ -270,9 +283,10 @@ export default class App extends React.Component {
 
   render() {
 
-    const {jsonContent, children, tableSelected, users, posts, selectedModel} = this.state;
-    const defaultUser = new User({name: '', age: '', admin: 0});
+    const {jsonContent, children, tableSelected, users, posts, comments, selectedModel} = this.state;
+    const defaultUser = new User({name: '', age: 0, admin: 0});
     const defaultPost = new Post({title: '', content: ''});
+    const defaultComment = new Comment({author: '', date: ''});
 
     const footerUsersTable = (
       <div className="ui-helper-clearfix full-width">
@@ -284,6 +298,12 @@ export default class App extends React.Component {
       <div className="ui-helper-clearfix full-width">
         <Button className="float-left" icon="fa-plus" label="Add New"
           onClick={_ => this.add(defaultPost, this.dialogPost)}/>
+      </div>
+    );
+    const footerCommentsTable = (
+      <div className="ui-helper-clearfix full-width">
+        <Button className="float-left" icon="fa-plus" label="Add New"
+          onClick={_ => this.add(defaultComment, this.dialogComment)}/>
       </div>
     );
     const dialogProps = {
@@ -358,16 +378,16 @@ export default class App extends React.Component {
 
         <Panel header="✅ Table View" toggleable={true}>
 
-          <DataTable value={users} onRowClick={(e: any) => this.onRowClick(e)}
-            header="USERS" footer={footerUsersTable}
-            className={this.getSelectedTableCss('users')}>
-              <Column field="id" header="Id"/>
-              <Column field="name" header="Name"/>
-              <Column field="age" header="Age"/>
-              <Column field="admin" header="Admin"/>
-              <Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>
-              <Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>
-          </DataTable>
+          {/*<DataTable value={users} onRowClick={(e: any) => this.onRowClick(e)}*/}
+            {/*header="USERS" footer={footerUsersTable}*/}
+            {/*className={this.getSelectedTableCss('users')}>*/}
+              {/*<Column field="id" header="Id"/>*/}
+              {/*<Column field="name" header="Name"/>*/}
+              {/*<Column field="age" header="Age"/>*/}
+              {/*<Column field="admin" header="Admin"/>*/}
+              {/*<Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>*/}
+              {/*<Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>*/}
+          {/*</DataTable>*/}
 
           {/*<DataTable value={posts} onRowClick={(e: any) => this.onRowClick(e)}*/}
             {/*header="POSTS" footer={footerPostsTable}*/}
@@ -380,6 +400,17 @@ export default class App extends React.Component {
               {/*<Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>*/}
           {/*</DataTable>*/}
 
+          <DataTable value={comments} onRowClick={(e: any) => this.onRowClick(e)}
+            header="COMMENTS" footer={footerCommentsTable}
+            className={this.getSelectedTableCss('comments')}>
+              <Column field="id" header="Id"/>
+              <Column field="author" header="Author"/>
+              <Column field="date" header="Date"/>
+              <Column field="post_id" header="Post Id"/>
+              <Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>
+              <Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>
+          </DataTable>
+
         </Panel>
 
         {/*<Panel header="✅ Nested View" toggleable={true}>*/}
@@ -387,9 +418,11 @@ export default class App extends React.Component {
         {/*</Panel>*/}
 
 
-        <DialogUser ref={(el: DialogUser) => this.dialogUser = el} {...dialogProps}/>
+        {/*<DialogUser ref={(el: DialogUser) => this.dialogUser = el} {...dialogProps}/>*/}
 
         {/*<DialogPost ref={(el: DialogPost) => this.dialogPost = el} {...dialogProps}/>*/}
+
+        <DialogComment ref={(el: DialogComment) => this.dialogComment = el} {...dialogProps}/>
 
       </div>
     );

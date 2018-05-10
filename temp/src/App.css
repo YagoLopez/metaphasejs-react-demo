@@ -132,6 +132,10 @@ div.ui-panel {
   margin-bottom: 40px !important;
 }
 
+.marginBottom {
+  margin-bottom: 100px !important;
+}
+
 .btn-menu {
   background-color: grey;
   border-color: grey;

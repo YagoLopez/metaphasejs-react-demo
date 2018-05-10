@@ -10,12 +10,6 @@ import {User} from "./models/user";
 
 export class DialogUser extends DialogBase {
 
-  // onIsAdminChange(value: any) {
-  //   const {selectedModel} = this.state;
-  //   selectedModel.admin = value;
-  //   this.setState({selectedModel: selectedModel});
-  // }
-
   onIsAdminChange(value: any) {
     const selectedModel = {...this.state.selectedModel};
     selectedModel.admin = value;
@@ -62,7 +56,7 @@ export class DialogUser extends DialogBase {
             </div>
             <div className="dialog-label">
               <Dropdown value={selectedModel ? selectedModel.admin : ''}
-                        id="admin" dataKey="admin" options={isAdminOptions}
+                        id="admin" options={isAdminOptions}
                         onChange={(e: {originalEvent: Event, value: any}) => this.onIsAdminChange(e.value)}
                         className="dropdown" placeholder="Is Admin?"/>
             </div>
