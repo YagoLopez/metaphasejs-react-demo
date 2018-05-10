@@ -289,6 +289,9 @@ export default class App extends React.Component {
     const defaultUser = new User({name: '', age: 0, admin: 0});
     const defaultPost = new Post({title: '', content: ''});
     const defaultComment = new Comment({author: '', date: ''});
+    const getIsAdminValue = (model: Model): string => {
+      return model.admin ? 'True' : 'False';
+    };
 
     const footerUsersTable = (
       <div className="ui-helper-clearfix full-width">
@@ -386,7 +389,7 @@ export default class App extends React.Component {
               <Column field="id" header="Id"/>
               <Column field="name" header="Name"/>
               <Column field="age" header="Age"/>
-              <Column field="admin" header="Admin"/>
+              <Column field="admin" header="Admin" body={(model: Model) => getIsAdminValue(model)}/>
               <Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>
               <Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>
           </DataTable>
