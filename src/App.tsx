@@ -1,10 +1,10 @@
-//todo: sigue dando error al pulsar boton edit. (no pasa cuando solo tabla users)
-//probablemente tenga que ver con inicializacion de "selectedModel"
+//todo: quitar funcionalidad en json viewer y limpiar coidigo (usar nueva branch)
+//todo: hacer smoke tests
 //todo: feature filtro en el listado de tabla
 //todo: diagram view (static)
-//todo: al hacer onclick en tableHeader, deberia cambiar el valor de this.state.tableSelected
 //todo: poner en cv desarrollo de software con metodologia de tarjetas (kanban?) y Cursos Deep Learning
 //todo: validacion de propiedades de modelo al salvar
+//todo: validacion de campo "comment.date"
 import * as React from 'react';
 import './App.css';
 import {Collection} from "./orm/collection";
