@@ -63,7 +63,7 @@ export class DialogComment extends DialogBase {
           </div>
           <div className="ui-grid-row">
             <div className="ui-grid-col-4 dialog-label">
-              <label htmlFor="date">Date (mm/dd/yy)</label>
+              <label htmlFor="date">Date [mm/dd/yy]</label>
             </div>
             <div className="ui-grid-col-8 dialog-label">
               <Calendar value={selectedModel ? new Date(selectedModel.date) : ''} id="date"

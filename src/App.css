@@ -14,6 +14,9 @@
   .code-view-container {
     width: 100%;
   }
+  .ui-button {
+    padding: 7px !important;
+  }
 }
 
 .ui-datatable {
@@ -102,7 +105,7 @@ div.ui-toolbar {
 
 .code-view-container {
   display: block;
-  margin: 30px auto auto;
+  margin: 20px auto auto;
   width: 90%;
   height: 90%;
 }
@@ -178,4 +181,20 @@ div.ui-panel {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.subtitle {
+  padding-top: 10px;
+  font-size: 12px;
+  color: burlywood;
+  font-face: verdana;
+}
+
+.title-border {
+  height: 30px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.ui-calendar-button {
+  padding: 0 !important;
 }

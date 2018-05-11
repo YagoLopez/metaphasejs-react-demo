@@ -1,9 +1,10 @@
-//todo: quitar funcionalidad en json viewer y limpiar coidigo (usar nueva branch)
+//todo: hacer los botones mas grandes
+//todo: generar cod. ocr y ponerlo en readme.md
 //todo: hacer smoke tests
 //todo: feature filtro en el listado de tabla
 //todo: diagram view (static)
 //todo: poner en cv desarrollo de software con metodologia de tarjetas (kanban?) y Cursos Deep Learning
-//todo: validacion de propiedades de modelo al salvar
+//todo: validacion de propiedades de modelo al salvar (poner solo tipos de datos admitidos)
 //todo: validacion de campo "comment.date"
 //todo: probar en iexplorer
 //todo: html editor en campo "post.content"
@@ -68,8 +69,8 @@ import 'font-awesome/css/font-awesome.css';
 
 // Comments -----------------------------------------------------------------
   const comments = new Collection(Comment);
-  const comment1 = new Comment({author: 'author1', date: '05/16/2018'});
-  const comment2 = new Comment({author: 'author2', date: '06/16/2018'});
+  const comment1 = new Comment({author: 'author1', date: '5/16/2018'});
+  const comment2 = new Comment({author: 'author2', date: '6/16/2018'});
   comment1.belongsTo(post1);
   comment2.belongsTo(post1);
   comment1.save();
@@ -247,7 +248,7 @@ export default class App extends React.Component {
   }
 
   getUrlApp(): string {
-    return this.state.logger ? "/?logger=true" : "/";
+    return this.state.logger ? "./?logger=true" : "./";
   }
 
 
@@ -255,6 +256,7 @@ export default class App extends React.Component {
   render() {
 
     const {jsonContent, children, users, posts, comments, selectedModel} = this.state;
+    const {displayLeftMenu, displayDialogFullScreen} = this.state;
     const defaultUser = new User({name: '', age: 0, admin: 0});
     const defaultPost = new Post({title: '', content: ''});
     const defaultComment = new Comment({author: '', date: new Date()});
@@ -302,21 +304,22 @@ export default class App extends React.Component {
           </div>
         </Toolbar>
 
-        <Sidebar visible={this.state.displayLeftMenu} baseZIndex={1000000}
+        <Sidebar visible={displayLeftMenu} baseZIndex={1000000}
           onHide={() => this.setState({displayLeftMenu: false})}>
             <h1>MetaphaseJS</h1>
-            <a href="#" className="left-menu-item"
-              onClick={_ => this.showCode()}>
-                <i className="fa fa-bars"></i><span>Show Code</span>
+            <a href="#" className="left-menu-item" onClick={_ => this.showCode()}>
+                <i className="fa fa-file-code-o"></i><span>Show Code</span>
             </a>
-            <a href={this.getUrlApp()} className="left-menu-item"
-               onClick={_ => this.switchLogger()}>
-              <i className="fa fa-bars"></i><span>Switch Logger</span>
+            <a href={this.getUrlApp()} className="left-menu-item" onClick={_ => this.switchLogger()}>
+              <i className="fa fa-refresh"></i><span>Switch Logger</span>
             </a>
         </Sidebar>
 
-        <Sidebar fullScreen={true} visible={this.state.displayDialogFullScreen}
-          onHide={() => this.hideCode()}>
+        <Sidebar fullScreen={true} visible={displayDialogFullScreen} onHide={() => this.hideCode()}>
+          <h2 className="centered title-border">✅ Code View</h2>
+          <div className="centered subtitle">
+            Source Code for definition of models, relations and operations
+          </div>
             <ScrollPanel className="custom code-view-container">
               <CodeHighlight
                 language="javascript" tab={2}
