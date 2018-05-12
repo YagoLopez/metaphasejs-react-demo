@@ -34,7 +34,7 @@ export class DialogUser extends DialogBase {
               <label htmlFor="name">Name</label>
             </div>
             <div className="ui-grid-col-8 dialog-label">
-              <InputText id="name"
+              <InputText id="name" autocapitalize="off" autocomplete="off" spellcheck="false" autocorrect="off"
                          onChange={(e: any) => {this.updateProperty('name', e.target.value)}}
                          value={selectedModel ? selectedModel.name : ''}/>
             </div>
