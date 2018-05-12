@@ -1,5 +1,5 @@
-//todo: hacer los botones mas grandes
-//todo: generar cod. ocr y ponerlo en readme.md
+//todo: load database file asynchronously
+//todo: html editor en campo "post.content"
 //todo: hacer smoke tests
 //todo: feature filtro en el listado de tabla
 //todo: diagram view (static)
@@ -7,7 +7,6 @@
 //todo: validacion de propiedades de modelo al salvar (poner solo tipos de datos admitidos)
 //todo: validacion de campo "comment.date"
 //todo: probar en iexplorer
-//todo: html editor en campo "post.content"
 import * as React from 'react';
 import './App.css';
 import {Collection} from "./orm/collection";
@@ -334,7 +333,7 @@ export default class App extends React.Component {
 
         <p><button onClick={(e: any) => this.saveDbToDisk(e)}>Save database file</button></p>
 
-        <Panel header="✅ Tree View" toggleable={true}>
+        <Panel header="✅ Json View" toggleable={true}>
           <ScrollPanel className="custom json-view-container">
             <ReactJson
               ref={(el: React.Component) => this.reactJsonCmp = el}
