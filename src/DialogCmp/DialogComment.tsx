@@ -6,10 +6,15 @@ import {Dropdown} from "primereact/components/dropdown/Dropdown";
 import {Button} from "primereact/components/button/Button";
 import {Calendar} from 'primereact/components/calendar/Calendar';
 import {query} from "../orm/query.builder";
+import {setReadOnlyAttr} from "../utils";
 
 export class DialogComment extends DialogBase {
 
   postIds: {label: string, value: number}[];
+
+  componentDidMount() {
+    setReadOnlyAttr('post_id');
+  }
 
   componentWillUpdate() {
     let modelIds: {id: number}[] = query.select('id').from('posts').run();
@@ -48,7 +53,7 @@ export class DialogComment extends DialogBase {
     );
 
     return (
-      <Dialog visible={displayDialog} header="Edit Row" modal={true}
+      <Dialog visible={displayDialog} header="Edit Row" modal={true} responsive={false}
               footer={footerDialog} onHide={() => this.setState({displayDialog: false})}>
         <div className="ui-grid ui-grid-responsive ui-fluid">
           <div className="ui-grid-row">

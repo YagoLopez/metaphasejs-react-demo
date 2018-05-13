@@ -5,6 +5,8 @@ import {InputText} from "primereact/components/inputtext/InputText";
 import {Dropdown} from "primereact/components/dropdown/Dropdown";
 import {Button} from "primereact/components/button/Button";
 import {User} from "../models/user";
+import {setReadOnlyAttr} from "../utils";
+
 
 
 export class DialogUser extends DialogBase {
@@ -13,6 +15,10 @@ export class DialogUser extends DialogBase {
     const selectedModel = {...this.state.selectedModel};
     selectedModel.admin = value;
     this.setState({selectedModel: selectedModel});
+  }
+
+  componentDidMount() {
+    setReadOnlyAttr('admin');
   }
 
   render() {
@@ -26,7 +32,7 @@ export class DialogUser extends DialogBase {
     );
 
     return (
-      <Dialog visible={displayDialog} header="Edit Row" modal={true}
+      <Dialog visible={displayDialog} header="Edit Row" modal={true} responsive={false}
               footer={footerDialog} onHide={() => this.setState({displayDialog: false})}>
         <div className="ui-grid ui-grid-responsive ui-fluid">
           <div className="ui-grid-row">
@@ -34,7 +40,7 @@ export class DialogUser extends DialogBase {
               <label htmlFor="name">Name</label>
             </div>
             <div className="ui-grid-col-8 dialog-label">
-              <InputText id="name" autocapitalize="off" autocomplete="off" spellcheck="false" autocorrect="off"
+              <InputText id="name" autoComplete="off" autoCapitalize="off" autoCorrect="off" spellCheck={false}
                          onChange={(e: any) => {this.updateProperty('name', e.target.value)}}
                          value={selectedModel ? selectedModel.name : ''}/>
             </div>
