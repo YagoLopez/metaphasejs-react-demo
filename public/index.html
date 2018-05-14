@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <title>MetaPhaseJS React Demo</title>
     <style>
+      body {background: #00c4ff82;}
       /* --- loader --- */
       .loader-circle-container {
         position: absolute;
@@ -19,11 +20,11 @@
       }
       .loader-circle {
         position: absolute;
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
         margin-left: auto;
         margin-right: auto;
-        background-color: deepskyblue;
+        background-color: white;
         border-radius: 100%;
         -webkit-animation: loader-animation 1.0s infinite ease-in-out;
         animation: loader-animation 1.0s infinite ease-in-out;
@@ -39,12 +40,10 @@
       .loader-title {
         margin-top: 70px;
         font-family: sans-serif;
-        font-size: 14px;
-        color: deepskyblue;
-      }
+        font-size: 16px;
+        color: white;      }
       /* --- /loader --- */
     </style>
-  </head>
   <body>
     <noscript>You need to enable JavaScript to run this app</noscript>
     <div id="loader" class="loader-circle-container">

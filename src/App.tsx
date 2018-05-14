@@ -5,6 +5,7 @@
 //todo: hacer smoke tests
 //todo: feature filtro en el listado de tabla
 //todo: probar en iexplorer
+//todo: separar mensajes en logger
 import * as React from 'react';
 import './App.css';
 import {Collection} from "./orm/collection";
@@ -128,7 +129,9 @@ export default class App extends React.Component {
 
   componentDidMount() {
     const loader = document.getElementById('loader') as HTMLDivElement;
+    const body = document.querySelector('body') as HTMLBodyElement;
     loader.style.display = 'none';
+    body.style.background = 'white';
 
     //todo: cargar aqui la base de datos desde un fichero mediante peticion xmlhttp
     // this.carservice.getCarsSmall().then(data => this.setState({cars: data}));
@@ -325,72 +328,72 @@ export default class App extends React.Component {
             <ScrollPanel className="custom code-view-container">
               <CodeHighlight
                 language="javascript" tab={2}
-                classes={{code: 'sample-code', pre: 'pre-margin'}}
-                style={{padding: '20px'}}>
+                classes={{code: 'sample-code', pre: 'pre-margin'}}>
                   { sampleCode }
               </CodeHighlight>
             </ScrollPanel>
         </Sidebar>
 
-        <p><button onClick={(e: any) => this.loadDbFromDisk(e)}>load from file</button></p>
+        <div className="fade-in-long">
+          <p><button onClick={(e: any) => this.loadDbFromDisk(e)}>load from file</button></p>
 
-        <p><button onClick={(e: any) => this.saveDbToDisk(e)}>Save database file</button></p>
+          <p><button onClick={(e: any) => this.saveDbToDisk(e)}>Save database file</button></p>
 
-        <Panel header={JsonViewPanelHeader} toggleable={true}>
-          <ScrollPanel className="custom json-view-container">
-            <ReactJson
-              ref={(el: React.Component) => this.reactJsonCmp = el}
-              src={jsonContent} iconStyle={'square'} name="USERS"
-              enableClipboard={false} displayDataTypes={false}
-              displayObjectSize={false} theme={'shapeshifter:inverted'}
-            />
-          </ScrollPanel>
-        </Panel>
+          <Panel header={JsonViewPanelHeader} toggleable={true}>
+            <ScrollPanel className="custom json-view-container">
+              <ReactJson
+                ref={(el: React.Component) => this.reactJsonCmp = el}
+                src={jsonContent} iconStyle={'square'} name="USERS"
+                enableClipboard={false} displayDataTypes={false}
+                displayObjectSize={false} theme={'shapeshifter:inverted'}
+              />
+            </ScrollPanel>
+          </Panel>
 
-        <Panel header="✅ Table View" toggleable={true}>
+          <Panel header="✅ Table View" toggleable={true}>
 
-          <DataTable value={users} onRowClick={(e: any) => this.onRowClick(e)}
-            header="USERS" footer={footerUsersTable} className="centered">
-              <Column field="id" header="Id"/>
-              <Column field="name" header="Name"/>
-              <Column field="age" header="Age"/>
-              <Column field="admin" header="Admin" body={(model: Model) => mapIsAdminValue(model)}/>
-              <Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>
-              <Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>
-          </DataTable>
+            <DataTable value={users} onRowClick={(e: any) => this.onRowClick(e)}
+              header="USERS" footer={footerUsersTable} className="centered">
+                <Column field="id" header="Id"/>
+                <Column field="name" header="Name"/>
+                <Column field="age" header="Age"/>
+                <Column field="admin" header="Admin" body={(model: Model) => mapIsAdminValue(model)}/>
+                <Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>
+                <Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>
+            </DataTable>
 
-          <DataTable value={posts} onRowClick={(e: any) => this.onRowClick(e)}
-            header="POSTS" footer={footerPostsTable} className="centered">
-              <Column field="id" header="Id"/>
-              <Column field="title" header="Title"/>
-              <Column field="content" header="Content" className="ellipsis"/>
-              <Column field="user_id" header="User Id"/>
-              <Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>
-              <Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>
-          </DataTable>
+            <DataTable value={posts} onRowClick={(e: any) => this.onRowClick(e)}
+              header="POSTS" footer={footerPostsTable} className="centered">
+                <Column field="id" header="Id"/>
+                <Column field="title" header="Title"/>
+                <Column field="content" header="Content" className="ellipsis"/>
+                <Column field="user_id" header="User Id"/>
+                <Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>
+                <Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>
+            </DataTable>
 
-          <DataTable value={comments} onRowClick={(e: any) => this.onRowClick(e)}
-            header="COMMENTS" footer={footerCommentsTable} className="centered">
-              <Column field="id" header="Id"/>
-              <Column field="author" header="Author"/>
-              <Column field="date" header="Date" className="ellipsis"/>
-              <Column field="post_id" header="Post Id"/>
-              <Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>
-              <Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>
-          </DataTable>
+            <DataTable value={comments} onRowClick={(e: any) => this.onRowClick(e)}
+              header="COMMENTS" footer={footerCommentsTable} className="centered">
+                <Column field="id" header="Id"/>
+                <Column field="author" header="Author"/>
+                <Column field="date" header="Date" className="ellipsis"/>
+                <Column field="post_id" header="Post Id"/>
+                <Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>
+                <Column header="Delete" body={(model: Model) => this.btnRemove(model)}/>
+            </DataTable>
 
-        </Panel>
+          </Panel>
 
-        {/*<Panel header="✅ Nested View" toggleable={true}>*/}
-          {/*<JSONViewer json={this.state.users}></JSONViewer>*/}
-        {/*</Panel>*/}
+          {/*<Panel header="✅ Nested View" toggleable={true}>*/}
+            {/*<JSONViewer json={this.state.users}></JSONViewer>*/}
+          {/*</Panel>*/}
+        </div>
 
+          <DialogUser ref={(el: DialogUser) => this.dialogUser = el} {...dialogProps}/>
 
-        <DialogUser ref={(el: DialogUser) => this.dialogUser = el} {...dialogProps}/>
+          <DialogPost ref={(el: DialogPost) => this.dialogPost = el} {...dialogProps}/>
 
-        <DialogPost ref={(el: DialogPost) => this.dialogPost = el} {...dialogProps}/>
-
-        <DialogComment ref={(el: DialogComment) => this.dialogComment = el} {...dialogProps}/>
+          <DialogComment ref={(el: DialogComment) => this.dialogComment = el} {...dialogProps}/>
 
       </div>
     );
