@@ -334,7 +334,7 @@ export default class App extends React.Component {
             </ScrollPanel>
         </Sidebar>
 
-        <div className="fade-in-long">
+        {/*<div className="fade-in-long">*/}
           <p><button onClick={(e: any) => this.loadDbFromDisk(e)}>load from file</button></p>
 
           <p><button onClick={(e: any) => this.saveDbToDisk(e)}>Save database file</button></p>
@@ -387,7 +387,7 @@ export default class App extends React.Component {
           {/*<Panel header="✅ Nested View" toggleable={true}>*/}
             {/*<JSONViewer json={this.state.users}></JSONViewer>*/}
           {/*</Panel>*/}
-        </div>
+        {/*</div>*/}
 
           <DialogUser ref={(el: DialogUser) => this.dialogUser = el} {...dialogProps}/>
 
