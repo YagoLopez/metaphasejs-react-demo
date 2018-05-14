@@ -3,22 +3,54 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="cornflowerblue">
+    <meta name="theme-color" content="deepskyblue">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
     <title>MetaPhaseJS React Demo</title>
+    <style>
+      /* --- loader --- */
+      .loader-circle-container {
+        position: absolute;
+        width: 96%;
+        height: 93%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .loader-circle {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: deepskyblue;
+        border-radius: 100%;
+        -webkit-animation: loader-animation 1.0s infinite ease-in-out;
+        animation: loader-animation 1.0s infinite ease-in-out;
+      }
+      @-webkit-keyframes loader-animation {
+        0% { -webkit-transform: scale(0) }
+        100% { -webkit-transform: scale(1.0); opacity: 0 }
+      }
+      @keyframes loader-animation {
+        0% { -webkit-transform: scale(0); transform: scale(0) }
+        100% { -webkit-transform: scale(1.0); transform: scale(1.0); opacity: 0 }
+      }
+      .loader-title {
+        margin-top: 70px;
+        font-family: sans-serif;
+        font-size: 14px;
+        color: deepskyblue;
+      }
+      /* --- /loader --- */
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app</noscript>
+    <div id="loader" class="loader-circle-container">
+      <div class="loader-circle"></div>
+      <div class="loader-title">MetaphaseJS Demo</div>
+    </div>
     <div id="root"></div>
   </body>
 </html>

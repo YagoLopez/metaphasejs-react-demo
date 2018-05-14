@@ -1,11 +1,9 @@
+//todo: actualizar dependencias
 //todo: load database file asynchronously
+//todo: diagram view (static)
 //todo: html editor en campo "post.content"
 //todo: hacer smoke tests
 //todo: feature filtro en el listado de tabla
-//todo: diagram view (static)
-//todo: poner en cv desarrollo de software con metodologia de tarjetas (kanban?) y Cursos Deep Learning
-//todo: validacion de propiedades de modelo al salvar (poner solo tipos de datos admitidos)
-//todo: validacion de campo "comment.date"
 //todo: probar en iexplorer
 import * as React from 'react';
 import './App.css';
