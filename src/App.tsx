@@ -127,6 +127,9 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
+    const loader = document.getElementById('loader') as HTMLDivElement;
+    loader.style.display = 'none';
+
     //todo: cargar aqui la base de datos desde un fichero mediante peticion xmlhttp
     // this.carservice.getCarsSmall().then(data => this.setState({cars: data}));
   }
@@ -201,6 +204,7 @@ export default class App extends React.Component {
     )
   }
 
+  //todo: borrar
   onRowClick(e: any) {
     // let collection;
     // const {children} = this.state;
@@ -254,7 +258,7 @@ export default class App extends React.Component {
 
     const {jsonContent, children, users, posts, comments, selectedModel} = this.state;
     const {displayLeftMenu, displayDialogFullScreen} = this.state;
-    const defaultUser = new User({name: '', age: 0, admin: 0});
+    const defaultUser = new User({name: '', age: '', admin: 0});
     const defaultPost = new Post({title: '', content: ''});
     const defaultComment = new Comment({author: '', date: new Date()});
 
@@ -284,6 +288,12 @@ export default class App extends React.Component {
       updateState: this.updateState,
       children: children
     };
+    const JsonViewPanelHeader = (
+      <span>✅ Json View <input type="checkbox" checked={children}
+         onChange={_ => this.showChildren()} className="checkbox-children"/>
+      <span className="checkbox-children-label">Show Children</span></span>
+    );
+
 
     return (
 
@@ -292,13 +302,8 @@ export default class App extends React.Component {
         <Toolbar>
           <div className="ui-toolbar-group-left">
             <Button icon="fa-bars" onClick={_ => this.btnLeftMenu()} className="btn-menu"/>
-            <input type="checkbox" checked={children}
-              onChange={_ => this.showChildren()} className="checkbox-children"/>
-            <span className="checkbox-children-label">Show Children</span>
           </div>
-          <div className="ui-toolbar-group-right">
-            <strong className="title">&nbsp; MetaphaseJS &nbsp;</strong>
-          </div>
+          <strong className="title">MetaphaseJS</strong>
         </Toolbar>
 
         <Sidebar visible={displayLeftMenu} baseZIndex={1000000}
@@ -331,7 +336,7 @@ export default class App extends React.Component {
 
         <p><button onClick={(e: any) => this.saveDbToDisk(e)}>Save database file</button></p>
 
-        <Panel header="✅ Json View" toggleable={true}>
+        <Panel header={JsonViewPanelHeader} toggleable={true}>
           <ScrollPanel className="custom json-view-container">
             <ReactJson
               ref={(el: React.Component) => this.reactJsonCmp = el}

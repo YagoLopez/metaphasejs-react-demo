@@ -17,7 +17,15 @@
   .ui-button {
     padding: 10px !important;
   }
+  .ui-toolbar-group-left {
+    padding-top: 1px !important;
+  }
 }
+
+.ui-toolbar-group-left {
+  padding-top: 8px;
+}
+
 
 .ui-datatable {
   padding-top: 5px;
@@ -26,6 +34,10 @@
 
 .ui-dialog .ui-dialog-content {
   overflow: unset !important;
+}
+
+.ui-dialog-footer{
+  border-width: 1px 0 0 0 !important;
 }
 
 .sample-code {
@@ -74,10 +86,11 @@ div.ui-toolbar {
 .title {
   font-size: 16px;
   color: deepskyblue;
-  border-radius: 2px;
   font-variant: petite-caps;
   font-weight: normal;
-  vertical-align: -webkit-baseline-middle;
+  display: block;
+  padding: 10px;
+  margin-left: 40px;
 }
 
 .react-json-view {

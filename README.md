@@ -4,7 +4,7 @@ Demostration of MetaphaseJS framework (**<u>ALPHA VERSION</u>**).
 
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
 
-**MetaphaseJS** is an super-easy, efficient and frameworkless state manager for Javascript. It can be used with React, Angular o Vanilla JS. In this demo React has been used.
+**MetaphaseJS** is a super easy, efficient and agnostic state manager for Javascript. It can be used with React, Angular o Vanilla JS. In this demo ReactJS has been used.
 
 ## Demo
 
@@ -16,7 +16,7 @@ Demostration of MetaphaseJS framework (**<u>ALPHA VERSION</u>**).
 ## Requirements
 
 - Yarn package manager (or npm)
-- Typescript
+- Typescript (for this demo)
 
 ## Installation
 
