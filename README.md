@@ -11,7 +11,7 @@ Demostration of MetaphaseJS framework ( **ALPHA VERSION** ).
 - :computer: [Use this link to access the demo](https://yagolopez.js.org/metaphasejs-react-demo/build/)
 - :iphone: Or scan the QR code to load the demo in a smartphone:
 
-<p align="center">![](qrcode-metaphasejs-demo-small.jpg)</p>
+<p align="center"><img src="qrcode-metaphasejs-demo-small.jpg"/></p>
 
 ## Requirements
 
