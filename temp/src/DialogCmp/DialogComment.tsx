@@ -6,10 +6,15 @@ import {Dropdown} from "primereact/components/dropdown/Dropdown";
 import {Button} from "primereact/components/button/Button";
 import {Calendar} from 'primereact/components/calendar/Calendar';
 import {query} from "../orm/query.builder";
+import {setReadOnlyAttr} from "../utils";
 
 export class DialogComment extends DialogBase {
 
   postIds: {label: string, value: number}[];
+
+  componentDidMount() {
+    setReadOnlyAttr('post_id');
+  }
 
   componentWillUpdate() {
     let modelIds: {id: number}[] = query.select('id').from('posts').run();
@@ -48,7 +53,7 @@ export class DialogComment extends DialogBase {
     );
 
     return (
-      <Dialog visible={displayDialog} header="Edit Row" modal={true}
+      <Dialog visible={displayDialog} header="Edit Row" modal={true} responsive={false}
               footer={footerDialog} onHide={() => this.setState({displayDialog: false})}>
         <div className="ui-grid ui-grid-responsive ui-fluid">
           <div className="ui-grid-row">
@@ -63,10 +68,13 @@ export class DialogComment extends DialogBase {
           </div>
           <div className="ui-grid-row">
             <div className="ui-grid-col-4 dialog-label">
-              <label htmlFor="date">Date (mm/dd/yy)</label>
+              <label htmlFor="date">Date <span className="dialog-small">(mm/dd/yy)</span></label>
             </div>
             <div className="ui-grid-col-8 dialog-label">
               <Calendar value={selectedModel ? new Date(selectedModel.date) : ''} id="date"
+                        readOnlyInput={true}
+                        monthNavigator={true}
+                        showIcon={true}
                         onChange={(e: {originalEvent: Event, value: any}) => this.onDateChange(e.value)}/>
             </div>
           </div>

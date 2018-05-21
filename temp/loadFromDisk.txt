@@ -1,0 +1,80 @@
+// fetch(DB_FILE_NAME)
+//   .then((response: any) => {
+//     debugger
+//     if (response) {
+//       return response.arrayBuffer();
+//     }
+//   }).then((arrayBuffer: any) => {
+// debugger
+//     if (arrayBuffer) {
+//       const uInt8Array = new Uint8Array(arrayBuffer);
+//       const mydb = new sql.Database(uInt8Array);
+//       const results = mydb.exec("select * from users");
+//       console.log('results', results);
+//       return mydb;
+//     } else {
+//       return new sql.Database();
+//     }
+//   })
+//   .catch((error: Error) => {
+//     console.error(error);
+// });
+
+
+// debugger
+// if (DB_FILE_NAME) {
+// debugger
+//   const xhr = new XMLHttpRequest();
+//   xhr.responseType = 'arraybuffer';
+//   xhr.open('GET', DB_FILE_NAME, false);
+//   xhr.onload = function(e) {
+// debugger
+//     const response = this.response;
+//     const uInt8Array = new Uint8Array(this.response);
+//     db = new sql.Database(uInt8Array);
+//     const results = db.exec("select * from users");
+//     console.log('results', results);
+//   };
+//   xhr.send();
+// } else {
+//   db = new sql.Database();
+// }
+
+
+// export function loadFromDisk3(fileNamePath: string) {
+//   debugger
+//   const xhr = new XMLHttpRequest();
+//   xhr.open('GET', fileNamePath, true);
+//   xhr.responseType = 'arraybuffer';
+//   xhr.onload = function(e) {
+//     debugger
+//     const response = this.response;
+//     const uInt8Array = new Uint8Array(this.response);
+//     db = new sql.Database(uInt8Array);
+//     const results = db.exec("select * from users");
+//     console.log('results', results);
+//   };
+//   xhr.send();
+// }
+
+// export function loadFromDisk4(fileNamePath: string) {
+//   return fetch(fileNamePath)
+//     .then((response) => {
+//     // debugger
+//       return response.arrayBuffer();
+//     }).then(function (arrayBuffer: any) {
+//       const uInt8Array = new Uint8Array(arrayBuffer);
+//       db = new sql.Database(uInt8Array);
+//       const results = db.exec("select * from users");
+//       console.log('results', results);
+//     })
+//     .catch((error: Error) => {
+//       console.error(error);
+//     });
+// }
+
+
+//todo: eliminar esta funcion (?). Se usa para obtener resultado de consulta como con "run()" pero usando "modify()"
+// export function rows(queryBuilder: any): any {
+//   queryBuilder.result = db.execQuery(queryBuilder);
+// }

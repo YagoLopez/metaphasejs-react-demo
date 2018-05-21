@@ -1,12 +1,15 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import App from "./App";
-import {Collection} from "./orm/collection";
-import {query} from "./orm/query.builder";
-import {User} from "./models/user";
-import {Post} from "./models/post";
-import {Comment} from "./models/comment";
-import {LOG_FORMAT} from "./orm/yago.logger";
+import {db} from "./orm/database";
+// import {Collection} from "./orm/collection";
+// import {User} from "./models/user";
+// import {Post} from "./models/post";
+// import {Comment} from "./models/comment";
+import {getUrlParameter} from "./orm/yago.logger";
+// import {LOG_FORMAT} from "./orm/yago.logger";
+
+declare const SQL: any;
 
 
 
@@ -20,8 +23,6 @@ import {LOG_FORMAT} from "./orm/yago.logger";
 // users.save(user1);
 // users.save(user2);
 // users.save(user3);
-
-
 
 // Posts -----------------------------------------------------------------
 // const posts = new Collection(Post);
@@ -96,8 +97,105 @@ import {LOG_FORMAT} from "./orm/yago.logger";
 // console.table( users.query().run() );
 // console.table( users.query().where('id', 2).run() );
 
-ReactDOM.render(<App />, document.getElementById('root') as HTMLElement);
 
 
+// Users -----------------------------------------------------------------
+// const users = new Collection(User);
+// const user1 = new User({name: "user1", age: 11, admin: 1});
+// const user2 = new User({name: "user2", age: 22, admin: 1});
+// const user3 = new User({name: "user3", age: 33, admin: 1});
+// users.save(user1);
+// users.save(user2);
+// users.save(user3);
+
+// Posts -----------------------------------------------------------------
+// const posts = new Collection(Post);
+// const post1 = new Post({title: 'title post 1', content: 'content post 1'});
+// const post2 = new Post({title: 'title post 2', content: 'content post 2'});
+// const post3 = new Post({title: 'title post 3', content: 'content post 3'});
+// post1.belongsTo(user1);
+// post2.belongsTo(user1);
+// post3.belongsTo(user2);
+// posts.save(post1);
+// posts.save(post2);
+// posts.save(post3);
+
+// Comments -----------------------------------------------------------------
+// const comments = new Collection(Comment);
+// const comment1 = new Comment({author: 'author1', date: '5/16/2018'});
+// const comment2 = new Comment({author: 'author2', date: '6/16/2018'});
+// comment1.belongsTo(post1);
+// comment2.belongsTo(post1);
+// comment1.save();
+// comment2.save();
+// --------------------------------------------------------------------------
 
 
+/*
+const loadDbFromDisk = (e?: XMLHttpRequestEventTarget): void => {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', 'metaphase.sqlite', true);
+  xhr.responseType = 'arraybuffer';
+  xhr.onload = (e: any) => {
+    const uInt8Array = new Uint8Array(e.target.response);
+    const dbFile = new SQL.Database(uInt8Array);
+    db.setDatabase(dbFile);
+    const users = new Collection(User);
+    const posts = new Collection(Post);
+    const comments = new Collection(Comment);
+    // users.getAll();
+    // const users = query.select().from('users').run();
+    // const posts = query.select().from('posts').run();
+    // const comments = query.select().from('comments').run();
+    const store = {users: users.getAll(), posts: posts.getAll(), comments: comments.getAll()};
+    ReactDOM.render(<App store={store}/>, document.getElementById('root') as HTMLElement);
+  };
+  xhr.send();
+};
+*/
+
+// loadDbFromDisk();
+
+const appElement = document.getElementById('root') as HTMLElement;
+
+function getDbFileName(): string {
+  return getUrlParameter('dbfile');
+};
+
+function loadDbFromFile(): boolean {
+  return getDbFileName().length > 0;
+};
+
+function renderApp() {
+  ReactDOM.render(<App/>, appElement);
+};
+
+
+if (loadDbFromFile()) {
+  fetch(getDbFileName())
+    .then((response: any) => {
+      if (response) {
+        return response.arrayBuffer();
+      }
+    }).then((arrayBuffer: any) => {
+    if (arrayBuffer) {
+      const dbFile = new Uint8Array(arrayBuffer);
+      const dbInstance = new SQL.Database(dbFile);
+      db.setDatabase(dbInstance);
+      try {
+        db.integrityCheck();
+      } catch (exception) {
+        alert(`Database file not found: "${getDbFileName()}"`);
+      }
+      const logFormat = 'background: cornflowerblue; color: white; font-weight: ';
+      console.log(`%c Database loaded from file "${getDbFileName()}" `, logFormat);
+      db.execQuery('PRAGMA foreign_keys=ON;');
+      renderApp();
+    }
+  })
+    .catch((error: Error) => {
+      console.error(error);
+  })
+} else {
+  renderApp();
+}

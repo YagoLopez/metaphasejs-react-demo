@@ -1,15 +1,16 @@
 
 /**
- * Avoids to show virtual keyboard in smartphone when input element is tapped in Dialog component
- * User in Dropdown component, in componentDidMount() lifecylce event.
+ * Avoids to show virtual keyboard in smartphone when input element is tapped in DialogUser component
+ * in Dropdown component, in componentDidMount() lifecylce event.
  * @param {string} dropDownId: id attribute corresponding to the field name
  * @return {HTMLInputElement}
  */
 export const setReadOnlyAttr = (dropDownId: string) => {
-  const inputElement = document.querySelector(`#${dropDownId} > div > input`) as HTMLInputElement;
-  if (inputElement) {
-    inputElement.setAttribute('readOnly', 'true');
-  } else {
+  try {
+    const cssSelector = `#${dropDownId} > div > input`;
+    const inputEl = document.querySelector(cssSelector) as HTMLInputElement;
+    inputEl.setAttribute('readOnly', 'true');
+  } catch (error) {
     console.warn(`dorpDownId ${dropDownId} not found`);
   }
 };

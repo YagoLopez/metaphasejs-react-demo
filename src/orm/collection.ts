@@ -23,7 +23,7 @@ import {DBtype} from "./types";
  * Manages a collection of models (rows in a db table)
  * It follows Data Mapper/Repository pattern
  */
-export class Collection extends Base{
+export class Collection extends Base {
 
   constructor(protected model: any) {
     super();
@@ -34,7 +34,8 @@ export class Collection extends Base{
   }
 
   private createTable(tableName: string, columns: Column[]): void {
-    const createTableQuery = query.schema.raw('PRAGMA foreign_keys=ON').createTable(
+    const createTableQuery = query.schema.raw('PRAGMA foreign_keys=ON')
+      .dropTableIfExists(tableName).createTable(
       tableName, (tableBuilder: TableBuilder) => {
         this.createColumns(columns, tableBuilder)
       });
@@ -142,7 +143,7 @@ export class Collection extends Base{
     });
     const logFormat = 'color: grey; border-color: lightgrey; border-style: solid; border-width: 1px; ' +
       'border-radius: 2px; padding: 2px; background-color: #f0f0f5';
-    console.log(`%c ⚿ Foreign-key column created in table ${relatedModel.prototype.tableName()} `, logFormat);
+    console.log(`%c ⚿ Foreign-key column created in table ${relatedModel.prototype.tableName()}: `, logFormat);
     console.log(newColumnRelation);
     const relatedModelColumns = relatedModel.prototype.constructor.columns;
     relatedModelColumns.push(newColumnRelation);

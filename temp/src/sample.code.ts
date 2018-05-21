@@ -63,8 +63,8 @@ posts.save(post3);
 
 // Comments collection -----------------------------------------------------
 const comments = new Collection(Comment);
-const comment1 = new Comment({author: 'author1', date: 'date1'});
-const comment2 = new Comment({author: 'author2', date: 'date2'});
+const comment1 = new Comment({author: 'author1', date: '5/16/2018'});
+const comment2 = new Comment({author: 'author2', date: '6/16/2018'});
 comment1.belongsTo(post1);
 comment2.belongsTo(post1);
 comment1.save();

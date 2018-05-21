@@ -9,7 +9,8 @@ interface Props {
 interface State {
   selectedModel: any,
   displayDialog?: boolean,
-  updateState?: Function,
+  //todo: borrar
+  // updateState?: Function,
 }
 
 export class DialogBase extends React.Component {
@@ -19,14 +20,14 @@ export class DialogBase extends React.Component {
   props: Props;
 
   constructor(props: Props) {
-    super(props)
+    super(props);
     this.state = {selectedModel: props.selectedModel};
   }
 
   componentWillReceiveProps(props: Props) {
     const dialogBelongsToSelectedModel = (dialogName: string, selectedModelClassName: string): boolean => {
       return dialogName.indexOf(selectedModelClassName) > 0;
-    }
+    };
     const dialogName = this.constructor.name;
     const {selectedModel} = props;
     const selectedModelClassName = selectedModel && selectedModel.constructor.name;
@@ -36,7 +37,6 @@ export class DialogBase extends React.Component {
   }
 
   updateProperty(property: any, value: any) {
-debugger
     let selectedModel = {...this.state.selectedModel};
     selectedModel[property] = value;
     this.setState({selectedModel: selectedModel});
@@ -48,8 +48,8 @@ debugger
 
   onBtnSave() {
     const initialSelectedModel = this.props.selectedModel;
-    if (initialSelectedModel) {
-      let modifiedSelectedModel = this.state.selectedModel;
+    let modifiedSelectedModel = this.state.selectedModel;
+    if (initialSelectedModel && initialSelectedModel !== modifiedSelectedModel) {
       try {
         Object.setPrototypeOf(modifiedSelectedModel, initialSelectedModel);
         modifiedSelectedModel = Model.omitChildrenProps(modifiedSelectedModel);
@@ -60,6 +60,8 @@ debugger
         alert(exception.message);
       }
       this.props.updateState();
+    } else {
+      alert('Invalid user: empty');
     }
   }
 

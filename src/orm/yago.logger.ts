@@ -1,4 +1,5 @@
-// Controls default logger behaviour. User 'false' for log supression in production mode
+// Controls default logger behaviour. Pass a 'false' value
+// for avoiding logging in production mode as default behaviour
 const DEFAULT_LOG_STATE: string = 'false';
 
 /**
@@ -36,7 +37,7 @@ if (urlLogParam === 'false') {
 }
 
 /**
- * Log message formats: foregorund color, background color
+ * Log message formats: foreground color, background color
  * CSS syntax is used to format messages
  * @type {Object}
  */
@@ -47,7 +48,7 @@ export const LOG_FORMAT = {
 };
 
 /**
- * Logs sql query strings and results appling two formats:
+ * Logs sql query strings and query results, appling two formats:
  * Input (query): blue colors
  * Output (result): yellow colors
  * @param {string} msg

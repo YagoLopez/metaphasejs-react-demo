@@ -44,7 +44,7 @@ queryBuilder().__proto__.run = function() {
 
 /**
  * Execute database query using query-builder and return only first row
- * @return {Object} list with query results
+ * @return {Object} query result
  */
 queryBuilder().__proto__.getOne = function() {
   return db.execQuery(this)[0];

@@ -14,7 +14,18 @@
   .code-view-container {
     width: 100%;
   }
+  .ui-button {
+    padding: 10px !important;
+  }
+  .ui-toolbar-group-left {
+    padding-top: 1px !important;
+  }
 }
+
+.ui-toolbar-group-left {
+  padding-top: 8px;
+}
+
 
 .ui-datatable {
   padding-top: 5px;
@@ -23,6 +34,10 @@
 
 .ui-dialog .ui-dialog-content {
   overflow: unset !important;
+}
+
+.ui-dialog-footer{
+  border-width: 1px 0 0 0 !important;
 }
 
 .sample-code {
@@ -51,7 +66,6 @@ h2 {
 
 .custom .ui-scrollpanel-wrapper {
   border-right: 9px solid #f4f4f4;
-  /*background-color: aliceblue;*/
 }
 
 .custom .ui-scrollpanel-bar {
@@ -71,10 +85,11 @@ div.ui-toolbar {
 .title {
   font-size: 16px;
   color: deepskyblue;
-  border-radius: 2px;
   font-variant: petite-caps;
   font-weight: normal;
-  vertical-align: -webkit-baseline-middle;
+  display: block;
+  padding: 10px;
+  margin-left: 40px;
 }
 
 .react-json-view {
@@ -102,9 +117,9 @@ div.ui-toolbar {
 
 .code-view-container {
   display: block;
-  margin: 30px auto auto;
+  margin: 20px auto auto;
   width: 90%;
-  height: 90%;
+  height: 80%;
 }
 
 .json-view-container {
@@ -179,3 +194,28 @@ div.ui-panel {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.subtitle {
+  padding-top: 10px;
+  font-size: 12px;
+  color: burlywood;
+  font-face: verdana;
+}
+
+.title-border {
+  height: 30px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.ui-calendar-button {
+  padding: 0 !important;
+}
+
+.dialog-small {
+  font-size: smaller;
+  color: lightgrey;
+}
+
+.fade-in-long {-webkit-animation: fade 2s ease both; animation: fade 2s ease both}
+@-webkit-keyframes fade {from {opacity: 0 } to { opacity: 1 }}
+@keyframes fade {from {opacity: 0 } to { opacity: 1 }}

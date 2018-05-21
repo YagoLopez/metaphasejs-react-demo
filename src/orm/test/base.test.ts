@@ -3,9 +3,6 @@ import {query} from "../query.builder";
 import {User} from "./models/user";
 import {Post} from "./models/post";
 import {Comment} from "./models/comment";
-import {Model} from "../model";
-import {column} from "../decorators";
-import {DBtype} from "../types";
 
 
 const users = new Collection(User);
@@ -16,7 +13,6 @@ const user2 = new User({name: "user2", age: 22, admin: 1});
 describe('Base Class', () => {
 
   test('tableName()', () => {
-debugger
     expect(user1.tableName()).toBe('users');
     expect(users.tableName()).toBe('users');
   });

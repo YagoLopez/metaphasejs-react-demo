@@ -11,7 +11,7 @@ export class NotSavedModelError extends Error {
       relatedModelName = relatedModel.constructor.name;
     }
     const msg = `(${model.constructor.name}) = ${JSON.stringify(model)}` +
-      ' must be saved to establish a relation with (' + relatedModelName + ')';
+      ` must be saved to establish a relation with (${relatedModelName})`;
     throw new Error(msg);
   }
 }

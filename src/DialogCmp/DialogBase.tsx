@@ -9,7 +9,8 @@ interface Props {
 interface State {
   selectedModel: any,
   displayDialog?: boolean,
-  updateState?: Function,
+  //todo: borrar
+  // updateState?: Function,
 }
 
 export class DialogBase extends React.Component {
@@ -47,8 +48,8 @@ export class DialogBase extends React.Component {
 
   onBtnSave() {
     const initialSelectedModel = this.props.selectedModel;
-    if (initialSelectedModel) {
-      let modifiedSelectedModel = this.state.selectedModel;
+    let modifiedSelectedModel = this.state.selectedModel;
+    if (initialSelectedModel && initialSelectedModel !== modifiedSelectedModel) {
       try {
         Object.setPrototypeOf(modifiedSelectedModel, initialSelectedModel);
         modifiedSelectedModel = Model.omitChildrenProps(modifiedSelectedModel);
@@ -59,6 +60,8 @@ export class DialogBase extends React.Component {
         alert(exception.message);
       }
       this.props.updateState();
+    } else {
+      alert('Invalid user: empty');
     }
   }
 

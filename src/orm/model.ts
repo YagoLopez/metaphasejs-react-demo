@@ -32,7 +32,6 @@ export abstract class Model extends Base {
 
   //todo: parametro para opcion escribir el modelo en la tabla de la bd {save: true}
   public belongsTo(model: Model): Model {
-
     if ( !model.isSaved ) {
       throw new Error('Invalid model instance: ' + model);
     }
