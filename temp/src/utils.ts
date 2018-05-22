@@ -1,3 +1,4 @@
+import {getUrlParameter} from "./orm/yago.logger";
 
 /**
  * Avoids to show virtual keyboard in smartphone when input element is tapped in DialogUser component
@@ -23,4 +24,12 @@ export const removeSplashScreen = () => {
   const body = document.querySelector('body') as HTMLBodyElement;
   body.style.background = 'white';
   body.removeChild(loader);
+};
+
+export const getDbFileName = (): string => {
+  return getUrlParameter('dbfile');
+};
+
+export const isLoadDbFromFile = (): boolean => {
+  return getDbFileName().length > 0;
 };

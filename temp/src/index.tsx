@@ -3,12 +3,8 @@ import * as ReactDOM from 'react-dom';
 import {App} from "./App";
 import {ErrorBoundary} from "./ErrorBoundary";
 import {db, loadDbFromFile} from "./orm/database";
-// import {Collection} from "./orm/collection";
-// import {User} from "./models/user";
-// import {Post} from "./models/post";
-// import {Comment} from "./models/comment";
 import {getUrlParameter} from "./orm/yago.logger";
-// import {LOG_FORMAT} from "./orm/yago.logger";
+import * as utils from './utils';
 
 
 //todo: abrir issue en repo sql.js sobre thread safe
@@ -17,20 +13,12 @@ import {getUrlParameter} from "./orm/yago.logger";
 
 const appElement = document.getElementById('root') as HTMLElement;
 
-function getDbFileName(): string {
-  return getUrlParameter('dbfile');
-};
-
-function isLoadDbFromFile(): boolean {
-  return getDbFileName().length > 0;
-};
-
 function renderApp() {
   ReactDOM.render(<ErrorBoundary><App/></ErrorBoundary>, appElement);
 };
 
-if (isLoadDbFromFile()) {
-  loadDbFromFile(getDbFileName(), renderApp);
+if (utils.isLoadDbFromFile()) {
+  loadDbFromFile(utils.getDbFileName(), renderApp);
 } else {
   renderApp();
 }

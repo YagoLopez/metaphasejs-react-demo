@@ -1,5 +1,5 @@
 //todo: actualizar dependencias
-//todo: entrada en menu lateral izquierdo para cargar dbfile
+//todo: query string parameters deberian funcional bien simulataneamente
 //todo: probar a pasar el estado como props de tipo array. Ejm: store = {users: users.getAll(), posts: posts.getAll()}
 //todo: settimeout() al mostrar el dialogo modal con el codigo para que el comportamiento del ui sea más suave
 //todo: option for saving binary dbfile to localstorage
@@ -49,7 +49,7 @@ import {DialogComment} from "./DialogCmp/DialogComment";
 import 'primereact/resources/primereact.min.css';
 import 'primereact/resources/themes/omega/theme.css';
 import 'font-awesome/css/font-awesome.css';
-import {removeSplashScreen} from "./utils";
+import * as utils from "./utils";
 
 declare const SQL: any;
 
@@ -66,6 +66,7 @@ export class App extends React.Component {
     displayLeftMenu: boolean,
     displayDialogFullScreen: boolean,
     logger: boolean,
+    loadDbFromFile: boolean,
   };
 
   constructor(props: any) {
@@ -75,8 +76,9 @@ export class App extends React.Component {
       selectedModel: undefined,
       displayLeftMenu: false,
       displayDialogFullScreen: false,
-      logger: false
-    }
+      logger: false,
+      loadDbFromFile: utils.isLoadDbFromFile(),
+    };
     this.updateState = this.updateState.bind(this);
   }
 
@@ -97,8 +99,7 @@ export class App extends React.Component {
   }
 
   componentDidMount() {
-    removeSplashScreen();
-    // debugger
+    utils.removeSplashScreen();
     // const users = new Collection(User);
     // try {
     //   const response = await fetch('metaphase.sqlite');
@@ -122,6 +123,7 @@ export class App extends React.Component {
     console.log('component will update');
   }
 
+  //todo: borrar
   // updateState() {
   //   const {children} = this.state;
   //   this.setState({
@@ -209,8 +211,18 @@ export class App extends React.Component {
   }
 
   getUrlAppLoadDbFromDisk(): string {
-    return location.href + '?dbfile=metaphase.sqlite';
+    return this.state.loadDbFromFile ? `${location.href}?dbfile=metaphase.sqlite` : './';
   }
+
+  switchDb() {
+    const {loadDbFromFile} = this.state;
+    this.setState({loadDbFromFile: !loadDbFromFile});
+    if (loadDbFromFile) {
+      alert('Load database application state dynamically created by code...')
+    } else {
+      alert('Load database application state from disk file...');
+    }
+   }
 
   render() {
 
@@ -275,11 +287,11 @@ export class App extends React.Component {
           <a href={this.getUrlAppWithLogger()} className="left-menu-item" onClick={_ => this.switchLogger()}>
             <i className="fa fa-refresh"></i><span>Switch Logger</span>
           </a>
-          <a href={this.getUrlAppLoadDbFromDisk()} className="left-menu-item">
-            <i className="fa fa-refresh"></i><span>Load DB From Disk</span>
+          <a href={this.getUrlAppLoadDbFromDisk()} className="left-menu-item" onClick={_ => this.switchDb()}>
+            <i className="fa fa-refresh"></i><span>Switch data origin</span>
           </a>
-          <a href="./" className="left-menu-item">
-            <i className="fa fa-refresh"></i><span>Load DB From Code</span>
+          <a href="#" className="left-menu-item"  onClick={(e: any) => this.saveDbToDisk(e)}>
+            <i className="fa fa-refresh"></i><span>Save state to file</span>
           </a>
         </Sidebar>
 
