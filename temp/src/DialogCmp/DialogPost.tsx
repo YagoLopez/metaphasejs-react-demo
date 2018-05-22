@@ -38,7 +38,7 @@ export class DialogPost extends DialogBase {
     );
 
     return (
-      <Dialog visible={displayDialog} header="Edit Row" modal={true} responsive={false}
+      <Dialog visible={displayDialog} header="Edit Post" modal={true} responsive={false}
               footer={footerDialog} onHide={() => this.setState({displayDialog: false})}>
         <div className="ui-grid ui-grid-responsive ui-fluid">
           <div className="ui-grid-row">

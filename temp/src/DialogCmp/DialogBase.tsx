@@ -9,8 +9,6 @@ interface Props {
 interface State {
   selectedModel: any,
   displayDialog?: boolean,
-  //todo: borrar
-  // updateState?: Function,
 }
 
 export class DialogBase extends React.Component {

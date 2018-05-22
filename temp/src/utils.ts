@@ -14,3 +14,13 @@ export const setReadOnlyAttr = (dropDownId: string) => {
     console.warn(`dorpDownId ${dropDownId} not found`);
   }
 };
+
+/**
+ * Remove splash screen when the loading is finished
+ */
+export const removeSplashScreen = () => {
+  const loader = document.getElementById('loader') as HTMLDivElement;
+  const body = document.querySelector('body') as HTMLBodyElement;
+  body.style.background = 'white';
+  body.removeChild(loader);
+};

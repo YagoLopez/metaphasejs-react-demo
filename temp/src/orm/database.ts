@@ -3,7 +3,7 @@ import {QueryBuilder} from 'knex';
 import {logQuery} from './yago.logger';
 const FileSaver = require('file-saver');
 
-
+declare const SQL: any;
 
 //todo: falta completar definicion de tipos para clase Statement y documentar cada metodo
 /** **************************************************************************************************************
@@ -106,18 +106,7 @@ db.__proto__.runQuery = (query: QueryBuilder | string): any => {
 
 db.__proto__.execQuery = (query: QueryBuilder | string): Object[] => {
   logQuery(query.toString(), 'query');
-  // let result: Object[] = [];
-  // try {
-  //   result = db.getResults( db.prepare(query.toString()) );
-  // } catch (exception) {
-  //   console.error(exception);
-  // } finally {
-  //   return result;
-  // }
-  //todo: conntrolar este error usando react boundaries https://reactjs.org/docs/error-boundaries.html
-  //todo: comprobar si db existe en vez de usar try catch
   return db.getResults( db.prepare(query.toString()) );
-
 };
 
 db.__proto__.getResults = (statement: any): Object[] => {
@@ -149,7 +138,35 @@ db.__proto__.getSchema = () => {
   return db.execQuery('SELECT "name", "sql" FROM "sqlite_master" WHERE type="table"');
 };
 
-export const saveToDisk = (fileNamePath: string) => {
+export const loadDbFromFile = (fileNamePath: string, actionFn: Function): void => {
+  fetch(fileNamePath)
+    .then((response: any) => {
+      if (response) {
+        return response.arrayBuffer();
+      }
+    }).then((arrayBuffer: any) => {
+    if (arrayBuffer) {
+      const dbFile = new Uint8Array(arrayBuffer);
+      const dbInstance = new SQL.Database(dbFile);
+      db.setDatabase(dbInstance);
+      try {
+        db.integrityCheck();
+      } catch (exception) {
+        alert(`Database file not found: "${fileNamePath}"`);
+      }
+      console.clear();
+      const logFormat = 'background: cornflowerblue; color: white; font-weight: ';
+      console.log(`%c Database loaded from file "${fileNamePath}" `, logFormat);
+      db.execQuery('PRAGMA foreign_keys=ON;');
+      actionFn();
+    }
+  })
+  .catch((error: Error) => {
+    console.error(error);
+  })
+};
+
+export const saveDbToFile = (fileNamePath: string) => {
   try {
     const isFileSaverSupported = !!new Blob;
   } catch (exception) {

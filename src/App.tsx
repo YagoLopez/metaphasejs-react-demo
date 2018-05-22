@@ -1,4 +1,6 @@
 //todo: actualizar dependencias
+//todo: entrada en menu lateral izquierdo para cargar dbfile
+//todo: probar a pasar el estado como props de tipo array. Ejm: store = {users: users.getAll(), posts: posts.getAll()}
 //todo: settimeout() al mostrar el dialogo modal con el codigo para que el comportamiento del ui sea más suave
 //todo: option for saving binary dbfile to localstorage
 //todo: separador de mensajes de logger
@@ -9,11 +11,14 @@
 //todo: probar en iexplorer
 //todo: estudiar la posibilidad de SSR para reducir el tamaño de bundle
 //todo: documentar api con typedoc
+//todo: evento onChange() en span show children para que sea facil hacer tap en checkbox
+//todo: poder ejecutar consulta sql que conste de varias sentencias en varias lineas
+//todo: remove completely react-json-viewer library
+//todo: poner nombre de modelo en dialogos de tablas
 
 import * as React from 'react';
-import './App.css';
 import {users, posts, comments} from "./store";
-import {saveToDisk} from "./orm/database";
+import {saveDbToFile} from "./orm/database";
 import {getUrlParameter} from "./orm/yago.logger";
 import {Model} from "./orm/model";
 import {User} from "./models/user";
@@ -25,6 +30,7 @@ import ReactJson from 'react-json-view';
 import CodeHighlight from 'code-highlight';
 import "code-highlight/lib/style.css";
 import "highlight.js/styles/atelier-forest-light.css";
+import './App.css';
 
 import {Sidebar} from "primereact/components/sidebar/Sidebar";
 import {Toolbar} from 'primereact/components/toolbar/Toolbar';
@@ -43,29 +49,24 @@ import {DialogComment} from "./DialogCmp/DialogComment";
 import 'primereact/resources/primereact.min.css';
 import 'primereact/resources/themes/omega/theme.css';
 import 'font-awesome/css/font-awesome.css';
+import {removeSplashScreen} from "./utils";
 
-declare var SQL: any;
+declare const SQL: any;
 
 
 
 
-export default class App extends React.Component {
+export class App extends React.Component {
 
   SHOW_CHILDREN = true;
 
-  //todo: arreglar tipo de state
-  // state: {
-  //   children: boolean,
-  //   jsonContent: any,
-  //   users: any,
-  //   posts: any,
-  //   comments: any,
-  //   selectedModel: any,
-  //   displayLeftMenu: boolean,
-  //   displayDialogFullScreen: boolean,
-  //   logger: boolean
-  // };
-  state: any;
+  state: {
+    children: boolean,
+    selectedModel: any,
+    displayLeftMenu: boolean,
+    displayDialogFullScreen: boolean,
+    logger: boolean,
+  };
 
   constructor(props: any) {
     super(props);
@@ -96,11 +97,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    const loader = document.getElementById('loader') as HTMLDivElement;
-    const body = document.querySelector('body') as HTMLBodyElement;
-    body.style.background = 'white';
-    body.removeChild(loader);
-
+    removeSplashScreen();
     // debugger
     // const users = new Collection(User);
     // try {
@@ -114,7 +111,6 @@ export default class App extends React.Component {
     // } catch (error) {
     //   console.error(error);
     // }
-
   }
 
   componentWillReceiveProps(props: any) {
@@ -151,11 +147,8 @@ export default class App extends React.Component {
     });
   }
 
-  loadDbFromDisk(e: any) {
-  }
-
   saveDbToDisk(e: any) {
-    saveToDisk('metaphase.sqlite');
+    saveDbToFile('metaphase.sqlite');
   }
 
   add(model: Model, dialog: DialogBase) {
@@ -211,10 +204,13 @@ export default class App extends React.Component {
     }
   }
 
-  getUrlApp(): string {
+  getUrlAppWithLogger(): string {
     return this.state.logger ? "./?logger=true" : "./";
   }
 
+  getUrlAppLoadDbFromDisk(): string {
+    return location.href + '?dbfile=metaphase.sqlite';
+  }
 
   render() {
 
@@ -253,7 +249,7 @@ export default class App extends React.Component {
       children: children
     };
     const JsonViewPanelHeader = (
-      <span>✅ Json View <input type="checkbox" checked={children}
+      <span>✅ Json State View<input type="checkbox" checked={children}
                                onChange={_ => this.showChildren()} className="checkbox-children"/>
       <span className="checkbox-children-label">Show Children</span></span>
     );
@@ -276,15 +272,21 @@ export default class App extends React.Component {
           <a href="#" className="left-menu-item" onClick={_ => this.showCode()}>
             <i className="fa fa-file-code-o"></i><span>Show Code</span>
           </a>
-          <a href={this.getUrlApp()} className="left-menu-item" onClick={_ => this.switchLogger()}>
+          <a href={this.getUrlAppWithLogger()} className="left-menu-item" onClick={_ => this.switchLogger()}>
             <i className="fa fa-refresh"></i><span>Switch Logger</span>
+          </a>
+          <a href={this.getUrlAppLoadDbFromDisk()} className="left-menu-item">
+            <i className="fa fa-refresh"></i><span>Load DB From Disk</span>
+          </a>
+          <a href="./" className="left-menu-item">
+            <i className="fa fa-refresh"></i><span>Load DB From Code</span>
           </a>
         </Sidebar>
 
         <Sidebar fullScreen={true} visible={displayDialogFullScreen} onHide={() => this.hideCode()}>
           <h2 className="centered title-border">✅ Code View</h2>
           <div className="centered subtitle">
-            Source Code for definition of models, relations and operations
+            Source code for store creation, model definitions and relations
           </div>
           <ScrollPanel className="custom code-view-container">
             <CodeHighlight
@@ -297,7 +299,6 @@ export default class App extends React.Component {
 
 
         <div className="fade-in-long">
-          {/*<p><button onClick={(e: any) => this.loadDbFromDisk(e)}>load from file</button></p>*/}
 
           <p><button onClick={(e: any) => this.saveDbToDisk(e)}>Save database file</button></p>
 
@@ -310,7 +311,7 @@ export default class App extends React.Component {
             </ScrollPanel>
           </Panel>
 
-          <Panel header="✅ Table View" toggleable={true}>
+          <Panel header="✅ Table State View" toggleable={true}>
 
             <DataTable value={users.getAll()}
                        header="USERS" footer={footerTableUsers} className="centered">

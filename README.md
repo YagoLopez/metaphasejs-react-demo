@@ -39,6 +39,10 @@ Demostration of MetaphaseJS framework ( **ALPHA VERSION** ).
 
 TODO: generate API documentation with TypeDoc
 
+## Features
+
+- Simplicity: no callbacks, no asynchronous code, no functional nor inmutable complications 
+
 ## Motivation
 
 - Other client state managers like Redux are verbose and complicated (mutability is easier and simpler than inmutability)
