@@ -4,6 +4,7 @@ import {DialogBase} from "./DialogBase";
 import {InputText} from "primereact/components/inputtext/InputText";
 import {Dropdown} from "primereact/components/dropdown/Dropdown";
 import {Button} from "primereact/components/button/Button";
+import {Editor} from "primereact/components/editor/Editor";
 import {query} from "../orm/query.builder";
 import {setReadOnlyAttr} from "../utils";
 
@@ -28,14 +29,38 @@ export class DialogPost extends DialogBase {
     this.setState({selectedModel: selectedModel});
   }
 
+  prueba(): string {
+    debugger
+    console.error('selectedModel', this.state.selectedModel);
+    // return this.state.selectedModel && this.state.selectedModel.content;
+    let p = 'vacio';
+    setTimeout(() =>{
+      // console.error('returning prueba', this.state.selectedModel.content);
+      p = 'lleno';
+      console.error('returning prueba', p);
+      // return this.state.selectedModel.content;
+      return p;
+    }, 3000);
+    // return this.state.selectedModel && this.state.selectedModel.content;
+    return p;
+  }
+
+
   render() {
     const {selectedModel, displayDialog} = this.state;
+    let postContent = selectedModel && selectedModel.content;
     const footerDialog = (
       <div className="ui-dialog-buttonpane ui-helper-clearfix">
         <Button icon="fa-close" label="Cancel" onClick={_ => this.onBtnCancel()}/>
         <Button label="Save" icon="fa-check" onClick={_ => this.onBtnSave()}/>
      </div>
     );
+    var editorHeader =
+      <span className="ql-formats">
+        <button className="ql-bold" aria-label="Bold"></button>
+        <button className="ql-italic" aria-label="Italic"></button>
+        <button className="ql-underline" aria-label="Underline"></button>
+    </span>;
 
     return (
       <Dialog visible={displayDialog} header="Edit Post" modal={true} responsive={false}
@@ -59,6 +84,13 @@ export class DialogPost extends DialogBase {
               <InputText id="content"
                          onChange={(e: any) => {this.updateProperty('content', e.target.value)}}
                          value={selectedModel ? selectedModel.content : ''}/>
+              <Editor id="content"
+                      placeholder={selectedModel ? selectedModel.content : ''}
+                      className="html-editor"
+                      headerTemplate={editorHeader}
+                      onTextChange={(e: any) => {this.updateProperty('content', e.htmlValue)}}
+                      value={selectedModel ? selectedModel.content : ''}/>
+              {/*<div>content: {selectedModel && selectedModel.content}</div>*/}
             </div>
           </div>
           <div className="ui-grid-row">

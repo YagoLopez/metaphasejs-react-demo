@@ -1,19 +1,19 @@
-//todo: evento onChange() en span show children para que sea facil hacer tap en checkbox
+
+//todo: html editor en campo "post.content"
+//todo: add code sample to readme
 //todo: actualizar dependencias
-//todo: query string parameters deberian funcional bien simulataneamente
 //todo: probar a pasar el estado como props de tipo array. Ejm: store = {users: users.getAll(), posts: posts.getAll()}
 //todo: settimeout() al mostrar el dialogo modal con el codigo para que el comportamiento del ui sea más suave
 //todo: option for saving binary dbfile to localstorage
 //todo: separador de mensajes de logger
 //todo: diagram view (static)
-//todo: html editor en campo "post.content"
 //todo: hacer smoke tests
-//todo: feature, filtro en el listado de tabla
 //todo: probar en iexplorer
 //todo: estudiar la posibilidad de SSR para reducir el tamaño de bundle
 //todo: documentar api con typedoc
 //todo: poder ejecutar consulta sql que conste de varias sentencias en varias lineas
 //todo: remove completely react-json-viewer library
+//todo: feature, filtro en el listado de tabla
 
 import * as React from 'react';
 import {users, posts, comments} from "./store";
@@ -270,7 +270,7 @@ export class App extends React.Component {
     const JsonViewPanelHeader = (
       <span>✅ Json State View<input type="checkbox" checked={children}
                                onChange={_ => this.showChildren()} className="checkbox-children"/>
-      <span className="checkbox-children-label">Show Children</span></span>
+      <span className="checkbox-children-label" onClick={_ => this.showChildren()}>Show Children</span></span>
     );
 
 
@@ -298,7 +298,7 @@ export class App extends React.Component {
             <i className="fa fa-refresh"></i><span>Switch data origin</span>
           </a>
           <a href="#" className="left-menu-item"  onClick={(e: any) => this.saveDbToDisk(e)}>
-            <i className="fa fa-refresh"></i><span>Save state to file</span>
+            <i className="fa fa-database"></i><span>Save state to file</span>
           </a>
         </Sidebar>
 
@@ -318,8 +318,6 @@ export class App extends React.Component {
 
 
         <div className="fade-in-long">
-
-          <p><button onClick={(e: any) => this.saveDbToDisk(e)}>Save database file</button></p>
 
           <Panel header={JsonViewPanelHeader} toggleable={true}>
             <ScrollPanel className="custom json-view-container">
@@ -363,7 +361,6 @@ export class App extends React.Component {
             </DataTable>
 
           </Panel>
-
 
           {/*<Panel header="✅ Nested View" toggleable={true}>*/}
           {/*<JSONViewer json={this.state.users}></JSONViewer>*/}

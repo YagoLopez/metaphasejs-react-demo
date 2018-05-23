@@ -1,19 +1,19 @@
-//todo: evento onChange() en span show children para que sea facil hacer tap en checkbox
+
+//todo: html editor en campo "post.content"
+//todo: add code sample to readme
 //todo: actualizar dependencias
-//todo: query string parameters deberian funcional bien simulataneamente
 //todo: probar a pasar el estado como props de tipo array. Ejm: store = {users: users.getAll(), posts: posts.getAll()}
 //todo: settimeout() al mostrar el dialogo modal con el codigo para que el comportamiento del ui sea más suave
 //todo: option for saving binary dbfile to localstorage
 //todo: separador de mensajes de logger
 //todo: diagram view (static)
-//todo: html editor en campo "post.content"
 //todo: hacer smoke tests
-//todo: feature, filtro en el listado de tabla
 //todo: probar en iexplorer
 //todo: estudiar la posibilidad de SSR para reducir el tamaño de bundle
 //todo: documentar api con typedoc
 //todo: poder ejecutar consulta sql que conste de varias sentencias en varias lineas
 //todo: remove completely react-json-viewer library
+//todo: feature, filtro en el listado de tabla
 
 import * as React from 'react';
 import {users, posts, comments} from "./store";
@@ -274,6 +274,7 @@ export class App extends React.Component {
     );
 
 
+
     return (
 
       <div className="main-content">
@@ -288,7 +289,7 @@ export class App extends React.Component {
         <Sidebar visible={displayLeftMenu} baseZIndex={1000000}
                  onHide={() => this.setState({displayLeftMenu: false})}>
           <h1>MetaphaseJS</h1>
-          <a href="#" className="left-menu-item" onClick={_ => this.showCode()}>
+          <a href="javascript:void(0)" className="left-menu-item" onClick={_ => this.showCode()}>
             <i className="fa fa-file-code-o"></i><span>Show Code</span>
           </a>
           <a href={this.getUrlAppWithLogger()} className="left-menu-item" onClick={_ => this.switchLogger()}>
@@ -297,7 +298,7 @@ export class App extends React.Component {
           <a href={this.getUrlAppLoadDbFromDisk()} className="left-menu-item" onClick={_ => this.switchDb()}>
             <i className="fa fa-refresh"></i><span>Switch data origin</span>
           </a>
-          <a href="#" className="left-menu-item"  onClick={(e: any) => this.saveDbToDisk(e)}>
+          <a href="javascript:void(0)" className="left-menu-item"  onClick={(e: any) => this.saveDbToDisk(e)}>
             <i className="fa fa-database"></i><span>Save state to file</span>
           </a>
         </Sidebar>
