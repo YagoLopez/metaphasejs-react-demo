@@ -13,6 +13,35 @@ Demostration of MetaphaseJS framework ( **ALPHA VERSION** ).
 
 <p align="center"><img src="qrcode-metaphasejs-demo-small.jpg"/></p>
 
+## Motivation
+
+- State management is an issue solved decades ago in server-side environments using transactional and relational databases. This is not the case client-side (browser) where it has remained as an unsolved issue until the adventment of libraries/patterns like Redux/Flux
+- These other client state managers like Redux are verbose and complicated (inmutability is verbose and adds complexity) and they are basically reinventing the wheel
+- There are other client databases (IndexDB, LovefieldDB, etc.) but they are complicated too (callbacks, asynchrony) or incomplete (localStorage)
+- The intention of MetaphaseJS is to apply the same techniques of server-side state management to client-side apps.
+
+## Features
+
+- Simplicity: no callbacks, no asynchronous code, no functional nor inmutable complexities 
+
+- Agnostic and frameworkless: it can be used with ReactJS, Angular, Vue, React Native, vanilla JS, etc.
+
+  Simply plug-and-play
+
+- State is a true SQLite relational database
+
+- Manage state with simple SQL queries using an ORM (Object Relational Mapper)
+
+- State can be saved to a database file
+
+- State can be designed with any db tool that supports SQLite (even using a graphical UI without using code), then it can be filled with data, and imported into app
+
+- Big developer productivity and satisfacction. (For example, an entire blog sistem can be developed in minutes)
+
+- Ideal for static generated content (i. e.: static blogs without a server database)
+
+- Comprehensive and switchable logger system. (it can be turned off in production for better performance)
+
 ## Requirements
 
 - Yarn package manager (or NPM)
@@ -38,16 +67,6 @@ Demostration of MetaphaseJS framework ( **ALPHA VERSION** ).
 ## Docs
 
 TODO: generate API documentation with TypeDoc
-
-## Features
-
-- Simplicity: no callbacks, no asynchronous code, no functional nor inmutable complications 
-
-## Motivation
-
-- Other client state managers like Redux are verbose and complicated (mutability is easier and simpler than inmutability)
-- Other client state mangers like Redux reinvent the wheel. State management is an issue solved decades ago in backends with transactional relational databases.
-- The intention of MetaphaseJS is to apply the same techniques of server state management to client-side apps.
 
 ## Credits
 
