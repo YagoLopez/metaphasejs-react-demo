@@ -1,3 +1,4 @@
+//todo: evento onChange() en span show children para que sea facil hacer tap en checkbox
 //todo: actualizar dependencias
 //todo: query string parameters deberian funcional bien simulataneamente
 //todo: probar a pasar el estado como props de tipo array. Ejm: store = {users: users.getAll(), posts: posts.getAll()}
@@ -11,10 +12,8 @@
 //todo: probar en iexplorer
 //todo: estudiar la posibilidad de SSR para reducir el tamaño de bundle
 //todo: documentar api con typedoc
-//todo: evento onChange() en span show children para que sea facil hacer tap en checkbox
 //todo: poder ejecutar consulta sql que conste de varias sentencias en varias lineas
 //todo: remove completely react-json-viewer library
-//todo: poner nombre de modelo en dialogos de tablas
 
 import * as React from 'react';
 import {users, posts, comments} from "./store";
@@ -218,7 +217,7 @@ export class App extends React.Component {
     const {loadDbFromFile} = this.state;
     this.setState({loadDbFromFile: !loadDbFromFile});
     if (loadDbFromFile) {
-      alert('Load database application state dynamically created by code...')
+      alert('Load database application state dynamically created from code...')
     } else {
       alert('Load database application state from disk file...');
     }
