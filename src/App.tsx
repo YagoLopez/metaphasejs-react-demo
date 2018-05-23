@@ -18,7 +18,7 @@
 import * as React from 'react';
 import {users, posts, comments} from "./store";
 import {saveDbToFile} from "./orm/database";
-import {getUrlParameter} from "./orm/yago.logger";
+import {getUrlParameter, updateQueryStringParameter} from "./orm/yago.logger";
 import {Model} from "./orm/model";
 import {User} from "./models/user";
 import {Post} from "./models/post";
@@ -75,7 +75,7 @@ export class App extends React.Component {
       selectedModel: undefined,
       displayLeftMenu: false,
       displayDialogFullScreen: false,
-      logger: false,
+      logger: utils.isLoggerEnabled(),
       loadDbFromFile: utils.isLoadDbFromFile(),
     };
     this.updateState = this.updateState.bind(this);
@@ -206,20 +206,28 @@ export class App extends React.Component {
   }
 
   getUrlAppWithLogger(): string {
-    return this.state.logger ? "./?logger=true" : "./";
+    if (this.state.logger) {
+      return updateQueryStringParameter(location.href, 'logger', 'true');
+    } else {
+      return updateQueryStringParameter(location.href, 'logger', 'false');
+    }
   }
 
   getUrlAppLoadDbFromDisk(): string {
-    return this.state.loadDbFromFile ? `${location.href}?dbfile=metaphase.sqlite` : './';
+    if (this.state.loadDbFromFile) {
+      return updateQueryStringParameter(location.href, 'dbfile', 'metaphase.sqlite');
+    } else {
+      return updateQueryStringParameter(location.href, 'dbfile', '');
+    }
   }
 
   switchDb() {
     const {loadDbFromFile} = this.state;
     this.setState({loadDbFromFile: !loadDbFromFile});
     if (loadDbFromFile) {
-      alert('Load database application state dynamically created from code...')
+      alert('Load application state from database created by code...')
     } else {
-      alert('Load database application state from disk file...');
+      alert('Load application state from database file...');
     }
    }
 

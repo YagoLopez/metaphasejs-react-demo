@@ -33,3 +33,7 @@ export const getDbFileName = (): string => {
 export const isLoadDbFromFile = (): boolean => {
   return getDbFileName().length > 0;
 };
+
+export const isLoggerEnabled = (): boolean => {
+  return getUrlParameter('logger').toLowerCase() === 'true';
+};
