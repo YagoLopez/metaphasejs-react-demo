@@ -270,7 +270,7 @@ export class App extends React.Component {
     const JsonViewPanelHeader = (
       <span>✅ Json State View<input type="checkbox" checked={children}
                                onChange={_ => this.showChildren()} className="checkbox-children"/>
-      <span className="checkbox-children-label">Show Children</span></span>
+      <span className="checkbox-children-label" onClick={_ => this.showChildren()}>Show Children</span></span>
     );
 
 
@@ -298,7 +298,7 @@ export class App extends React.Component {
             <i className="fa fa-refresh"></i><span>Switch data origin</span>
           </a>
           <a href="#" className="left-menu-item"  onClick={(e: any) => this.saveDbToDisk(e)}>
-            <i className="fa fa-refresh"></i><span>Save state to file</span>
+            <i className="fa fa-database"></i><span>Save state to file</span>
           </a>
         </Sidebar>
 
@@ -318,8 +318,6 @@ export class App extends React.Component {
 
 
         <div className="fade-in-long">
-
-          <p><button onClick={(e: any) => this.saveDbToDisk(e)}>Save database file</button></p>
 
           <Panel header={JsonViewPanelHeader} toggleable={true}>
             <ScrollPanel className="custom json-view-container">
@@ -363,7 +361,6 @@ export class App extends React.Component {
             </DataTable>
 
           </Panel>
-
 
           {/*<Panel header="✅ Nested View" toggleable={true}>*/}
           {/*<JSONViewer json={this.state.users}></JSONViewer>*/}

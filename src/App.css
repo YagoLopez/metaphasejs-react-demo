@@ -115,6 +115,11 @@ div.ui-toolbar {
   color: darkorange;
 }
 
+.checkbox-children-label:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .code-view-container {
   display: block;
   margin: 20px auto auto;
