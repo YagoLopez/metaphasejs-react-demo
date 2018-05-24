@@ -1,18 +1,15 @@
 
-//todo: html editor en campo "post.content"
 //todo: actualizar dependencias
+//todo: html editor en campo "post.content"
 //todo: diagram view (static)
 //todo: remove completely react-json-viewer library
 //todo: probar a pasar el estado como props de tipo array. Ejm: store = {users: users.getAll(), posts: posts.getAll()}
-//todo: settimeout() al mostrar el dialogo modal con el codigo para que el comportamiento del ui sea más suave
 //todo: option for saving binary dbfile to localstorage
 //todo: separador de mensajes de logger
 //todo: hacer smoke tests
 //todo: probar en iexplorer
-//todo: estudiar la posibilidad de SSR para reducir el tamaño de bundle
 //todo: documentar api con typedoc
 //todo: poder ejecutar consulta sql que conste de varias sentencias en varias lineas
-//todo: feature, filtro en el listado de tabla
 
 import * as React from 'react';
 import {users, posts, comments} from "./store";
@@ -120,18 +117,6 @@ export class App extends React.Component {
   componentWillUpdate() {
     console.log('component will update');
   }
-
-  //todo: borrar
-  // updateState() {
-  //   const {children} = this.state;
-  //   this.setState({
-  //     users: users.getAll({children}),
-  //     posts: posts.getAll({children}),
-  //     comments: comments.getAll(),
-  //     jsonContent: users.getAll({children}),
-  //     displayDialogCode: false,
-  //   });
-  // }
 
   updateState() {
     this.forceUpdate();

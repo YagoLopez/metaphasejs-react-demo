@@ -34,7 +34,7 @@ Demostration of MetaphaseJS framework ( **ALPHA VERSION** ).
 
 - State can be saved to a database file
 
-- State can be designed with any db tool that supports SQLite (even using a graphical UI without using code), then it can be filled with data, and imported into app
+- State can be designed and populated with any db tool that supports SQLite (even using a graphical UI without using code) and after that imported into app
 
 - Great developer productivity and satisfacction. (For example, an entire blog sistem could be developed in minutes)
 
