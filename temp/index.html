@@ -9,17 +9,35 @@
     <title>MetaPhaseJS React Demo</title>
     <style>
       body {background: #00c4ff82;}
-      .loader-logo-container {
+      .loader-circle-container {
         position: absolute;
         width: 96%;
         height: 90%;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
       }
+      .loader-circle {
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: white;
+        border-radius: 100%;
+        -webkit-animation: loader-animation 1.0s infinite ease-in-out;
+        animation: loader-animation 1.0s infinite ease-in-out;
+      }
+      @-webkit-keyframes loader-animation {
+        0% { -webkit-transform: scale(0) }
+        100% { -webkit-transform: scale(1.0); opacity: 0 }
+      }
+      @keyframes loader-animation {
+        0% { -webkit-transform: scale(0); transform: scale(0) }
+        100% { -webkit-transform: scale(1.0); transform: scale(1.0); opacity: 0 }
+      }
       .loader-title {
-        margin-top: 16px;
+        margin-top: 70px;
         font-family: sans-serif;
         font-size: 16px;
         color: white;
@@ -38,8 +56,8 @@
     </style>
   <body>
     <noscript>You need to enable JavaScript to run this app</noscript>
-    <div id="loader" class="loader-logo-container">
-      <img src="mp-logo.svg" class="logo-rotation" style="width: 70px"/>
+    <div id="loader" class="loader-circle-container">
+      <div class="loader-circle"></div>
       <div class="loader-title">MetaphaseJS Demo</div>
     </div>
     <div id="root"></div>

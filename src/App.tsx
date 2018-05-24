@@ -1,18 +1,17 @@
 
 //todo: html editor en campo "post.content"
-//todo: add code sample to readme
 //todo: actualizar dependencias
+//todo: diagram view (static)
+//todo: remove completely react-json-viewer library
 //todo: probar a pasar el estado como props de tipo array. Ejm: store = {users: users.getAll(), posts: posts.getAll()}
 //todo: settimeout() al mostrar el dialogo modal con el codigo para que el comportamiento del ui sea más suave
 //todo: option for saving binary dbfile to localstorage
 //todo: separador de mensajes de logger
-//todo: diagram view (static)
 //todo: hacer smoke tests
 //todo: probar en iexplorer
 //todo: estudiar la posibilidad de SSR para reducir el tamaño de bundle
 //todo: documentar api con typedoc
 //todo: poder ejecutar consulta sql que conste de varias sentencias en varias lineas
-//todo: remove completely react-json-viewer library
 //todo: feature, filtro en el listado de tabla
 
 import * as React from 'react';
@@ -63,7 +62,7 @@ export class App extends React.Component {
     children: boolean,
     selectedModel: any,
     displayLeftMenu: boolean,
-    displayDialogFullScreen: boolean,
+    displayDialogCode: boolean,
     logger: boolean,
     loadDbFromFile: boolean,
   };
@@ -74,7 +73,7 @@ export class App extends React.Component {
       children: this.SHOW_CHILDREN,
       selectedModel: undefined,
       displayLeftMenu: false,
-      displayDialogFullScreen: false,
+      displayDialogCode: false,
       logger: utils.isLoggerEnabled(),
       loadDbFromFile: utils.isLoadDbFromFile(),
     };
@@ -98,7 +97,7 @@ export class App extends React.Component {
   }
 
   componentDidMount() {
-    utils.removeSplashScreen();
+    utils.removeElementFromDom('loader');
     // const users = new Collection(User);
     // try {
     //   const response = await fetch('metaphase.sqlite');
@@ -130,7 +129,7 @@ export class App extends React.Component {
   //     posts: posts.getAll({children}),
   //     comments: comments.getAll(),
   //     jsonContent: users.getAll({children}),
-  //     displayDialogFullScreen: false,
+  //     displayDialogCode: false,
   //   });
   // }
 
@@ -144,7 +143,7 @@ export class App extends React.Component {
     this.setState({
       children: !children,
       jsonContent: users.getAll({children: !children}),
-      displayDialogFullScreen: false
+      displayDialogCode: false
     });
   }
 
@@ -182,17 +181,20 @@ export class App extends React.Component {
   }
 
   btnBurguer() {
-    this.setState({displayLeftMenu: !this.state.displayLeftMenu, displayDialogFullScreen: false});
+    this.setState({displayLeftMenu: !this.state.displayLeftMenu});
   }
 
   showCode() {
     document.body.style.overflow = 'hidden';
-    this.setState({displayLeftMenu: false, displayDialogFullScreen: true});
+    // Set state change asynchronously for better performance
+    setTimeout(_ => {
+      this.setState({displayLeftMenu: false, displayDialogCode: true});
+    }, 0);
   }
 
   hideCode() {
     document.body.style.overflow = 'visible';
-    this.setState({displayLeftMenu: false, displayDialogFullScreen: false});
+    this.setState({displayLeftMenu: false, displayDialogCode: false});
   }
 
   switchLogger() {
@@ -231,11 +233,13 @@ export class App extends React.Component {
     }
    }
 
+
+
   render() {
 
     // const {jsonContent, children, users, posts, comments, selectedModel} = this.state;
     // const {users, posts, comments} = this.props;
-    const {children, selectedModel, displayLeftMenu, displayDialogFullScreen} = this.state;
+    const {children, selectedModel, displayLeftMenu, displayDialogCode} = this.state;
     const defaultUser = new User({name: '', age: '', admin: 0});
     const defaultPost = new Post({title: '', content: ''});
     const defaultComment = new Comment({author: '', date: new Date()});
@@ -303,7 +307,7 @@ export class App extends React.Component {
           </a>
         </Sidebar>
 
-        <Sidebar fullScreen={true} visible={displayDialogFullScreen} onHide={() => this.hideCode()}>
+        <Sidebar fullScreen={true} visible={displayDialogCode} onHide={() => this.hideCode()}>
           <h2 className="centered title-border">✅ Code View</h2>
           <div className="centered subtitle">
             Source code for store creation, model definitions and relations

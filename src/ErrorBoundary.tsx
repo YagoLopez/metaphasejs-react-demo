@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {removeSplashScreen} from "./utils";
+import {removeElementFromDom} from "./utils";
 
 export class ErrorBoundary extends React.Component {
 
@@ -13,7 +13,7 @@ export class ErrorBoundary extends React.Component {
   error: string;
 
   componentDidCatch(error: any, info: any) {
-    removeSplashScreen();
+    removeElementFromDom('loader');
     this.setState({hasError: true});
     this.error = error.message[0].toUpperCase() + error.message.substring(1);
   }

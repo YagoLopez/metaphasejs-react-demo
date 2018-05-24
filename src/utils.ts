@@ -18,9 +18,10 @@ export const setReadOnlyAttr = (dropDownId: string) => {
 
 /**
  * Remove splash screen when the loading is finished
+ * @elementId {string}
  */
-export const removeSplashScreen = () => {
-  const loader = document.getElementById('loader') as HTMLDivElement;
+export const removeElementFromDom = (elementId: string) => {
+  const loader = document.getElementById(elementId) as HTMLDivElement;
   const body = document.querySelector('body') as HTMLBodyElement;
   body.style.background = 'white';
   body.removeChild(loader);

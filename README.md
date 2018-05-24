@@ -170,7 +170,7 @@ users.getAll({children: true});
 
 ## Credits
 
-TODO: write credits
+- [FontAwesome](https://fontawesome.com/license)
 
 ## License
 

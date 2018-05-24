@@ -84,12 +84,12 @@ export class DialogPost extends DialogBase {
               <InputText id="content"
                          onChange={(e: any) => {this.updateProperty('content', e.target.value)}}
                          value={selectedModel ? selectedModel.content : ''}/>
-              <Editor id="content"
-                      placeholder={selectedModel ? selectedModel.content : ''}
-                      className="html-editor"
-                      headerTemplate={editorHeader}
-                      onTextChange={(e: any) => {this.updateProperty('content', e.htmlValue)}}
-                      value={selectedModel ? selectedModel.content : ''}/>
+              {/*<Editor id="content"*/}
+                      {/*placeholder={selectedModel ? selectedModel.content : ''}*/}
+                      {/*className="html-editor"*/}
+                      {/*headerTemplate={editorHeader}*/}
+                      {/*onTextChange={(e: any) => {this.updateProperty('content', e.htmlValue)}}*/}
+                      {/*value={selectedModel ? selectedModel.content : ''}/>*/}
               {/*<div>content: {selectedModel && selectedModel.content}</div>*/}
             </div>
           </div>
