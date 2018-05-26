@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import {App} from "./App";
 import {ErrorBoundary} from "./ErrorBoundary";
-import {db, loadDbFromFile} from "./orm/database";
+import {loadDbFromFile} from "./orm/database";
 import {getUrlParameter} from "./orm/yago.logger";
 import * as utils from './utils';
 

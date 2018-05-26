@@ -10,6 +10,7 @@
 //todo: probar en iexplorer
 //todo: documentar api con typedoc
 //todo: poder ejecutar consulta sql que conste de varias sentencias en varias lineas
+//todo: dynamic/async import para cargar el contenido del dialogo de codigo
 
 import * as React from 'react';
 import {users, posts, comments} from "./store";
@@ -21,7 +22,6 @@ import {Post} from "./models/post";
 import {Comment} from "./models/comment";
 import {sampleCode} from "./sample.code";
 import ReactJson from 'react-json-view';
-// import JSONViewer from 'react-json-viewer';
 import CodeHighlight from 'code-highlight';
 import "code-highlight/lib/style.css";
 import "highlight.js/styles/atelier-forest-light.css";
@@ -268,6 +268,7 @@ export class App extends React.Component {
 
       <div className="main-content">
 
+        {/*top menu bar*/}
         <Toolbar>
           <div className="ui-toolbar-group-left">
             <Button icon="fa-bars" onClick={_ => this.btnBurguer()} className="btn-menu"/>
@@ -275,6 +276,7 @@ export class App extends React.Component {
           <strong className="title">MetaphaseJS Demo</strong>
         </Toolbar>
 
+        {/*left side menu*/}
         <Sidebar visible={displayLeftMenu} baseZIndex={1000000}
                  onHide={() => this.setState({displayLeftMenu: false})}>
           <h1>MetaphaseJS</h1>
@@ -292,6 +294,7 @@ export class App extends React.Component {
           </a>
         </Sidebar>
 
+        {/*code dialog*/}
         <Sidebar fullScreen={true} visible={displayDialogCode} onHide={() => this.hideCode()}>
           <h2 className="centered title-border">✅ Code View</h2>
           <div className="centered subtitle">
@@ -306,9 +309,9 @@ export class App extends React.Component {
           </ScrollPanel>
         </Sidebar>
 
-
         <div className="fade-in-long">
 
+          {/*json state view*/}
           <Panel header={JsonViewPanelHeader} toggleable={true}>
             <ScrollPanel className="custom json-view-container">
               <ReactJson ref={(el: React.Component) => this.reactJsonCmp = el}
@@ -318,6 +321,7 @@ export class App extends React.Component {
             </ScrollPanel>
           </Panel>
 
+          {/*table state view*/}
           <Panel header="✅ Table State View" toggleable={true}>
 
             <DataTable value={users.getAll()}
@@ -352,9 +356,6 @@ export class App extends React.Component {
 
           </Panel>
 
-          {/*<Panel header="✅ Nested View" toggleable={true}>*/}
-          {/*<JSONViewer json={this.state.users}></JSONViewer>*/}
-          {/*</Panel>*/}
         </div>
 
         <DialogUser ref={(el: DialogUser) => this.dialogUser = el} {...dialogProps}/>

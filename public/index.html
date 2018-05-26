@@ -26,20 +26,21 @@
       }
       .logo-rotation{
         animation: 2s rotate_animation infinite;
+        width: 70px;
       }
       @keyframes rotate_animation {
         from {
           transform: rotatey(360deg);
         }
         80%, 100% {
-          transform: rotatey(0deg);
+          transform: rotatey(0);
         }
       }
     </style>
   <body>
     <noscript>You need to enable JavaScript to run this app</noscript>
     <div id="loader" class="loader-logo-container">
-      <img src="mp-logo.svg" class="logo-rotation" style="width: 70px"/>
+      <img src="mp-logo.svg" class="logo-rotation"/>
       <div class="loader-title">MetaphaseJS Demo</div>
     </div>
     <div id="root"></div>

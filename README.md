@@ -13,34 +13,37 @@ Demostration of MetaphaseJS framework ( **ALPHA VERSION** ).
 
 <p align="center"><img src="qrcode-metaphasejs-demo-small.jpg"/></p>
 
-## Motivation
+## Why
 
-- State management is an issue solved decades ago in server-side environments using transactional and relational databases. This is not the case client-side (browser) where it has remained as an unsolved issue until the adventment of libraries/patterns like Redux/Flux
-- These other client state managers like Redux are verbose and complicated (inmutability adds levels of indirection and therefore complexity) and they are basically reinventing the wheel
-- There are other client databases (IndexDB, LovefieldDB, etc.) but they are complicated too (callbacks, asynchrony) or incomplete (localStorage)
+- State management is an issue solved decades ago in server-side environments using transactional and relational databases. This is not the case of client-side (browser) apps where it has remained as an unsolved issue until the advent of libraries/patterns like Redux/Flux
+- These other client state managers like Redux produce verbose and complicated code (inmutability adds levels of indirection and therefore complexity) and they are basically reinventing the wheel
+- There are other client databases like IndexDB, LovefieldDB, etc. but they are complicated too (callbacks, asynchrony) or incomplete (localStorage)
 - The intention of MetaphaseJS is to apply the same techniques of server-side state management to client-side apps.
 
 ## Features
 
 - Simplicity: no callbacks, no asynchronous code, no functional nor inmutable complexities 
-
-- Agnostic and frameworkless: it can be used with ReactJS, Angular, Vue, React Native, vanilla JS, etc.
-
-  Simply plug-and-play
+- Agnostic and frameworkless: it can be used with ReactJS, Angular, Vue, React Native, vanilla JS, etc. Simply plug-and-play
 
 - State is a true SQLite relational database
-
 - Manage state with simple SQL queries and an ORM (Object Relational Mapper)
-
 - State can be saved to a database file
-
 - State can be designed and populated with any db tool that supports SQLite (even using a graphical UI without using code) and after that imported into app
-
 - Great developer productivity and satisfacction. (For example, an entire blog sistem could be developed in minutes)
-
 - Ideal for static generated content (i. e.: static blogs without a server database)
-
 - Comprehensive and switchable logger system. It can be turned off in production for better performance . A simple url query string parameter controls the logger `http://app_url?logger=true/false`
+
+## How
+
+- Using Emscriptem/WebAssembly the C++ code of SQLite has been compiled as any other Javascript library that you can load in the browser environment
+- You can hold the application state in a true relational SQLite database. 
+  - You can create model (or entity) classes
+  - Setup relations between models
+  - Create collections of models
+  - Execute operations on models
+- You can use an ORM to execute queries
+- You can load the state from a database file
+- You can save the state to a file on disk
 
 ## Requirements
 
