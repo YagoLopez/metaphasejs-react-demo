@@ -53,7 +53,7 @@ export class DialogComment extends DialogBase {
     );
 
     return (
-      <Dialog visible={displayDialog} header="Edit Comment" modal={true} responsive={false}
+      <Dialog visible={displayDialog} header="Comment" modal={true} responsive={false}
               footer={footerDialog} onHide={() => this.setState({displayDialog: false})}>
         <div className="ui-grid ui-grid-responsive ui-fluid">
           <div className="ui-grid-row">

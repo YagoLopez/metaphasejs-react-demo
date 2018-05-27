@@ -59,7 +59,7 @@ export class DialogBase extends React.Component {
       }
       this.props.updateState();
     } else {
-      alert('Data has not changed');
+      alert('Unchanged data cannot be saved');
     }
   }
 
