@@ -240,11 +240,8 @@ fieldset {
 @-webkit-keyframes fade {from {opacity: 0 } to { opacity: 1 }}
 @keyframes fade {from {opacity: 0 } to { opacity: 1 }}
 
-.quill {
-  /*width: 225px;*/
-  /*overflow-y: scroll;*/
-  /*height: 180px;*/
-  /*border-bottom: 1px solid lightgrey;*/
+.spinner-height {
+  height: 35px;
 }
 
 body{
@@ -252,7 +249,7 @@ body{
   scrollbar-highlight-color: #C0C0C0; scrollbar-track-color: #EBEBEB; scrollbar-arrow-color: black;
   scrollbar-shadow-color: #C0C0C0; scrollbar-dark-shadow-color: #C0C0C0;
 }
-::-webkit-scrollbar {width: 7px; height: 3px} ::-webkit-scrollbar-button {background-color: darkgrey}
+::-webkit-scrollbar {width: 9px; height: 9px} ::-webkit-scrollbar-button {background-color: darkgrey}
 ::-webkit-scrollbar-track {background-color: lightgrey} ::-webkit-scrollbar-track-piece {background-color: lightgrey}
 ::-webkit-scrollbar-thumb {height: 50px; background-color: darkgrey; border-radius: 3px}
 ::-webkit-scrollbar-corner {background-color: #999} ::-webkit-resizer {background-color: #666}

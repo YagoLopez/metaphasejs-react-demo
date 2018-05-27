@@ -57,7 +57,7 @@ export class DialogPost extends DialogBase {
             <div className="ui-grid-col-3 dialog-label">
               <label htmlFor="title">Title</label>
             </div>
-            <div className="ui-grid-col-12 dialog-label">
+            <div className="ui-grid-col-10 dialog-label">
               <InputText id="title"
                          onChange={(e: any) => {this.updateProperty('title', e.target.value)}}
                          value={selectedModel ? selectedModel.title : ''}/>
@@ -77,7 +77,7 @@ export class DialogPost extends DialogBase {
             <div className="ui-grid-col-3 dialog-label">
               <label htmlFor="user_id">User Id</label>
             </div>
-            <div className="ui-grid-col-12 dialog-label">
+            <div className="ui-grid-col-10 dialog-label">
               <Dropdown value={selectedModel ? selectedModel.user_id : ''}
                         id="user_id" options={this.userIds}
                         onChange={(e: {originalEvent: Event, value: any}) => this.onUserIdChange(e.value)}

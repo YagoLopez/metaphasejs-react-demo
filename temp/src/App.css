@@ -241,10 +241,10 @@ fieldset {
 @keyframes fade {from {opacity: 0 } to { opacity: 1 }}
 
 .quill {
-  width: 225px;
-  overflow: auto;
-  height: 180px;
-  border-bottom: 1px solid lightgrey;
+  /*width: 225px;*/
+  /*overflow-y: scroll;*/
+  /*height: 180px;*/
+  /*border-bottom: 1px solid lightgrey;*/
 }
 
 body{

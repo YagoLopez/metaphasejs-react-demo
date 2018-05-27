@@ -1,5 +1,4 @@
 
-//todo: actualizar dependencias
 //todo: html editor en campo "post.content"
 //todo: diagram view (static)
 //todo: remove completely react-json-viewer library

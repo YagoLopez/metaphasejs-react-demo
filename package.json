@@ -16,7 +16,7 @@
     "react-dom": "^16.4.0",
     "react-json-view": "^1.16.6",
     "react-quill": "^1.2.7",
-    "react-scripts-ts": "2.13.0",
+    "react-scripts-ts": "<=2.13.0",
     "reflect-metadata": "^0.1.12",
     "sql-bricks-sqlite": "^0.1.0",
     "sql.js": "^0.5.0"

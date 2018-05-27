@@ -4,7 +4,6 @@ import {DialogBase} from "./DialogBase";
 import {InputText} from "primereact/components/inputtext/InputText";
 import {Dropdown} from "primereact/components/dropdown/Dropdown";
 import {Button} from "primereact/components/button/Button";
-import {User} from "../models/user";
 import {setReadOnlyAttr} from "../utils";
 
 
@@ -32,7 +31,7 @@ export class DialogUser extends DialogBase {
     );
 
     return (
-      <Dialog visible={displayDialog} header="Edit User" modal={true} responsive={false}
+      <Dialog visible={displayDialog} header="User" modal={true} responsive={false}
               footer={footerDialog} onHide={() => this.setState({displayDialog: false})}>
         <div className="ui-grid ui-grid-responsive ui-fluid">
           <div className="ui-grid-row">
