@@ -1,7 +1,7 @@
 
-//todo: html editor en campo "post.content"
+//todo: dynamic/async import para cargar el contenido del dialogo de codigo
+//todo: arreglar errores compilacion
 //todo: diagram view (static)
-//todo: remove completely react-json-viewer library
 //todo: probar a pasar el estado como props de tipo array. Ejm: store = {users: users.getAll(), posts: posts.getAll()}
 //todo: option for saving binary dbfile to localstorage
 //todo: separador de mensajes de logger
@@ -9,7 +9,6 @@
 //todo: probar en iexplorer
 //todo: documentar api con typedoc
 //todo: poder ejecutar consulta sql que conste de varias sentencias en varias lineas
-//todo: dynamic/async import para cargar el contenido del dialogo de codigo
 
 import * as React from 'react';
 import {users, posts, comments} from "./store";

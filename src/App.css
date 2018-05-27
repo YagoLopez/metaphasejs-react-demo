@@ -6,7 +6,7 @@
   font-size: small;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   .main-content {
     width: 100%;
     margin: 0 auto 0;
@@ -242,6 +242,11 @@ fieldset {
 
 .spinner-height {
   height: 35px;
+}
+
+.numeric-input {
+  height: 25px;
+  width: 160px !important;
 }
 
 body{

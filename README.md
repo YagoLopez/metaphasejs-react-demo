@@ -38,7 +38,7 @@ Demostration of MetaphaseJS framework ( **ALPHA VERSION** ).
 - Using [Emscriptem](http://kripken.github.io/emscripten-site/)/[WebAssembly](https://webassembly.org/) the C++ code of SQLite has been recompiled to Javascript. As any other js library you can load it in browser environment
 - Using MetaphaseJS the application state is hold in a true relational SQLite database:
   - You create classes for your model/entities
-  - Setup relations between models
+  - Set up relations between models
   - Create collections of models
   - Execute operations on models
 - You can use an ORM to execute queries or raw SQL
@@ -73,7 +73,7 @@ TODO: generate API documentation with TypeDoc
 
 ## Code Samples
 
-Models and relations definitions
+- Models and relations definitions
 
 ```typescript
 // User model definition --------------------------------------------------
@@ -120,7 +120,7 @@ export class Comment extends Model {
 
 
 
-Collections definition
+- Collections definition
 
 ```typescript
 
@@ -157,7 +157,7 @@ comment2.save();
 
 
 
-Operations with data
+- Operations with data
 
 ```typescript
 // Get all users
@@ -178,3 +178,4 @@ users.getAll({children: true});
 ## License
 
 MIT
+

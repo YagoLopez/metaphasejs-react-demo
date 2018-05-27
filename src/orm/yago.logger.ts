@@ -1,9 +1,13 @@
-// Controls default logger behaviour. Pass a 'false' value
-// for avoiding logging in production mode as default behaviour
+
+// Debugging to the browser console can be controlled through a query parameter in url.
+// For example: http://localhost:3000?logger=true
+
+// Controls default logger behaviour.
+// Pass a 'false' value to avoid logger in production mode as default behaviour
 const DEFAULT_LOG_STATE: string = 'false';
 
 /**
- * Gets an url query string parameter value form URL
+ * Gets url query parameter form URL
  * @param {string} paramName
  * @returns {string}
  */
@@ -32,10 +36,7 @@ export function updateQueryStringParameter(uri: string, key: string, value: stri
   }
 }
 
-/**
- * Debugging to the browser console can be controlled through a query string parameter in url.
- * For example: http://localhost:3000?logger=true
- */
+// Variable that holds the looger state
 let urlLogParam = getUrlParameter('logger');
 urlLogParam = urlLogParam || DEFAULT_LOG_STATE;
 
@@ -86,7 +87,7 @@ export function logQuery(msg: string, format: 'query' | 'result' | string): void
 }
 
 /**
- * General fn to apply format to a log message
+ * General Fn to apply format to a log message
  * @param {string} msg
  * @param {string} format
  */

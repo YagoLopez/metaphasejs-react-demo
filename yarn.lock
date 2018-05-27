@@ -5151,6 +5151,10 @@ react-json-view@^1.16.6:
     react-base16-styling "^0.5.3"
     react-textarea-autosize "^5.1.0"
 
+react-numeric-input@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/react-numeric-input/-/react-numeric-input-2.2.3.tgz#4bf5918c3eafed851a80df1eb992d941002bb552"
+
 react-quill@^1.2.7:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/react-quill/-/react-quill-1.2.7.tgz#3e74fadbb30dce915733ad230f92415894437c16"
@@ -5163,7 +5167,7 @@ react-quill@^1.2.7:
     quill "^1.2.6"
     react-dom-factories "^1.0.0"
 
-react-scripts-ts@2.13.0:
+react-scripts-ts@<=2.13.0:
   version "2.13.0"
   resolved "https://registry.yarnpkg.com/react-scripts-ts/-/react-scripts-ts-2.13.0.tgz#d5493035e6d521030f0d3e5e8e5b5872f7df1a28"
   dependencies:

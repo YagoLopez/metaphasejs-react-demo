@@ -4,6 +4,7 @@ import {DialogBase} from "./DialogBase";
 import {InputText} from "primereact/components/inputtext/InputText";
 import {Dropdown} from "primereact/components/dropdown/Dropdown";
 import {Button} from "primereact/components/button/Button";
+import * as NumericInput from "react-numeric-input";
 import {setReadOnlyAttr} from "../utils";
 
 
@@ -18,6 +19,7 @@ export class DialogUser extends DialogBase {
 
   componentDidMount() {
     setReadOnlyAttr('admin');
+    setReadOnlyAttr('age');
   }
 
   render() {
@@ -49,9 +51,9 @@ export class DialogUser extends DialogBase {
               <label htmlFor="age">Age <span className="dialog-small">(number)</span></label>
             </div>
             <div className="ui-grid-col-8 dialog-label">
-              <InputText id="age" keyfilter="pint"
-                         onChange={(e: any) => {this.updateProperty('age', e.target.value)}}
-                         value={selectedModel ? selectedModel.age : ''}/>
+              <NumericInput id="age" className="numeric-input" mobile={true}
+                            onChange={(age: number) => {this.updateProperty('age', age)}}
+                            value={selectedModel && selectedModel.age}/>
             </div>
           </div>
           <div className="ui-grid-row">
