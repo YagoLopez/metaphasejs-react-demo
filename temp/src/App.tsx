@@ -1,18 +1,16 @@
 
-//todo: html editor en campo "post.content"
 //todo: actualizar dependencias
+//todo: html editor en campo "post.content"
 //todo: diagram view (static)
 //todo: remove completely react-json-viewer library
 //todo: probar a pasar el estado como props de tipo array. Ejm: store = {users: users.getAll(), posts: posts.getAll()}
-//todo: settimeout() al mostrar el dialogo modal con el codigo para que el comportamiento del ui sea más suave
 //todo: option for saving binary dbfile to localstorage
 //todo: separador de mensajes de logger
 //todo: hacer smoke tests
 //todo: probar en iexplorer
-//todo: estudiar la posibilidad de SSR para reducir el tamaño de bundle
 //todo: documentar api con typedoc
 //todo: poder ejecutar consulta sql que conste de varias sentencias en varias lineas
-//todo: feature, filtro en el listado de tabla
+//todo: dynamic/async import para cargar el contenido del dialogo de codigo
 
 import * as React from 'react';
 import {users, posts, comments} from "./store";
@@ -24,11 +22,11 @@ import {Post} from "./models/post";
 import {Comment} from "./models/comment";
 import {sampleCode} from "./sample.code";
 import ReactJson from 'react-json-view';
-// import JSONViewer from 'react-json-viewer';
 import CodeHighlight from 'code-highlight';
 import "code-highlight/lib/style.css";
 import "highlight.js/styles/atelier-forest-light.css";
 import './App.css';
+import {Editor} from "primereact/components/editor/Editor";
 
 import {Sidebar} from "primereact/components/sidebar/Sidebar";
 import {Toolbar} from 'primereact/components/toolbar/Toolbar';
@@ -97,7 +95,7 @@ export class App extends React.Component {
   }
 
   componentDidMount() {
-    utils.removeSplashScreen();
+    utils.removeElementFromDom('loader');
     // const users = new Collection(User);
     // try {
     //   const response = await fetch('metaphase.sqlite');
@@ -120,18 +118,6 @@ export class App extends React.Component {
   componentWillUpdate() {
     console.log('component will update');
   }
-
-  //todo: borrar
-  // updateState() {
-  //   const {children} = this.state;
-  //   this.setState({
-  //     users: users.getAll({children}),
-  //     posts: posts.getAll({children}),
-  //     comments: comments.getAll(),
-  //     jsonContent: users.getAll({children}),
-  //     displayDialogCode: false,
-  //   });
-  // }
 
   updateState() {
     this.forceUpdate();
@@ -181,22 +167,15 @@ export class App extends React.Component {
   }
 
   btnBurguer() {
-    setTimeout(_ => {
-      this.setState({displayLeftMenu: !this.state.displayLeftMenu});
-    }, 50)
+    this.setState({displayLeftMenu: !this.state.displayLeftMenu});
   }
 
   showCode() {
     document.body.style.overflow = 'hidden';
-    this.setState({displayLeftMenu: false, displayDialogCode: true
-
-
-    });
-    // this.setState({displayLeftMenu: false});
-    // setTimeout(_ => {
-    //   this.setState({displayDialogCode: true});
-    //   console.error('show code');
-    // }, 10);
+    // Set state change asynchronously for better performance
+    setTimeout(_ => {
+      this.setState({displayLeftMenu: false, displayDialogCode: true});
+    }, 0);
   }
 
   hideCode() {
@@ -240,10 +219,7 @@ export class App extends React.Component {
     }
    }
 
-  componentWillUnmount() {
-debugger
 
-  }
 
   render() {
 
@@ -293,6 +269,7 @@ debugger
 
       <div className="main-content">
 
+        {/*top menu bar*/}
         <Toolbar>
           <div className="ui-toolbar-group-left">
             <Button icon="fa-bars" onClick={_ => this.btnBurguer()} className="btn-menu"/>
@@ -300,6 +277,7 @@ debugger
           <strong className="title">MetaphaseJS Demo</strong>
         </Toolbar>
 
+        {/*left side menu*/}
         <Sidebar visible={displayLeftMenu} baseZIndex={1000000}
                  onHide={() => this.setState({displayLeftMenu: false})}>
           <h1>MetaphaseJS</h1>
@@ -317,6 +295,7 @@ debugger
           </a>
         </Sidebar>
 
+        {/*code dialog*/}
         <Sidebar fullScreen={true} visible={displayDialogCode} onHide={() => this.hideCode()}>
           <h2 className="centered title-border">✅ Code View</h2>
           <div className="centered subtitle">
@@ -331,9 +310,9 @@ debugger
           </ScrollPanel>
         </Sidebar>
 
-
         <div className="fade-in-long">
 
+          {/*json state view*/}
           <Panel header={JsonViewPanelHeader} toggleable={true}>
             <ScrollPanel className="custom json-view-container">
               <ReactJson ref={(el: React.Component) => this.reactJsonCmp = el}
@@ -343,6 +322,7 @@ debugger
             </ScrollPanel>
           </Panel>
 
+          {/*table state view*/}
           <Panel header="✅ Table State View" toggleable={true}>
 
             <DataTable value={users.getAll()}
@@ -377,9 +357,6 @@ debugger
 
           </Panel>
 
-          {/*<Panel header="✅ Nested View" toggleable={true}>*/}
-          {/*<JSONViewer json={this.state.users}></JSONViewer>*/}
-          {/*</Panel>*/}
         </div>
 
         <DialogUser ref={(el: DialogUser) => this.dialogUser = el} {...dialogProps}/>

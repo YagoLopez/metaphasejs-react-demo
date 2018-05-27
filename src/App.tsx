@@ -26,6 +26,7 @@ import CodeHighlight from 'code-highlight';
 import "code-highlight/lib/style.css";
 import "highlight.js/styles/atelier-forest-light.css";
 import './App.css';
+import {Editor} from "primereact/components/editor/Editor";
 
 import {Sidebar} from "primereact/components/sidebar/Sidebar";
 import {Toolbar} from 'primereact/components/toolbar/Toolbar';

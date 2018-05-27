@@ -44,25 +44,6 @@ export class DialogBase extends React.Component {
     this.setState({selectedModel: undefined, displayDialog: false});
   }
 
-  // onBtnSave() {
-  //   debugger
-  //   const initialSelectedModel = this.props.selectedModel;
-  //   let modifiedSelectedModel = this.state.selectedModel;
-  //   if (initialSelectedModel && initialSelectedModel !== modifiedSelectedModel) {
-  //     try {
-  //       Object.setPrototypeOf(modifiedSelectedModel, initialSelectedModel);
-  //       modifiedSelectedModel = Model.omitChildrenProps(modifiedSelectedModel);
-  //       modifiedSelectedModel.save();
-  //       this.setState({displayDialog: false});
-  //     } catch (exception) {
-  //       console.warn(exception);
-  //       alert(exception.message);
-  //     }
-  //     this.props.updateState();
-  //   } else {
-  //     alert('Invalid user: empty');
-  //   }
-  // }
   onBtnSave() {
     const initialSelectedModel = this.props.selectedModel;
     let modifiedSelectedModel = this.state.selectedModel;
@@ -78,7 +59,7 @@ export class DialogBase extends React.Component {
       }
       this.props.updateState();
     } else {
-      alert('Data has not changes');
+      alert('Unchanged data cannot be saved');
     }
   }
 

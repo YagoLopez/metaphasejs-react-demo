@@ -204,7 +204,6 @@ div.ui-panel {
   padding-top: 10px;
   font-size: 12px;
   color: burlywood;
-  /*font-face: verdana;*/
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -241,27 +240,19 @@ fieldset {
 @-webkit-keyframes fade {from {opacity: 0 } to { opacity: 1 }}
 @keyframes fade {from {opacity: 0 } to { opacity: 1 }}
 
-.html-editor {
-  /*todo: revisar*/
-  height: 150px;
+.quill {
+  width: 225px;
+  overflow: auto;
+  height: 180px;
+  border-bottom: 1px solid lightgrey;
 }
 
-.img-logo {
-  width: 30px;
-  height: 30px;
-  float: left;
-  margin-top: 6px;
-  margin-bottom: 6px
+body{
+  scrollbar-base-color: #C0C0C0; scrollbar-face-color: darkgrey; scrollbar-3dlight-color: #C0C0C0;
+  scrollbar-highlight-color: #C0C0C0; scrollbar-track-color: #EBEBEB; scrollbar-arrow-color: black;
+  scrollbar-shadow-color: #C0C0C0; scrollbar-dark-shadow-color: #C0C0C0;
 }
-
-.logo-rotation{
-  animation: 3s rotate_animation infinite;
-}
-@keyframes rotate_animation {
-  from {
-    transform: rotatey(360deg);
-  }
-  46%, 100% {
-    transform: rotatey(0deg);
-  }
-}
+::-webkit-scrollbar {width: 7px; height: 3px} ::-webkit-scrollbar-button {background-color: darkgrey}
+::-webkit-scrollbar-track {background-color: lightgrey} ::-webkit-scrollbar-track-piece {background-color: lightgrey}
+::-webkit-scrollbar-thumb {height: 50px; background-color: darkgrey; border-radius: 3px}
+::-webkit-scrollbar-corner {background-color: #999} ::-webkit-resizer {background-color: #666}

@@ -4,9 +4,11 @@ import {DialogBase} from "./DialogBase";
 import {InputText} from "primereact/components/inputtext/InputText";
 import {Dropdown} from "primereact/components/dropdown/Dropdown";
 import {Button} from "primereact/components/button/Button";
-import {Editor} from "primereact/components/editor/Editor";
+import * as ReactQuill from 'react-quill';
 import {query} from "../orm/query.builder";
 import {setReadOnlyAttr} from "../utils";
+import {Post} from "../models/post";
+import 'react-quill/dist/quill.snow.css';
 
 export class DialogPost extends DialogBase {
 
@@ -29,26 +31,11 @@ export class DialogPost extends DialogBase {
     this.setState({selectedModel: selectedModel});
   }
 
-  prueba(): string {
-    debugger
-    console.error('selectedModel', this.state.selectedModel);
-    // return this.state.selectedModel && this.state.selectedModel.content;
-    let p = 'vacio';
-    setTimeout(() =>{
-      // console.error('returning prueba', this.state.selectedModel.content);
-      p = 'lleno';
-      console.error('returning prueba', p);
-      // return this.state.selectedModel.content;
-      return p;
-    }, 3000);
-    // return this.state.selectedModel && this.state.selectedModel.content;
-    return p;
-  }
 
 
   render() {
     const {selectedModel, displayDialog} = this.state;
-    let postContent = selectedModel && selectedModel.content;
+    // const defaultPost = new Post({title: '', content: '', user_id: 0});
     const footerDialog = (
       <div className="ui-dialog-buttonpane ui-helper-clearfix">
         <Button icon="fa-close" label="Cancel" onClick={_ => this.onBtnCancel()}/>
@@ -80,17 +67,9 @@ export class DialogPost extends DialogBase {
             <div className="ui-grid-col-4 dialog-label">
               <label htmlFor="content">Content</label>
             </div>
-            <div className="ui-grid-col-8 dialog-label">
-              <InputText id="content"
-                         onChange={(e: any) => {this.updateProperty('content', e.target.value)}}
-                         value={selectedModel ? selectedModel.content : ''}/>
-              <Editor id="content"
-                      placeholder={selectedModel ? selectedModel.content : ''}
-                      className="html-editor"
-                      headerTemplate={editorHeader}
-                      onTextChange={(e: any) => {this.updateProperty('content', e.htmlValue)}}
-                      value={selectedModel ? selectedModel.content : ''}/>
-              {/*<div>content: {selectedModel && selectedModel.content}</div>*/}
+            <div className="dialog-label">
+              <ReactQuill value={selectedModel ? selectedModel.content : ''}
+                          onChange={(content: string) => {this.updateProperty('content', content)}} />
             </div>
           </div>
           <div className="ui-grid-row">
