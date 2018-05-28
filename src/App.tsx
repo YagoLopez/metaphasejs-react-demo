@@ -1,5 +1,6 @@
 
-//todo: arreglar displa:block en editor-html en dialogoPost
+//todo: intentar mificar manualmente usando rollup
+//todo: arreglar display:block en editor-html en dialogoPost
 //todo: arreglar errores compilacion
 //todo: dynamic/async import para cargar el contenido del dialogo de codigo
 //todo: diagram view (static)
@@ -7,6 +8,7 @@
 //todo: separador de mensajes de logger
 //todo: hacer smoke tests
 //todo: probar en iexplorer
+//todo: preparar proyecto libreria npm
 //todo: documentar api con typedoc
 //todo: poder ejecutar consulta sql que conste de varias sentencias en varias lineas
 //todo: probar a pasar el estado como props de tipo array. Ejm: store = {users: users.getAll(), posts: posts.getAll()}
@@ -54,6 +56,8 @@ declare const SQL: any;
 export class App extends React.Component {
 
   SHOW_CHILDREN = true;
+
+  DB_FILENAME = 'metaphase.sqlite';
 
   state: {
     children: boolean,
@@ -112,7 +116,7 @@ export class App extends React.Component {
   }
 
   saveDbToDisk(e: any) {
-    saveDbToFile('metaphase.sqlite');
+    saveDbToFile(this.DB_FILENAME);
   }
 
   add(model: Model, dialog: DialogBase) {
@@ -180,7 +184,7 @@ export class App extends React.Component {
 
   getUrlAppLoadDbFromDisk(): string {
     if (this.state.loadDbFromFile) {
-      return updateQueryStringParameter(location.href, 'dbfile', 'metaphase.sqlite');
+      return updateQueryStringParameter(location.href, 'dbfile', this.DB_FILENAME);
     } else {
       return updateQueryStringParameter(location.href, 'dbfile', '');
     }
@@ -236,7 +240,14 @@ export class App extends React.Component {
                                onChange={_ => this.showChildren()} className="checkbox-children"/>
       <span className="checkbox-children-label" onClick={_ => this.showChildren()}>Show Children</span></span>
     );
-
+    const dbLoadedMessage = (
+      <div className="subtitle">
+        Database loaded from file: <a href="metaphase.sqlite" target="_blank">metaphase.sqlite</a>
+        <div>
+          You can download "metaphase.sqlite" db file and query it online using "Online SQLite Viewer"
+        </div>
+      </div>
+    )
 
 
     return (
@@ -251,10 +262,12 @@ export class App extends React.Component {
           <strong className="title">MetaphaseJS Demo</strong>
         </Toolbar>
 
+        {this.state.loadDbFromFile ? dbLoadedMessage : ''}
+
         {/*left side menu*/}
         <Sidebar visible={displayLeftMenu} baseZIndex={1000000}
                  onHide={() => this.setState({displayLeftMenu: false})}>
-          <h1><img src="mp-logo-leftmenu.svg" className="logo-leftside-menu"/> MetaphaseJS</h1>
+          <h3><img src="mp-logo-leftmenu.svg" className="logo-leftside-menu"/> MetaphaseJS</h3>
           <a href="javascript:void(0)" className="left-menu-item" onClick={_ => this.showCode()}>
             <i className="fa fa-file-code-o"></i><span>Show Code</span>
           </a>
@@ -267,6 +280,10 @@ export class App extends React.Component {
           <a href="javascript:void(0)" className="left-menu-item"  onClick={(e: any) => this.saveDbToDisk(e)}>
             <i className="fa fa-database"></i><span>Save state to file</span>
           </a>
+          <a href="https://sqliteonline.com" className="left-menu-item" target="_blank">
+            <i className="fa fa-link"></i><span>Online SQLite Viewer</span>
+          </a>
+          <br/>
         </Sidebar>
 
         {/*code dialog*/}

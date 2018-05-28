@@ -196,3 +196,4 @@ users.getByFilter({name: 'user1', age: 11, admin: 0});
 
 MIT
 
+<p align="center">Back to top :arrow_up</p>

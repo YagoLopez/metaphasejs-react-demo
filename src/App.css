@@ -64,6 +64,12 @@ h2 {
   color: cornflowerblue;
 }
 
+h3 {
+  font-size: 16px;
+  color: dodgerblue;
+  padding: 30px;
+}
+
 .custom .ui-scrollpanel-wrapper {
   border-right: 9px solid #f4f4f4;
 }
@@ -251,7 +257,8 @@ fieldset {
 
 .logo-leftside-menu {
   width: 30px;
-  margin-bottom: -5px;
+  margin-bottom: -10px;
+  margin-right: 2px;
   /* vertical-align: sub; */
 }
 
