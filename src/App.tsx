@@ -1,4 +1,5 @@
 
+//todo: poner logo en cabecera
 //todo: dynamic/async import para cargar el contenido del dialogo de codigo
 //todo: arreglar errores compilacion
 //todo: diagram view (static)

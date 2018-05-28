@@ -244,9 +244,9 @@ fieldset {
   height: 35px;
 }
 
-.numeric-input {
+.react-numeric-input input {
   height: 25px;
-  width: 160px !important;
+  width: 160px;
 }
 
 body{

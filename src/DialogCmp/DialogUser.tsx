@@ -19,7 +19,6 @@ export class DialogUser extends DialogBase {
 
   componentDidMount() {
     setReadOnlyAttr('admin');
-    setReadOnlyAttr('age');
   }
 
   render() {
@@ -51,7 +50,7 @@ export class DialogUser extends DialogBase {
               <label htmlFor="age">Age <span className="dialog-small">(number)</span></label>
             </div>
             <div className="ui-grid-col-8 dialog-label">
-              <NumericInput id="age" className="numeric-input" mobile={true}
+              <NumericInput id="age" className="numeric-input" mobile={true} min={1} max={100} strict={true}
                             onChange={(age: number) => {this.updateProperty('age', age)}}
                             value={selectedModel && selectedModel.age}/>
             </div>
