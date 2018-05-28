@@ -1,9 +1,9 @@
 
-//todo: intentar mificar manualmente usando rollup
 //todo: arreglar display:block en editor-html en dialogoPost
+//todo: intentar mificar manualmente usando rollup
+//todo: diagram view (static)
 //todo: arreglar errores compilacion
 //todo: dynamic/async import para cargar el contenido del dialogo de codigo
-//todo: diagram view (static)
 //todo: option for saving binary dbfile to localstorage
 //todo: separador de mensajes de logger
 //todo: hacer smoke tests
@@ -243,9 +243,7 @@ export class App extends React.Component {
     const dbLoadedMessage = (
       <div className="subtitle">
         Database loaded from file: <a href="metaphase.sqlite" target="_blank">metaphase.sqlite</a>
-        <div>
-          You can download "metaphase.sqlite" db file and query it online using "Online SQLite Viewer"
-        </div>
+        <div>You can download db file and query it uploading to "Menu &raquo; Online SQLite Viewer"</div>
       </div>
     )
 
@@ -261,8 +259,6 @@ export class App extends React.Component {
           </div>
           <strong className="title">MetaphaseJS Demo</strong>
         </Toolbar>
-
-        {this.state.loadDbFromFile ? dbLoadedMessage : ''}
 
         {/*left side menu*/}
         <Sidebar visible={displayLeftMenu} baseZIndex={1000000}
@@ -302,6 +298,8 @@ export class App extends React.Component {
         </Sidebar>
 
         <div className="fade-in-long">
+
+          <div>{this.state.loadDbFromFile ? dbLoadedMessage : ''}</div>
 
           {/*json state view*/}
           <Panel header={JsonViewPanelHeader} toggleable={true}>

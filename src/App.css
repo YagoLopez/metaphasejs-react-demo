@@ -26,7 +26,6 @@
   padding-top: 8px;
 }
 
-
 .ui-datatable {
   padding-top: 5px;
   padding-bottom: 5px;
@@ -262,6 +261,17 @@ fieldset {
   /* vertical-align: sub; */
 }
 
+.ql-editor {
+  height: 70px !important;
+}
+
+div.ql-tooltip {
+  z-index: 1;
+}
+
+div.ql-tooltip.ql-editing {
+  z-index: 1;
+}
 
 body{
   scrollbar-base-color: #C0C0C0; scrollbar-face-color: darkgrey; scrollbar-3dlight-color: #C0C0C0;
