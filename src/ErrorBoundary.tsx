@@ -5,12 +5,12 @@ export class ErrorBoundary extends React.Component {
 
   state: {hasError: boolean};
 
+  private error: string;
+
   constructor(props: any) {
     super(props);
     this.state = {hasError: false};
   }
-
-  error: string;
 
   componentDidCatch(error: any, info: any) {
     removeElementFromDom('loader');

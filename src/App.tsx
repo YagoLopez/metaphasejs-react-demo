@@ -1,15 +1,15 @@
 
-//todo: poner logo en cabecera
-//todo: dynamic/async import para cargar el contenido del dialogo de codigo
+//todo: arreglar displa:block en editor-html en dialogoPost
 //todo: arreglar errores compilacion
+//todo: dynamic/async import para cargar el contenido del dialogo de codigo
 //todo: diagram view (static)
-//todo: probar a pasar el estado como props de tipo array. Ejm: store = {users: users.getAll(), posts: posts.getAll()}
 //todo: option for saving binary dbfile to localstorage
 //todo: separador de mensajes de logger
 //todo: hacer smoke tests
 //todo: probar en iexplorer
 //todo: documentar api con typedoc
 //todo: poder ejecutar consulta sql que conste de varias sentencias en varias lineas
+//todo: probar a pasar el estado como props de tipo array. Ejm: store = {users: users.getAll(), posts: posts.getAll()}
 
 import * as React from 'react';
 import {users, posts, comments} from "./store";
@@ -95,27 +95,6 @@ export class App extends React.Component {
 
   componentDidMount() {
     utils.removeElementFromDom('loader');
-    // const users = new Collection(User);
-    // try {
-    //   const response = await fetch('metaphase.sqlite');
-    //   const arrayBuffer = await response.arrayBuffer();
-    //   const uInt8Array = new Uint8Array(arrayBuffer);
-    //   const database = new SQL.Database(uInt8Array);
-    //   const results = database.exec("select * from users");
-    //   db.setDatabase(database);
-    //   console.log('users', users.getAll());
-    // } catch (error) {
-    //   console.error(error);
-    // }
-  }
-
-  componentWillReceiveProps(props: any) {
-    debugger
-    console.warn('component will receive props', props);
-  }
-
-  componentWillUpdate() {
-    console.log('component will update');
   }
 
   updateState() {
@@ -141,12 +120,12 @@ export class App extends React.Component {
     dialog.show();
   }
 
-  btnEdit(model: Model) {
+  btnEdit(selectedModel: Model) {
     const edit = () => {
-      model.tableName() === 'users' && this.dialogUser.show();
-      model.tableName() === 'posts' && this.dialogPost.show();
-      model.tableName() === 'comments' && this.dialogComment.show();
-      this.setState({selectedModel: model});
+      selectedModel.tableName() === 'users' && this.dialogUser.show();
+      selectedModel.tableName() === 'posts' && this.dialogPost.show();
+      selectedModel.tableName() === 'comments' && this.dialogComment.show();
+      this.setState({selectedModel: selectedModel});
     }
     return (
       <Button onClick={_ => edit()} className="ui-button-info" icon="fa-edit" title="Edit"/>
@@ -171,7 +150,6 @@ export class App extends React.Component {
 
   showCode() {
     document.body.style.overflow = 'hidden';
-    // Set state change asynchronously for better performance
     setTimeout(_ => {
       this.setState({displayLeftMenu: false, displayDialogCode: true});
     }, 0);
@@ -222,13 +200,10 @@ export class App extends React.Component {
 
   render() {
 
-    // const {jsonContent, children, users, posts, comments, selectedModel} = this.state;
-    // const {users, posts, comments} = this.props;
     const {children, selectedModel, displayLeftMenu, displayDialogCode} = this.state;
     const defaultUser = new User({name: '', age: '', admin: 0});
     const defaultPost = new Post({title: '', content: ''});
     const defaultComment = new Comment({author: '', date: new Date()});
-
 
     const mapIsAdminValue = (model: Model): string => {
       return model.admin ? 'True' : 'False';
@@ -279,7 +254,7 @@ export class App extends React.Component {
         {/*left side menu*/}
         <Sidebar visible={displayLeftMenu} baseZIndex={1000000}
                  onHide={() => this.setState({displayLeftMenu: false})}>
-          <h1>MetaphaseJS</h1>
+          <h1><img src="mp-logo-leftmenu.svg" className="logo-leftside-menu"/> MetaphaseJS</h1>
           <a href="javascript:void(0)" className="left-menu-item" onClick={_ => this.showCode()}>
             <i className="fa fa-file-code-o"></i><span>Show Code</span>
           </a>

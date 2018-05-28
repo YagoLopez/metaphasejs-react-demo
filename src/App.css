@@ -54,7 +54,7 @@ pre.javascript.hljs {
 }
 
 h1 {
-  color: lightslategray;
+  color: deepskyblue;
   text-align: center;
 }
 
@@ -248,6 +248,13 @@ fieldset {
   height: 25px;
   width: 160px;
 }
+
+.logo-leftside-menu {
+  width: 30px;
+  margin-bottom: -5px;
+  /* vertical-align: sub; */
+}
+
 
 body{
   scrollbar-base-color: #C0C0C0; scrollbar-face-color: darkgrey; scrollbar-3dlight-color: #C0C0C0;
