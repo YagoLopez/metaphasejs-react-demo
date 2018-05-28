@@ -11,7 +11,7 @@ Demostration of MetaphaseJS framework ( **ALPHA VERSION** ).
 - :computer: [Use this link to access the demo](https://yagolopez.js.org/metaphasejs-react-demo/build/)
 - :iphone: Or scan the QR code to load the demo in a smartphone:
 
-<p align="center"><img src="qrcode-metaphasejs-demo-small.jpg"/></p>
+<p align="center"><img src="qrcode.jpg"/></p>
 
 ## Why
 
@@ -180,6 +180,18 @@ users.getByFilter({name: 'user1', age: 11, admin: 0});
 - Create/Read/Update/Delete (CRUD):
 
 ```typescript
+// Save/update user1 using model
+user1.save();
+
+// Save/update user1 using collection
+users.save(user1);
+
+// Delete user1 using model
+user1.remove();
+
+// Delete user1 using collection
+users.remove(user1);
+
 // TODO more examples
 
 ```
@@ -196,4 +208,4 @@ users.getByFilter({name: 'user1', age: 11, admin: 0});
 
 MIT
 
-<p align="center">Back to top :arrow_up</p>
+<p align="center">Back to top :arrow_up:</p>
