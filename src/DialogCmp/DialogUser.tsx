@@ -47,7 +47,7 @@ export class DialogUser extends DialogBase {
           </div>
           <div className="ui-grid-row">
             <div className="ui-grid-col-4 dialog-label">
-              <label htmlFor="age">Age <span className="dialog-small">(number)</span></label>
+              <label htmlFor="age">Age <span className="dialog-small">(1 ≤ num ≤ 100)</span></label>
             </div>
             <div className="ui-grid-col-8 dialog-label">
               <NumericInput id="age" className="numeric-input" mobile={true} min={1} max={100} strict={true}

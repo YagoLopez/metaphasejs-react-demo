@@ -1,17 +1,15 @@
 
-//todo: arreglar display:block en editor-html en dialogoPost
-//todo: intentar mificar manualmente usando rollup
+//todo: intentar minificar manualmente usando brunch para arreglar errores compilacion
 //todo: diagram view (static)
-//todo: arreglar errores compilacion
-//todo: dynamic/async import para cargar el contenido del dialogo de codigo
+//todo: preparar proyecto libreria npm
 //todo: option for saving binary dbfile to localstorage
 //todo: separador de mensajes de logger
 //todo: hacer smoke tests
 //todo: probar en iexplorer
-//todo: preparar proyecto libreria npm
 //todo: documentar api con typedoc
 //todo: poder ejecutar consulta sql que conste de varias sentencias en varias lineas
 //todo: probar a pasar el estado como props de tipo array. Ejm: store = {users: users.getAll(), posts: posts.getAll()}
+//todo: dynamic/async import para cargar el contenido del dialogo de codigo
 
 import * as React from 'react';
 import {users, posts, comments} from "./store";
