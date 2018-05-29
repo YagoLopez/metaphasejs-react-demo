@@ -64,8 +64,8 @@ Demostration of MetaphaseJS framework ( **ALPHA VERSION** ).
 
 - Run `yarn start`
 - Test `yarn test`
-- Code coverage`yarn coverage` :arrow_right: [link](./coverage/lcov-report/index.html)
-- Package analysis `yarn analysis` :arrow_right: [link](./analysis/packages.html)
+- Code coverage`yarn coverage` :arrow_right: [link](https://yagolopez.js.org/metaphasejs-react-demo/coverage/lcov-report/index.html)
+- Package analysis `yarn analysis` :arrow_right: [link](https://yagolopez.js.org/metaphasejs-react-demo/analysis/packages.html)
 
 
 ## Contributing
