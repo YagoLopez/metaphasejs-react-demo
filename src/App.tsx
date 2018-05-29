@@ -1,6 +1,5 @@
 
 //todo: intentar minificar manualmente usando brunch para arreglar errores compilacion
-//todo: diagram view (static)
 //todo: preparar proyecto libreria npm
 //todo: option for saving binary dbfile to localstorage
 //todo: separador de mensajes de logger
@@ -10,7 +9,6 @@
 //todo: poder ejecutar consulta sql que conste de varias sentencias en varias lineas
 //todo: probar a pasar el estado como props de tipo array. Ejm: store = {users: users.getAll(), posts: posts.getAll()}
 //todo: dynamic/async import para cargar el contenido del dialogo de codigo
-//todo: source map analyzer
 
 import * as React from 'react';
 import {users, posts, comments} from "./store";

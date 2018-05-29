@@ -1,10 +1,10 @@
-<p align="center"><img src="/public/mp-logo-leftmenu.svg" style="width: 100px"/></p>
+<p align="center"><img width="100" src="/public/mp-logo-leftmenu.svg" style="width: 100px"/></p>
 
-<p align="center">
-<h1>MetaphaseJS Demo</h1>
+# MetaphaseJS Demo
+
 Demostration of MetaphaseJS framework ( **ALPHA VERSION** ).
+
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
-</p>
 
 **MetaphaseJS** is a super easy, efficient and agnostic state manager for Javascript. It can be used with React, Angular o vanilla JS. In this demo ReactJS and Typescript have been used.
 
