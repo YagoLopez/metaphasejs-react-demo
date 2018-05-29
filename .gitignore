@@ -4,9 +4,10 @@
 /node_modules
 
 # testing
-/coverage
+
 
 # misc
+.db
 .DS_Store
 .env.local
 .env.development.local
