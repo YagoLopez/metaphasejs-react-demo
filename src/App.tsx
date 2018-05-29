@@ -5,11 +5,12 @@
 //todo: option for saving binary dbfile to localstorage
 //todo: separador de mensajes de logger
 //todo: hacer smoke tests
-//todo: probar en iexplorer
+//todo: probar en iexplorer. (avisar de navegador no soportado)
 //todo: documentar api con typedoc
 //todo: poder ejecutar consulta sql que conste de varias sentencias en varias lineas
 //todo: probar a pasar el estado como props de tipo array. Ejm: store = {users: users.getAll(), posts: posts.getAll()}
 //todo: dynamic/async import para cargar el contenido del dialogo de codigo
+//todo: source map analyzer
 
 import * as React from 'react';
 import {users, posts, comments} from "./store";
@@ -238,11 +239,14 @@ export class App extends React.Component {
                                onChange={_ => this.showChildren()} className="checkbox-children"/>
       <span className="checkbox-children-label" onClick={_ => this.showChildren()}>Show Children</span></span>
     );
-    const dbLoadedMessage = (
+    const loadStateFromFile = (
       <div className="subtitle">
-        Database loaded from file: <a href="metaphase.sqlite" target="_blank">metaphase.sqlite</a>
-        <div>You can download db file and query it uploading to "Menu &raquo; Online SQLite Viewer"</div>
+        Application state loaded from file: <a href="metaphase.sqlite" target="_blank">metaphase.sqlite</a>
+        <div>You can download db file and query it uploading it to "Menu &raquo; Online SQLite Viewer"</div>
       </div>
+    )
+    const loadStateFromCode = (
+      <div className="subtitle">Application state loaded from code</div>
     )
 
 
@@ -272,10 +276,10 @@ export class App extends React.Component {
             <i className="fa fa-refresh"></i><span>Switch data origin</span>
           </a>
           <a href="javascript:void(0)" className="left-menu-item"  onClick={(e: any) => this.saveDbToDisk(e)}>
-            <i className="fa fa-database"></i><span>Save state to file</span>
+            <i className="fa fa-download"></i><span>Save state to file</span>
           </a>
           <a href="https://sqliteonline.com" className="left-menu-item" target="_blank">
-            <i className="fa fa-link"></i><span>Online SQLite Viewer</span>
+            <i className="fa fa-external-link"></i><span>Online SQLite Viewer</span>
           </a>
           <br/>
         </Sidebar>
@@ -297,7 +301,7 @@ export class App extends React.Component {
 
         <div className="fade-in-long">
 
-          <div>{this.state.loadDbFromFile ? dbLoadedMessage : ''}</div>
+          <div>{this.state.loadDbFromFile ? loadStateFromFile : loadStateFromCode}</div>
 
           {/*json state view*/}
           <Panel header={JsonViewPanelHeader} toggleable={true}>

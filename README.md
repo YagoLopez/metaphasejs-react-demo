@@ -168,7 +168,10 @@ users.getAll();
 // Get all users with children (related models)
 users.getAll({children: true});
 
-// Get users with name 'users1'
+// Get all users using raw sql
+// TODO
+
+// Get user with name 'user1'
 users.getByFilter({name: 'user1'})
 
 // Get users
@@ -208,4 +211,4 @@ users.remove(user1);
 
 MIT
 
-<p align="center">[Back to top](#) :arrow_up:</p>
+<p align="center"><a href="#">Back to top :arrow_up:</a></p>
