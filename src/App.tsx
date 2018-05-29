@@ -1,9 +1,9 @@
 
-//todo: intentar minificar manualmente usando brunch para arreglar errores compilacion
 //todo: preparar proyecto libreria npm
-//todo: option for saving binary dbfile to localstorage
+//todo: arreglar errores compilacion
+//todo: opcion para salvar db state a localstorage
 //todo: separador de mensajes de logger
-//todo: hacer smoke tests
+//todo: smoke tests
 //todo: probar en iexplorer. (avisar de navegador no soportado)
 //todo: documentar api con typedoc
 //todo: poder ejecutar consulta sql que conste de varias sentencias en varias lineas
@@ -346,7 +346,16 @@ export class App extends React.Component {
 
           </Panel>
 
+          {/*UML View*/}
+          <Panel header="✅ State View Schema (static)" toggleable={true}>
+            <ScrollPanel className="uml-img-container">
+              <img className="uml-img" src="/uml/uml.png"/>
+            </ScrollPanel>
+          </Panel>
+
         </div>
+
+        <br/>
 
         <DialogUser ref={(el: DialogUser) => this.dialogUser = el} {...dialogProps}/>
 

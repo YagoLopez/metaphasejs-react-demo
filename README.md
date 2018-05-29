@@ -82,7 +82,7 @@ TODO: generate API documentation with TypeDoc
 
 ## UML Diagram of the state
 
-<p align="center"><img src="./uml/uml.png"/></p>
+<p align="center"><img src="./public/uml/uml.png"/></p>
 
 ## Code Samples
 
