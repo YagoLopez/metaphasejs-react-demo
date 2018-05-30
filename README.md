@@ -1,10 +1,3 @@
-<p align="center">
-<img width="100" src="/public/mp-logo-leftmenu.svg"/>
-<h1 align="center">Metaphase Demo</h1>
-<div style="text-align: center">Demostration of MetaphaseJS framework <strong>( ALPHA VERSION )</strong></div>
-<div><img src="http://badges.github.io/stability-badges/dist/experimental.svg"/></div>
-</p>
-
 # MetaphaseJS Demo
 
 Demostration of MetaphaseJS framework ( **ALPHA VERSION** ).
