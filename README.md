@@ -16,10 +16,10 @@ Demostration of MetaphaseJS framework ( **ALPHA VERSION** ).
 ## Why
 
 - State management is an issue solved decades ago in server-side environments using transactional and relational databases. This is not the case of client-side apps (browser) where it has remained unsolved until the advent of libraries/patterns like Redux/Flux
-- Client-state managers based on Flux architecture produce verbose and complicated code (inmutability adds levels of indirection and therefore complexity) and they are basically reinventing the wheel trying to create a database in browser
-- Store in Redux is essentially a key-value object which is not appropiated for nested and relational data
+- Client-state managers based on Flux architecture produce verbose and complicated code (inmutability adds levels of indirection and therefore complexity) and they are basically reinventing the wheel trying to recreate an in-browser database
+- Store in Redux is essentially a big key-value object which is not appropiate for nested and relational data
 - There are other client databases like IndexDB, LovefieldDB, etc. but they are complicated (callbacks, asynchrony) or very elementary (localStorage)
-- The intention of MetaphaseJS is to apply the same techniques of server-side state management to client-side apps.
+- The intention of MetaphaseJS is to apply the same server-side state management techniques to client-side apps.
 
 ## Features
 
