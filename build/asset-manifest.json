@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.221d1438.css",
   "main.css.map": "static/css/main.221d1438.css.map",
-  "main.js": "static/js/main.d5cc4a20.js",
-  "main.js.map": "static/js/main.d5cc4a20.js.map",
+  "main.js": "static/js/main.09655c4f.js",
+  "main.js.map": "static/js/main.09655c4f.js.map",
   "static\\media\\color.png": "static/media/color.c7a33805.png",
   "static\\media\\fontawesome-webfont.eot": "static/media/fontawesome-webfont.674f50d2.eot",
   "static\\media\\fontawesome-webfont.svg?v=4.7.0": "static/media/fontawesome-webfont.912ec66d.svg",
@@ -14,5 +14,6 @@
   "static\\media\\roboto-v15-latin-regular.svg": "static/media/roboto-v15-latin-regular.3d3a5358.svg",
   "static\\media\\roboto-v15-latin-regular.ttf": "static/media/roboto-v15-latin-regular.38861cba.ttf",
   "static\\media\\roboto-v15-latin-regular.woff": "static/media/roboto-v15-latin-regular.16e1d930.woff",
-  "static\\media\\roboto-v15-latin-regular.woff2": "static/media/roboto-v15-latin-regular.7e367be0.woff2"
+  "static\\media\\roboto-v15-latin-regular.woff2": "static/media/roboto-v15-latin-regular.7e367be0.woff2",
+  "static\\media\\uml.png": "static/media/uml.29bd6cde.png"
 }
