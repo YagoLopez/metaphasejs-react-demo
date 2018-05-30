@@ -1,7 +1,7 @@
 <p align="center">
 <img width="100" src="/public/mp-logo-leftmenu.svg"/>
-<h1>Metaphase Demo</h1>
-<div>Demostration of MetaphaseJS framework <strong>( ALPHA VERSION )</strong></div>
+<h1 align="center">Metaphase Demo</h1>
+<div style="text-align: center">Demostration of MetaphaseJS framework <strong>( ALPHA VERSION )</strong></div>
 <div><img src="http://badges.github.io/stability-badges/dist/experimental.svg"/></div>
 </p>
 
