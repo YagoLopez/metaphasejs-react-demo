@@ -349,7 +349,7 @@ export class App extends React.Component {
           {/*UML View*/}
           <Panel header="✅ Schema State View (static)" toggleable={true}>
             <ScrollPanel className="uml-img-container">
-              <img className="uml-img" src={require("./uml/uml.png")}/>
+              <img className="uml-img" src={require("./uml/uml.jpg")}/>
             </ScrollPanel>
           </Panel>
 

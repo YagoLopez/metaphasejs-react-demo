@@ -29,10 +29,13 @@
     "@types/node": "^10.1.2",
     "@types/react": "^16.3.14",
     "@types/react-dom": "^16.0.5",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "browserify": "^16.2.2",
     "mock-knex": "YagoLopez/mock-knex",
     "source-map-explorer": "^1.5.0",
-    "typescript": "^2.8.3"
+    "typescript": "^2.8.3",
+    "uglify-js": "3"
   },
   "scripts": {
     "start": "react-scripts-ts start",
@@ -43,7 +46,9 @@
     "test:debug": "jest --debug",
     "test:update": "jest -u",
     "coverage": "jest --coverage --silent",
-    "analyze": "source-map-explorer build/static/js/main.*"
+    "analyze": "source-map-explorer build/static/js/main.*",
+    "uglify": "./node_modules/.bin/uglifyjs ./build/static/js/main.09655c4f.js --compress --output main.js --keep-fnames",
+    "babel": "babel ./build/static/js/main.09655c4f.js --out-file bundle.js --presets=es2015,react"
   },
   "jest": {
     "setupFiles": [

@@ -249,7 +249,7 @@
 									"containerExtending": false,
 									"left": 256,
 									"top": 125,
-									"width": 160.7236328125,
+									"width": 164.32275390625,
 									"height": 13,
 									"autoResize": false,
 									"underline": false,
@@ -288,7 +288,7 @@
 											"containerExtending": false,
 											"left": 261,
 											"top": 148,
-											"width": 150.7236328125,
+											"width": 154.32275390625,
 											"height": 13,
 											"autoResize": false
 										},
@@ -312,7 +312,7 @@
 											"containerExtending": false,
 											"left": 261,
 											"top": 163,
-											"width": 150.7236328125,
+											"width": 154.32275390625,
 											"height": 13,
 											"autoResize": false
 										},
@@ -336,7 +336,7 @@
 											"containerExtending": false,
 											"left": 261,
 											"top": 178,
-											"width": 150.7236328125,
+											"width": 154.32275390625,
 											"height": 13,
 											"autoResize": false
 										},
@@ -360,7 +360,7 @@
 											"containerExtending": false,
 											"left": 261,
 											"top": 193,
-											"width": 150.7236328125,
+											"width": 154.32275390625,
 											"height": 13,
 											"autoResize": false
 										}
@@ -376,7 +376,7 @@
 									"containerExtending": false,
 									"left": 256,
 									"top": 143,
-									"width": 160.7236328125,
+									"width": 164.32275390625,
 									"height": 68,
 									"autoResize": false
 								}
@@ -392,7 +392,7 @@
 							"containerExtending": false,
 							"left": 256,
 							"top": 120,
-							"width": 160.7236328125,
+							"width": 164.32275390625,
 							"height": 91,
 							"autoResize": false,
 							"nameLabel": {
@@ -607,8 +607,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 152,
-									"top": 131,
+									"left": 149,
+									"top": 147,
 									"width": 59.99169921875,
 									"height": 13,
 									"autoResize": false,
@@ -639,7 +639,7 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": -82,
+									"left": -85,
 									"top": 226,
 									"width": 59.99169921875,
 									"height": 13,
@@ -672,7 +672,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 230,
-									"top": 131,
+									"top": 147,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -704,7 +704,7 @@
 								"$ref": "AAAAAAFjrOiys82mXhY="
 							},
 							"lineStyle": 0,
-							"points": "112:200;112:152;256:152",
+							"points": "109:200;109:168;256:168",
 							"nameLabel": {
 								"$ref": "AAAAAAFjrPOpeM5jGsI="
 							},
@@ -1071,7 +1071,10 @@
 							"name": "user_id",
 							"type": "NUMBER",
 							"primaryKey": false,
-							"foreignKey": false,
+							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFjrOkBfc2xx3k="
+							},
 							"nullable": false,
 							"unique": false
 						}
@@ -1168,7 +1171,7 @@
 							"type": "NUMBER",
 							"length": 0,
 							"primaryKey": false,
-							"foreignKey": false,
+							"foreignKey": true,
 							"nullable": false,
 							"unique": false
 						}
