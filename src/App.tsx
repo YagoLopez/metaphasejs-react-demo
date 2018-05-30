@@ -1,4 +1,4 @@
-
+//todo: reducir tamaño bundle quitando dependencias no usadas
 //todo: preparar proyecto libreria npm
 //todo: arreglar errores compilacion
 //todo: opcion para salvar db state a localstorage
@@ -191,9 +191,9 @@ export class App extends React.Component {
     const {loadDbFromFile} = this.state;
     this.setState({loadDbFromFile: !loadDbFromFile});
     if (loadDbFromFile) {
-      alert('Load application state from database created by code...')
+      alert('Loading application state from database created by code...')
     } else {
-      alert('Load application state from database file...');
+      alert('Loading application state from database file...');
     }
    }
 
@@ -346,7 +346,7 @@ export class App extends React.Component {
 
           </Panel>
 
-          {/*UML View*/}
+          {/*Schema View*/}
           <Panel header="✅ Schema State View (static)" toggleable={true}>
             <ScrollPanel className="uml-img-container">
               <img className="uml-img" src={require("./uml/uml.jpg")}/>
