@@ -1,3 +1,4 @@
+//todo: hacer anchura de html editor fija
 //todo: reducir tamaño bundle quitando dependencias no usadas
 //todo: preparar proyecto libreria npm
 //todo: arreglar errores compilacion
@@ -317,7 +318,7 @@ export class App extends React.Component {
             <DataTable value={users.getAll()}
                        header="USERS" footer={footerTableUsers} className="centered">
               <Column field="id" header="Id"/>
-              <Column field="name" header="Name"/>
+              <Column field="name" header="Name" className="ellipsis"/>
               <Column field="age" header="Age"/>
               <Column field="admin" header="Admin" body={(model: Model) => mapIsAdminValue(model)}/>
               <Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>
@@ -337,7 +338,7 @@ export class App extends React.Component {
             <DataTable value={comments.getAll()}
                        header="COMMENTS" footer={footerCommentsTable} className="centered">
               <Column field="id" header="Id"/>
-              <Column field="author" header="Author"/>
+              <Column field="author" header="Author" className="ellipsis"/>
               <Column field="date" header="Date" className="ellipsis"/>
               <Column field="post_id" header="Post Id"/>
               <Column header="Edit" body={(model: Model) => this.btnEdit(model)}/>
