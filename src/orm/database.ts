@@ -163,20 +163,21 @@ export const loadDbFromFile = (fileNamePath: string, actionFn: Function): void =
   })
   .catch((error: Error) => {
     console.error(error);
+    alert('Failed to fetch database file');
   })
 };
 
 export const saveDbToFile = (fileNamePath: string) => {
   try {
     const isFileSaverSupported = !!new Blob;
+    const uint8Array = db.export();
+    const buffer = new Buffer(uint8Array);
+    const file = new File([buffer], fileNamePath, {type: 'application/octet-stream'});
+    FileSaver.saveAs(file);
   } catch (exception) {
     alert('Save file to disk not supported by browser');
     console.error(exception);
   }
-  const uint8Array = db.export();
-  const buffer = new Buffer(uint8Array);
-  const file = new File([buffer], fileNamePath, {type: 'application/octet-stream'});
-  FileSaver.saveAs(file);
 };
 
 console.clear();

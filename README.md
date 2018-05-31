@@ -176,6 +176,7 @@ comments.save(comment2);
 
 
 3. Operations with data
+
    3.  1 Filtering:
 ```typescript
 // Get all users

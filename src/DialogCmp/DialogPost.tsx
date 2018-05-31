@@ -67,7 +67,7 @@ export class DialogPost extends DialogBase {
             <div className="ui-grid-col-3 dialog-label">
               <label htmlFor="content">Content</label>
             </div>
-            <div className="ui-grid-col-10 dialog-label">
+            <div className="ui-grid-col-10 dialog-label" style={{width: '300px'}}>
               <ReactQuill value={selectedModel ? selectedModel.content : ''}
                           placeholder="Html post content here..."
                           onChange={(content: string) => {this.updateProperty('content', content)}} />

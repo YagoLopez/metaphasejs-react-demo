@@ -1,13 +1,13 @@
-//todo: hacer anchura de html editor fija
+//todo: abrir issue en repo cra. error sw. no se comprueba el soporte de sw del navegador
+//todo: arreglar spinner en dialogo user para que no aparezca teclado virtual
 //todo: reducir tamaño bundle quitando dependencias no usadas
+//todo: hacer prueba ejectando config crat
 //todo: preparar proyecto libreria npm
-//todo: arreglar errores compilacion
 //todo: opcion para salvar db state a localstorage
 //todo: separador de mensajes de logger
 //todo: smoke tests
 //todo: probar en iexplorer. (avisar de navegador no soportado)
 //todo: documentar api con typedoc
-//todo: poder ejecutar consulta sql que conste de varias sentencias en varias lineas
 //todo: probar a pasar el estado como props de tipo array. Ejm: store = {users: users.getAll(), posts: posts.getAll()}
 //todo: dynamic/async import para cargar el contenido del dialogo de codigo
 

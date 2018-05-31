@@ -19,7 +19,6 @@
     "react-quill": "^1.2.7",
     "react-scripts-ts": "<=2.13.0",
     "reflect-metadata": "^0.1.12",
-    "sql-bricks-sqlite": "^0.1.0",
     "sql.js": "^0.5.0"
   },
   "devDependencies": {
@@ -35,11 +34,13 @@
     "mock-knex": "YagoLopez/mock-knex",
     "source-map-explorer": "^1.5.0",
     "typescript": "^2.8.3",
+    "uglify-es": "^3.3.9",
     "uglify-js": "3"
   },
   "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
+    "build2": "react-scripts-ts build && uglify-compress",
     "eject": "react-scripts-ts eject",
     "test": "jest --verbose --notify",
     "test:watch": "jest --watch --notify",
@@ -47,8 +48,9 @@
     "test:update": "jest -u",
     "coverage": "jest --coverage --silent",
     "analyze": "source-map-explorer build/static/js/main.*",
-    "uglify": "./node_modules/.bin/uglifyjs ./build/static/js/main.09655c4f.js --compress --output main.js --keep-fnames",
-    "babel": "babel ./build/static/js/main.09655c4f.js --out-file bundle.js --presets=es2015,react"
+    "uglify-compress": "npx uglifyjs ./build/static/js/main.59949d2c.js --compress --output ./build/static/js/main.js --timings",
+    "uglify-mangle": "npx uglifyjs ./build/static/js/main.59949d2c.js --compress --mangle --output ./build/static/js/main.js --keep-fnames",
+    "uglify2": "npx uglifyjs ./build/static/js/main.59949d2c.js --config-file uglify.config.json --output ./build/static/js/main.js"
   },
   "jest": {
     "setupFiles": [
