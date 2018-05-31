@@ -283,7 +283,7 @@ export class App extends React.Component {
           <br/>
         </Sidebar>
 
-        {/*code dialog*/}
+        {/*Show code dialog*/}
         <Sidebar fullScreen={true} visible={displayDialogCode} onHide={() => this.hideCode()}>
           <h2 className="centered title-border">✅ Code View</h2>
           <div className="centered subtitle">
