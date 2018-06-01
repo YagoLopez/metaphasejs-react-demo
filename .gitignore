@@ -7,7 +7,6 @@
 
 
 # misc
-/**/.idea/workspace.xml
 *.db
 .DS_Store
 .env.local
