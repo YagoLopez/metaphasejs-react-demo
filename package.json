@@ -53,31 +53,6 @@
     "uglify2": "npx uglifyjs ./build/static/js/main.59949d2c.js --config-file uglify.config.json --output ./build/static/js/main.js"
   },
   "jest": {
-    "setupFiles": [
-      "<rootDir>/config/test-shim.js",
-      "<rootDir>/config/test-setup.js"
-    ],
-    "globals": {
-      "ts-jest": {
-        "skipBabel": true
-      }
-    },
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "transform": {
-      "^.+\\.(ts|tsx)$": "<rootDir>/config/test-preprocessor.js",
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/assetsTransformer.js",
-      "\\.(css|less)$": "<rootDir>/config/assetsTransformer.js"
-    },
-    "roots": [
-      "src"
-    ],
-    "testMatch": [
-      "**/test/*.(test).(ts|tsx|js)"
-    ],
     "collectCoverageFrom": [
       "src/orm/**/*.{js,tsx,ts}",
       "!src/index.tsx",
