@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoTestManager">
-    <enabled-run-configurations>
-      <run-configuration type="JavaScriptTestRunnerJest" name="collection.test.ts" />
-      <run-configuration type="JavaScriptTestRunnerJest" name="Base Class.insert()" />
-      <run-configuration type="JavaScriptTestRunnerJest" name="Test Debug" />
-      <run-configuration type="JavaScriptTestRunnerJest" name="Column Class.createColumn().With invalid column data" />
-      <run-configuration type="JavaScriptTestRunnerJest" name="column.test.ts" />
-      <run-configuration type="JavaScriptTestRunnerJest" name="base.test.ts" />
-    </enabled-run-configurations>
-  </component>
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/orm/decorators.ts" line="16" />
-    <bookmark url="file://$PROJECT_DIR$/src/orm/column.ts" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="52fc5b86-ba75-49ec-a978-0dd57b69a38f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
@@ -31,26 +17,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CoverageOptionsProvider">
-    <option name="myAddOrReplace" value="2" />
-    <option name="myActivateViewOnRun" value="false" />
-  </component>
-  <component name="ExportToHTMLSettings">
-    <option name="printScope" value="1" />
-    <option name="PRINT_LINE_NUMBERS" value="true" />
-    <option name="OPEN_IN_BROWSER" value="true" />
-    <option name="OUTPUT_DIRECTORY" value="C:\Users\yagol\Documents\projects\metaphase-react-demo\exportToHTML" />
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="sql_js-test" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+    <leaf>
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="156">
+              <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -58,87 +34,8 @@
       </file>
     </leaf>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>left-side-menu</find>
-      <find>logo-left</find>
-      <find>h1</find>
-      <find>h2</find>
-      <find>ql</find>
-      <find>number</find>
-      <find>metaphase.sqlite</find>
-      <find>fa-</find>
-      <find>fa-link</find>
-      <find>left-menu</find>
-      <find>getUrlParameter</find>
-      <find>scroll</find>
-      <find>ui-scrollpanel-</find>
-      <find>numeric-input</find>
-      <find>graphi</find>
-      <find>\</find>
-      <find>//</find>
-      <find>uglify</find>
-      <find>uml.png</find>
-      <find>ellipsis</find>
-      <find>uml-img</find>
-      <find>outpu</find>
-      <find>/</find>
-      <find>mangle</find>
-      <find>savedbtofile</find>
-      <find>fetch</find>
-      <find>classnames</find>
-      <find>utils</find>
-      <find>fnames</find>
-      <find>main</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>?</replace>
-      <replace>user_id</replace>
-      <replace>Comment</replace>
-      <replace>author</replace>
-      <replace>date</replace>
-      <replace>post_id</replace>
-      <replace>dialogComment</replace>
-      <replace>postIds</replace>
-      <replace>loader-circle-container</replace>
-      <replace>loader-title</replace>
-      <replace>loader-circle</replace>
-      <replace>loader</replace>
-      <replace>5</replace>
-      <replace>this.httpRequest</replace>
-      <replace>xhr</replace>
-      <replace>any</replace>
-      <replace>[]</replace>
-      <replace>store</replace>
-      <replace>State</replace>
-      <replace>;</replace>
-      <replace>fileNamePath</replace>
-      <replace>utils1</replace>
-      <replace>&quot;javascript:void(0)&quot;</replace>
-      <replace>prueba</replace>
-      <replace>displayDialogCode</replace>
-      <replace>ui-grid-col-4</replace>
-      <replace>ui-grid-col-3</replace>
-      <replace>this.DB_FILENAME</replace>
-      <replace>//</replace>
-      <replace>/</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>C:\Users\yagol\Documents\projects\sql_js-test\src</dir>
-      <dir>C:\Users\yagol\Documents\projects\sql_js-test\src\orm\test</dir>
-      <dir>C:\Users\yagol\Documents\projects\sql_js-test\src\orm</dir>
-      <dir>C:\Users\yagol\Documents\projects\metaphase-react-demo\src\DialogCmp</dir>
-      <dir>C:\Users\yagol\Documents\projects\metaphase-react-demo\node_modules\knex</dir>
-      <dir>C:\Users\yagol\Documents\projects\metaphase-react-demo\src</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="simple-json-viewer" />
-      </map>
-    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/App.tsx" root0="SKIP_HIGHLIGHTING" />
@@ -215,22 +112,8 @@
       </list>
     </option>
   </component>
-  <component name="JsBowerSettings">
-    <node-interpreter value="project" />
-    <exe-path />
-    <config-path />
-  </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
-    <package-json value="$PROJECT_DIR$/package.json" />
-  </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <annotation-enable>false</annotation-enable>
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
-  </component>
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
@@ -246,25 +129,6 @@
     <option name="y" value="81" />
     <option name="width" value="1382" />
     <option name="height" value="754" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>File Watchers</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>AngularJS</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -319,51 +183,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
-    <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../metaphasd-react-typescript-parcel-test" />
-    <property name="JavaScriptPreferStrict" value="false" />
-    <property name="JavaScriptWeakerCompletionTypeGuess" value="false" />
-    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
-    <property name="settings.editor.splitter.proportion" value="0.2397541" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="types&#9;FILE&#9;file://C:/Users/yagol/Documents/projects/sql_js-test/src/orm/types.ts&#10;relatedColum&#9;null&#9;null&#10;relatedColumn&#9;null&#9;null&#10;initOrm&#9;FILE&#9;file://C:/Users/yagol/Documents/projects/sql_js-test/src/connection/initOrm.ts" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
-    <property name="TODO_SCOPE" value="Current File" />
-    <property name="node.js.path.for.package.jscs" value="project" />
-    <property name="node.js.detected.package.jscs" value="true" />
-    <property name="node.js.selected.package.jscs" value="" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="" />
-    <property name="node.js.path.for.package.standard" value="project" />
-    <property name="node.js.detected.package.standard" value="true" />
-    <property name="node.js.selected.package.standard" value="" />
-    <property name="node.js.path.for.package.stylelint" value="project" />
-    <property name="node.js.detected.package.stylelint" value="true" />
-    <property name="node.js.selected.package.stylelint" value="" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.tslint" value="C:\Users\yagol\Documents\projects\metaphase-react-demo\node_modules\tslint" />
-    <property name="restartRequiresConfirmation" value="false" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\temp\urls\minify" />
-      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\src" />
-      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo" />
-      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\public" />
-      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\temp" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\temp" />
-      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\temp\urls\minify" />
-      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\analysis" />
-      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\temp\urls" />
-      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\src" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -377,165 +197,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.Run">
-    <configuration name="Base Class.insert()" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <working-dir value="$PROJECT_DIR$" />
-      <jest-options value="--notify" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/orm/test/base.test.ts" />
-      <test-names>
-        <test-name value="Base Class" />
-        <test-name value="insert()" />
-      </test-names>
-    </configuration>
-    <configuration name="Build" type="js.build_tools.npm" factoryName="npm">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-    </configuration>
-    <configuration name="Column Class.createColumn().With invalid column data" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <working-dir value="$PROJECT_DIR$" />
-      <jest-options value="--debug" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/orm/test/column.test.ts" />
-      <test-names>
-        <test-name value="Column Class" />
-        <test-name value="createColumn()" />
-        <test-name value="With invalid column data" />
-      </test-names>
-    </configuration>
-    <configuration name="Run" type="js.build_tools.npm" factoryName="npm">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-    </configuration>
-    <configuration name="Test Debug" type="JavaScriptTestRunnerJest" factoryName="Jest" singleton="false">
-      <node-interpreter value="project" />
-      <working-dir value="$PROJECT_DIR$" />
-      <jest-options value="--debug" />
-      <envs />
-      <scope-kind value="ALL" />
-    </configuration>
-    <configuration name="Test" type="JavaScriptTestRunnerJest" factoryName="Jest">
-      <node-interpreter value="project" />
-      <working-dir value="$PROJECT_DIR$" />
-      <jest-options value="--notify" />
-      <envs />
-      <scope-kind value="ALL" />
-    </configuration>
-    <configuration name="base.test.ts" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <working-dir value="$PROJECT_DIR$" />
-      <jest-options value="--notify" />
-      <envs />
-      <scope-kind value="TEST_FILE" />
-      <test-file value="$PROJECT_DIR$/src/orm/test/base.test.ts" />
-    </configuration>
-    <configuration name="collection.test.ts" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <working-dir value="$PROJECT_DIR$" />
-      <jest-options value="--notify" />
-      <envs />
-      <scope-kind value="TEST_FILE" />
-      <test-file value="$PROJECT_DIR$/src/orm/test/collection.test.ts" />
-    </configuration>
-    <configuration name="column.test.ts" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <working-dir value="$PROJECT_DIR$" />
-      <jest-options value="--debug" />
-      <envs />
-      <scope-kind value="TEST_FILE" />
-      <test-file value="$PROJECT_DIR$/src/orm/test/column.test.ts" />
-    </configuration>
-    <list size="9">
-      <item index="0" class="java.lang.String" itemvalue="Jest.Test" />
-      <item index="1" class="java.lang.String" itemvalue="Jest.Test Debug" />
-      <item index="2" class="java.lang.String" itemvalue="npm.Build" />
-      <item index="3" class="java.lang.String" itemvalue="npm.Run" />
-      <item index="4" class="java.lang.String" itemvalue="Jest.column.test.ts" />
-      <item index="5" class="java.lang.String" itemvalue="Jest.Column Class.createColumn().With invalid column data" />
-      <item index="6" class="java.lang.String" itemvalue="Jest.base.test.ts" />
-      <item index="7" class="java.lang.String" itemvalue="Jest.Base Class.insert()" />
-      <item index="8" class="java.lang.String" itemvalue="Jest.collection.test.ts" />
-    </list>
-    <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Jest.collection.test.ts" />
-        <item index="1" class="java.lang.String" itemvalue="Jest.base.test.ts" />
-        <item index="2" class="java.lang.String" itemvalue="Jest.Base Class.insert()" />
-        <item index="3" class="java.lang.String" itemvalue="Jest.column.test.ts" />
-        <item index="4" class="java.lang.String" itemvalue="Jest.Column Class.createColumn().With invalid column data" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
-  <component name="StructureViewFactory">
-    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR,SHOW_CLASSES,SHOW_FIELDS,HIDE_INHERITED_FROM_OBJECT" />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="Test - 2018.04.14 at 09h 58m 46s.xml">
-      <configuration name="Test" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="Test - 2018.04.14 at 10h 07m 13s.xml">
-      <configuration name="Test" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="Test - 2018.04.14 at 10h 33m 52s.xml">
-      <configuration name="Test" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="Test - 2018.04.25 at 20h 25m 39s.xml">
-      <configuration name="Test" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="Test - 2018.05.28 at 12h 18m 16s.xml">
-      <configuration name="Test" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="collection_test_ts - 2018.04.13 at 09h 09m 55s.xml">
-      <configuration name="collection.test.ts" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="collection_test_ts - 2018.04.13 at 09h 10m 00s.xml">
-      <configuration name="collection.test.ts" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="collection_test_ts - 2018.04.13 at 09h 10m 32s.xml">
-      <configuration name="collection.test.ts" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="collection_test_ts - 2018.04.13 at 09h 10m 50s.xml">
-      <configuration name="collection.test.ts" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="collection_test_ts - 2018.04.13 at 09h 11m 01s.xml">
-      <configuration name="collection.test.ts" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-  </component>
-  <component name="TodoView" selected-index="2">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32572114" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23349181" sideWeight="0.5793269" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39975992" sideWeight="0.5021119" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23349181" sideWeight="0.42067307" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23507659" sideWeight="0.5954382" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32692307" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23336853" sideWeight="0.44912282" order="3" side_tool="true" content_ui="tabs" />
@@ -545,6 +218,7 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="415" y="304" width="1042" height="539" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31610578" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23349181" sideWeight="0.42067307" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4435096" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -583,36 +257,6 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Mapped values using function in Users.admin field" />
-    <MESSAGE value="Toggle scrollbar in Code View Dialog" />
-    <MESSAGE value="Simplified &quot;json-view&quot; component behaviour, Dialog files grouped in &quot;DialogCmp&quot; directory and fix &quot;Show Code&quot; Dialog behaviour" />
-    <MESSAGE value="Add Calendar control to &quot;Comment.date&quot; edit field in Dialog Calendar, css class &quot;ellipsis&quot; and refactors" />
-    <MESSAGE value="Responsive buttons" />
-    <MESSAGE value="QR Code in Readme.md" />
-    <MESSAGE value="Prevent mobile soft keyboard in &quot;user.name&quot; field in &quot;DialogUser&quot; component" />
-    <MESSAGE value="Hide virtual keyboard when dropdown control is tapped" />
-    <MESSAGE value="Loading screen" />
-    <MESSAGE value="Refactors position of input &quot;show children&quot; and other minor changes" />
-    <MESSAGE value="FadeIn css class" />
-    <MESSAGE value=":checkered_flag: Load DB from file" />
-    <MESSAGE value="Menu item load db from file in left side menu" />
-    <MESSAGE value="Add items to left menu" />
-    <MESSAGE value="Update Readme.md" />
-    <MESSAGE value="Fix bad behaviour with simultaneous parameters passed in query string" />
-    <MESSAGE value="Input label &quot;Show Children&quot; enhanced" />
-    <MESSAGE value="📤 Upgrade dependecies" />
-    <MESSAGE value="Update readme.md" />
-    <MESSAGE value="Html post editor" />
-    <MESSAGE value="Numeric input" />
-    <MESSAGE value="Logo in left side menu" />
-    <MESSAGE value="Online sqlite viewer item in left side menu" />
-    <MESSAGE value="Build" />
-    <MESSAGE value="Refactors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactors" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
@@ -623,13 +267,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/chalk/templates.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/mp-logo-leftmenu.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -901,28 +538,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ScopeChooserConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
