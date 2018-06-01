@@ -48,8 +48,8 @@
     "test:update": "jest -u",
     "coverage": "jest --coverage --silent",
     "analyze": "source-map-explorer build/static/js/main.*",
-    "uglify-compress": "npx uglifyjs ./build/static/js/main.10ef0f08.js --compress --output ./build/static/js/main.js --timings",
-    "uglify-mangle": "npx uglifyjs ./build/static/js/main.10ef0f08.js --compress --mangle --output ./build/static/js/main.js --keep-fnames",
+    "uglify-compress": "npx uglifyjs ./build/static/js/main.59949d2c.js --compress --output ./build/static/js/main.js --timings",
+    "uglify-mangle": "npx uglifyjs ./build/static/js/main.59949d2c.js --compress --mangle --output ./build/static/js/main.js --keep-fnames",
     "uglify2": "npx uglifyjs ./build/static/js/main.10ef0f08.js --config-file uglify.config.json --output ./build/static/js/main.js"
   },
   "jest": {

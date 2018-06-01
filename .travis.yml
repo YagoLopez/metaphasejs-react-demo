@@ -5,5 +5,5 @@ cache:
   directories:
     - node_modules
 script:
-  - yarn build
-  - yarn coverage
+  - npm coverage
+  - npm build

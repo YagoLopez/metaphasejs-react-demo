@@ -3,7 +3,6 @@
 Demostration of MetaphaseJS framework ( **ALPHA VERSION** ).
 
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
-[![Build Status](https://travis-ci.org/YagoLopez/metaphasejs-react-demo.svg?branch=master)](https://travis-ci.org/YagoLopez/metaphasejs-react-demo)
 
 **MetaphaseJS** is a super easy, efficient and agnostic state manager for Javascript. It can be used with React, Angular o vanilla JS. In this demo React and Typescript have been used.
 
