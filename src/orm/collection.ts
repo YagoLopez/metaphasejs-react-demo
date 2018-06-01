@@ -96,8 +96,6 @@ export class Collection extends Base {
                      columns: string[]=[],
                      load: {children: boolean} = {children: false} ): Model[] {
 
-    // const sqlQuery = query.select(columns).from(this.tableName()).where(filter);
-    // const result = db.execQuery(sqlQuery);
     const result = query.select(columns).from(this.tableName()).where(filter).run();
     console.table(result);
     if (load.children) {
@@ -115,8 +113,6 @@ export class Collection extends Base {
                        columns: string[] = [],
                        load: {children: boolean} = {children: false}): Model[] {
 
-    // const sqlQuery = query.select(columns).from(this.tableName()).where(termA, operator, termB);
-    // const result = db.execQuery(sqlQuery);
     const result = query.select(columns).from(this.tableName()).where(termA, operator, termB).run();
     console.table(result);
     if (load.children) {
