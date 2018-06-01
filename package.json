@@ -39,8 +39,7 @@
   },
   "scripts": {
     "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
-    "build2": "react-scripts-ts build && uglify-compress",
+    "build2": "react-scripts-ts build",
     "eject": "react-scripts-ts eject",
     "test": "jest --verbose --notify",
     "test:watch": "jest --watch --notify",
@@ -49,7 +48,7 @@
     "coverage": "jest --coverage --silent",
     "analyze": "source-map-explorer build/static/js/main.*",
     "uglify-compress": "npx uglifyjs ./build/static/js/main.59949d2c.js --compress --output ./build/static/js/main.js --timings",
-    "uglify-mangle": "npx uglifyjs ./build/static/js/main.59949d2c.js --compress --mangle --output ./build/static/js/main.js --keep-fnames",
+    "build": "npx uglifyjs ./build/static/js/main.59949d2c.js --compress --mangle --output ./build/static/js/main.js --keep-fnames",
     "uglify2": "npx uglifyjs ./build/static/js/main.10ef0f08.js --config-file uglify.config.json --output ./build/static/js/main.js"
   },
   "jest": {
