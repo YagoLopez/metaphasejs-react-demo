@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">52.54% </span>
+        <span class="strong">51.67% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>31/59</span>
+        <span class='fraction'>31/60</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>5/13</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">52.54% </span>
+        <span class="strong">51.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>31/59</span>
+        <span class='fraction'>31/60</span>
       </div>
     </div>
     <p class="quiet">
@@ -229,7 +229,8 @@
 <a name='L181'></a><a href='#L181'>181</a>
 <a name='L182'></a><a href='#L182'>182</a>
 <a name='L183'></a><a href='#L183'>183</a>
-<a name='L184'></a><a href='#L184'>184</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -300,20 +301,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -483,20 +485,20 @@ export interface db {
    */
   getSchema(): O<span class="fstat-no" title="function not covered" >bj</span>ect[];
 <span class="cstat-no" title="statement not covered" ></span>
-  /**
+  /**<span class="cstat-no" title="statement not covered" ></span>
    * Execute SQLite function
-   * @param {string} fn<span class="fstat-no" title="function not covered" >Ex</span>pression
-   *<span class="cstat-no" title="statement not covered" > @returns {any}</span>
-   */<span class="cstat-no" title="statement not covered" ></span>
-  execFunction(fnExpression: string): any;
-&nbsp;
-  run(sq<span class="cstat-no" title="statement not covered" >lQuery: string, params?: object | any[]): db;</span>
-  exec(s<span class="cstat-no" title="statement not covered" >qlQuery: string): Array&lt;{c</span>olumns: string[], values: any[]}&gt;;
-  prepare(sqlQuery: string, params?: object | any[]): Object;
-  each(sqlQuery: stri<span class="cstat-no" title="statement not covered" >ng, callback: Function,</span> done: Function, params?: object | any[]): db;
-  export(): Uint8<span class="cstat-no" title="statement not covered" >Array;</span>
-  close(): void<span class="cstat-no" title="statement not covered" >;</span>
-  ge<span class="cstat-no" title="statement not covered" >tRowsModified(): number;</span>
+   * @param {string} fnExpression
+   * @returns {any}<span class="fstat-no" title="function not covered" ></span>
+   *<span class="cstat-no" title="statement not covered" >/</span>
+  execFunction(fnExpression: string<span class="cstat-no" title="statement not covered" >): any;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+  run(sqlQuery: strin<span class="cstat-no" title="statement not covered" >g, params?: object | an</span>y[]): db;
+  exec(sqlQuery: st<span class="cstat-no" title="statement not covered" >ring): Array&lt;{columns: string[], values: any[]}&gt;;</span>
+  prepar<span class="cstat-no" title="statement not covered" >e(sqlQuery: string, para</span>ms?: object | any[]): Object;
+  each(sqlQuery: string, callback: Function, done: Function, params?: object | any[]): db;
+  export(): Uint8Array;
+  close(<span class="cstat-no" title="statement not covered" >): void;</span>
+  getRow<span class="cstat-no" title="statement not covered" >sModified(): number;</span>
   create_function(name: string, fn: Function): void;
 }
 &nbsp;
@@ -577,20 +579,21 @@ export const loadDbFromFile = (fileNamePath: string, actionFn: Function): void =
   })
   .catch((error: Error) =&gt; {
     console.error(error);
+    alert('Failed to fetch database file');
   })
 };
 &nbsp;
 export const saveDbToFile = (fileNamePath: string) =&gt; {
   try {
     const isFileSaverSupported = !!new Blob;
+    const uint8Array = db.export();
+    const buffer = new Buffer(uint8Array);
+    const file = new File([buffer], fileNamePath, {type: 'application/octet-stream'});
+    FileSaver.saveAs(file);
   } catch (exception) {
     alert('Save file to disk not supported by browser');
     console.error(exception);
   }
-  const uint8Array = db.export();
-  const buffer = new Buffer(uint8Array);
-  const file = new File([buffer], fileNamePath, {type: 'application/octet-stream'});
-  FileSaver.saveAs(file);
 };
 &nbsp;
 console.clear();
@@ -601,7 +604,7 @@ console.clear();
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue May 29 2018 20:05:41 GMT+0200 (Hora de verano romance)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jun 01 2018 20:01:03 GMT+0200 (Hora de verano romance)
 </div>
 </div>
 <script src="prettify.js"></script>
