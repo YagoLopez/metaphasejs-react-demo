@@ -2,23 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="492a7a69-5fc5-4d3c-9fd0-29e4e02618cb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/assetsTransformer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/test-preprocessor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/test-setup.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/test-shim.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.babelrc" afterPath="$PROJECT_DIR$/temp/.babelrc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/backup/assetsTransformer.js" afterPath="$PROJECT_DIR$/jest-config/assetsTransformer.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/backup/test-preprocessor.js" afterPath="$PROJECT_DIR$/jest-config/test-preprocessor.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/backup/test-setup.js" afterPath="$PROJECT_DIR$/jest-config/test-setup.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/backup/test-shim.js" afterPath="$PROJECT_DIR$/jest-config/test-shim.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.4f873164.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.4f873164.js.map" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/css/main.12438c08.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/css/main.12438c08.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.59949d2c.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.59949d2c.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DialogCmp/DialogComment.tsx" afterPath="$PROJECT_DIR$/src/DialogCmp/DialogComment.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DialogCmp/DialogPost.tsx" afterPath="$PROJECT_DIR$/src/DialogCmp/DialogPost.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DialogCmp/DialogUser.tsx" afterPath="$PROJECT_DIR$/src/DialogCmp/DialogUser.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils.ts" afterPath="$PROJECT_DIR$/src/utils.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/package.json.copia" afterPath="$PROJECT_DIR$/temp/package.json.copia" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tsconfig.prod.json" afterPath="$PROJECT_DIR$/tsconfig.prod.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/asset-manifest.json" afterPath="$PROJECT_DIR$/build/asset-manifest.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/index.html" afterPath="$PROJECT_DIR$/build/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/service-worker.js" afterPath="$PROJECT_DIR$/build/service-worker.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -86,8 +80,8 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="160" />
-    <option name="y" value="234" />
+    <option name="x" value="127" />
+    <option name="y" value="81" />
     <option name="width" value="1382" />
     <option name="height" value="754" />
   </component>
@@ -115,17 +109,6 @@
               <item name="metaphase-react-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="metaphase-react-demo" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="metaphase-react-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="metaphase-react-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="metaphase-react-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="metaphase-react-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="DialogCmp" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -136,6 +119,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="TODO_SCOPE" value="Project Files" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ts-lib-boilerplate - copia" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -158,12 +143,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.Run">
+  <component name="RunManager" selected="npm.Analyze">
     <configuration name="Analyze" type="js.build_tools.npm" factoryName="npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="analyze" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
+    <configuration name="Build CRA" type="js.build_tools.npm" factoryName="npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build-cra" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -186,14 +180,12 @@
       <node-interpreter value="project" />
       <envs />
     </configuration>
-    <configuration name="Test" type="js.build_tools.npm" factoryName="npm">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="test" />
-      </scripts>
+    <configuration name="Test" type="JavaScriptTestRunnerJest" factoryName="Jest">
       <node-interpreter value="project" />
+      <working-dir value="$PROJECT_DIR$" />
+      <jest-options value="--notify" />
       <envs />
+      <scope-kind value="ALL" />
     </configuration>
     <configuration name="Uglify-compress" type="js.build_tools.npm" factoryName="npm">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -213,16 +205,22 @@
       <node-interpreter value="C:/Program Files (x86)/Yarn/bin/yarn.js" />
       <envs />
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="npm.Run" />
-      <item index="1" class="java.lang.String" itemvalue="npm.Build" />
-      <item index="2" class="java.lang.String" itemvalue="npm.Test" />
-      <item index="3" class="java.lang.String" itemvalue="npm.Analyze" />
-      <item index="4" class="java.lang.String" itemvalue="npm.Uglify-compress" />
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="Jest.Test" />
+      <item index="1" class="java.lang.String" itemvalue="npm.Run" />
+      <item index="2" class="java.lang.String" itemvalue="npm.Build" />
+      <item index="3" class="java.lang.String" itemvalue="npm.Build CRA" />
+      <item index="4" class="java.lang.String" itemvalue="npm.Analyze" />
+      <item index="5" class="java.lang.String" itemvalue="npm.Uglify-compress" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Test - 2018.06.02 at 12h 27m 11s.xml">
+      <configuration name="Test" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -492,6 +490,14 @@
             <element signature="e#0#31#0" expanded="true" />
             <element signature="e#1492#2020#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis/packages.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
