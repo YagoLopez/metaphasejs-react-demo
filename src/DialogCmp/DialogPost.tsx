@@ -15,7 +15,7 @@ export class DialogPost extends DialogBase {
   userIds: {label: string, value: number}[];
 
   componentDidMount() {
-    setReadOnlyAttr('user_id');
+    setReadOnlyAttr('#user_id > div > input');
   }
 
   componentWillUpdate() {

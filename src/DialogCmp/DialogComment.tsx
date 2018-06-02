@@ -13,7 +13,7 @@ export class DialogComment extends DialogBase {
   postIds: {label: string, value: number}[];
 
   componentDidMount() {
-    setReadOnlyAttr('post_id');
+    setReadOnlyAttr('#post_id > div > input');
   }
 
   componentWillUpdate() {

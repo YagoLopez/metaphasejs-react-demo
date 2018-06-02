@@ -39,7 +39,7 @@
   },
   "scripts": {
     "start": "react-scripts-ts start",
-    "build2": "react-scripts-ts build",
+    "build-cra": "react-scripts-ts build",
     "eject": "react-scripts-ts eject",
     "test": "jest --verbose --notify",
     "test:watch": "jest --watch --notify",
@@ -53,8 +53,8 @@
   },
   "jest": {
     "setupFiles": [
-      "<rootDir>/config/test-shim.js",
-      "<rootDir>/config/test-setup.js"
+      "<rootDir>/jest-config/test-shim.js",
+      "<rootDir>/jest-config/test-setup.js"
     ],
     "globals": {
       "ts-jest": {
@@ -62,14 +62,12 @@
       }
     },
     "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
+      "ts", "tsx", "js"
     ],
     "transform": {
-      "^.+\\.(ts|tsx)$": "<rootDir>/config/test-preprocessor.js",
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/assetsTransformer.js",
-      "\\.(css|less)$": "<rootDir>/config/assetsTransformer.js"
+      "^.+\\.(ts|tsx)$": "<rootDir>/jest-config/test-preprocessor.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/jest-config/assetsTransformer.js",
+      "\\.(css|less)$": "<rootDir>/jest-config/assetsTransformer.js"
     },
     "roots": [
       "src"

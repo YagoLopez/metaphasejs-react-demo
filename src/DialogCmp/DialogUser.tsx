@@ -18,7 +18,9 @@ export class DialogUser extends DialogBase {
   }
 
   componentDidMount() {
-    setReadOnlyAttr('admin');
+    // Avoids to show virtual keyboard in smartphones
+    setReadOnlyAttr('#admin > div > input');
+    setReadOnlyAttr('#age');
   }
 
   render() {
