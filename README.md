@@ -4,7 +4,7 @@ Demostration of MetaphaseJS framework ( **0. 9. 0 BETA VERSION** ).
 
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges) [![Build Status](https://travis-ci.org/YagoLopez/metaphasejs-react-demo.svg?branch=master)](https://travis-ci.org/YagoLopez/metaphasejs-react-demo) [![Maintainability](https://api.codeclimate.com/v1/badges/c1a754523798b48ec180/maintainability)](https://codeclimate.com/github/YagoLopez/metaphasejs-react-demo/maintainability)
 
-**MetaphaseJS** is a super easy, efficient and agnostic state manager for Javascript. It can be used with React, Angular o vanilla JS. In this demo React and Typescript have been used. [Link to repository](https://github.com/YagoLopez/metaphasejs) 🔗
+**MetaphaseJS** is a super easy, efficient and agnostic state manager for Javascript. It can be used with React, Angular o vanilla JS. In this demo React and Typescript have been used. :arrow_right: ​[Link to repository](https://github.com/YagoLopez/metaphasejs)
 
 ## Demo
 
@@ -14,11 +14,7 @@ Demostration of MetaphaseJS framework ( **0. 9. 0 BETA VERSION** ).
 <p align="center"><img src="qrcode.jpg"/></p>
 
 ## Index
-
-- [Why](#why)
-- [Features](#features)
-- [How](#how)
-- [Requirements](#requirements)
+[TOC]
 
 ## Why
 
@@ -85,9 +81,9 @@ Demostration of MetaphaseJS framework ( **0. 9. 0 BETA VERSION** ).
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
-## Docs
+## API Docs
 
-TODO: generate API documentation with TypeDoc
+:arrow_right: [Link](https://yagolopez.js.org/metaphasejs/docs/index.html)
 
 ## Entity/Relation State Diagram
 
