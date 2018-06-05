@@ -42,9 +42,12 @@
       <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-              <folding />
+            <state relative-caret-position="338">
+              <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+              <folding>
+                <marker date="1528214129499" expanded="true" signature="90:255" ph="script: &lt;1 item&gt;" />
+                <marker date="1528214129499" expanded="true" signature="171:255" ph="CC_TEST_R…d73bd5844d" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -785,9 +788,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="338">
+          <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding>
+            <marker date="1528214129499" expanded="true" signature="90:255" ph="script: &lt;1 item&gt;" />
+            <marker date="1528214129499" expanded="true" signature="171:255" ph="CC_TEST_R…d73bd5844d" />
+          </folding>
         </state>
       </provider>
     </entry>

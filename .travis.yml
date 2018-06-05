@@ -11,7 +11,7 @@ script:
 # Codeclimate config
 # env:
 #   global:
-    - CC_TEST_REPORTER_ID=5423e7982b7e6a8f424bc45f53b0d9381b232daae1a6e8863fc310d73bd5844d
+#    - CC_TEST_REPORTER_ID=5423e7982b7e6a8f424bc45f53b0d9381b232daae1a6e8863fc310d73bd5844d
 # rvm:
 #  - 2.2.0
 # before_script:
