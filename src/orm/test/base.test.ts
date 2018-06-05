@@ -12,55 +12,55 @@ const user2 = new User({name: "user2", age: 22, admin: 1});
 
 describe('Base Class', () => {
 
-  test('tableName()', () => {
+  it('tableName()', () => {
     expect(user1.tableName()).toBe('users');
     expect(users.tableName()).toBe('users');
   });
 
-  test('insert()', () => {
+  it('insert()', () => {
     const user3 = new User({name: 'user3', age: 33, admin: 1});
     user3.save();
-    const result = query().select().from('users').where({name: 'user3', age: 33}).run()[0];
+    const result = query().select().from('users').where({name: 'user3', age: 33}).getOne();
     expect(result).toHaveProperty('name', 'user3');
     expect(result).toHaveProperty('age', 33);
   });
 
   describe('● update()', () => {
 
-    test('Model created with constructor parameters', () => {
+    it('Model created with constructor parameters', () => {
       const user4 = new User({name: 'user4', age: 44, admin: 1});
       user4.age = 400;
       user4.save();
       user4.name = 'name changed';
       user4.save();
-      const result = query().select().from('users').where({name: 'name changed', age: 400}).run()[0];
+      const result = query().select().from('users').where({name: 'name changed', age: 400}).getOne();
       expect(result).toHaveProperty('name', 'name changed');
       expect(result).toHaveProperty('age', 400);
     });
 
-    test('Model created without constructor parameters', () => {
+    it('Model created without constructor parameters', () => {
       const user5 = new User();
       user5.name = 'user5';
       user5.age = 55;
       user5.save();
-      const result = query().select().from('users').where({name: 'user5', age: 55}).run()[0];
+      const result = query().select().from('users').where({name: 'user5', age: 55}).getOne();
       expect(result).toHaveProperty('name', 'user5');
       expect(result).toHaveProperty('age', 55);
     });
 
   });
 
-  test('save()', () => {
+  it('save()', () => {
     const user6 = new User({name: 'user6', age: 66, admin: 1});
     user6.save();
-    const result = query().select().from('users').where({name: 'user6', age: 66}).run()[0];
+    const result = query().select().from('users').where({name: 'user6', age: 66}).getOne();
     expect(result).toHaveProperty('name', 'user6');
     expect(result).toHaveProperty('age', 66);
   });
 
   describe('● remove()', () => {
 
-    test('Remove model without children (no cascade deletion)', () => {
+    it('Remove model without children (whitout cascade deletion)', () => {
       const user7 = new User({name: 'user7', age: 77, admin: 0});
       users.save(user7);
       const idUserRemoved = user7.remove();
@@ -72,7 +72,7 @@ describe('Base Class', () => {
       expect(users.query().where('id', idUserRemoved2).run().length).toBe(0);
     });
 
-    test('Remove model with children (cascade deletion)', () => {
+    it('Remove model with children (with cascade deletion)', () => {
       const user9 = new User({name: 'user9', age: 99, admin: 0});
       users.save(user9);
 

@@ -1,3 +1,4 @@
+//todo: usar whatg-fetch en lugar de fetch para compatibilidad navegador
 const sql = require('sql.js');
 import {QueryBuilder} from 'knex';
 import {logQuery} from './yago.logger';
@@ -76,6 +77,12 @@ export interface db {
    */
   execFunction(fnExpression: string): any;
 
+  /**
+   * Get id of last record inserted in database
+   * @return {number}
+   */
+  getIdLastRecordInserted(): number;
+
   run(sqlQuery: string, params?: object | any[]): db;
   exec(sqlQuery: string): Array<{columns: string[], values: any[]}>;
   prepare(sqlQuery: string, params?: object | any[]): Object;
@@ -136,6 +143,11 @@ db.__proto__.integrityCheck = (): Object[] => {
 
 db.__proto__.getSchema = () => {
   return db.execQuery('SELECT "name", "sql" FROM "sqlite_master" WHERE type="table"');
+};
+
+db.__proto__.getIdLastRecordInserted = (): number => {
+  const result = db.execFunction('select last_insert_rowid()');
+  return result && result[0]['last_insert_rowid()'];
 };
 
 export const loadDbFromFile = (fileNamePath: string, actionFn: Function): void => {

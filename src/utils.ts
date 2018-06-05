@@ -2,22 +2,21 @@ import {getUrlParameter} from "./orm/yago.logger";
 
 /**
  * Avoids to show virtual keyboard in smartphone when input element is tapped.
- * Used in Dialogs components.
- * @param {string} cssSelector: id attribute corresponding to the field name
+ * Used in Dialog components.
+ * @param {string} cssSelector
  * @return {HTMLInputElement}
  */
 export const setReadOnlyAttr = (cssSelector: string) => {
   try {
-    // const cssSelector = `#${dropDownId} > div > input`;
     const inputEl = document.querySelector(cssSelector) as HTMLInputElement;
     inputEl.setAttribute('readOnly', 'true');
   } catch (error) {
-    console.warn(`dorpDownId ${cssSelector} not found`);
+    console.warn(`DOM element selected by ${cssSelector} not found`);
   }
 };
 
 /**
- * Remove splash screen when the loading is finished
+ * Remove splash screen when loading is finished
  * @elementId {string}
  */
 export const removeElementFromDom = (elementId: string) => {

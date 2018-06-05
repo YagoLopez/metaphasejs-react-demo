@@ -16,7 +16,7 @@ users.save(user3);
 
 // Posts -----------------------------------------------------------------
 export const posts = new Collection(Post);
-const post1 = new Post({title: 'title post 1', content: '<div>content post 1 asfasdfa dfas fasfd asdf asdf asdf asdf asdf asdf asdfasdfasdfasd fasd </div>'});
+const post1 = new Post({title: 'title post 1', content: '<div>content post 1</div>'});
 const post2 = new Post({title: 'title post 2', content: 'content post 2'});
 const post3 = new Post({title: 'title post 3', content: 'content post 3'});
 post1.belongsTo(user1);

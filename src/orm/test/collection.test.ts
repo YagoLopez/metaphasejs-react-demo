@@ -1,3 +1,4 @@
+import {db} from "../database";
 import {Collection} from "../collection";
 import {User} from "./models/user";
 import {Post} from "./models/post";
@@ -192,7 +193,7 @@ describe('Collection Class', () => {
   test('getIdLastRecordInserted()', () => {
     const user4 = new User({name: "user4", age: 44, admin: 1});
     const idUser4 = users.save(user4);
-    expect( Collection.getIdLastRecordInserted() ).toBe(idUser4);
+    expect( db.getIdLastRecordInserted() ).toBe(idUser4);
   });
 
   test('deleteTable()', () => {

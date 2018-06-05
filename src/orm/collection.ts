@@ -9,7 +9,6 @@
 //todo: documentar funciones
 //todo: fn borrar tabla
 //todo: implementar logger usando decorators
-
 import {db} from "./database";
 import {query} from "./query.builder";
 import {Column} from "./column";
@@ -19,10 +18,9 @@ import {TableBuilder} from "knex";
 import {DBtype} from "./types";
 
 
-
 /**
  * Manages a collection of models (rows in a db table)
- * It follows Data Mapper/Repository pattern
+ * It follows Repository pattern
  */
 export class Collection extends Base {
 
@@ -49,11 +47,6 @@ export class Collection extends Base {
     for (let i in columns) {
       columns[i].createColumn(tableBuilder);
     }
-  }
-
-  public static getIdLastRecordInserted(): number {
-    const result = db.execFunction('select last_insert_rowid()');
-    return result && result[0]['last_insert_rowid()'];
   }
 
   /**
@@ -90,8 +83,6 @@ export class Collection extends Base {
     return model;
   }
 
-  //todo: hacer una funcion "one()" para obtener un solo registro o columna encadenando funciones:
-  //Ejm: getByFilter().one()
   public getByFilter(filter: Object,
                      columns: string[]=[],
                      load: {children: boolean} = {children: false} ): Model[] {

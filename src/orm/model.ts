@@ -35,7 +35,6 @@ export abstract class Model extends Base {
     if ( !model.isSaved ) {
       throw new Error('Invalid model instance: ' + model);
     }
-
     if( !model.isSaved() ) {
       throw new NotSavedModelError(model, this);
     }

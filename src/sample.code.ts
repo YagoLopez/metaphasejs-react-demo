@@ -1,5 +1,6 @@
 export const sampleCode = `
 // User model definition --------------------------------------------------
+
 export class User extends Model {
 
   @column()
@@ -17,6 +18,7 @@ export class User extends Model {
 }
 
 // Post model definition -------------------------------------------------
+
 export class Post extends Model {
 
   @column()
@@ -31,6 +33,7 @@ export class Post extends Model {
 }
 
 // Comment model definition -----------------------------------------------
+
 export class Comment extends Model {
 
   @column()
@@ -41,6 +44,7 @@ export class Comment extends Model {
 }
 
 // Users collection -------------------------------------------------------
+
 const users = new Collection(User);
 const user1 = new User({name: "user1", age: 11, admin: 1});
 const user2 = new User({name: "user2", age: 22, admin: 1});
@@ -50,6 +54,7 @@ users.save(user2);
 users.save(user3);
 
 // Posts collection --------------------------------------------------------
+
 const posts = new Collection(Post);
 const post1 = new Post({title: 'title post 1', content: 'content post 1'});
 const post2 = new Post({title: 'title post 2', content: 'content post 2'});
@@ -62,6 +67,7 @@ posts.save(post2);
 posts.save(post3);
 
 // Comments collection -----------------------------------------------------
+
 const comments = new Collection(Comment);
 const comment1 = new Comment({author: 'author1', date: '5/16/2018'});
 const comment2 = new Comment({author: 'author2', date: '6/16/2018'});

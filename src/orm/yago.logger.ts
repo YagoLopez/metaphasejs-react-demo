@@ -1,9 +1,8 @@
-
-// Debugging to the browser console can be controlled through a query parameter in url.
+// Debugging in the browser console can be controlled through a url query parameter in.
 // For example: http://localhost:3000?logger=true
 
 // Controls default logger behaviour.
-// Pass a 'false' value to avoid logger in production mode as default behaviour
+// Pass a 'false' value to avoid logger. This is the desired behaviour for production.
 const DEFAULT_LOG_STATE: string = 'false';
 
 /**
@@ -45,7 +44,7 @@ urlLogParam = urlLogParam || DEFAULT_LOG_STATE;
  * Used for production mode
  */
 export function disableConsole(): void {
-  console = console || {};
+  // console = console || {};
   console.log = () => {};
   console.table = () => {};
   console.warn = () => {};

@@ -32,7 +32,10 @@ if (process.env.NODE_ENV === 'test') {
   mockKnex.mock(queryBuilder);
 }
 
+//todo: testar la funcion run() y getOne()
 //todo: emitir un evento personalizado para saber cuando se ha ejecutado una consulta
+//todo: renombrar getOne() a getFirst()
+
 /**
  * Execute database query using query-builder
  * Do not use arrow function because "this" type is incorrectly infered by typescript

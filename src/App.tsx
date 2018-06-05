@@ -1,4 +1,4 @@
-//todo: abrir issue en repo cra. error sw. no se comprueba el soporte de sw del navegador
+//todo: en la linea que dice que los datos han sido cargados desde codigo poner enlace a dialogo codigo
 //todo: arreglar spinner en dialogo user para que no aparezca teclado virtual
 //todo: reducir tamaño bundle quitando dependencias no usadas
 //todo: hacer prueba ejectando config crat
@@ -10,6 +10,7 @@
 //todo: documentar api con typedoc
 //todo: probar a pasar el estado como props de tipo array. Ejm: store = {users: users.getAll(), posts: posts.getAll()}
 //todo: dynamic/async import para cargar el contenido del dialogo de codigo
+//todo: considerar el uso de polyfills como core-js
 
 import * as React from 'react';
 import {users, posts, comments} from "./store";
@@ -25,16 +26,12 @@ import CodeHighlight from 'code-highlight';
 import "code-highlight/lib/style.css";
 import "highlight.js/styles/atelier-forest-light.css";
 import './App.css';
-import {Editor} from "primereact/components/editor/Editor";
 
 import {Sidebar} from "primereact/components/sidebar/Sidebar";
 import {Toolbar} from 'primereact/components/toolbar/Toolbar';
 import {Button} from "primereact/components/button/Button";
 import {DataTable} from 'primereact/components/datatable/DataTable';
-import {Dialog} from 'primereact/components/dialog/Dialog';
 import {Column} from 'primereact/components/column/Column';
-import {InputText} from 'primereact/components/inputtext/InputText';
-import {Dropdown} from 'primereact/components/dropdown/Dropdown';
 import {ScrollPanel} from 'primereact/components/scrollpanel/ScrollPanel';
 import {Panel} from 'primereact/components/panel/Panel';
 import {DialogBase} from "./DialogCmp/DialogBase";
@@ -46,10 +43,8 @@ import 'primereact/resources/themes/omega/theme.css';
 import 'font-awesome/css/font-awesome.css';
 import * as utils from "./utils";
 
+
 declare const SQL: any;
-
-
-
 
 export class App extends React.Component {
 
@@ -128,7 +123,7 @@ export class App extends React.Component {
       selectedModel.tableName() === 'posts' && this.dialogPost.show();
       selectedModel.tableName() === 'comments' && this.dialogComment.show();
       this.setState({selectedModel: selectedModel});
-    }
+    };
     return (
       <Button onClick={_ => edit()} className="ui-button-info" icon="fa-edit" title="Edit"/>
     )
@@ -140,7 +135,7 @@ export class App extends React.Component {
         model.remove();
         this.updateState();
       }
-    }
+    };
     return (
       <Button onClick={_ => remove(model)} className="ui-button-danger" icon="fa-trash" title="Delete"/>
     )
@@ -152,9 +147,7 @@ export class App extends React.Component {
 
   showCode() {
     document.body.style.overflow = 'hidden';
-    setTimeout(_ => {
-      this.setState({displayLeftMenu: false, displayDialogCode: true});
-    }, 0);
+    this.setState({displayLeftMenu: false, displayDialogCode: true});
   }
 
   hideCode() {
@@ -163,7 +156,7 @@ export class App extends React.Component {
   }
 
   switchLogger() {
-    const {logger} = this.state
+    const {logger} = this.state;
     this.setState({logger: !logger});
     if (logger) {
       alert('Logger System Off.\n\nReloading...');
@@ -222,7 +215,7 @@ export class App extends React.Component {
           onClick={_ => this.add(defaultPost, this.dialogPost)}/>
       </div>
     );
-    const footerCommentsTable = (
+    const footerTableComments = (
       <div className="ui-helper-clearfix full-width">
         <Button className="float-left" icon="fa-plus" label="Add New"
           onClick={_ => this.add(defaultComment, this.dialogComment)}/>
@@ -238,15 +231,15 @@ export class App extends React.Component {
                                onChange={_ => this.showChildren()} className="checkbox-children"/>
       <span className="checkbox-children-label" onClick={_ => this.showChildren()}>Show Children</span></span>
     );
-    const loadStateFromFile = (
+    const loadStateFromFileMsg = (
       <div className="subtitle">
-        Application state loaded from file: <a href="metaphase.sqlite" target="_blank">metaphase.sqlite</a>
+        Application state loaded from file: <a href={this.DB_FILENAME} target="_blank">{this.DB_FILENAME}</a>
         <div>You can download db file and query it uploading it to "Menu &raquo; Online SQLite Viewer"</div>
       </div>
-    )
-    const loadStateFromCode = (
+    );
+    const loadStateFromCodeMsg = (
       <div className="subtitle">Application state loaded from code</div>
-    )
+    );
 
 
     return (
@@ -300,7 +293,7 @@ export class App extends React.Component {
 
         <div className="fade-in-long">
 
-          <div>{this.state.loadDbFromFile ? loadStateFromFile : loadStateFromCode}</div>
+          <div>{this.state.loadDbFromFile ? loadStateFromFileMsg : loadStateFromCodeMsg}</div>
 
           {/*json state view*/}
           <Panel header={JsonViewPanelHeader} toggleable={true}>
@@ -336,7 +329,7 @@ export class App extends React.Component {
             </DataTable>
 
             <DataTable value={comments.getAll()}
-                       header="COMMENTS" footer={footerCommentsTable} className="centered">
+                       header="COMMENTS" footer={footerTableComments} className="centered">
               <Column field="id" header="Id"/>
               <Column field="author" header="Author" className="ellipsis"/>
               <Column field="date" header="Date" className="ellipsis"/>
@@ -365,6 +358,6 @@ export class App extends React.Component {
         <DialogComment ref={(el: DialogComment) => this.dialogComment = el} {...dialogProps}/>
 
       </div>
-    );
+    )
   }
 }

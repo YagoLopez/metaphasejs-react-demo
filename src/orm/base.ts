@@ -1,6 +1,5 @@
 import {db} from "./database";
 import {Model} from "./model";
-import {Collection} from "./collection";
 import {query} from "./query.builder";
 import {logQuery} from "./yago.logger";
 
@@ -22,7 +21,7 @@ export abstract class Base {
   protected insert(model?: any): number | string {
     model = model || this;
     query.insert(model).into(this.tableName()).run();
-    model.id = Collection.getIdLastRecordInserted();
+    model.id = db.getIdLastRecordInserted();
     return model.id;
   }
 
