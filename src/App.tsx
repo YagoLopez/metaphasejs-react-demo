@@ -197,8 +197,8 @@ export class App extends React.Component {
 
     const {children, selectedModel, displayLeftMenu, displayDialogCode} = this.state;
     const defaultUser = new User({name: '', age: '', admin: 0});
-    const defaultPost = new Post({title: '', content: ''});
-    const defaultComment = new Comment({author: '', date: new Date()});
+    const defaultPost = new Post({title: '', content: '', user_id: 0});
+    const defaultComment = new Comment({author: '', date: new Date(), post_id: 0});
 
     const mapIsAdminValue = (model: Model): string => {
       return model.admin ? 'True' : 'False';

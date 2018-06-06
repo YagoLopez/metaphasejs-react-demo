@@ -1,6 +1,6 @@
 # MetaphaseJS Demo
 
-Demostration of MetaphaseJS framework ( **0. 9. 0 BETA VERSION** ).
+Demostration of MetaphaseJS framework ( **BETA VERSION** ).
 
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges) [![Build Status](https://travis-ci.org/YagoLopez/metaphasejs-react-demo.svg?branch=master)](https://travis-ci.org/YagoLopez/metaphasejs-react-demo) [![Maintainability](https://api.codeclimate.com/v1/badges/c1a754523798b48ec180/maintainability)](https://codeclimate.com/github/YagoLopez/metaphasejs-react-demo/maintainability)
 
@@ -14,7 +14,19 @@ Demostration of MetaphaseJS framework ( **0. 9. 0 BETA VERSION** ).
 <p align="center"><img src="qrcode.jpg"/></p>
 
 ## Index
-[TOC]
+
+- [Why](#why)
+- [Features](#features)
+- [How](#how)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [API Docs](#api docs)
+- [Entity/Relation State Diagram](#entity/relation state diagram)
+- [Code](#code)
+- [Credits](#credits)
+- [License](#license)
 
 ## Why
 

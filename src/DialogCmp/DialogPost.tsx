@@ -42,7 +42,7 @@ export class DialogPost extends DialogBase {
         <Button label="Save" icon="fa-check" onClick={_ => this.onBtnSave()}/>
      </div>
     );
-    var editorHeader =
+    const editorHeader =
       <span className="ql-formats">
         <button className="ql-bold" aria-label="Bold"></button>
         <button className="ql-italic" aria-label="Italic"></button>
