@@ -5,7 +5,7 @@ import {InputText} from "primereact/components/inputtext/InputText";
 import {Dropdown} from "primereact/components/dropdown/Dropdown";
 import {Button} from "primereact/components/button/Button";
 import {Calendar} from 'primereact/components/calendar/Calendar';
-import {query} from "../orm/query.builder";
+import {query} from "metaphasejs";
 import {setReadOnlyAttr} from "../utils";
 
 export class DialogComment extends DialogBase {

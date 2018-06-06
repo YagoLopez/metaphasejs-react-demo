@@ -1,5 +1,4 @@
-import {Model} from "../orm/model";
-import {column} from "../orm/decorators";
+import {Model, column} from "metaphasejs";
 
 export class Comment extends Model {
 

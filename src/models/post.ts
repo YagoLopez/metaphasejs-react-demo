@@ -1,7 +1,17 @@
-import {Model} from "../orm/model";
-import {column} from "../orm/decorators";
-import {DBtype} from "../orm/types";
+import {Model, column} from "metaphasejs";
 import {Comment} from "./comment";
+
+enum DBtype {
+  INTEGER = 'integer',
+  REAL = 'real',
+  BOOLEAN = 'integer', // SQLite does not admit boolean values natively
+  STRING = 'varchar',
+  TEXT = 'text',
+  DATE = 'varchar',
+  BLOB = 'blob',
+  NULL = 'null' // null is reserved word
+}
+
 
 export class Post extends Model {
 

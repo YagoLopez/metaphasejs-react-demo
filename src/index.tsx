@@ -5,7 +5,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import {App} from "./App";
 import {ErrorBoundary} from "./ErrorBoundary";
-import {loadDbFromFile} from "./orm/database";
+import {loadDbFromFile} from "metaphasejs";
 import * as utils from './utils';
 import registerServiceWorker from './registerServiceWorker';
 

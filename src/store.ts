@@ -1,4 +1,4 @@
-import {Collection} from "./orm/collection";
+import {Collection} from "metaphasejs";
 import {User} from "./models/user";
 import {Post} from "./models/post";
 import {Comment} from "./models/comment";

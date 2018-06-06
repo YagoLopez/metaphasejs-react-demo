@@ -1,4 +1,4 @@
-import {getUrlParameter} from "./orm/yago.logger";
+import {getUrlParameter} from "metaphasejs";
 
 /**
  * Avoids to show virtual keyboard in smartphone when input element is tapped.

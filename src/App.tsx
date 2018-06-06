@@ -13,10 +13,8 @@
 //todo: considerar el uso de polyfills como core-js
 
 import * as React from 'react';
+import {saveDbToFile, getUrlParameter, updateQueryStringParameter, Model} from "metaphasejs";
 import {users, posts, comments} from "./store";
-import {saveDbToFile} from "./orm/database";
-import {getUrlParameter, updateQueryStringParameter} from "./orm/yago.logger";
-import {Model} from "./orm/model";
 import {User} from "./models/user";
 import {Post} from "./models/post";
 import {Comment} from "./models/comment";
@@ -74,7 +72,7 @@ export class App extends React.Component {
     this.updateState = this.updateState.bind(this);
   }
 
-  reactJsonCmp: React.Component;
+  reactJsonViewCmp: React.Component;
 
   dialogUser: DialogUser;
 
@@ -298,7 +296,7 @@ export class App extends React.Component {
           {/*json state view*/}
           <Panel header={JsonViewPanelHeader} toggleable={true}>
             <ScrollPanel className="custom json-view-container">
-              <ReactJson ref={(el: React.Component) => this.reactJsonCmp = el}
+              <ReactJson ref={(el: React.Component) => this.reactJsonViewCmp = el}
                 src={users.getAll({children})} iconStyle={'square'} name="USERS"
                 enableClipboard={false} displayDataTypes={false}
                 displayObjectSize={false} theme={'shapeshifter:inverted'}/>

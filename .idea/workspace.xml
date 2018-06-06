@@ -2,10 +2,78 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="492a7a69-5fc5-4d3c-9fd0-29e4e02618cb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/coverage/lcov-report/block-navigation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/coverage/lcov-report/block-navigation.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/coverage/lcov-report/prettify.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/coverage/lcov-report/prettify.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/coverage/lcov-report/sorter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/coverage/lcov-report/sorter.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/jest-config/assetsTransformer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/jest-config/assetsTransformer.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/jest-config/test-preprocessor.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/jest-config/test-preprocessor.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/jest-config/test-setup.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/jest-config/test-setup.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/jest-config/test-shim.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/jest-config/test-shim.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/App.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/App.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/DialogCmp/DialogBase.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/DialogCmp/DialogBase.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/DialogCmp/DialogComment.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/DialogCmp/DialogComment.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/DialogCmp/DialogPost.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/DialogCmp/DialogPost.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/DialogCmp/DialogUser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/DialogCmp/DialogUser.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/ErrorBoundary.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/ErrorBoundary.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/models/comment.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/models/comment.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/models/post.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/models/post.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/models/user.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/models/user.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/registerServiceWorker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/registerServiceWorker.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/sample.code.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/sample.code.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/store.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/store.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/dist/src/utils.js.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/orm/base.ts" afterPath="$PROJECT_DIR$/temp/orm/base.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/orm/collection.ts" afterPath="$PROJECT_DIR$/temp/orm/collection.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/orm/column.ts" afterPath="$PROJECT_DIR$/temp/orm/column.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/orm/database.ts" afterPath="$PROJECT_DIR$/temp/orm/database.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/orm/decorators.ts" afterPath="$PROJECT_DIR$/temp/orm/decorators.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/orm/exceptions.ts" afterPath="$PROJECT_DIR$/temp/orm/exceptions.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/orm/model.ts" afterPath="$PROJECT_DIR$/temp/orm/model.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/orm/query.builder.ts" afterPath="$PROJECT_DIR$/temp/orm/query.builder.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/orm/test/base.test.ts" afterPath="$PROJECT_DIR$/temp/orm/test/base.test.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/orm/test/collection.test.ts" afterPath="$PROJECT_DIR$/temp/orm/test/collection.test.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/orm/test/column.test.ts" afterPath="$PROJECT_DIR$/temp/orm/test/column.test.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/orm/test/database.test.ts" afterPath="$PROJECT_DIR$/temp/orm/test/database.test.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/orm/test/decorators.test.ts" afterPath="$PROJECT_DIR$/temp/orm/test/decorators.test.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/orm/test/model.test.ts" afterPath="$PROJECT_DIR$/temp/orm/test/model.test.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/orm/test/models/comment.ts" afterPath="$PROJECT_DIR$/temp/orm/test/models/comment.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/orm/test/models/post.ts" afterPath="$PROJECT_DIR$/temp/orm/test/models/post.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/orm/test/models/user.ts" afterPath="$PROJECT_DIR$/temp/orm/test/models/user.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/orm/types.ts" afterPath="$PROJECT_DIR$/temp/orm/types.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/orm/yago.logger.ts" afterPath="$PROJECT_DIR$/temp/orm/yago.logger.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.tsx" afterPath="$PROJECT_DIR$/src/App.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DialogCmp/DialogBase.tsx" afterPath="$PROJECT_DIR$/src/DialogCmp/DialogBase.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DialogCmp/DialogComment.tsx" afterPath="$PROJECT_DIR$/src/DialogCmp/DialogComment.tsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DialogCmp/DialogPost.tsx" afterPath="$PROJECT_DIR$/src/DialogCmp/DialogPost.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.tsx" afterPath="$PROJECT_DIR$/src/index.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/comment.ts" afterPath="$PROJECT_DIR$/src/models/comment.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/post.ts" afterPath="$PROJECT_DIR$/src/models/post.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/user.ts" afterPath="$PROJECT_DIR$/src/models/user.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/store.ts" afterPath="$PROJECT_DIR$/src/store.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils.ts" afterPath="$PROJECT_DIR$/src/utils.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,7 +86,33 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="App.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#784#815#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="post.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/models/post.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="436">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -42,15 +136,19 @@
       <find>metaphase.sqlite</find>
       <find>[0]</find>
       <find>defaultpost</find>
+      <find>metaphasejs</find>
+      <find>reactJsonCmp</find>
+      <find>./orm/collection</find>
+      <find>orm</find>
     </findStrings>
     <replaceStrings>
       <replace>/jest-config</replace>
       <replace>it(</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>C:\Users\yagol\Documents\projects\metaphase-react-demo\src</dir>
       <dir>C:\Users\yagol\Documents\projects\metaphase-react-demo\src\orm</dir>
       <dir>C:\Users\yagol\Documents\projects\metaphase-react-demo\src\orm\test</dir>
+      <dir>C:\Users\yagol\Documents\projects\metaphase-react-demo\src</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -62,36 +160,40 @@
     <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/App.tsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/index.tsx" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/orm/base.ts" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/orm/collection.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/temp/orm/base.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/temp/orm/collection.ts" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/tsconfig.prod.json" />
-        <option value="$PROJECT_DIR$/src/DialogCmp/DialogComment.tsx" />
         <option value="$PROJECT_DIR$/src/DialogCmp/DialogUser.tsx" />
-        <option value="$PROJECT_DIR$/src/models/comment.ts" />
-        <option value="$PROJECT_DIR$/src/models/post.ts" />
-        <option value="$PROJECT_DIR$/src/models/user.ts" />
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/src/orm/test/collection.test.ts" />
         <option value="$PROJECT_DIR$/src/orm/database.ts" />
         <option value="$PROJECT_DIR$/src/orm/base.ts" />
         <option value="$PROJECT_DIR$/src/orm/query.builder.ts" />
         <option value="$PROJECT_DIR$/src/sample.code.ts" />
-        <option value="$PROJECT_DIR$/src/store.ts" />
         <option value="$PROJECT_DIR$/src/orm/collection.ts" />
         <option value="$PROJECT_DIR$/src/orm/model.ts" />
         <option value="$PROJECT_DIR$/src/orm/yago.logger.ts" />
         <option value="$PROJECT_DIR$/src/orm/test/base.test.ts" />
-        <option value="$PROJECT_DIR$/src/index.tsx" />
-        <option value="$PROJECT_DIR$/src/utils.ts" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/DialogCmp/DialogPost.tsx" />
+        <option value="$PROJECT_DIR$/src/DialogCmp/DialogBase.tsx" />
+        <option value="$PROJECT_DIR$/src/models/user.ts" />
+        <option value="$PROJECT_DIR$/src/models/comment.ts" />
         <option value="$PROJECT_DIR$/src/App.tsx" />
+        <option value="$PROJECT_DIR$/src/store.ts" />
+        <option value="$PROJECT_DIR$/src/index.tsx" />
+        <option value="$PROJECT_DIR$/src/utils.ts" />
+        <option value="$PROJECT_DIR$/src/DialogCmp/DialogComment.tsx" />
+        <option value="$PROJECT_DIR$/src/DialogCmp/DialogPost.tsx" />
+        <option value="$PROJECT_DIR$/node_modules/metaphasejs/dist/types/metaphasejs.d.ts" />
+        <option value="$PROJECT_DIR$/node_modules/metaphasejs/dist/types/orm/decorators.d.ts" />
+        <option value="$PROJECT_DIR$/node_modules/metaphasejs/dist/types/orm/types.d.ts" />
+        <option value="$PROJECT_DIR$/src/models/post.ts" />
       </list>
     </option>
   </component>
@@ -135,7 +237,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -147,18 +248,24 @@
             <path>
               <item name="metaphase-react-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="metaphase-react-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="metaphase-react-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="metaphase-react-demo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="metaphase-react-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="metaphase-react-demo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="uml" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -170,13 +277,13 @@
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\temp" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\src" />
       <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\temp" />
       <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\temp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -309,24 +416,24 @@
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
     <layout>
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23137876" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,27 +485,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tsconfig.test.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yarn-error.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3432">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react-numeric-input/__tests__/focusAndBlur.test.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
@@ -462,7 +548,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/orm/test/models/user.ts">
+    <entry file="file://$PROJECT_DIR$/temp/orm/test/models/user.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
@@ -476,21 +562,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/user.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/orm/exceptions.ts">
+    <entry file="file://$PROJECT_DIR$/temp/orm/exceptions.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-214">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/orm/decorators.ts">
+    <entry file="file://$PROJECT_DIR$/temp/orm/decorators.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-234">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -504,7 +583,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/orm/yago.logger.ts">
+    <entry file="file://$PROJECT_DIR$/temp/orm/yago.logger.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
@@ -515,13 +594,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -567,13 +639,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/static/js/main.js" />
-    <entry file="file://$PROJECT_DIR$/src/store.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/globals.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
@@ -581,63 +646,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/orm/base.ts">
+    <entry file="file://$PROJECT_DIR$/temp/orm/base.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-6">
           <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/orm/collection.ts">
+    <entry file="file://$PROJECT_DIR$/temp/orm/collection.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
           <caret line="184" column="1" lean-forward="true" selection-start-line="184" selection-start-column="1" selection-end-line="184" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/orm/test/collection.test.ts">
+    <entry file="file://$PROJECT_DIR$/temp/orm/test/collection.test.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
           <caret line="166" column="24" lean-forward="false" selection-start-line="166" selection-start-column="21" selection-end-line="166" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/orm/test/base.test.ts">
+    <entry file="file://$PROJECT_DIR$/temp/orm/test/base.test.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-14">
           <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/orm/column.ts">
+    <entry file="file://$PROJECT_DIR$/temp/orm/column.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/orm/test/model.test.ts">
+    <entry file="file://$PROJECT_DIR$/temp/orm/test/model.test.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
           <caret line="150" column="39" lean-forward="false" selection-start-line="150" selection-start-column="36" selection-end-line="150" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/orm/database.ts">
+    <entry file="file://$PROJECT_DIR$/temp/orm/database.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1826">
           <caret line="102" column="0" lean-forward="true" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/orm/query.builder.ts">
+    <entry file="file://$PROJECT_DIR$/temp/orm/query.builder.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-266">
           <caret line="22" column="35" lean-forward="true" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
@@ -651,61 +709,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DialogCmp/DialogBase.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DialogCmp/DialogComment.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="15" column="43" lean-forward="false" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/post.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/orm/model.ts">
+    <entry file="file://$PROJECT_DIR$/temp/orm/model.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/comment.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="363" column="0" lean-forward="true" selection-start-line="363" selection-start-column="0" selection-end-line="363" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DialogCmp/DialogPost.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -717,14 +724,118 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uml/uml.png">
+    <entry file="file://$PROJECT_DIR$/src/uml/uml.png" />
+    <entry file="file://$PROJECT_DIR$/src/uml/uml.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uml/uml.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/DialogCmp/DialogBase.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="42" lean-forward="false" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DialogCmp/DialogComment.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DialogCmp/DialogPost.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1566">
+          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/user.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/comment.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/metaphasejs/dist/types/metaphasejs.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#784#815#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/metaphasejs/dist/types/orm/decorators.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/metaphasejs/dist/types/orm/types.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/post.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

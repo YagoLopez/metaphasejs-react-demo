@@ -5,7 +5,7 @@ import {InputText} from "primereact/components/inputtext/InputText";
 import {Dropdown} from "primereact/components/dropdown/Dropdown";
 import {Button} from "primereact/components/button/Button";
 import * as ReactQuill from 'react-quill';
-import {query} from "../orm/query.builder";
+import {query} from "metaphasejs";
 import {setReadOnlyAttr} from "../utils";
 import {Post} from "../models/post";
 import 'react-quill/dist/quill.snow.css';
