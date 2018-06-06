@@ -23,7 +23,7 @@ Demostration of MetaphaseJS framework ( **BETA VERSION** ).
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [API Docs](#api-docs)
-- [Entity/Relation State Diagram](#entity/relation-state-diagram)
+- [Entity-Relation State Diagram](#entity-relation-state-diagram)
 - [Code](#code)
 - [Credits](#credits)
 - [License](#license)
@@ -97,7 +97,7 @@ Demostration of MetaphaseJS framework ( **BETA VERSION** ).
 
 :arrow_right: [Link](https://yagolopez.js.org/metaphasejs/docs/index.html)
 
-## Entity/Relation State Diagram
+## Entity-Relation State Diagram
 
 <p align="center"><img src="/src/uml/uml.jpg"/></p>
 
