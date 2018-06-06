@@ -1,6 +1,7 @@
 import {Model, column} from "metaphasejs";
 import {Comment} from "./comment";
 
+//todo: revisar
 enum DBtype {
   INTEGER = 'integer',
   REAL = 'real',

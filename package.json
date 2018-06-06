@@ -11,6 +11,7 @@
     "font-awesome": "^4.7.0",
     "highlight.js": "^9.12.0",
     "knex": "^0.14.6",
+    "metaphasejs": "^0.9.3",
     "primereact": "^1.5.3",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",

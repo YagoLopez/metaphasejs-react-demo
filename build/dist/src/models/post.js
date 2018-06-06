@@ -43,9 +43,7 @@ var Post = /** @class */ (function (_super) {
         __metadata("design:type", String)
     ], Post.prototype, "title", void 0);
     __decorate([
-        column({ dbType: DBtype.TEXT, notNullable: true })
-        // @column({notNullable: true})
-        ,
+        column({ dbType: DBtype.TEXT, notNullable: true }),
         __metadata("design:type", String)
     ], Post.prototype, "content", void 0);
     return Post;
