@@ -17,19 +17,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Model, column } from "metaphasejs";
+import { Model, column, DBtype } from "metaphasejs";
 import { Comment } from "./comment";
-var DBtype;
-(function (DBtype) {
-    DBtype["INTEGER"] = "integer";
-    DBtype["REAL"] = "real";
-    DBtype["BOOLEAN"] = "integer";
-    DBtype["STRING"] = "varchar";
-    DBtype["TEXT"] = "text";
-    DBtype["DATE"] = "varchar";
-    DBtype["BLOB"] = "blob";
-    DBtype["NULL"] = "null"; // null is reserved word
-})(DBtype || (DBtype = {}));
 var Post = /** @class */ (function (_super) {
     __extends(Post, _super);
     function Post() {

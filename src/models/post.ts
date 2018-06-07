@@ -1,18 +1,5 @@
-import {Model, column} from "metaphasejs";
+import {Model, column, DBtype} from "metaphasejs";
 import {Comment} from "./comment";
-
-//todo: revisar
-enum DBtype {
-  INTEGER = 'integer',
-  REAL = 'real',
-  BOOLEAN = 'integer', // SQLite does not admit boolean values natively
-  STRING = 'varchar',
-  TEXT = 'text',
-  DATE = 'varchar',
-  BLOB = 'blob',
-  NULL = 'null' // null is reserved word
-}
-
 
 export class Post extends Model {
 
