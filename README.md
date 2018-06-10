@@ -22,7 +22,6 @@ Demostration of MetaphaseJS framework ( **BETA VERSION** ).
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [API Docs](#api-docs)
 - [Entity-Relation State Diagram](#entity-relation-state-diagram)
 - [Code](#code)
 - [Credits](#credits)
@@ -80,9 +79,7 @@ Demostration of MetaphaseJS framework ( **BETA VERSION** ).
 ## Usage
 
 - Run `yarn start`
-- Test `yarn test`
-- Code coverage `yarn coverage` :arrow_right: [link](https://yagolopez.js.org/metaphasejs-react-demo/coverage/lcov-report/index.html)
-- Packages analysis `yarn analysis` :arrow_right: [link](https://yagolopez.js.org/metaphasejs-react-demo/analysis/packages.html)
+- Packages analysis (without gzip compression) `yarn analysis` :arrow_right: [link](https://yagolopez.js.org/metaphasejs-react-demo/analysis/packages.html)
 
 
 ## Contributing
@@ -92,10 +89,6 @@ Demostration of MetaphaseJS framework ( **BETA VERSION** ).
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
-
-## API Docs
-
-:arrow_right: [Link](https://yagolopez.js.org/metaphasejs/docs/index.html)
 
 ## Entity-Relation State Diagram
 
