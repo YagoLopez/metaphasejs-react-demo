@@ -231,7 +231,10 @@ export class App extends React.Component {
     );
     const loadStateFromFileMsg = (
       <div className="subtitle">
-        Application state loaded from file: <a href={this.DB_FILENAME} target="_blank">{this.DB_FILENAME}</a>
+        Application state loaded from file:&nbsp;
+        <a href="javascript:void(0)" target="_blank" onClick={(e: any) => this.saveDbToDisk(e)}>
+          {this.DB_FILENAME}
+        </a>
         <div>You can download db file and query it uploading it to "Menu &raquo; Online SQLite Viewer"</div>
       </div>
     );
