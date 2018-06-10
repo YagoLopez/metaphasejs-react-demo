@@ -8,6 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="492a7a69-5fc5-4d3c-9fd0-29e4e02618cb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yarn.lock" afterPath="$PROJECT_DIR$/yarn.lock" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -74,8 +76,8 @@
       <find>orm</find>
       <find>sql.js</find>
       <find>logger</find>
-      <find>metaphase</find>
       <find>jest</find>
+      <find>metaphase</find>
     </findStrings>
     <replaceStrings>
       <replace>/jest-config</replace>
@@ -410,9 +412,9 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Merge branch clean-unused-dependencies&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <MESSAGE value="Refactors" />
     <MESSAGE value="Upgrade dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Upgrade dependencies" />
+    <MESSAGE value="Refactors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
