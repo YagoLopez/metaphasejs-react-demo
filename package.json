@@ -41,7 +41,9 @@
     "analyze": "source-map-explorer build/static/js/main.*",
     "uglify:compress": "npx uglifyjs ./build/static/js/main.*.js --compress --output ./build/static/main.js --timings",
     "build": "npx uglifyjs ./build/static/js/main.*.js --compress --mangle --output ./build/static/main.js --keep-fnames --timings",
-    "uglify:config:file": "npx uglifyjs ./build/static/js/main.*.js --config-file uglify.config.json --output ./build/static/main.js"
+    "uglify:config:file": "npx uglifyjs ./build/static/js/main.*.js --config-file uglify.config.json --output ./build/static/main.js",
+    "show-dist": "start http://localhost:63342/metaphase-react-demo/build/index.html",
+    "show-analysis": "start http://localhost:63342/metaphase-react-demo/analysis/index.html"
   },
   "jest": {
     "setupFiles": [
