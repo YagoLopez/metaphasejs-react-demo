@@ -3933,7 +3933,7 @@ merge@^1.1.3:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.0.tgz#7531e39d4949c281a66b8c5a6e0265e8b05894da"
 
-metaphasejs@^0.9.4:
+metaphasejs@^0.9.6:
   version "0.9.6"
   resolved "https://registry.yarnpkg.com/metaphasejs/-/metaphasejs-0.9.6.tgz#b9550c3a06003ddfb5711d63dfd9de8e262fcb45"
   dependencies:
