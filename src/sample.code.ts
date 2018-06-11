@@ -1,4 +1,7 @@
 export const sampleCode = `
+
+import {Model, Collection, column} from 'metaphasejs';
+
 // User model definition --------------------------------------------------
 
 export class User extends Model {

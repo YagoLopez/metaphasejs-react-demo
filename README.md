@@ -96,14 +96,18 @@ Demostration of MetaphaseJS framework ( **BETA VERSION** ).
 
 ## Code
 
-1. Creation of models and relations.
+1. Creation of models and relations in `store.ts`.
 
 ```typescript
+// file: store.ts
+
 // ---------------------------------------------------------------------
 // This simplified example is written in Typescript using decorators
 // For regular Javascript you can define columns using "Column" class.
 // (See tests)
 // ---------------------------------------------------------------------
+
+import {Model, column} from 'metaphasejs';
 
 // User model definition (ids are automatically generated) -------------
 export class User extends Model {
@@ -149,9 +153,14 @@ export class Comment extends Model {
 
 
 
-2. Definition of collections and relations
+2. Definition of collections and relations in `app.ts`
 
 ```typescript
+// file: app.ts
+// You could also define collections and relations in 'store.ts' and export them
+
+import {Collection} from 'metaphasejs';
+import {User, Post, Comment} from 'store';
 
 // Users collection -------------------------------------------------------
 const users = new Collection(User);
@@ -190,6 +199,8 @@ comments.save(comment2);
 
    3. 1 Filtering:
 ```typescript
+// file: app.ts
+
 // Get all users
 users.getAll();
 
