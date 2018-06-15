@@ -231,7 +231,7 @@ export class App extends React.Component {
     const loadStateFromFileMsg = (
       <div className="subtitle">
         Application state loaded from file:&nbsp;
-        <a href="metaphase.sqlite" target="_blank">
+        <a href="javascript:void(0)" target="_blank" onClick={_ => this.saveDbToDisk()}>
           {this.DB_FILENAME}
         </a>
         <div>You can download db file and query it uploading it to "Menu &raquo; Online SQLite Viewer"</div>
