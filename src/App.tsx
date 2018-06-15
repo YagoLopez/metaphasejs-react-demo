@@ -104,8 +104,9 @@ export class App extends React.Component {
     });
   }
 
-  saveDbToDisk(e: any) {
+  saveDbToDisk() {
     saveDbToFile(this.DB_FILENAME);
+    this.setState({displayLeftMenu: false});
   }
 
   add(model: Model, dialog: DialogBase) {
@@ -208,13 +209,13 @@ export class App extends React.Component {
     const footerTablePosts = (
       <div className="ui-helper-clearfix full-width">
         <Button className="float-left" icon="fa-plus" label="Add New"
-          onClick={_ => this.add(defaultPost, this.dialogPost)}/>
+                onClick={_ => this.add(defaultPost, this.dialogPost)}/>
       </div>
     );
     const footerTableComments = (
       <div className="ui-helper-clearfix full-width">
         <Button className="float-left" icon="fa-plus" label="Add New"
-          onClick={_ => this.add(defaultComment, this.dialogComment)}/>
+                onClick={_ => this.add(defaultComment, this.dialogComment)}/>
       </div>
     );
     const dialogProps = {
@@ -230,7 +231,7 @@ export class App extends React.Component {
     const loadStateFromFileMsg = (
       <div className="subtitle">
         Application state loaded from file:&nbsp;
-        <a href="javascript:void(0)" target="_blank" onClick={(e: any) => this.saveDbToDisk(e)}>
+        <a href="metaphase.sqlite" target="_blank">
           {this.DB_FILENAME}
         </a>
         <div>You can download db file and query it uploading it to "Menu &raquo; Online SQLite Viewer"</div>
@@ -266,7 +267,7 @@ export class App extends React.Component {
           <a href={this.getUrlAppLoadDbFromDisk()} className="left-menu-item" onClick={_ => this.switchDb()}>
             <i className="fa fa-refresh"></i><span>Switch data origin</span>
           </a>
-          <a href="javascript:void(0)" className="left-menu-item"  onClick={(e: any) => this.saveDbToDisk(e)}>
+          <a href="javascript:void(0)" className="left-menu-item" target="_blank" onClick={_ => this.saveDbToDisk()}>
             <i className="fa fa-download"></i><span>Save state to file</span>
           </a>
           <a href="https://sqliteonline.com" className="left-menu-item" target="_blank">
