@@ -48,7 +48,7 @@ Demostration of MetaphaseJS framework ( **BETA VERSION** ).
 - Great developer productivity and satisfacction. For example, an entire blog sistem could be developed in minutes
 - Ideal for statically generated content (i. e.: static blogs without a server database)
 - Comprehensive and switchable logger system. It can be turned off in production for better performance . A simple url query parameter controls the logger `http://url-app?logger=true/false`
-- Use of Reflection-Metadata API and Decorators to simplify model definitions (when Typescript is used)
+- Use of [Reflection-Metadata API and Decorators](https://blog.wizardsoftheweb.pro/typescript-decorators-reflection/) to simplify model definitions (when Typescript is used)
 - In SQLite by default all operations are transactional. This means protection against race conditions when state is accessed by asynchronous writes
 
 ## How
@@ -74,7 +74,7 @@ Demostration of MetaphaseJS framework ( **BETA VERSION** ).
 ## Installation
 
 - Clone the project
-- Run `yarn` in the project directory
+- Run `yarn install` in the project directory
 
 ## Usage
 
@@ -99,10 +99,10 @@ Demostration of MetaphaseJS framework ( **BETA VERSION** ).
 1. Creation of models and relations in `store.ts`.
 
 ```typescript
-// file: store.ts
+// File: store.ts
 
 // ---------------------------------------------------------------------
-// This simplified example is written in Typescript using decorators
+// This is a simplified example and it is written in Typescript using decorators
 // For regular Javascript you can define columns using "Column" class.
 // (See tests)
 // ---------------------------------------------------------------------
@@ -115,7 +115,7 @@ export class User extends Model {
   @column()
   name: string;
 
-  @column({notNullable: true, index: true}) // example of column specifying values
+  @column({notNullable: true, index: true}) // example of column specifying attributes
   age: number;
 
   @column()
@@ -126,7 +126,7 @@ export class User extends Model {
   }
 }
 
-// Post model definition -------------------------------------------------
+// Post model definition ------------------------------------------------
 export class Post extends Model {
 
   @column()
@@ -140,7 +140,7 @@ export class Post extends Model {
   }
 }
 
-// Comment model definition -----------------------------------------------
+// Comment model definition ---------------------------------------------
 export class Comment extends Model {
 
   @column()
@@ -156,13 +156,13 @@ export class Comment extends Model {
 2. Definition of collections and relations in `app.ts`
 
 ```typescript
-// file: app.ts
+// File: app.ts
 // You could also define collections and relations in 'store.ts' and export them
 
 import {Collection} from 'metaphasejs';
 import {User, Post, Comment} from 'store';
 
-// Users collection -------------------------------------------------------
+// Users collection -----------------------------------------------------
 const users = new Collection(User);
 const user1 = new User({name: "user1", age: 11, admin: 1});
 const user2 = new User({name: "user2", age: 22, admin: 1});
@@ -171,7 +171,7 @@ users.save(user1);
 users.save(user2);
 users.save(user3);
 
-// Posts collection --------------------------------------------------------
+// Posts collection -----------------------------------------------------
 const posts = new Collection(Post);
 const post1 = new Post({title: 'title post 1', content: 'content post 1'});
 const post2 = new Post({title: 'title post 2', content: 'content post 2'});
@@ -183,7 +183,7 @@ posts.save(post1);
 posts.save(post2);
 posts.save(post3);
 
-// Comments collection -----------------------------------------------------
+// Comments collection --------------------------------------------------
 const comments = new Collection(Comment);
 const comment1 = new Comment({author: 'author1', date: '5/16/2018'});
 const comment2 = new Comment({author: 'author2', date: '6/16/2018'});
@@ -193,13 +193,13 @@ comments.save(comment1);
 comments.save(comment2);
 ```
 
-
-
 3. Operations with data
+   3. 1) Filtering:
 
-   3. 1 Filtering:
 ```typescript
-// file: app.ts
+// File: app.ts
+
+import {db} from "metaphasejs";
 
 // Get all users
 users.getAll();
@@ -208,7 +208,7 @@ users.getAll();
 users.getAll({children: true});
 
 // Get all users using raw sql
-users.query().raw('select * from users');
+db.execQuery('select * from users');
 
 // Get user by id = 1
 users.getById(1);
@@ -222,7 +222,7 @@ users.getByFilter({name: 'user1', age: 11, admin: 0});
 // See tests for more examples
 ```
 
-   3. 2 Create/Read/Update/Delete (CRUD):
+3. 2) Create/Read/Update/Delete (CRUD):
 
 ```typescript
 // user1 modification

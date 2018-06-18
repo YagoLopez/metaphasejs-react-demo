@@ -50,7 +50,7 @@ export class App extends React.Component {
 
   state: {
     children: boolean,
-    selectedModel: any,
+    selectedModel: Model | undefined,
     displayLeftMenu: boolean,
     displayDialogCode: boolean,
     logger: boolean,
@@ -257,7 +257,11 @@ export class App extends React.Component {
         {/*left side menu*/}
         <Sidebar visible={displayLeftMenu} baseZIndex={1000000}
                  onHide={() => this.setState({displayLeftMenu: false})}>
-          <h3><img src="mp-logo-leftmenu.svg" className="logo-leftside-menu"/> MetaphaseJS</h3>
+          <h3>
+            <a href="https://yagolopez.github.io/metaphasejs" target="_blank" className="logo-leftside-menu"
+              title="GitHub Project"><img src="mp-logo-leftmenu.svg" className="logo-leftside-menu"/></a>
+              &nbsp;MetaphaseJS
+          </h3>
           <a href="javascript:void(0)" className="left-menu-item" onClick={_ => this.showCode()}>
             <i className="fa fa-file-code-o"></i><span>Show Code</span>
           </a>
@@ -276,7 +280,7 @@ export class App extends React.Component {
           <br/>
         </Sidebar>
 
-        {/*Show code dialog*/}
+        {/*show code dialog*/}
         <Sidebar fullScreen={true} visible={displayDialogCode} onHide={() => this.hideCode()}>
           <h2 className="centered title-border">✅ Code View</h2>
           <div className="centered subtitle">

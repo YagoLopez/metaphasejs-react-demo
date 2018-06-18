@@ -34,5 +34,6 @@ comment1.belongsTo(post1);
 comment2.belongsTo(post1);
 comment1.save();
 comment2.save();
+
 // --------------------------------------------------------------------------
 
