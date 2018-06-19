@@ -13,7 +13,7 @@ Demostration of MetaphaseJS framework ( **BETA VERSION** ).
 
 <p align="center"><img src="qrcode.jpg"/></p>
 
-## Index
+## Table of Contents
 
 - [Why](#why)
 - [Features](#features)
@@ -96,10 +96,10 @@ Demostration of MetaphaseJS framework ( **BETA VERSION** ).
 
 ## Code
 
-1. Creation of models and relations in `store.ts`.
+1. Creation of models and relations in `models.ts`. (Models could have also been defined in individual files).
 
 ```typescript
-// File: store.ts
+// File: models.ts
 
 // ---------------------------------------------------------------------
 // This is a simplified example and it is written in Typescript using decorators
@@ -115,14 +115,14 @@ export class User extends Model {
   @column()
   name: string;
 
-  @column({notNullable: true, index: true}) // example of column specifying attributes
+  @column({notNullable: true, index: true}) // Example of db column attributes
   age: number;
 
   @column()
   admin: number;
 
   hasMany() {
-    return [Post];
+    return [Post]; // Relation definition: User "has many" Post
   }
 }
 
@@ -157,7 +157,6 @@ export class Comment extends Model {
 
 ```typescript
 // File: app.ts
-// You could also define collections and relations in 'store.ts' and export them
 
 import {Collection} from 'metaphasejs';
 import {User, Post, Comment} from 'store';
@@ -194,7 +193,8 @@ comments.save(comment2);
 ```
 
 3. Operations with data
-   3. 1) Filtering:
+
+   a) Filtering:
 
 ```typescript
 // File: app.ts
@@ -222,7 +222,7 @@ users.getByFilter({name: 'user1', age: 11, admin: 0});
 // See tests for more examples
 ```
 
-3. 2) Create/Read/Update/Delete (CRUD):
+   b) Create/Read/Update/Delete (CRUD):
 
 ```typescript
 // user1 modification
@@ -244,7 +244,6 @@ users.remove(user1);
 
 ```
 
-   
 
 ## Credits
 
