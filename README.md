@@ -30,7 +30,7 @@ Demostration of MetaphaseJS framework ( **BETA VERSION** ).
 ## Why
 
 - State management is an issue solved decades ago in server-side environments using transactional and relational databases. This is not the case of client-side apps (browser) where it has remained unsolved until the advent of libraries/patterns like Redux/Flux
-- Client-state managers based on Flux architecture produce verbose and complicated code (inmutability adds levels of indirection and hence complexity) and they are basically reinventing the wheel trying to recreate a sort of in-browser database
+- Client-state managers based on Flux architecture produce verbose and complicated code (inmutability adds levels of indirection and therefore complexity) and they are basically reinventing the wheel trying to recreate a sort of in-browser database
 - Store in Redux is essentially a big key-value object which is not appropiate for nested and relational data
 - There are other client databases like IndexDB, LovefieldDB, etc. but they are complicated (callbacks, asynchrony) or very elementary (localStorage)
 - The intention of MetaphaseJS is to apply the same server-side state management techniques to client-side apps.
@@ -48,7 +48,7 @@ Demostration of MetaphaseJS framework ( **BETA VERSION** ).
 - Great developer productivity and satisfacction. For example, an entire blog sistem could be developed in minutes
 - Ideal for statically generated content (i. e.: static blogs without a server database)
 - Comprehensive and switchable logger system. It can be turned off in production for better performance . A simple url query parameter controls the logger `http://url-app?logger=true/false`
-- Use of [Reflection-Metadata API and Decorators](https://blog.wizardsoftheweb.pro/typescript-decorators-reflection/) to simplify model definitions (when Typescript is used)
+- Use of [Reflection-Metadata API](https://www.typescriptlang.org/docs/handbook/decorators.html#metadata) and [Decorators](https://www.typescriptlang.org/docs/handbook/decorators.html) to simplify model definitions (when Typescript is used)
 - In SQLite by default all operations are transactional. This means protection against race conditions when state is accessed by asynchronous writes
 
 ## How
