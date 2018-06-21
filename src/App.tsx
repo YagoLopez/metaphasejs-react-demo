@@ -16,11 +16,7 @@ import {users, posts, comments} from "./store";
 import {User} from "./models/user";
 import {Post} from "./models/post";
 import {Comment} from "./models/comment";
-import {sampleCode} from "./sample.code";
 import ReactJson from 'react-json-view';
-import CodeHighlight from 'code-highlight';
-import "code-highlight/lib/style.css";
-import "highlight.js/styles/atelier-forest-light.css";
 import './App.css';
 
 import {Sidebar} from "primereact/components/sidebar/Sidebar";
@@ -283,16 +279,8 @@ export class App extends React.Component {
         {/*show code dialog*/}
         <Sidebar fullScreen={true} visible={displayDialogCode} onHide={() => this.hideCode()}>
           <h2 className="centered title-border">✅ Code View</h2>
-          <div className="centered subtitle">
-            Source code for store creation, model definitions and relations
-          </div>
-          <ScrollPanel className="custom code-view-container">
-            <CodeHighlight
-              language="javascript" tab={2}
-              classes={{code: 'sample-code', pre: 'pre-margin'}}>
-              {sampleCode}
-            </CodeHighlight>
-          </ScrollPanel>
+          <div className="centered subtitle">Source code for model definitions, relations and collections</div>
+          <iframe src="/highlighted.code.html"></iframe>
         </Sidebar>
 
         <div className="fade-in-long">

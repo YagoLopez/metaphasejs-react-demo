@@ -5,9 +5,7 @@
   "homepage": ".",
   "dependencies": {
     "classnames": "^2.2.5",
-    "code-highlight": "^1.0.0",
     "font-awesome": "^4.7.0",
-    "highlight.js": "^9.12.0",
     "metaphasejs": "^0.9.6",
     "primereact": "^1.5.3",
     "react": "^16.4.0",
@@ -33,18 +31,18 @@
     "start": "react-scripts-ts start",
     "build-cra": "react-scripts-ts build",
     "eject": "react-scripts-ts eject",
-    "test": "jest --verbose --notify",
+    "test": "./test.bat",
     "test:watch": "jest --watch --notify",
     "test:debug": "jest --debug",
     "test:update": "jest -u",
     "coverage": "jest --coverage --silent",
-    "analyze": "source-map-explorer build/static/js/main.*",
+    "analyze": "source-map-explorer build/static/js/main.*.js",
     "uglify:compress": "npx uglifyjs ./build/static/js/main.*.js --compress --output ./build/static/main.js --timings",
     "build": "npx uglifyjs ./build/static/js/main.*.js --compress --mangle --output ./build/static/main.js --keep-fnames --timings",
     "uglify:config:file": "npx uglifyjs ./build/static/js/main.*.js --config-file uglify.config.json --output ./build/static/main.js",
     "show-dist": "start http://localhost:63342/metaphase-react-demo/build/index.html",
     "show-analysis": "start http://localhost:63342/metaphase-react-demo/analysis/index.html",
-    "test": "./test.bat"
+    "build2": "node build.js"
   },
   "jest": {
     "setupFiles": [
