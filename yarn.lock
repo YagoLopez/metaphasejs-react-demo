@@ -22,7 +22,11 @@
     "@types/events" "*"
     "@types/node" "*"
 
-"@types/node@*", "@types/node@^10.1.2":
+"@types/node@*":
+  version "10.3.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.3.4.tgz#c74e8aec19e555df44609b8057311052a2c84d9e"
+
+"@types/node@^10.1.2":
   version "10.3.3"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.3.3.tgz#8798d9e39af2fa604f715ee6a6b19796528e46c3"
 
@@ -3948,8 +3952,8 @@ merge@^1.1.3:
   resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.0.tgz#7531e39d4949c281a66b8c5a6e0265e8b05894da"
 
 metaphasejs@^0.9.6:
-  version "0.9.81"
-  resolved "https://registry.yarnpkg.com/metaphasejs/-/metaphasejs-0.9.81.tgz#d86503b32a57567070f7394c33fde2eb43cfe130"
+  version "0.9.82"
+  resolved "https://registry.yarnpkg.com/metaphasejs/-/metaphasejs-0.9.82.tgz#53d11de6540cc38217404ce307b1a4134c47b605"
   dependencies:
     "@types/knex" "^0.14.7"
     chalk "^2.3.2"
@@ -5594,7 +5598,13 @@ resolve@1.1.7:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
 
-resolve@^1.1.6, resolve@^1.1.7, resolve@^1.3.2:
+resolve@^1.1.6, resolve@^1.1.7:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.8.1.tgz#82f1ec19a423ac1fbd080b0bab06ba36e84a7a26"
+  dependencies:
+    path-parse "^1.0.5"
+
+resolve@^1.3.2:
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.7.1.tgz#aadd656374fd298aee895bc026b8297418677fd3"
   dependencies:

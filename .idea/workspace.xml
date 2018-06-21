@@ -7,29 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="492a7a69-5fc5-4d3c-9fd0-29e4e02618cb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/highlighted.code.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/css/main.ebd164fe.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/css/main.ebd164fe.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.abbdb3a0.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.abbdb3a0.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/highlighted.code.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/css/main.40732213.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/css/main.40732213.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.c06c0f6f.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.c06c0f6f.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test.bat" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/App.test.ts" afterPath="$PROJECT_DIR$/src/test/App.test.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/uglify.config.json" afterPath="$PROJECT_DIR$/temp/uglify.config.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.39d6adda.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.39d6adda.js.map" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.abbdb3a0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.abbdb3a0.js.map" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.js" afterPath="$PROJECT_DIR$/build.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/asset-manifest.json" afterPath="$PROJECT_DIR$/build/asset-manifest.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/index.html" afterPath="$PROJECT_DIR$/build/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/service-worker.js" afterPath="$PROJECT_DIR$/build/service-worker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.css" afterPath="$PROJECT_DIR$/src/App.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.tsx" afterPath="$PROJECT_DIR$/src/App.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/globals.d.ts" afterPath="$PROJECT_DIR$/src/globals.d.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yarn.lock" afterPath="$PROJECT_DIR$/yarn.lock" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -49,7 +35,20 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="416">
               <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1529612189483" expanded="true" signature="0:2587" ph="{&quot;name&quot;: &quot;metaphasejs-react-demo&quot;...}" />
+                <marker date="1529612189483" expanded="true" signature="446:773" ph="{&quot;@types/jest&quot;: &quot;23.1.0&quot;...}" />
+                <marker date="1529612189483" expanded="true" signature="788:1754" ph="{&quot;start&quot;: &quot;react-scripts-ts start&quot;...}" />
+                <marker date="1529612189483" expanded="true" signature="1766:2585" ph="{...}" />
+                <marker date="1529612189483" expanded="true" signature="1786:1881" ph="[...]" />
+                <marker date="1529612189483" expanded="true" signature="1898:1958" ph="{...}" />
+                <marker date="1529612189483" expanded="true" signature="1917:1952" ph="{&quot;skipBabel&quot;: true...}" />
+                <marker date="1529612189483" expanded="true" signature="1988:2031" ph="[...]" />
+                <marker date="1529612189483" expanded="true" signature="2050:2336" ph="{&quot;^.+\.(ts|tsx)$&quot;: &quot;&lt;rootDir&gt;/jest-config/test-preprocessor.js&quot;...}" />
+                <marker date="1529612189483" expanded="true" signature="2351:2370" ph="[...]" />
+                <marker date="1529612189483" expanded="true" signature="2389:2433" ph="[...]" />
+                <marker date="1529612189483" expanded="true" signature="2462:2581" ph="[...]" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,8 +56,8 @@
       <file leaf-file-name="App.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="282" column="24" lean-forward="false" selection-start-line="282" selection-start-column="24" selection-end-line="282" selection-end-column="24" />
+            <state relative-caret-position="260">
+              <caret line="282" column="23" lean-forward="false" selection-start-line="282" selection-start-column="23" selection-end-line="282" selection-end-column="23" />
               <folding>
                 <element signature="e#710#741#0" expanded="true" />
               </folding>
@@ -69,8 +68,8 @@
       <file leaf-file-name="build.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="241">
+              <caret line="36" column="44" lean-forward="false" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -80,7 +79,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>query.</find>
       <find>test(</find>
       <find>metaphase.sqlite</find>
       <find>[0]</find>
@@ -110,6 +108,7 @@
       <find>console</find>
       <find>code</find>
       <find>high</find>
+      <find>cra.config.js</find>
     </findStrings>
     <replaceStrings>
       <replace>/jest-config</replace>
@@ -125,7 +124,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="upgrade-dependencies" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RESET_MODE" value="HARD" />
@@ -190,6 +189,7 @@
         <option value="$PROJECT_DIR$/src/globals.d.ts" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/App.tsx" />
+        <option value="$PROJECT_DIR$/cra.config.js" />
         <option value="$PROJECT_DIR$/build.js" />
       </list>
     </option>
@@ -247,6 +247,11 @@
               <item name="metaphase-react-demo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="metaphase-react-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="metaphase-react-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="temp" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -266,8 +271,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\temp" />
       <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\temp\urls" />
+      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\temp" />
       <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\src" />
       <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo" />
     </key>
@@ -290,7 +295,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.ShowDist">
+  <component name="RunManager" selected="npm.Build2">
     <configuration name="Analyze" type="js.build_tools.npm" factoryName="npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -388,9 +393,6 @@
     <option name="ACTIVE_ACTIONS" value=",HIDE_INHERITED_FROM_OBJECT,HIDE_INHERITED,ALPHA_COMPARATOR" />
   </component>
   <component name="TestHistory">
-    <history-entry file="Test - 2018.06.20 at 00h 05m 29s.xml">
-      <configuration name="Test" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
     <history-entry file="Test - 2018.06.20 at 00h 05m 45s.xml">
       <configuration name="Test" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
@@ -418,6 +420,9 @@
     <history-entry file="Test - 2018.06.20 at 00h 11m 10s.xml">
       <configuration name="Test" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
+    <history-entry file="Test - 2018.06.21 at 22h 01m 31s.xml">
+      <configuration name="Test" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -432,13 +437,14 @@
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22715266" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22715266" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986793" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290441" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -447,7 +453,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -488,6 +493,7 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Merge branch clean-unused-dependencies&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Upgrade dependencies" />
+    <MESSAGE value="Refactors: removed highlight dependencies (use of iframe instead), new build script for uglifying" />
     <MESSAGE value="Refactors" />
     <option name="LAST_COMMIT_MESSAGE" value="Refactors" />
   </component>
@@ -496,7 +502,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/node_modules/metaphasejs/dist/metaphasejs.umd.js</url>
-          <line>191</line>
+          <line>193</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
@@ -505,13 +511,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/DialogCmp/DialogPost.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1566">
-          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/comment.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
@@ -782,14 +781,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
           <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding>
+            <marker date="1529612189483" expanded="true" signature="0:2587" ph="{&quot;name&quot;: &quot;metaphasejs-react-demo&quot;...}" />
+            <marker date="1529612189483" expanded="true" signature="446:773" ph="{&quot;@types/jest&quot;: &quot;23.1.0&quot;...}" />
+            <marker date="1529612189483" expanded="true" signature="788:1754" ph="{&quot;start&quot;: &quot;react-scripts-ts start&quot;...}" />
+            <marker date="1529612189483" expanded="true" signature="1766:2585" ph="{...}" />
+            <marker date="1529612189483" expanded="true" signature="1786:1881" ph="[...]" />
+            <marker date="1529612189483" expanded="true" signature="1898:1958" ph="{...}" />
+            <marker date="1529612189483" expanded="true" signature="1917:1952" ph="{&quot;skipBabel&quot;: true...}" />
+            <marker date="1529612189483" expanded="true" signature="1988:2031" ph="[...]" />
+            <marker date="1529612189483" expanded="true" signature="2050:2336" ph="{&quot;^.+\.(ts|tsx)$&quot;: &quot;&lt;rootDir&gt;/jest-config/test-preprocessor.js&quot;...}" />
+            <marker date="1529612189483" expanded="true" signature="2351:2370" ph="[...]" />
+            <marker date="1529612189483" expanded="true" signature="2389:2433" ph="[...]" />
+            <marker date="1529612189483" expanded="true" signature="2462:2581" ph="[...]" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cra.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="282" column="24" lean-forward="false" selection-start-line="282" selection-start-column="24" selection-end-line="282" selection-end-column="24" />
+        <state relative-caret-position="260">
+          <caret line="282" column="23" lean-forward="false" selection-start-line="282" selection-start-column="23" selection-end-line="282" selection-end-column="23" />
           <folding>
             <element signature="e#710#741#0" expanded="true" />
           </folding>
@@ -798,11 +818,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="241">
+          <caret line="36" column="44" lean-forward="false" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

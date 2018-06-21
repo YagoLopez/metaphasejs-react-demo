@@ -34,6 +34,7 @@ try {
   console.log('Uglify result', uglifyResult.timings);
   console.log('Creating destination file: ', path + fileName);
   fs.writeFileSync((path + fileName), uglifyResult.code, 'utf-8');
+  fs.unlinkSync(path + fileName + '.copia');
   listDirFiles(path);
 } catch (error) {
   console.error(error);
