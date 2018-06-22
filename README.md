@@ -156,16 +156,16 @@ export class Comment extends Model {
 
 
 
-2. Definition of collections and relations in `app.ts`
+2. Definition of collections and relations in `store.ts`. This concept of "*store*" is not the same like in Redux. It is just a place where instances and collections of models are created, but they can be created in any other place of the application.
 
 ```typescript
-// File: app.ts
+// File: store.ts
 
 import {Collection} from 'metaphasejs';
 import {User, Post, Comment} from 'models';
 
 // Users collection -----------------------------------------------------
-const users = new Collection(User);
+export const users = new Collection(User);
 const user1 = new User({name: "user1", age: 11, admin: 1});
 const user2 = new User({name: "user2", age: 22, admin: 1});
 const user3 = new User({name: "user3", age: 33, admin: 1});
@@ -174,7 +174,7 @@ users.save(user2);
 users.save(user3);
 
 // Posts collection -----------------------------------------------------
-const posts = new Collection(Post);
+export const posts = new Collection(Post);
 const post1 = new Post({title: 'title post 1', content: 'content post 1'});
 const post2 = new Post({title: 'title post 2', content: 'content post 2'});
 const post3 = new Post({title: 'title post 3', content: 'content post 3'});
@@ -186,7 +186,7 @@ posts.save(post2);
 posts.save(post3);
 
 // Comments collection --------------------------------------------------
-const comments = new Collection(Comment);
+export const comments = new Collection(Comment);
 const comment1 = new Comment({author: 'author1', date: '5/16/2018'});
 const comment2 = new Comment({author: 'author2', date: '6/16/2018'});
 comment1.belongsTo(post1);
@@ -202,6 +202,7 @@ comments.save(comment2);
 ```typescript
 // File: app.ts
 
+import {users} from "store"
 import {db} from "metaphasejs";
 
 // Get all users
@@ -214,7 +215,7 @@ users.getAll({children: true});
 db.execQuery('select * from users');
 
 // Get user by id = 1
-users.getById(1);
+const user1 = users.getById(1);
 
 // Get user with name 'user1'
 users.getByFilter({name: 'user1'})
@@ -228,6 +229,8 @@ users.getByFilter({name: 'user1', age: 11, admin: 0});
    b) Create/Read/Update/Delete (CRUD):
 
 ```typescript
+// File app.ts
+
 // user1 modification
 user1.name = 'new name';
 

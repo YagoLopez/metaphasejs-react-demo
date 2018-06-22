@@ -17,7 +17,7 @@ const uglifyjsOptions = {compress: true, mangle: {keep_fnames: true}, timings: t
 
 try {
   //todo: comprobar el nombre del fichero 'path + fileName'. debe ser del tipo main.*.js y no terminar en *.copia
-  fs.renameSync((path + fileName), (path + fileName + '.copia'));
+  fs.renameSync((path + fileName + 'caca'), (path + fileName + '.copia'));
   listDirFiles(path);
   const fileToUglify = path + fileName + '.copia';
   console.log('Reading file to uglify: ', fileToUglify);
