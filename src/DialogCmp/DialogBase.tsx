@@ -44,9 +44,24 @@ export class DialogBase extends React.Component {
     this.setState({selectedModel: undefined, displayDialog: false});
   }
 
+  static hasEmptyFields(model: Model): boolean {
+    let result = false;
+    Object.keys(model).forEach((key: string) => {
+      if (model[key].length === 0) {
+        alert(`field "${key}" is empty`);
+        result = true;
+        return;
+      }
+    });
+    return result;
+  }
+
   onBtnSave() {
     const initialSelectedModel = this.props.selectedModel;
     let modifiedSelectedModel = this.state.selectedModel;
+    if (DialogBase.hasEmptyFields(modifiedSelectedModel) ) {
+      return;
+    }
     if (initialSelectedModel && initialSelectedModel !== modifiedSelectedModel) {
       try {
         Object.setPrototypeOf(modifiedSelectedModel, initialSelectedModel);
@@ -54,12 +69,12 @@ export class DialogBase extends React.Component {
         modifiedSelectedModel.save();
         this.setState({displayDialog: false});
       } catch (exception) {
-        console.warn(exception);
+        console.error(exception);
         alert(exception.message);
       }
       this.props.updateState();
     } else {
-      alert('Unchanged data cannot be saved');
+      alert('Data has not changed');
     }
   }
 

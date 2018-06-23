@@ -36,7 +36,7 @@ export class DialogUser extends DialogBase {
     return (
       <Dialog visible={displayDialog} header="User" modal={true} responsive={false}
               footer={footerDialog} onHide={() => this.setState({displayDialog: false})}>
-        <div className="ui-grid ui-grid-responsive ui-fluid">
+          <div className="ui-grid ui-grid-responsive ui-fluid">
           <div className="ui-grid-row">
             <div className="ui-grid-col-4 dialog-label">
               <label htmlFor="name">Name</label>

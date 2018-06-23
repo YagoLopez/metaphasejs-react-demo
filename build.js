@@ -1,12 +1,12 @@
 const fs = require('fs');
 const Uglify = require('uglify-es');
 
-const path = './build/static/js/';
-const listDirFiles = (path) => {
+const listFilesFolder = (path) => {
   console.log('Directory file list: ');
   fs.readdirSync(path).forEach(file => console.log(file));
   console.log('');
 };
+const path = './build/static/js/';
 const fileList = fs.readdirSync(path);
 const fileName = fileList[0];
 const fileNameFragments = fileName.split('.');
@@ -17,8 +17,8 @@ const uglifyjsOptions = {compress: true, mangle: {keep_fnames: true}, timings: t
 
 try {
   //todo: comprobar el nombre del fichero 'path + fileName'. debe ser del tipo main.*.js y no terminar en *.copia
-  fs.renameSync((path + fileName + 'caca'), (path + fileName + '.copia'));
-  listDirFiles(path);
+  fs.renameSync((path + fileName), (path + fileName + '.copia'));
+  listFilesFolder(path);
   const fileToUglify = path + fileName + '.copia';
   console.log('Reading file to uglify: ', fileToUglify);
   const fileContent = fs.readFileSync(fileToUglify, 'utf-8');
@@ -35,7 +35,7 @@ try {
   console.log('Creating destination file: ', path + fileName);
   fs.writeFileSync((path + fileName), uglifyResult.code, 'utf-8');
   fs.unlinkSync(path + fileName + '.copia');
-  listDirFiles(path);
+  listFilesFolder(path);
 } catch (error) {
   console.error(error);
 }

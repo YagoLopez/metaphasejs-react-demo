@@ -58,14 +58,14 @@ Demostration of MetaphaseJS framework ( **BETA VERSION** ).
 
 - [Sql.js](https://github.com/kripken/sql.js) is a Javascript library that uses [Emscriptem](http://kripken.github.io/emscripten-site/)/[WebAssembly](https://webassembly.org/)  to recompile the SQLite C++ code to Javascript. This means you can create a SQLite database in browser and use all its functionality.
 - MetaphaseJS uses `Sql.js` to hold the application state in a **in-memory SQLite database**:
-  - You create classes for your models (also called *entities*)
-  - Set up relations between models
-  - Create collections of models
-  - Execute operations with models (CRUD)
+  1. You create classes for your models (also called *entities*)
+  2. Set up relations between models
+  3. Create collections of models
+  4. Execute operations with models (CRUD)
 - You can use an ORM to execute queries, or raw SQL
 - You can load state:
-  - From a database file on disk
-  - From a database created at runtime by code
+  1. From a database file on disk
+  2. From a database created at runtime by code
 - You can save the state to a file on disk
 - As always you can persist the state to a server using http requests.
 
@@ -84,14 +84,6 @@ Demostration of MetaphaseJS framework ( **BETA VERSION** ).
 - Run `yarn start`
 - Packages analysis (without gzip compression) `yarn analysis` :arrow_right: [link](https://yagolopez.js.org/metaphasejs-react-demo/analysis/packages.html)
 
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
 
 ## Entity-Relation State Diagram
 
@@ -156,7 +148,7 @@ export class Comment extends Model {
 
 
 
-2. Definition of collections and relations in `store.ts`. This concept of "*store*" is not the same like in Redux. It is just a place where instances and collections of models are created, but they can be created in any other place of the application.
+2. Definition of collections and relations in `store.ts`. This concept of "*store*" is not the same like in Redux. It is just a place where instances and collections of models are created, but they can be created in any other place in the application.
 
 ```typescript
 // File: store.ts

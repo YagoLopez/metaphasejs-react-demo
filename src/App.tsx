@@ -280,12 +280,13 @@ export class App extends React.Component {
         <Sidebar fullScreen={true} visible={displayDialogCode} onHide={() => this.hideCode()}>
           <h2 className="centered title-border">✅ Code View</h2>
           <div className="centered subtitle">Source code for model definitions, relations and collections</div>
-          <iframe src="highlighted.code.html"></iframe>
+          <iframe src="/highlighted.code.html"></iframe>
         </Sidebar>
 
         <div className="fade-in-long">
 
           <div>{this.state.loadDbFromFile ? loadStateFromFileMsg : loadStateFromCodeMsg}</div>
+          <div>test {process.env.PUBLIC_URL + '/highlighted.code.html'}</div>
 
           {/*json state view*/}
           <Panel header={JsonViewPanelHeader} toggleable={true}>
