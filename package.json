@@ -10,6 +10,7 @@
     "primereact": "^1.5.3",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "react-iframe": "^1.2.0",
     "react-json-view": "^1.16.6",
     "react-numeric-input": "^2.2.3",
     "react-quill": "^1.2.7",

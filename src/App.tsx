@@ -34,6 +34,7 @@ import 'primereact/resources/primereact.min.css';
 import 'primereact/resources/themes/omega/theme.css';
 import 'font-awesome/css/font-awesome.css';
 import * as utils from "./utils";
+import Iframe from 'react-iframe';
 
 
 declare const SQL: any;
@@ -280,13 +281,12 @@ export class App extends React.Component {
         <Sidebar fullScreen={true} visible={displayDialogCode} onHide={() => this.hideCode()}>
           <h2 className="centered title-border">✅ Code View</h2>
           <div className="centered subtitle">Source code for model definitions, relations and collections</div>
-          <iframe src="/highlighted.code.html"></iframe>
+          <Iframe url="highlighted.code.html" className="highlighted-code"></Iframe>
         </Sidebar>
 
         <div className="fade-in-long">
 
           <div>{this.state.loadDbFromFile ? loadStateFromFileMsg : loadStateFromCodeMsg}</div>
-          <div>test {process.env.PUBLIC_URL + '/highlighted.code.html'}</div>
 
           {/*json state view*/}
           <Panel header={JsonViewPanelHeader} toggleable={true}>

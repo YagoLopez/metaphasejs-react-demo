@@ -7,19 +7,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="492a7a69-5fc5-4d3c-9fd0-29e4e02618cb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.9b98d5ae.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.9b98d5ae.js.map" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.39d6adda.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.39d6adda.js.map" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/css/main.d3aed180.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/css/main.d3aed180.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.1875207e.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.1875207e.js.map" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/css/main.ebd164fe.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/css/main.ebd164fe.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.9b98d5ae.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.9b98d5ae.js.map" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.js" afterPath="$PROJECT_DIR$/build.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/asset-manifest.json" afterPath="$PROJECT_DIR$/build/asset-manifest.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/index.html" afterPath="$PROJECT_DIR$/build/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/service-worker.js" afterPath="$PROJECT_DIR$/build/service-worker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.css" afterPath="$PROJECT_DIR$/src/App.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.tsx" afterPath="$PROJECT_DIR$/src/App.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DialogCmp/DialogBase.tsx" afterPath="$PROJECT_DIR$/src/DialogCmp/DialogBase.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DialogCmp/DialogUser.tsx" afterPath="$PROJECT_DIR$/src/DialogCmp/DialogUser.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/globals.d.ts" afterPath="$PROJECT_DIR$/src/globals.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yarn.lock" afterPath="$PROJECT_DIR$/yarn.lock" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,36 +37,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
+            <state relative-caret-position="0">
               <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="674">
-              <caret line="282" column="46" lean-forward="false" selection-start-line="282" selection-start-column="46" selection-end-line="282" selection-end-column="46" />
-              <folding>
-                <element signature="e#710#741#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DialogBase.tsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/DialogCmp/DialogBase.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-760">
-              <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -94,13 +74,13 @@
       <find>subtitle</find>
       <find>console</find>
       <find>code</find>
-      <find>high</find>
       <find>cra.config.js</find>
       <find>input</find>
       <find>caca</find>
       <find>unchange</find>
       <find>home</find>
       <find>../</find>
+      <find>high</find>
     </findStrings>
     <replaceStrings>
       <replace>/jest-config</replace>
@@ -174,15 +154,15 @@
         <option value="$PROJECT_DIR$/uglify.config.json" />
         <option value="$PROJECT_DIR$/test2.js" />
         <option value="$PROJECT_DIR$/src/sample.code.2.ts" />
-        <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/public/highlighted.code.html" />
-        <option value="$PROJECT_DIR$/src/globals.d.ts" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/cra.config.js" />
         <option value="$PROJECT_DIR$/build.js" />
         <option value="$PROJECT_DIR$/src/DialogCmp/DialogUser.tsx" />
         <option value="$PROJECT_DIR$/src/DialogCmp/DialogBase.tsx" />
+        <option value="$PROJECT_DIR$/src/globals.d.ts" />
         <option value="$PROJECT_DIR$/src/App.tsx" />
+        <option value="$PROJECT_DIR$/src/App.css" />
       </list>
     </option>
   </component>
@@ -226,6 +206,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -233,17 +214,6 @@
             <path>
               <item name="metaphase-react-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="metaphase-react-demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="metaphase-react-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="metaphase-react-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="metaphase-react-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="metaphase-react-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="metaphase-react-demo" type="b2602c69:ProjectViewProjectNode" />
@@ -260,7 +230,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -274,16 +243,17 @@
     <property name="javascript.nodejs.core.library.configured.version" value="8.9.4" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\build\static\js" />
+      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\temp\urls" />
+      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\temp" />
+      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\src" />
+      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\temp\urls" />
       <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\public" />
       <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\temp" />
-      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\temp\urls" />
-      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\temp" />
-      <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo\src" />
       <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo" />
     </key>
   </component>
@@ -515,7 +485,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/metaphasejs/dist/types/metaphasejs.d.ts" />
     <entry file="file://$PROJECT_DIR$/build/static/main.js" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
@@ -690,13 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/highlighted.code.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -746,20 +708,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6626">
-          <caret line="291" column="42" lean-forward="false" selection-start-line="291" selection-start-column="42" selection-end-line="291" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/globals.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ErrorBoundary.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -788,41 +736,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DialogCmp/DialogUser.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="851">
           <caret line="46" column="72" lean-forward="false" selection-start-line="46" selection-start-column="72" selection-end-line="46" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/static/js/main.844fb2fa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/highlighted.code.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DialogCmp/DialogBase.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="722">
+          <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="299" column="32" lean-forward="false" selection-start-line="299" selection-start-column="32" selection-end-line="299" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/globals.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="674">
-          <caret line="282" column="46" lean-forward="false" selection-start-line="282" selection-start-column="46" selection-end-line="282" selection-end-column="46" />
+        <state relative-caret-position="284">
+          <caret line="283" column="21" lean-forward="false" selection-start-line="283" selection-start-column="21" selection-end-line="283" selection-end-column="21" />
           <folding>
             <element signature="e#710#741#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DialogCmp/DialogBase.tsx">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-760">
-          <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
