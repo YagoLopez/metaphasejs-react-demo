@@ -7,7 +7,7 @@ import {App} from "./App";
 import {ErrorBoundary} from "./ErrorBoundary";
 import {loadDbFromFile} from "metaphasejs";
 import * as utils from './utils';
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 
 
 
@@ -17,7 +17,7 @@ window.onbeforeunload = _ => {
   utils.removeElementFromDom('root');
 };
 
-function renderApp() {
+const renderApp = () => {
   ReactDOM.render(<ErrorBoundary><App/></ErrorBoundary>, appElement);
 }
 
@@ -27,7 +27,7 @@ if (utils.isLoadDbFromFile()) {
   renderApp();
 }
 
-registerServiceWorker();
+// registerServiceWorker();
 
 
 

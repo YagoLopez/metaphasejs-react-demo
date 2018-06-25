@@ -2,7 +2,7 @@
   "name": "metaphasejs-react-demo",
   "version": "0.9.0",
   "private": true,
-  "homepage": "https://yagolopez.js.org/metaphasejs-react-demo/build/",
+  "homepage": ".",
   "dependencies": {
     "classnames": "^2.2.5",
     "font-awesome": "^4.7.0",
