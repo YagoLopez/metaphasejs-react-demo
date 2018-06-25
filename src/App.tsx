@@ -34,7 +34,6 @@ import 'primereact/resources/primereact.min.css';
 import 'primereact/resources/themes/omega/theme.css';
 import 'font-awesome/css/font-awesome.css';
 import * as utils from "./utils";
-import Iframe from 'react-iframe';
 
 
 declare const SQL: any;
@@ -93,7 +92,6 @@ export class App extends React.Component {
 
   showChildren() {
     const {children} = this.state;
-    // const {users} = this.props;
     this.setState({
       children: !children,
       jsonContent: users.getAll({children: !children}),
@@ -140,6 +138,13 @@ export class App extends React.Component {
   }
 
   showCode() {
+    const iframe = this.refs.iframecode as HTMLIFrameElement;
+    const iframeLoader = '<div style="text-align: center; font-family: Arial; font-size: 12px;">Loading...</div>';
+    const iframeBody = iframe && iframe.contentDocument && iframe.contentDocument.body as HTMLBodyElement;
+    iframeBody && (iframeBody.innerHTML = iframeLoader);
+    setTimeout(() =>
+      iframe.src = "highlighted.code.html"
+    , 1000);
     document.body.style.overflow = 'hidden';
     this.setState({displayLeftMenu: false, displayDialogCode: true});
   }
@@ -281,7 +286,7 @@ export class App extends React.Component {
         <Sidebar fullScreen={true} visible={displayDialogCode} onHide={() => this.hideCode()}>
           <h2 className="centered title-border">✅ Code View</h2>
           <div className="centered subtitle">Source code for model definitions, relations and collections</div>
-          <Iframe url="highlighted.code.html" className="highlighted-code"></Iframe>
+          <iframe ref="iframecode" src="javascript:void(0)" className="highlighted-code"></iframe>
         </Sidebar>
 
         <div className="fade-in-long">

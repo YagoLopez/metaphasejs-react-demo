@@ -297,10 +297,7 @@ body{
 ::-webkit-scrollbar-corner {background-color: #999} ::-webkit-resizer {background-color: #666}
 
 .highlighted-code {
-  position: relative !important;
   width: 100%;
   height: 85%;
-  border-style: solid;
-  border-width: 1px;
-  border-color: lightgrey;
+  border: 1px solid lightgrey;
 }
