@@ -143,8 +143,8 @@ export class App extends React.Component {
     const iframeBody = iframe && iframe.contentDocument && iframe.contentDocument.body as HTMLBodyElement;
     iframeBody && (iframeBody.innerHTML = iframeLoader);
     setTimeout(() =>
-      iframe.src = "/highlighted.code.html"
-    , 1000);
+      iframe.src = "./highlighted.code.html"
+    , 500);
     document.body.style.overflow = 'hidden';
     this.setState({displayLeftMenu: false, displayDialogCode: true});
   }

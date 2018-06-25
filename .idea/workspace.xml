@@ -7,10 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="492a7a69-5fc5-4d3c-9fd0-29e4e02618cb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.bf988690.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.bf988690.js.map" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.55d0e45f.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.55d0e45f.js.map" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.7a1325b2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.7a1325b2.js.map" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.bf988690.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.bf988690.js.map" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/asset-manifest.json" afterPath="$PROJECT_DIR$/build/asset-manifest.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/index.html" afterPath="$PROJECT_DIR$/build/index.html" />
@@ -42,12 +42,12 @@
       <file leaf-file-name="App.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="145" column="21" lean-forward="false" selection-start-line="145" selection-start-column="21" selection-end-line="145" selection-end-column="21" />
+            <state relative-caret-position="273">
+              <caret line="146" column="9" lean-forward="false" selection-start-line="146" selection-start-column="9" selection-end-line="146" selection-end-column="9" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#710#741#0" expanded="true" />
-                <marker date="1529921963161" expanded="true" signature="4363:4419" ph="..." />
+                <marker date="1529922867491" expanded="true" signature="4363:4419" ph="..." />
               </folding>
             </state>
           </provider>
@@ -219,6 +219,11 @@
             <path>
               <item name="metaphase-react-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="metaphase-react-demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="metaphase-react-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="metaphase-react-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="metaphase-react-demo" type="b2602c69:ProjectViewProjectNode" />
@@ -784,12 +789,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="145" column="21" lean-forward="false" selection-start-line="145" selection-start-column="21" selection-end-line="145" selection-end-column="21" />
+        <state relative-caret-position="273">
+          <caret line="146" column="9" lean-forward="false" selection-start-line="146" selection-start-column="9" selection-end-line="146" selection-end-column="9" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#710#741#0" expanded="true" />
-            <marker date="1529921963161" expanded="true" signature="4363:4419" ph="..." />
+            <marker date="1529922867491" expanded="true" signature="4363:4419" ph="..." />
           </folding>
         </state>
       </provider>
