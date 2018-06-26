@@ -7,21 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="492a7a69-5fc5-4d3c-9fd0-29e4e02618cb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/css/main.073f4da6.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/css/main.073f4da6.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.336c9b47.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.336c9b47.js.map" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/css/main.dd9d4bec.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/css/main.dd9d4bec.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.805e0642.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.805e0642.js.map" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.85fd9ee5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/static/js/main.85fd9ee5.js.map" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.336c9b47.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.336c9b47.js.map" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/asset-manifest.json" afterPath="$PROJECT_DIR$/build/asset-manifest.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/index.html" afterPath="$PROJECT_DIR$/build/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/service-worker.js" afterPath="$PROJECT_DIR$/build/service-worker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.tsx" afterPath="$PROJECT_DIR$/src/index.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.tsx" afterPath="$PROJECT_DIR$/src/App.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils.ts" afterPath="$PROJECT_DIR$/src/utils.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,25 +30,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-526">
+            <state relative-caret-position="-130">
               <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.tsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="App.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="288" column="61" lean-forward="false" selection-start-line="288" selection-start-column="61" selection-end-line="288" selection-end-column="61" />
+            <state relative-caret-position="6474">
+              <caret line="291" column="24" lean-forward="false" selection-start-line="291" selection-start-column="24" selection-end-line="291" selection-end-column="24" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#710#741#0" expanded="true" />
-                <marker date="1529923403447" expanded="true" signature="4369:4425" ph="..." />
+                <marker date="1530003416989" expanded="true" signature="4371:4427" ph="..." />
               </folding>
             </state>
           </provider>
@@ -139,7 +134,6 @@
         <option value="$PROJECT_DIR$/src/orm/test/base.test.ts" />
         <option value="$PROJECT_DIR$/src/models/user.ts" />
         <option value="$PROJECT_DIR$/src/models/comment.ts" />
-        <option value="$PROJECT_DIR$/src/utils.ts" />
         <option value="$PROJECT_DIR$/src/DialogCmp/DialogComment.tsx" />
         <option value="$PROJECT_DIR$/src/DialogCmp/DialogPost.tsx" />
         <option value="$PROJECT_DIR$/node_modules/metaphasejs/dist/types/orm/decorators.d.ts" />
@@ -171,10 +165,11 @@
         <option value="$PROJECT_DIR$/src/DialogCmp/DialogBase.tsx" />
         <option value="$PROJECT_DIR$/src/globals.d.ts" />
         <option value="$PROJECT_DIR$/src/App.css" />
-        <option value="$PROJECT_DIR$/src/App.tsx" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/index.tsx" />
+        <option value="$PROJECT_DIR$/src/utils.ts" />
+        <option value="$PROJECT_DIR$/src/App.tsx" />
       </list>
     </option>
   </component>
@@ -218,8 +213,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -241,6 +234,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -491,7 +486,7 @@
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="13" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -564,13 +559,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="76" lean-forward="true" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
         </state>
       </provider>
     </entry>
@@ -726,13 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DialogCmp/DialogUser.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="851">
@@ -774,19 +755,7 @@
         <state relative-caret-position="-6">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#218#249#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="288" column="61" lean-forward="false" selection-start-line="288" selection-start-column="61" selection-end-line="288" selection-end-column="61" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#710#741#0" expanded="true" />
-            <marker date="1529923403447" expanded="true" signature="4369:4425" ph="..." />
+            <element signature="e#218#249#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -799,11 +768,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="25" column="12" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-526">
+        <state relative-caret-position="-130">
           <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6474">
+          <caret line="291" column="24" lean-forward="false" selection-start-line="291" selection-start-column="24" selection-end-line="291" selection-end-column="24" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#710#741#0" expanded="true" />
+            <marker date="1530003416989" expanded="true" signature="4371:4427" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

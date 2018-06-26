@@ -23,7 +23,7 @@ export const removeElementFromDom = (elementId: string) => {
   const loader = document.getElementById(elementId) as HTMLDivElement;
   const body = document.querySelector('body') as HTMLBodyElement;
   body.style.background = 'white';
-  body.removeChild(loader);
+  loader && body.removeChild(loader);
 };
 
 export const getDbFileName = (): string => {

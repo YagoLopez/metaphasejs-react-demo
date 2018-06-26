@@ -74,6 +74,8 @@ export class App extends React.Component {
 
   dialogComment: DialogComment;
 
+  iframecode: HTMLIFrameElement;
+
   componentWillMount() {
     if (getUrlParameter('logger').toLowerCase() === 'true') {
       this.setState({logger: true});
@@ -138,13 +140,13 @@ export class App extends React.Component {
   }
 
   showCode() {
-    // const iframe = this.refs.iframecode as HTMLIFrameElement;
-    // const iframeLoader = '<div style="text-align: center; font-family: Arial; font-size: 12px;">Loading...</div>';
-    // const iframeBody = iframe && iframe.contentDocument && iframe.contentDocument.body as HTMLBodyElement;
-    // iframeBody && (iframeBody.innerHTML = iframeLoader);
-    // setTimeout(() =>
-    //   iframe.src = "highlighted.code.html"
-    // , 500);
+    const iframe = this.iframecode;
+    const iframeLoader = '<div style="text-align: center; font-family: Arial; font-size: 12px;">Loading...</div>';
+    const iframeBody = iframe.contentDocument && iframe.contentDocument.body as HTMLBodyElement;
+    iframeBody && (iframeBody.innerHTML = iframeLoader);
+    setTimeout(_ =>
+      iframe.src = "highlighted.code.html"
+    , 500);
     document.body.style.overflow = 'hidden';
     this.setState({displayLeftMenu: false, displayDialogCode: true});
   }
@@ -286,7 +288,8 @@ export class App extends React.Component {
         <Sidebar fullScreen={true} visible={displayDialogCode} onHide={() => this.hideCode()}>
           <h2 className="centered title-border">✅ Code View</h2>
           <div className="centered subtitle">Source code for model definitions, relations and collections</div>
-          <iframe ref="iframecode" src="highlighted.code.html" className="highlighted-code"></iframe>
+          <iframe ref={(el: HTMLIFrameElement) => this.iframecode = el}
+                  src="#" className="highlighted-code"></iframe>
         </Sidebar>
 
         <div className="fade-in-long">
