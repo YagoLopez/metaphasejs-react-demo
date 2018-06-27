@@ -1,13 +1,10 @@
 //todo: en la linea que dice que los datos han sido cargados desde codigo poner enlace a dialogo codigo
 //todo: arreglar spinner en dialogo user para que no aparezca teclado virtual
-//todo: reducir tamaño bundle quitando dependencias no usadas
-//todo: hacer prueba ejectando config crat
-//todo: opcion para salvar db state a localstorage
+//todo: opcion para salvar db a localstorage
 //todo: separador de mensajes de logger
 //todo: smoke tests
 //todo: probar en iexplorer. (avisar de navegador no soportado)
 //todo: probar a pasar el estado como props de tipo array. Ejm: store = {users: users.getAll(), posts: posts.getAll()}
-//todo: dynamic/async import para cargar el contenido del dialogo de codigo
 //todo: considerar el uso de polyfills como core-js
 
 import * as React from 'react';
@@ -288,8 +285,9 @@ export class App extends React.Component {
         <Sidebar fullScreen={true} visible={displayDialogCode} onHide={() => this.hideCode()}>
           <h2 className="centered title-border">✅ Code View</h2>
           <div className="centered subtitle">Source code for model definitions, relations and collections</div>
-          <iframe ref={(el: HTMLIFrameElement) => this.iframecode = el}
-                  src="#" className="highlighted-code"></iframe>
+          <div className="flex-x">
+            <iframe ref={(el: HTMLIFrameElement) => this.iframecode = el} src="#" className="iframe-code2"></iframe>
+          </div>
         </Sidebar>
 
         <div className="fade-in-long">

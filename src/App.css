@@ -20,6 +20,10 @@
   .ui-toolbar-group-left {
     padding-top: 1px !important;
   }
+
+  .iframe-code2 {
+    width: 100% !important;
+  }
 }
 
 .ui-toolbar-group-left {
@@ -263,6 +267,7 @@ fieldset {
   /* vertical-align: sub; */
 }
 
+/* quill editor classes */
 .ql-editor {
   height: 70px !important;
 }
@@ -274,6 +279,7 @@ div.ql-tooltip {
 div.ql-tooltip.ql-editing {
   z-index: 1;
 }
+/* end quill editor classes */
 
 .uml-img-container {
   width: 100%;
@@ -296,8 +302,15 @@ body{
 ::-webkit-scrollbar-thumb {height: 50px; background-color: darkgrey; border-radius: 3px}
 ::-webkit-scrollbar-corner {background-color: #999} ::-webkit-resizer {background-color: #666}
 
-.highlighted-code {
-  width: 100%;
-  height: 85%;
+.flex-x {
+  display: flex;
+  flex-direction: row;
+}
+
+.iframe-code2 {
+  display: block;
+  margin: auto;
+  width: 70%;
+  height: 80vh;
   border: 1px solid lightgrey;
 }
