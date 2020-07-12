@@ -189,8 +189,6 @@ export class App extends React.Component {
     }
    }
 
-
-
   render() {
 
     const {children, selectedModel, displayLeftMenu, displayDialogCode} = this.state;
@@ -291,6 +289,19 @@ export class App extends React.Component {
         </Sidebar>
 
         <div className="fade-in-long">
+
+          <section className="subtitle subtitle-paragraph">
+            <div>
+              This React app uses a Sqlite database to manage state
+            </div>
+            <div>
+              Data used is relational. For example, if you delete a user, all posts related
+              to that user are deleted in cascade automatically.
+            </div>
+            <div>
+              Relational data management in Redux is much more complicated
+            </div>
+          </section>
 
           <div>{this.state.loadDbFromFile ? loadStateFromFileMsg : loadStateFromCodeMsg}</div>
 

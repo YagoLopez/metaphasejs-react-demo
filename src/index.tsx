@@ -9,8 +9,6 @@ import {loadDbFromFile} from "metaphasejs";
 import * as utils from './utils';
 // import registerServiceWorker from './registerServiceWorker';
 
-
-
 const appElement = document.getElementById('root') as HTMLElement;
 
 window.onbeforeunload = _ => {

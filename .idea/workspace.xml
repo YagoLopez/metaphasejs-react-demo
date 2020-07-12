@@ -6,61 +6,16 @@
     </enabled-run-configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="492a7a69-5fc5-4d3c-9fd0-29e4e02618cb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="492a7a69-5fc5-4d3c-9fd0-29e4e02618cb" name="Default" comment="Reformat code in utils.ts and other refactors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/build.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>Foreign-key</find>
-      <find>pragma</find>
-      <find>savedb</find>
-      <find>updateState</find>
-      <find>metaphase</find>
-      <find>noop</find>
-      <find>main</find>
-      <find>js</find>
-      <find>store</find>
-      <find>store creation</find>
-      <find>tim</find>
-      <find>keep</find>
-      <find>fileName</find>
-      <find>subtitle</find>
-      <find>console</find>
-      <find>code</find>
-      <find>cra.config.js</find>
-      <find>input</find>
-      <find>caca</find>
-      <find>unchange</find>
-      <find>home</find>
-      <find>../</find>
-      <find>high</find>
-      <find>react-iframe</find>
-      <find>homepage</find>
-      <find>showcode</find>
-      <find>field</find>
-      <find>iframe</find>
-      <find>animation</find>
-      <find>fade</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>/jest-config</replace>
-      <replace>it(</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>C:\Users\yagol\Documents\projects\metaphase-react-demo\src\orm</dir>
-      <dir>C:\Users\yagol\Documents\projects\metaphase-react-demo\src\orm\test</dir>
-      <dir>C:\Users\yagol\Documents\projects\metaphase-react-demo\src</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -331,13 +286,18 @@
     <MESSAGE value="Refactors" />
     <MESSAGE value="Fix: dialog show code example removing service worker" />
     <MESSAGE value="Refactos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactos" />
+    <MESSAGE value="Reformat code in utils.ts and other refactors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reformat code in utils.ts and other refactors" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="93" y="93" width="1095" height="495" maximized="true" key="DiffContextDialog" timestamp="1594545412110">
+    <state x="93" y="1" width="1167" height="679" key="CommitChangelistDialog2" timestamp="1594545594838">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="93" y="93" width="1095" height="495" maximized="true" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1594545412110" />
+    <state x="93" y="1" width="1167" height="679" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1594545594838" />
+    <state x="93" y="93" width="1095" height="495" maximized="true" key="DiffContextDialog" timestamp="1594546376455">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="93" y="93" width="1095" height="495" maximized="true" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1594546376455" />
     <state width="1261" height="147" key="GridCell.Tab.0.bottom" timestamp="1594544986946">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

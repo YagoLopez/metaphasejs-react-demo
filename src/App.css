@@ -211,11 +211,24 @@ div.ui-panel {
 }
 
 .subtitle {
+  text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 12px;
   color: burlywood;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.subtitle-paragraph {
+  color: cornflowerblue;
+  text-align: center;
+  font-size: 14px;
+  display: inline-flex;
+  background: ghostwhite;
+  border-color: cornflowerblue;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
 }
 
 .title-border {
