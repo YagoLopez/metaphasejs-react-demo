@@ -36,6 +36,7 @@ try {
   fs.writeFileSync((path + fileName), uglifyResult.code, 'utf-8');
   fs.unlinkSync(path + fileName + '.copia');
   listFilesFolder(path);
-} catch (error) {
+}
+catch (error) {
   console.error(error);
 }

@@ -26,14 +26,8 @@ export const removeElementFromDom = (elementId: string) => {
   loader && body.removeChild(loader);
 };
 
-export const getDbFileName = (): string => {
-  return getUrlParameter('dbfile');
-};
+export const getDbFileName = (): string => getUrlParameter('dbfile');
 
-export const isLoadDbFromFile = (): boolean => {
-  return getDbFileName().length > 0;
-};
+export const isLoadDbFromFile = (): boolean => getDbFileName().length > 0;
 
-export const isLoggerEnabled = (): boolean => {
-  return getUrlParameter('logger').toLowerCase() === 'true';
-};
+export const isLoggerEnabled = (): boolean => getUrlParameter('logger').toLowerCase() === 'true';

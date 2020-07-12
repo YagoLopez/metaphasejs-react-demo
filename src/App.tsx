@@ -103,9 +103,9 @@ export class App extends React.Component {
     this.setState({displayLeftMenu: false});
   }
 
-  add(model: Model, dialog: DialogBase) {
+  add(model: Model, dialogAdd: DialogBase) {
     this.setState({selectedModel: model});
-    dialog.show();
+    dialogAdd.show();
   }
 
   btnEdit(selectedModel: Model) {
