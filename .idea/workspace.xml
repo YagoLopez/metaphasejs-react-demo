@@ -6,33 +6,7 @@
     </enabled-run-configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="492a7a69-5fc5-4d3c-9fd0-29e4e02618cb" name="Default" comment="Add text section to App.tsx with instructions&#10;&#10;And other refactors">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/highlighted.code.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/metaphase.sqlite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/mp-logo-leftmenu.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/mp-logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/css/main.c37aeddd.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.c94137b2.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/color.c7a33805.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/fontawesome-webfont.674f50d2.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/fontawesome-webfont.912ec66d.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/fontawesome-webfont.af7ae505.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/fontawesome-webfont.b06871f2.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/fontawesome-webfont.fee66e71.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/line.567f5738.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/roboto-v15-latin-regular.16e1d930.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/roboto-v15-latin-regular.38861cba.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/roboto-v15-latin-regular.3d3a5358.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/roboto-v15-latin-regular.7e367be0.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/roboto-v15-latin-regular.9f916e33.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/media/uml.3886b695.jpg" beforeDir="false" />
-    </list>
+    <list default="true" id="492a7a69-5fc5-4d3c-9fd0-29e4e02618cb" name="Default" comment="Remove file" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -199,12 +173,12 @@
     </configuration>
     <list>
       <item itemvalue="Jest.Test" />
-      <item itemvalue="npm.Run" />
+      <item itemvalue="npm.Analyze" />
+      <item itemvalue="npm.Build CRA" />
       <item itemvalue="npm.Build2" />
       <item itemvalue="npm.Build" />
-      <item itemvalue="npm.Build CRA" />
+      <item itemvalue="npm.Run" />
       <item itemvalue="npm.ShowDist" />
-      <item itemvalue="npm.Analyze" />
       <item itemvalue="npm.Uglify-compress" />
     </list>
   </component>
@@ -308,13 +282,14 @@
     <MESSAGE value="Fix: dialog show code example removing service worker" />
     <MESSAGE value="Refactos" />
     <MESSAGE value="Reformat code in utils.ts and other refactors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reformat code in utils.ts and other refactors" />
+    <MESSAGE value="Remove file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove file" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="93" y="1" width="1167" height="679" key="CommitChangelistDialog2" timestamp="1594545594838">
+    <state x="93" y="1" width="1167" height="679" key="CommitChangelistDialog2" timestamp="1594548881457">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="93" y="1" width="1167" height="679" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1594545594838" />
+    <state x="93" y="1" width="1167" height="679" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1594548881457" />
     <state x="93" y="93" width="1095" height="495" maximized="true" key="DiffContextDialog" timestamp="1594546376455">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
