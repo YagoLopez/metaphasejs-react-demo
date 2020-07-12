@@ -1,0 +1,57 @@
+<style>
+  body{
+    scrollbar-base-color: #C0C0C0;
+    scrollbar-face-color: darkgrey;
+    scrollbar-3dlight-color: #C0C0C0;
+    scrollbar-highlight-color: #C0C0C0;
+    scrollbar-track-color: #EBEBEB;
+    scrollbar-arrow-color: black;
+    scrollbar-shadow-color: #C0C0C0;
+    scrollbar-dark-shadow-color: #C0C0C0;
+  }
+  ::-webkit-scrollbar {width: 9px; height: 9px} ::-webkit-scrollbar-button {background-color: darkgrey}
+  ::-webkit-scrollbar-track {background-color: lightgrey} ::-webkit-scrollbar-track-piece {background-color: lightgrey}
+  ::-webkit-scrollbar-thumb {height: 50px; background-color: darkgrey; border-radius: 3px}
+  ::-webkit-scrollbar-corner {background-color: #999} ::-webkit-resizer {background-color: #666}
+</style>
+
+<pre class="javascript" style="font-family:monospace;"><span style="color: #FF0000;">import</span> <span style="color: #009900;">&#123;</span>Collection<span style="color: #009900;">&#125;</span> from <span style="color: #3366CC;">&quot;metaphasejs&quot;</span><span style="color: #339933;">;</span>
+<span style="color: #FF0000;">import</span> <span style="color: #009900;">&#123;</span>User<span style="color: #009900;">&#125;</span> from <span style="color: #3366CC;">&quot;./models/user&quot;</span><span style="color: #339933;">;</span>
+<span style="color: #FF0000;">import</span> <span style="color: #009900;">&#123;</span>Post<span style="color: #009900;">&#125;</span> from <span style="color: #3366CC;">&quot;./models/post&quot;</span><span style="color: #339933;">;</span>
+<span style="color: #FF0000;">import</span> <span style="color: #009900;">&#123;</span>Comment<span style="color: #009900;">&#125;</span> from <span style="color: #3366CC;">&quot;./models/comment&quot;</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #006600; font-style: italic;">// Users -----------------------------------------------------------------</span>
+
+<span style="color: #FF0000;">export</span> <span style="color: #000066; font-weight: bold;">const</span> users <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">new</span> Collection<span style="color: #009900;">&#40;</span>User<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #000066; font-weight: bold;">const</span> user1 <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">new</span> User<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#123;</span>name<span style="color: #339933;">:</span> <span style="color: #3366CC;">'user1'</span><span style="color: #339933;">,</span> age<span style="color: #339933;">:</span> <span style="color: #CC0000;">11</span><span style="color: #339933;">,</span> admin<span style="color: #339933;">:</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #000066; font-weight: bold;">const</span> user2 <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">new</span> User<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#123;</span>name<span style="color: #339933;">:</span> <span style="color: #3366CC;">'user2'</span><span style="color: #339933;">,</span> age<span style="color: #339933;">:</span> <span style="color: #CC0000;">22</span><span style="color: #339933;">,</span> admin<span style="color: #339933;">:</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #000066; font-weight: bold;">const</span> user3 <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">new</span> User<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#123;</span>name<span style="color: #339933;">:</span> <span style="color: #3366CC;">'user3'</span><span style="color: #339933;">,</span> age<span style="color: #339933;">:</span> <span style="color: #CC0000;">33</span><span style="color: #339933;">,</span> admin<span style="color: #339933;">:</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+users.<span style="color: #660066;">save</span><span style="color: #009900;">&#40;</span>user1<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+users.<span style="color: #660066;">save</span><span style="color: #009900;">&#40;</span>user2<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+users.<span style="color: #660066;">save</span><span style="color: #009900;">&#40;</span>user3<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #006600; font-style: italic;">// Posts -----------------------------------------------------------------</span>
+
+<span style="color: #FF0000;">export</span> <span style="color: #000066; font-weight: bold;">const</span> posts <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">new</span> Collection<span style="color: #009900;">&#40;</span>Post<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #000066; font-weight: bold;">const</span> post1 <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">new</span> Post<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#123;</span>title<span style="color: #339933;">:</span> <span style="color: #3366CC;">'title post 1'</span><span style="color: #339933;">,</span> content<span style="color: #339933;">:</span> <span style="color: #3366CC;">'&lt;div&gt;content post 1&lt;/div&gt;'</span><span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #000066; font-weight: bold;">const</span> post2 <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">new</span> Post<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#123;</span>title<span style="color: #339933;">:</span> <span style="color: #3366CC;">'title post 2'</span><span style="color: #339933;">,</span> content<span style="color: #339933;">:</span> <span style="color: #3366CC;">'content post 2'</span><span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #000066; font-weight: bold;">const</span> post3 <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">new</span> Post<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#123;</span>title<span style="color: #339933;">:</span> <span style="color: #3366CC;">'title post 3'</span><span style="color: #339933;">,</span> content<span style="color: #339933;">:</span> <span style="color: #3366CC;">'content post 3'</span><span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+post1.<span style="color: #660066;">belongsTo</span><span style="color: #009900;">&#40;</span>user1<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+post2.<span style="color: #660066;">belongsTo</span><span style="color: #009900;">&#40;</span>user1<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+post3.<span style="color: #660066;">belongsTo</span><span style="color: #009900;">&#40;</span>user2<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+posts.<span style="color: #660066;">save</span><span style="color: #009900;">&#40;</span>post1<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+posts.<span style="color: #660066;">save</span><span style="color: #009900;">&#40;</span>post2<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+posts.<span style="color: #660066;">save</span><span style="color: #009900;">&#40;</span>post3<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #006600; font-style: italic;">// Comments -----------------------------------------------------------------</span>
+
+<span style="color: #FF0000;">export</span> <span style="color: #000066; font-weight: bold;">const</span> comments <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">new</span> Collection<span style="color: #009900;">&#40;</span>Comment<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #000066; font-weight: bold;">const</span> comment1 <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">new</span> Comment<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#123;</span>author<span style="color: #339933;">:</span> <span style="color: #3366CC;">'author1'</span><span style="color: #339933;">,</span> date<span style="color: #339933;">:</span> <span style="color: #3366CC;">'5/16/2018'</span><span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #000066; font-weight: bold;">const</span> comment2 <span style="color: #339933;">=</span> <span style="color: #000066; font-weight: bold;">new</span> Comment<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#123;</span>author<span style="color: #339933;">:</span> <span style="color: #3366CC;">'author2'</span><span style="color: #339933;">,</span> date<span style="color: #339933;">:</span> <span style="color: #3366CC;">'6/16/2018'</span><span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+comment1.<span style="color: #660066;">belongsTo</span><span style="color: #009900;">&#40;</span>post1<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+comment2.<span style="color: #660066;">belongsTo</span><span style="color: #009900;">&#40;</span>post1<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+comment1.<span style="color: #660066;">save</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+comment2.<span style="color: #660066;">save</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #006600; font-style: italic;">// --------------------------------------------------------------------------</span>
+  &nbsp;</pre>

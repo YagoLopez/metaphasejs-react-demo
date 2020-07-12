@@ -6,7 +6,9 @@
     </enabled-run-configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="492a7a69-5fc5-4d3c-9fd0-29e4e02618cb" name="Default" comment="Remove file" />
+    <list default="true" id="492a7a69-5fc5-4d3c-9fd0-29e4e02618cb" name="Default" comment="workspace.xml changed">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -173,12 +175,12 @@
     </configuration>
     <list>
       <item itemvalue="Jest.Test" />
-      <item itemvalue="npm.Analyze" />
-      <item itemvalue="npm.Build CRA" />
+      <item itemvalue="npm.Run" />
       <item itemvalue="npm.Build2" />
       <item itemvalue="npm.Build" />
-      <item itemvalue="npm.Run" />
+      <item itemvalue="npm.Build CRA" />
       <item itemvalue="npm.ShowDist" />
+      <item itemvalue="npm.Analyze" />
       <item itemvalue="npm.Uglify-compress" />
     </list>
   </component>
@@ -283,33 +285,34 @@
     <MESSAGE value="Refactos" />
     <MESSAGE value="Reformat code in utils.ts and other refactors" />
     <MESSAGE value="Remove file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove file" />
+    <MESSAGE value="workspace.xml changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace.xml changed" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="93" y="1" width="1167" height="679" key="CommitChangelistDialog2" timestamp="1594548881457">
+    <state x="93" y="1" width="1167" height="679" key="CommitChangelistDialog2" timestamp="1594549104062">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="93" y="1" width="1167" height="679" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1594548881457" />
+    <state x="93" y="1" width="1167" height="679" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1594549104062" />
     <state x="93" y="93" width="1095" height="495" maximized="true" key="DiffContextDialog" timestamp="1594546376455">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="93" y="93" width="1095" height="495" maximized="true" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1594546376455" />
-    <state width="1261" height="147" key="GridCell.Tab.0.bottom" timestamp="1594548123085">
+    <state width="1261" height="147" key="GridCell.Tab.0.bottom" timestamp="1594549237174">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1261" height="147" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1594548123085" />
-    <state width="1261" height="147" key="GridCell.Tab.0.center" timestamp="1594548123085">
+    <state width="1261" height="147" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1594549237174" />
+    <state width="1261" height="147" key="GridCell.Tab.0.center" timestamp="1594549237174">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1261" height="147" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1594548123085" />
-    <state width="1261" height="147" key="GridCell.Tab.0.left" timestamp="1594548123085">
+    <state width="1261" height="147" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1594549237174" />
+    <state width="1261" height="147" key="GridCell.Tab.0.left" timestamp="1594549237173">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1261" height="147" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1594548123085" />
-    <state width="1261" height="147" key="GridCell.Tab.0.right" timestamp="1594548123085">
+    <state width="1261" height="147" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1594549237173" />
+    <state width="1261" height="147" key="GridCell.Tab.0.right" timestamp="1594549237174">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1261" height="147" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1594548123085" />
+    <state width="1261" height="147" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1594549237174" />
     <state x="367" y="44" key="RollbackChangesDialog" timestamp="1594548491066">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
