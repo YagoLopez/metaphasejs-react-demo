@@ -6,11 +6,32 @@
     </enabled-run-configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="492a7a69-5fc5-4d3c-9fd0-29e4e02618cb" name="Default" comment="Reformat code in utils.ts and other refactors">
+    <list default="true" id="492a7a69-5fc5-4d3c-9fd0-29e4e02618cb" name="Default" comment="Add text section to App.tsx with instructions&#10;&#10;And other refactors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/highlighted.code.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/metaphase.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/mp-logo-leftmenu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/mp-logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.c37aeddd.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.c94137b2.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/color.c7a33805.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/fontawesome-webfont.674f50d2.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/fontawesome-webfont.912ec66d.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/fontawesome-webfont.af7ae505.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/fontawesome-webfont.b06871f2.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/fontawesome-webfont.fee66e71.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/line.567f5738.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/roboto-v15-latin-regular.16e1d930.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/roboto-v15-latin-regular.38861cba.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/roboto-v15-latin-regular.3d3a5358.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/roboto-v15-latin-regular.7e367be0.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/roboto-v15-latin-regular.9f916e33.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/uml.3886b695.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +106,7 @@
       <recent name="C:\Users\yagol\Documents\projects\metaphase-react-demo" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Run">
+  <component name="RunManager" selected="npm.ShowDist">
     <configuration name="Test" type="JavaScriptTestRunnerJest">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -298,26 +319,34 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="93" y="93" width="1095" height="495" maximized="true" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1594546376455" />
-    <state width="1261" height="147" key="GridCell.Tab.0.bottom" timestamp="1594544986946">
+    <state width="1261" height="147" key="GridCell.Tab.0.bottom" timestamp="1594548123085">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1261" height="147" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1594544986946" />
-    <state width="1261" height="147" key="GridCell.Tab.0.center" timestamp="1594544986946">
+    <state width="1261" height="147" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1594548123085" />
+    <state width="1261" height="147" key="GridCell.Tab.0.center" timestamp="1594548123085">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1261" height="147" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1594544986946" />
-    <state width="1261" height="147" key="GridCell.Tab.0.left" timestamp="1594544986945">
+    <state width="1261" height="147" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1594548123085" />
+    <state width="1261" height="147" key="GridCell.Tab.0.left" timestamp="1594548123085">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1261" height="147" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1594544986945" />
-    <state width="1261" height="147" key="GridCell.Tab.0.right" timestamp="1594544986946">
+    <state width="1261" height="147" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1594548123085" />
+    <state width="1261" height="147" key="GridCell.Tab.0.right" timestamp="1594548123085">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1261" height="147" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1594544986946" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1594545407249">
+    <state width="1261" height="147" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1594548123085" />
+    <state x="367" y="44" key="RollbackChangesDialog" timestamp="1594548491066">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1594545407249" />
+    <state x="367" y="44" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1594548491066" />
+    <state x="318" y="247" key="VCS.ChangelistChooser" timestamp="1594548367591">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="318" y="247" key="VCS.ChangelistChooser/0.0.1280.680@0.0.1280.680" timestamp="1594548367591" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1594547870165">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1594547870165" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
