@@ -6,6 +6,8 @@ Demostration of MetaphaseJS framework ( **BETA VERSION** ).
 
 ![NPM package](https://nodei.co/npm/metaphasejs.png)
 
+[![Repository stats](https://github-readme-stats.vercel.app/api?username=YagoLopez&hide=["contribs"])](https://github.com/anuraghazra/github-readme-stats)
+
 
 **MetaphaseJS** is a super easy, efficient and agnostic state manager for Javascript. It can be used with React, Angular o vanilla JS. In this demo React and Typescript have been used. :arrow_right: ​[Link to repository](https://github.com/YagoLopez/metaphasejs)
 
